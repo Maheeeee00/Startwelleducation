@@ -91,6 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
   });
 
+  // Holiday list: grey out past holidays and highlight the next one
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  let nextMarked = false;
+  document.querySelectorAll('.hol[data-end]').forEach(h => {
+    const end = new Date(h.dataset.end + 'T00:00:00');
+    if (end < today) { h.classList.add('past'); h.querySelector('.htag').textContent = 'Passed'; }
+    else if (!nextMarked) { h.classList.add('next'); h.querySelector('.htag').textContent = 'Next Holiday'; nextMarked = true; }
+  });
+
   // Footer year
   document.querySelectorAll('.year-now').forEach(el => el.textContent = new Date().getFullYear());
 });

@@ -473,3 +473,36 @@ table.schedule tr:nth-child(even) td{background:var(--cream)}
   .month-grid{grid-template-columns:1fr}
   .lead-banner{flex-direction:column;text-align:center;padding:28px 22px}
 }
+
+/* ---------- Sub-page pill navigation ---------- */
+.subnav{position:relative;z-index:5;margin-top:-30px}
+.subnav .container{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.subnav-pill{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;background:#fff;color:var(--navy);font-weight:800;font-size:.95rem;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:.25s}
+.subnav-pill i{color:var(--muted)}
+.subnav-pill:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.subnav-pill.active{background:linear-gradient(135deg,var(--navy-3),#1e7ae0);color:#fff;border-color:transparent;box-shadow:0 14px 28px -12px rgba(30,122,224,.8)}
+.subnav-pill.active i{color:#fff}
+
+/* ---------- Holiday list ---------- */
+.hol-card{background:#fff;border-radius:22px;padding:26px;box-shadow:var(--shadow);border:1px solid var(--line);max-width:1000px;margin:0 auto}
+.hol-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.hol-head h3{margin:0;font-family:var(--font-body);font-size:1.2rem;flex:1}
+.hol-badge{background:linear-gradient(135deg,var(--navy-3),#1e7ae0);color:#fff;padding:7px 16px;border-radius:999px;font-weight:800;font-size:.82rem}
+.hol-range{color:var(--muted);font-size:.92rem}
+.hol-list{display:grid;gap:10px}
+.hol{display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:12px;background:#f8f9fb;border:1px solid #e8eaf0;transition:.2s}
+.hol:hover{background:#fff;box-shadow:var(--shadow-sm)}
+.hol .dot{width:10px;height:10px;border-radius:50%;background:#e53935;flex-shrink:0}
+.hol strong{flex:1;color:var(--navy);font-weight:700}
+.hol .when{color:var(--muted);font-size:.92rem}
+.hol .htag{background:#fde2e2;color:#c62828;font-weight:800;font-size:.76rem;padding:4px 10px;border-radius:7px}
+.hol.past{opacity:.55}
+.hol.past .dot{background:#9aa3b5}
+.hol.past .htag{background:#eceff4;color:#6b7489}
+.hol.next{background:#fff4ea;border-color:#ffd2ad;box-shadow:0 0 0 2px rgba(242,113,28,.25)}
+.hol.next .htag{background:var(--orange);color:#fff}
+@media (max-width:600px){.hol{flex-wrap:wrap;gap:8px 12px}.hol strong{flex-basis:calc(100% - 30px)}.hol .when{margin-left:26px}}
+
+/* ---------- Facebook embed ---------- */
+.fb-embed{background:#fff;border-radius:22px;padding:12px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;justify-content:center;overflow:hidden}
+.fb-embed iframe{max-width:100%;border-radius:12px}

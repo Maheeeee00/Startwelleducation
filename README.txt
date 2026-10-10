@@ -21,20 +21,22 @@ PAGES (menu structure):
   Gallery ........... gallery.html
   Contact ........... contact.html
 
-SOCIAL LINKS: Facebook / TikTok / YouTube buttons currently link to "#".
-Search all .html files for  href="#"  and replace with your real
-page links (aria-label tells you which is which).
+SOCIAL LINKS: Facebook (startwell.educationbhimber) and TikTok
+(@startwell.edu) are connected on every page. The Facebook page also
+shows a live feed on facebook.html.
+
+SCHOOL CALENDAR: holidays are listed in calendar.html. Past holidays
+grey out automatically and the next one is highlighted. To update next
+year, edit each line's name, date and data-end="YYYY-MM-DD".
 FOLDERS: css/style.css (all styling), js/main.js (menu, animations,
          gallery lightbox, tabs, form), images/ (your photos & logo)
 
 PLEASE UPDATE BEFORE PUBLISHING (placeholders):
 - Phone number  : +92 300 0000000
 - Email         : info@startwelleducation.edu.pk
-- Address       : Mirpur, Azad Jammu & Kashmir, Pakistan
+- Address       : Bhimber, Azad Jammu & Kashmir (add full street address)
 - Principal's name (currently shown as "Principal, Startwell Education")
-- Home page numbers (800+ students, 45+ teachers, 30+ classrooms)
 - School timings table on academics.html
-- Social media links (the "#" links in header & footer)
 - Map location in contact.html (the "q=" value in the iframe)
 Tip: phone/email/address appear on every page - use "Find & Replace
 in files" in VS Code to change them all at once.
