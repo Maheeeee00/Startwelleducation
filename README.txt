@@ -35,7 +35,7 @@ PLEASE UPDATE BEFORE PUBLISHING (placeholders):
 - Phone number  : +92 300 0000000
 - Email         : info@startwelleducation.edu.pk
 - Address       : Bhimber, Azad Jammu & Kashmir (add full street address)
-- Principal's name (currently shown as "Principal, Startwell Education")
+
 - School timings table on academics.html
 - Map location in contact.html (the "q=" value in the iframe)
 Tip: phone/email/address appear on every page - use "Find & Replace
