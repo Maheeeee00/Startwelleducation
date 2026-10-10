@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Team | Startwell Education</title>
-<meta name="description" content="Meet the Principal and faculty of Startwell Education.">
+<title>Teams | Startwell Education</title>
+<meta name="description" content="Startwell Education student teams — Media Teams and the StartWell Spelling Bee.">
 <link rel="icon" href="images/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
     </div>
     <div class="socials">
       <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
       <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
       <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
@@ -38,9 +38,34 @@
       <button class="menu-toggle nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
       <a href="index.html">Home</a>
       <a href="aboutus.html">About Us</a>
-      <a href="academics.html">Academics</a>
-      <a href="activities.html">Activities</a>
-      <a href="teams.html" class="active">Our Team</a>
+      <div class="nav-item">
+        <a href="academics.html">Academics <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Academics pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="curriculum.html"><i class="fa-solid fa-book-open"></i>Curriculum</a>
+          <a href="faculty.html"><i class="fa-solid fa-chalkboard-user"></i>Faculty &amp; Staff</a>
+          <a href="calendar.html"><i class="fa-regular fa-calendar-days"></i>School Calendar</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="activities.html">Activities <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Activities pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="online-activities.html"><i class="fa-brands fa-tiktok"></i>Online Activities</a>
+          <a href="facebook.html"><i class="fa-brands fa-facebook"></i>Facebook Page</a>
+          <a href="projects.html"><i class="fa-solid fa-diagram-project"></i>Projects</a>
+        </div>
+      </div>
+      <div class="nav-item active">
+        <a href="teams.html">Teams <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Teams pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="junior-media-team.html"><i class="fa-solid fa-video"></i>Junior Media Team</a>
+          <a href="senior-media-team.html"><i class="fa-solid fa-microphone-lines"></i>Senior Media Team</a>
+          <a href="spelling-bee.html"><i class="fa-solid fa-spell-check"></i>StartWell Spelling Bee</a>
+        </div>
+      </div>
+      <a href="admissions.html">Admissions</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html" class="btn btn-primary">Contact Us</a>
     </nav>
@@ -50,65 +75,68 @@
 <section class="page-banner">
   <div class="container">
     <span class="eyebrow" style="color:var(--gold)">Startwell Education</span>
-    <h1>Our Team</h1>
-    <p class="lead" style="color:#c7d0ea;max-width:620px">Dedicated leadership and a qualified faculty committed to every child&#39;s success.</p>
-    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Our Team</div>
+    <h1>Teams</h1>
+    <p class="lead" style="color:#c7d0ea;max-width:620px">Media Teams and the StartWell Spelling Bee — where our students lead.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Teams</div>
   </div>
 </section>
 <section>
   <div class="container">
-    <div class="leader reveal">
-      <img src="images/principal.jpg" alt="Principal of Startwell Education">
-      <div>
-        <div class="role">Principal</div>
-        <h2>Leading with vision and care</h2>
-        <blockquote>“A school is only as strong as its teachers. At Startwell, we have built a team that is qualified, committed and truly cares about every child.”</blockquote>
-        <p style="margin-top:22px;color:var(--muted)">Under the Principal&#39;s leadership, Startwell Education has grown into a trusted institution known for discipline, academic quality and a warm, family-like environment.</p>
-        <div class="socials" style="display:flex;gap:10px;margin-top:10px">
-          <a href="#" class="btn btn-dark" style="padding:10px 18px"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="contact.html" class="btn btn-primary" style="padding:10px 22px">Meet the Principal</a>
-        </div>
-      </div>
+    <div class="section-head center reveal">
+      <span class="eyebrow">Our Teams</span>
+      <h2>Where students lead</h2>
+      <p class="lead">Our student teams give children real responsibility — on camera, on stage and in competition.</p>
     </div>
+    <div class="grid-3"><a href="junior-media-team.html" class="sub-card reveal">
+        <div class="top av4"><i class="fa-solid fa-video"></i></div>
+        <div class="body"><h3>Junior Media Team</h3><p>Student anchors, presenters and reporters who bring school news to life.</p><span class="link">Open page <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a><a href="senior-media-team.html" class="sub-card reveal d1">
+        <div class="top av1"><i class="fa-solid fa-microphone-lines"></i></div>
+        <div class="body"><h3>Senior Media Team</h3><p>Senior students producing newsletters, coverage and interviews.</p><span class="link">Open page <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a><a href="spelling-bee.html" class="sub-card reveal d2">
+        <div class="top av2"><i class="fa-solid fa-spell-check"></i></div>
+        <div class="body"><h3>StartWell Spelling Bee</h3><p>Our school-wide spelling competition that builds vocabulary and confidence.</p><span class="link">Open page <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a></div>
   </div>
 </section>
 
 <section class="bg-white">
   <div class="container">
     <div class="section-head center reveal">
-      <span class="eyebrow">Our Faculty</span>
-      <h2>The team behind every success</h2>
-      <p class="lead">Experienced, qualified and passionate educators dedicated to bringing out the best in every student.</p>
+      <span class="eyebrow">Media Team Leadership</span>
+      <h2>The people behind the camera</h2>
+      
     </div>
-    <div class="grid-4"><div class="member reveal"><div class="ph c1"><i class="fa-solid fa-user-tie"></i></div><h3>Vice Principal</h3><div class="r">Administration</div><p>Oversees daily academic operations and discipline.</p></div><div class="member reveal d1"><div class="ph c2"><i class="fa-solid fa-clipboard-list"></i></div><h3>Academic Coordinator</h3><div class="r">Academics</div><p>Plans curriculum, assessments and teacher training.</p></div><div class="member reveal d2"><div class="ph c3"><i class="fa-solid fa-flask"></i></div><h3>Science Faculty</h3><div class="r">Physics · Chemistry · Biology</div><p>Bring science to life through practical lab work.</p></div><div class="member reveal d3"><div class="ph c4"><i class="fa-solid fa-square-root-variable"></i></div><h3>Mathematics Faculty</h3><div class="r">Mathematics</div><p>Build strong problem-solving and reasoning skills.</p></div><div class="member reveal"><div class="ph c1"><i class="fa-solid fa-language"></i></div><h3>Languages Faculty</h3><div class="r">English · Urdu · Arabic</div><p>Develop reading, writing and communication skills.</p></div><div class="member reveal d1"><div class="ph c2"><i class="fa-solid fa-shapes"></i></div><h3>Early Years Teachers</h3><div class="r">Playgroup – Prep</div><p>Caring teachers who make first school days joyful.</p></div><div class="member reveal d2"><div class="ph c3"><i class="fa-solid fa-laptop-code"></i></div><h3>Computer Faculty</h3><div class="r">Computer Science</div><p>Teach digital literacy and coding foundations.</p></div><div class="member reveal d3"><div class="ph c4"><i class="fa-solid fa-person-running"></i></div><h3>Sports &amp; Co-curricular</h3><div class="r">Physical Education</div><p>Lead sports, events and student activities.</p></div></div>
-  </div>
-</section>
-
-<section class="bg-navy">
-  <div class="container grid-2">
-    <div class="reveal">
-      <span class="eyebrow" style="color:var(--gold)">Careers</span>
-      <h2>Join the Startwell team</h2>
-      <p style="color:#c7d0ea">We are always looking for passionate, qualified teachers who want to make a difference. If you love teaching and believe in nurturing young minds, we would love to hear from you.</p>
-      <a href="contact.html" class="btn btn-primary" style="margin-top:10px">Send Your CV <i class="fa-solid fa-paper-plane"></i></a>
-    </div>
-    <div class="grid-2 reveal d1" style="gap:18px">
-      <div class="card" style="background:var(--navy-2);border-color:rgba(255,255,255,.08)"><div class="icon"><i class="fa-solid fa-chalkboard"></i></div><h3>Training</h3><p style="color:#b8c3e3">Regular teacher development workshops.</p></div>
-      <div class="card" style="background:var(--navy-2);border-color:rgba(255,255,255,.08)"><div class="icon"><i class="fa-solid fa-handshake"></i></div><h3>Supportive</h3><p style="color:#b8c3e3">A respectful, team-first work culture.</p></div>
-    </div>
+    <div style="display:grid;gap:22px"><div class="lead-banner reveal">
+      <div class="av"><i class="fa-solid fa-chalkboard-user"></i></div>
+      <div class="info">
+        <h3>Nida Akram</h3>
+        <div class="role">Head Teacher — Complete Media Team Handling &amp; Supervision</div>
+        <p>Under her leadership, the Media Team continues to grow as a platform that builds confidence, communication skills, creativity, and leadership among students.</p>
+      </div>
+      <span class="lead-badge"><i class="fa-solid fa-star"></i> Team Lead</span>
+    </div><div class="lead-banner teal reveal">
+      <div class="av"><i class="fa-solid fa-video"></i></div>
+      <div class="info">
+        <h3>Miss Nimra Khalid</h3>
+        <div class="role">Official Camerawoman &amp; Technical Support</div>
+        <p>Handles video recording, camera operations, and technical production with professionalism and dedication.</p>
+      </div>
+      <span class="lead-badge"><i class="fa-solid fa-film"></i> Production</span>
+    </div></div>
   </div>
 </section>
 <section>
   <div class="container">
     <div class="cta reveal">
       <div>
-        <span class="eyebrow" style="color:var(--gold)">Admissions Open</span>
-        <h2>Give your child the right start.</h2>
-        <p>Seats are limited. Visit our campus, meet our teachers and see why families trust Startwell Education.</p>
+        <span class="eyebrow" style="color:var(--gold)">Watch Our Episodes</span>
+        <h2>Follow the StartWell Media Team</h2>
+        <p>New episodes, event coverage and student reports — follow us to never miss an update.</p>
       </div>
       <div class="actions">
-        <a href="contact.html" class="btn btn-primary">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
-        <a href="tel:+923000000000" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Us</a>
+        <a href="#" class="btn btn-fb"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        <a href="#" class="btn btn-tt"><i class="fa-brands fa-tiktok"></i> TikTok</a>
       </div>
     </div>
   </div>
@@ -124,7 +152,7 @@
         <p>A place where young minds are given wings to fly — combining strong academics, good character and a caring environment.</p>
         <div class="socials">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
@@ -136,14 +164,18 @@
           <li><a href="aboutus.html">About Us</a></li>
           <li><a href="academics.html">Academics</a></li>
           <li><a href="activities.html">Activities</a></li>
+          <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+          <li><a href="calendar.html">School Calendar</a></li>
         </ul>
       </div>
       <div>
         <h4>Explore</h4>
         <ul>
-          <li><a href="teams.html">Our Team</a></li>
+          <li><a href="junior-media-team.html">Junior Media Team</a></li>
+          <li><a href="senior-media-team.html">Senior Media Team</a></li>
+          <li><a href="spelling-bee.html">StartWell Spelling Bee</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="academics.html#admissions">Admissions</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>

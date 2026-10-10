@@ -2,8 +2,28 @@ STARTWELL EDUCATION - SCHOOL WEBSITE
 ====================================
 Open index.html in any browser to view the site.
 
-PAGES:   index.html, aboutus.html, academics.html, activities.html,
-         teams.html, gallery.html, contact.html
+PAGES (menu structure):
+  Home .............. index.html
+  About Us .......... aboutus.html
+  Academics ......... academics.html
+     - Curriculum ......... curriculum.html
+     - Faculty & Staff .... faculty.html
+     - School Calendar .... calendar.html
+  Activities ........ activities.html
+     - Online Activities .. online-activities.html
+     - Facebook Page ...... facebook.html
+     - Projects ........... projects.html
+  Teams ............. teams.html
+     - Junior Media Team .. junior-media-team.html
+     - Senior Media Team .. senior-media-team.html
+     - StartWell Spelling Bee .. spelling-bee.html
+  Admissions ........ admissions.html
+  Gallery ........... gallery.html
+  Contact ........... contact.html
+
+SOCIAL LINKS: Facebook / TikTok / YouTube buttons currently link to "#".
+Search all .html files for  href="#"  and replace with your real
+page links (aria-label tells you which is which).
 FOLDERS: css/style.css (all styling), js/main.js (menu, animations,
          gallery lightbox, tabs, form), images/ (your photos & logo)
 

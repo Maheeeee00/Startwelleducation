@@ -2,9 +2,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu
   const nav = document.querySelector('.nav');
-  document.querySelector('.menu-toggle')?.addEventListener('click', () => nav.classList.add('open'));
+  document.querySelector('.menu-toggle:not(.nav-close)')?.addEventListener('click', () => nav.classList.add('open'));
   document.querySelector('.nav-close')?.addEventListener('click', () => nav.classList.remove('open'));
   nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  // Mobile dropdown toggles
+  document.querySelectorAll('.sub-toggle').forEach(btn => btn.addEventListener('click', e => {
+    e.preventDefault();
+    btn.closest('.nav-item').classList.toggle('open');
+  }));
 
   // Sticky header shadow + back to top
   const header = document.querySelector('.header');
