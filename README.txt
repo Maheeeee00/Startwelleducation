@@ -31,9 +31,10 @@ year, edit each line's name, date and data-end="YYYY-MM-DD".
 FOLDERS: css/style.css (all styling), js/main.js (menu, animations,
          gallery lightbox, tabs, form), images/ (your photos & logo)
 
+CONTACT: phone +92 340 1501700 and email alihussainpersonal@ajkuob.edu.pk
+are used on every page (top bar, footer, contact page, principal profile).
+
 PLEASE UPDATE BEFORE PUBLISHING (placeholders):
-- Phone number  : +92 300 0000000
-- Email         : info@startwelleducation.edu.pk
 - Address       : Bhimber, Azad Jammu & Kashmir (add full street address)
 
 - School timings table on academics.html
