@@ -1,5 +1,31 @@
 // Startwell Education — site scripts
+// Preloader: hide once the page has loaded (or after 2.5s at most)
+(() => {
+  const hide = () => document.querySelector('.preloader')?.classList.add('done');
+  window.addEventListener('load', () => setTimeout(hide, 300));
+  setTimeout(hide, 2500);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Scroll progress bar
+  const bar = document.querySelector('.scroll-progress');
+  const updateBar = () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+  };
+  window.addEventListener('scroll', updateBar, { passive: true }); updateBar();
+
+  // Subtle parallax on the hero photo
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < window.innerHeight) heroBg.style.backgroundPositionY = `calc(40% + ${window.scrollY * 0.25}px)`;
+    }, { passive: true });
+  }
+
+  // Mark gallery items for reveal animation
+  document.querySelectorAll('.g-item').forEach(g => g.classList.add('reveal'));
+
   // Mobile menu
   const nav = document.querySelector('.nav');
   document.querySelector('.menu-toggle:not(.nav-close)')?.addEventListener('click', () => nav.classList.add('open'));
