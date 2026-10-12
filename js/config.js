@@ -6,6 +6,6 @@
 //  (See GOOGLE-SHEETS-SETUP.txt for how to get it.)
 // ============================================================
 window.SW_CONFIG = {
-  SHEETS_URL: 'https://script.google.com/macros/s/AKfycbxyh1NYTpuleHP-q7DhbhCnc9VJ2ZQSXdH54OvnrG51xj5UYFJIYjWZSu7OnnLJ3g75/exec',
+  SHEETS_URL: 'https://script.google.com/macros/s/AKfycbwtjy6xoNKtTY34K4lfmmM_hntGdUf0mKSI7ts3bjBeG-ln_vE7rQXUowAY4Qn2G3_g/exec',
   PHONE: '+92 340 1501700',
 };
