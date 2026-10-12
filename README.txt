@@ -42,9 +42,10 @@ PLEASE UPDATE BEFORE PUBLISHING (placeholders):
 Tip: phone/email/address appear on every page - use "Find & Replace
 in files" in VS Code to change them all at once.
 
-CONTACT FORM: currently shows a thank-you message only. To actually
-receive messages, connect it to a free service like Formspree
-(formspree.io) or Web3Forms.
+FORMS -> GOOGLE SHEETS: the Contact form and the Online Admission form
+(admissions.html#apply) save into a Google Sheet and email the school.
+Follow GOOGLE-SHEETS-SETUP.txt, then paste your Web app URL into
+js/config.js. Until then the forms show "please call us" instead.
 
 GALLERY: add more photos to images/ and copy one <div class="g-item">
 block in gallery.html for each new photo.

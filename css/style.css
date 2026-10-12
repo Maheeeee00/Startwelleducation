@@ -671,3 +671,14 @@ body{animation:pageIn .6s ease both}
 .now-tag{font-size:.72rem;font-weight:800;color:#14935a;background:#dcf7ea;padding:3px 9px;border-radius:7px;margin-top:4px;white-space:nowrap}
 @media (max-width:900px){.cv-grid{grid-template-columns:1fr}}
 @media (max-width:600px){.cv-card{padding:24px 20px}}
+
+/* ---------- Online forms ---------- */
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.form-error{display:none;margin-top:18px;padding:16px 18px;border-radius:12px;background:#fdecec;color:#b42318;font-weight:600}
+.form-error.show{display:block}
+.form-error a,.form-success a{text-decoration:underline}
+.form-step{display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:1.1rem;margin:30px 0 16px}
+.form-step:first-of-type{margin-top:4px}
+.form-step span{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-size:.9rem}
+.field input:user-invalid,.field select:user-invalid,.field textarea:user-invalid{border-color:#e5484d}
+button[disabled]{opacity:.75;cursor:wait}

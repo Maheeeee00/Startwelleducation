@@ -109,12 +109,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact form (front-end only — connect to a backend/form service to receive messages)
-  const form = document.querySelector('#contactForm');
-  form?.addEventListener('submit', e => {
-    e.preventDefault();
-    form.querySelector('.form-success').classList.add('show');
-    form.reset();
+  // Forms -> Google Sheets (via Google Apps Script web app, URL set in js/config.js)
+  document.querySelectorAll('form[data-sheet]').forEach(form => {
+    const ok = form.querySelector('.form-success');
+    const err = form.querySelector('.form-error');
+    const btn = form.querySelector('button[type="submit"]');
+    const btnHTML = btn.innerHTML;
+    const cfg = window.SW_CONFIG || {};
+    const showError = msg => { err.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> ' + msg; err.classList.add('show'); };
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      ok.classList.remove('show'); err.classList.remove('show');
+      if (!form.reportValidity()) return;
+      if (!cfg.SHEETS_URL) {
+        showError(`Online form is not connected yet. Please call us on <a href="tel:${(cfg.PHONE || '').replace(/\s/g, '')}">${cfg.PHONE || ''}</a>.`);
+        return;
+      }
+      const data = new URLSearchParams(new FormData(form));
+      data.set('form_type', form.dataset.sheet);
+      data.set('page', location.href);
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+      try {
+        const res = await fetch(cfg.SHEETS_URL, { method: 'POST', body: data });
+        const out = await res.json();
+        if (!out.ok) throw new Error(out.error || 'Could not save');
+        ok.querySelector('.ref').textContent = out.ref || '';
+        ok.classList.add('show');
+        form.reset();
+        ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (ex) {
+        const msg = ex && ex.message && !/fetch|network|JSON/i.test(ex.message) ? ex.message : 'Could not send right now';
+        showError(`${msg}. Please try again, or call us on <a href="tel:${(cfg.PHONE || '').replace(/\s/g, '')}">${cfg.PHONE || ''}</a>.`);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = btnHTML;
+      }
+    });
   });
 
   // Holiday list: grey out past holidays and highlight the next one

@@ -95,19 +95,21 @@
     <div class="form-card reveal d1">
       <span class="eyebrow">Send a Message</span>
       <h2 style="font-size:2rem">Admission &amp; general enquiry</h2>
-      <form id="contactForm">
+      <form id="contactForm" data-sheet="contact" novalidate>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-grid">
-          <div class="field"><label for="name">Parent / Your Name</label><input id="name" required placeholder="Full name"></div>
-          <div class="field"><label for="phone">Phone Number</label><input id="phone" type="tel" required placeholder="03XX XXXXXXX"></div>
-          <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com"></div>
+          <div class="field"><label for="name">Parent / Your Name *</label><input id="name" name="name" required maxlength="120" placeholder="Full name"></div>
+          <div class="field"><label for="phone">Phone Number *</label><input id="phone" name="phone" type="tel" required maxlength="30" placeholder="03XX XXXXXXX"></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" maxlength="120" placeholder="you@example.com"></div>
           <div class="field"><label for="subject">Enquiry About</label>
-            <select id="subject"><option>Admission</option><option>Fee Structure</option><option>Campus Visit</option><option>Job / Careers</option><option>Other</option></select></div>
+            <select id="subject" name="subject"><option>Admission</option><option>Fee Structure</option><option>Campus Visit</option><option>Job / Careers</option><option>Other</option></select></div>
           <div class="field full"><label for="cls">Class Applying For (if admission)</label>
-            <select id="cls"><option>—</option><option>Playgroup</option><option>Nursery</option><option>Prep</option><option>Class 1 – 5</option><option>Class 6 – 8</option><option>Class 9 – 10</option></select></div>
-          <div class="field full"><label for="msg">Message</label><textarea id="msg" required placeholder="How can we help you?"></textarea></div>
+            <select id="cls" name="class"><option value="">—</option><option>Playgroup</option><option>Nursery</option><option>Prep</option><option>Class 1 – 5</option><option>Class 6 – 8</option><option>Class 9 – 10</option><option>Hifz Department</option></select></div>
+          <div class="field full"><label for="msg">Message *</label><textarea id="msg" name="message" required maxlength="2000" placeholder="How can we help you?"></textarea></div>
         </div>
         <button type="submit" class="btn btn-primary" style="margin-top:22px">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-        <div class="form-success"><i class="fa-solid fa-circle-check"></i> Thank you! Your message has been received. We will contact you soon.</div>
+        <div class="form-success" role="status"><i class="fa-solid fa-circle-check"></i> Thank you! Your message has been received (Ref: <b class="ref"></b>). We will contact you soon.</div>
+        <div class="form-error" role="alert"></div>
       </form>
     </div>
   </div>
@@ -182,6 +184,7 @@
   <div class="footer-bottom">© <span class="year-now">2026</span> Start Well Education, Bhimber — <em>Start Well to End Well</em>. All rights reserved.</div>
 </footer>
 <button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<script src="js/config.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

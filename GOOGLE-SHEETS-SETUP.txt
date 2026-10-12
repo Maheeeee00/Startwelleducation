@@ -1,0 +1,64 @@
+START WELL EDUCATION — CONNECT THE WEBSITE FORMS TO GOOGLE SHEETS
+=================================================================
+Takes about 10 minutes. Do it once, signed in as startwelleducation@gmail.com.
+
+WHAT YOU GET
+- Contact page form  -> saved in tab "Contact Enquiries"  (Ref: ENQ-0001, ENQ-0002 ...)
+- Online Admission form (Admissions page) -> saved in tab "Admissions" (Ref: ADM-0001 ...)
+- An email alert to startwelleducation@gmail.com for every submission.
+  Press "Reply" in Gmail to answer the parent directly (if they gave an email).
+- A "Status" drop-down in each tab: New / Contacted / In Progress / Admitted / Closed
+
+STEP 1 — Create the Google Sheet
+  1. Go to sheets.google.com and create a Blank spreadsheet.
+  2. Name it: Start Well Website Data
+
+STEP 2 — Add the script
+  1. In the sheet: Extensions -> Apps Script
+  2. Delete everything in Code.gs
+  3. Open the file  google-apps-script/Code.gs  (in this website folder),
+     copy ALL of it, paste it in, and click Save (disk icon).
+
+STEP 3 — Run setup once
+  1. At the top, choose the function  setup  from the drop-down, click Run.
+  2. Google asks for permission: Review permissions -> choose your account
+     -> "Advanced" -> "Go to ... (unsafe)" -> Allow.
+     (This warning is normal for your own scripts. It needs access to this
+      sheet and to send email alerts from your Gmail.)
+  3. Go back to the sheet: the tabs "Contact Enquiries" and "Admissions" now exist.
+  Optional: run  testSubmission  to add one sample row to each tab and get
+  two sample emails. Delete those rows afterwards.
+
+STEP 4 — Publish it as a Web app
+  1. Click Deploy -> New deployment
+  2. Click the gear icon -> Web app
+  3. Execute as:      Me (startwelleducation@gmail.com)
+     Who has access:  Anyone
+  4. Click Deploy, then COPY the "Web app URL"
+     (it looks like https://script.google.com/macros/s/AKfycb..../exec)
+  Check: open that URL in a browser — you should see {"ok":true, ...}
+
+STEP 5 — Put the URL in the website
+  1. Open  js/config.js
+  2. Paste the URL between the quotes:
+       SHEETS_URL: 'https://script.google.com/macros/s/AKfycb..../exec',
+  3. Save, upload/commit to GitHub. Vercel publishes it automatically.
+
+STEP 6 — Test on the live site
+  Send one message from the Contact page and one from Admissions -> Apply Online.
+  Both should show a reference number, appear in the sheet, and arrive in Gmail.
+
+-----------------------------------------------------------------
+GOOD TO KNOW
+- If you EDIT the script later: Deploy -> Manage deployments -> pencil icon
+  -> Version: "New version" -> Deploy. This keeps the SAME URL.
+  (Do NOT use "New deployment" again, that creates a different URL.)
+- Turn off email alerts: in Code.gs set  SEND_EMAIL_ALERTS = false
+- Send alerts to another address: change  NOTIFY_EMAIL  at the top of Code.gs
+- Add a new field to a form: add it to the form in the HTML (with a name="")
+  and to that form's "fields" list in Code.gs. A new column is added
+  automatically; old rows are not touched.
+- Spam protection: a hidden trap field silently drops most bots.
+- Privacy: only people you share the Google Sheet with can see the data.
+  Don't make the sheet public.
+- Free Gmail can send about 100 alert emails per day — plenty for a school.

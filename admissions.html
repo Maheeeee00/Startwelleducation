@@ -94,7 +94,7 @@
         <li><i class="fa-solid fa-check"></i> Secondary (Class 9 – 10) — Science &amp; Arts</li>
         <li><i class="fa-solid fa-check"></i> Hifz Department</li>
       </ul>
-      <a href="contact.html" class="btn btn-primary">Send Admission Enquiry <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#apply" class="btn btn-primary">Apply Online Now <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -126,6 +126,41 @@
       <div class="card navy reveal d1"><div class="icon"><i class="fa-solid fa-image-portrait"></i></div><h3>Photographs</h3><p>Two recent passport-size photos.</p></div>
       <div class="card reveal d2"><div class="icon"><i class="fa-solid fa-address-card"></i></div><h3>Parent CNIC</h3><p>Copy of father&#39;s / guardian&#39;s CNIC.</p></div>
       <div class="card navy reveal d3"><div class="icon"><i class="fa-solid fa-file-lines"></i></div><h3>Previous Record</h3><p>Leaving certificate &amp; last result card (if any).</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Online Admission</span>
+      <h2>Apply online in 2 minutes</h2>
+      <p class="lead">Fill in the form below. Our admission office will call you to arrange the assessment and campus visit.</p>
+    </div>
+    <div class="form-card reveal" style="max-width:920px;margin:0 auto">
+      <form id="admissionForm" data-sheet="admission" novalidate>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <h3 class="form-step"><span>1</span> Student details</h3>
+        <div class="form-grid">
+          <div class="field full"><label for="a_name">Student Full Name *</label><input id="a_name" name="student_name" required maxlength="120" placeholder="As on B-Form"></div>
+          <div class="field"><label for="a_gender">Gender</label><select id="a_gender" name="gender"><option value="">Select</option><option>Male</option><option>Female</option></select></div>
+          <div class="field"><label for="a_dob">Date of Birth</label><input id="a_dob" name="date_of_birth" type="date"></div>
+          <div class="field"><label for="a_class">Class Applying For *</label><select id="a_class" name="class_applying" required><option value="">Select class</option><option>Playgroup</option><option>Nursery</option><option>Prep</option><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
+          <div class="field"><label for="a_dept">Department</label><select id="a_dept" name="department"><option>Regular</option><option>Hifz Department</option></select></div>
+          <div class="field full"><label for="a_prev">Previous School (if any)</label><input id="a_prev" name="previous_school" maxlength="160" placeholder="School name"></div>
+        </div>
+        <h3 class="form-step"><span>2</span> Parent / guardian details</h3>
+        <div class="form-grid">
+          <div class="field"><label for="a_guardian">Father / Guardian Name *</label><input id="a_guardian" name="guardian_name" required maxlength="120"></div>
+          <div class="field"><label for="a_phone">Phone / WhatsApp *</label><input id="a_phone" name="guardian_phone" type="tel" required maxlength="30" placeholder="03XX XXXXXXX"></div>
+          <div class="field full"><label for="a_email">Email</label><input id="a_email" name="guardian_email" type="email" maxlength="120" placeholder="you@example.com"></div>
+          <div class="field full"><label for="a_addr">Home Address</label><input id="a_addr" name="address" maxlength="250" placeholder="Village / mohalla, Bhimber"></div>
+          <div class="field full"><label for="a_notes">Anything we should know?</label><textarea id="a_notes" name="notes" maxlength="2000" placeholder="Siblings at Start Well, special needs, transport, questions…"></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:22px">Submit Application <i class="fa-solid fa-paper-plane"></i></button>
+        <div class="form-success" role="status"><i class="fa-solid fa-circle-check"></i> Application received! Your reference number is <b class="ref"></b>. Our admission office will call you shortly.</div>
+        <div class="form-error" role="alert"></div>
+      </form>
     </div>
   </div>
 </section>
@@ -194,6 +229,7 @@
   <div class="footer-bottom">© <span class="year-now">2026</span> Start Well Education, Bhimber — <em>Start Well to End Well</em>. All rights reserved.</div>
 </footer>
 <button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<script src="js/config.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
