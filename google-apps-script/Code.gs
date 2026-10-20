@@ -27,7 +27,7 @@
  */
 
 // ---------- SETTINGS (you can change these) ----------
-const NOTIFY_EMAIL = 'startwelleducation@gmail.com'; // receives an alert for each form submission
+const NOTIFY_EMAIL = 'startwelleducationbhimber@gmail.com'; // receives an alert for each form submission
 const SEND_EMAIL_ALERTS = true;                     // false = no alert emails
 const SITE_URL = 'https://startwell.edu.pk/';       // used for photo previews in the Sheet
 const TIMEZONE = 'Asia/Karachi';

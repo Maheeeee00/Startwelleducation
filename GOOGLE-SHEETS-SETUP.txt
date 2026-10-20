@@ -1,6 +1,6 @@
 START WELL EDUCATION — GOOGLE SHEETS BACKEND (ALL WEBSITE DATA)
 ================================================================
-Takes about 10 minutes. Do it once, signed in as startwelleducation@gmail.com.
+Takes about 10 minutes. Do it once, signed in as startwelleducationbhimber@gmail.com.
 Every tab and column is created AUTOMATICALLY — you never type headings.
 
 WHAT GOES INTO THE SHEET
@@ -10,7 +10,7 @@ WHAT GOES INTO THE SHEET
                         incl. STUDENT PHOTO (shown inside the sheet) and
                         B-FORM (link). Files are saved PRIVATELY in Google Drive:
                         Start Well Website Uploads / Admissions / ADM-0001 Name /
-  • Email alert to startwelleducation@gmail.com for each one (Reply = answer parent)
+  • Email alert to startwelleducationbhimber@gmail.com for each one (Reply = answer parent)
   • "Status" drop-down: New / Contacted / In Progress / Admitted / Closed
 
  Sheet -> Website (content you edit in the sheet)

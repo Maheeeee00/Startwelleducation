@@ -161,49 +161,104 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Forms -> Google Sheets (via Google Apps Script web app, URL set in js/config.js)
+  // Forms -> email (Web3Forms) + optional Google Sheet. Keys/URLs live in js/config.js
+  const cfg = window.SW_CONFIG || {};
+  const callUs = () => `call us on <a href="tel:${(cfg.PHONE || '').replace(/\s/g, '')}">${cfg.PHONE || ''}</a>`;
+  // Photo/B-Form uploads can only be stored via Google Sheets (Drive); hide them otherwise
+  if (!cfg.SHEETS_URL) document.querySelectorAll('[data-needs-sheet]').forEach(el => el.remove());
+
+  const FORM_INFO = {
+    contact: { subject: 'New website enquiry', who: 'name', reply: 'email' },
+    admission: { subject: 'New online admission application', who: 'student_name', reply: 'guardian_email' },
+  };
+  const labelFor = (form, name) => {
+    const f = form.querySelector(`[name="${name}"]`);
+    const l = f && ((f.id && form.querySelector(`label[for="${f.id}"]`)) || f.closest('label')?.querySelector('strong'));
+    return l ? l.textContent.replace(/\s*\*\s*$/, '').trim() : name;
+  };
+  const sendEmail = async (form, fields, info, uploads) => {
+    const body = {
+      access_key: cfg.WEB3FORMS_KEY,
+      subject: info.subject + (fields[info.who] ? ' — ' + fields[info.who] : ''),
+      from_name: 'Start Well Education Website',
+    };
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields[info.reply] || '')) body.replyto = fields[info.reply];
+    Object.entries(fields).forEach(([k, v]) => { if (String(v).trim()) body[labelFor(form, k)] = v; });
+    if (uploads.length) body['Uploaded files'] = uploads.join(', ') + ' (saved in Google Drive)';
+    body['Sent from page'] = location.href;
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body),
+    });
+    const out = await res.json().catch(() => ({}));
+    if (!res.ok || !out.success) throw new Error(out.message || 'Email could not be sent');
+    return out;
+  };
+  const sendSheet = async (form, fields, uploadInputs) => {
+    const data = new URLSearchParams();
+    Object.entries(fields).forEach(([k, v]) => data.append(k, v));
+    uploadInputs.forEach(u => {
+      if (!u._payload) return;
+      data.set('file_' + u.name, u._payload.data);
+      data.set('file_' + u.name + '_type', u._payload.type);
+      if (u._payload.thumb) data.set('thumb_' + u.name, u._payload.thumb);
+    });
+    data.set('form_type', form.dataset.sheet);
+    data.set('page', location.href);
+    const res = await fetch(cfg.SHEETS_URL, { method: 'POST', body: data });
+    const out = await res.json();
+    if (!out.ok) throw new Error(out.error || 'Could not save');
+    return out;
+  };
+
   document.querySelectorAll('form[data-sheet]').forEach(form => {
     const ok = form.querySelector('.form-success');
     const err = form.querySelector('.form-error');
     const btn = form.querySelector('button[type="submit"]');
     const btnHTML = btn.innerHTML;
-    const cfg = window.SW_CONFIG || {};
     const showError = msg => { err.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> ' + msg; err.classList.add('show'); };
+    const info = FORM_INFO[form.dataset.sheet] || { subject: 'New website form', who: 'name', reply: 'email' };
 
     form.addEventListener('submit', async e => {
       e.preventDefault();
       ok.classList.remove('show'); err.classList.remove('show');
       if (!form.reportValidity()) return;
-      if (!cfg.SHEETS_URL) {
-        showError(`Online form is not connected yet. Please call us on <a href="tel:${(cfg.PHONE || '').replace(/\s/g, '')}">${cfg.PHONE || ''}</a>.`);
+      if (!cfg.WEB3FORMS_KEY && !cfg.SHEETS_URL) {
+        showError(`Online form is not connected yet. Please ${callUs()}.`);
         return;
       }
-      const data = new URLSearchParams();
-      for (const [k, v] of new FormData(form)) if (typeof v === 'string') data.append(k, v);
-      const uploads = [...form.querySelectorAll('input[type="file"][data-upload]')];
-      await Promise.all(uploads.map(u => u._ready).filter(Boolean));
-      uploads.forEach(u => {
-        if (!u._payload) return;
-        data.set('file_' + u.name, u._payload.data);
-        data.set('file_' + u.name + '_type', u._payload.type);
-        if (u._payload.thumb) data.set('thumb_' + u.name, u._payload.thumb);
-      });
-      data.set('form_type', form.dataset.sheet);
-      data.set('page', location.href);
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ' + (uploads.some(u => u._payload) ? 'Uploading…' : 'Sending…');
-      try {
-        const res = await fetch(cfg.SHEETS_URL, { method: 'POST', body: data });
-        const out = await res.json();
-        if (!out.ok) throw new Error(out.error || 'Could not save');
-        ok.querySelector('.ref').textContent = out.ref || '';
+      const fields = {};
+      for (const [k, v] of new FormData(form)) if (typeof v === 'string' && k !== 'website') fields[k] = v.trim();
+      const finish = ref => {
+        ok.querySelector('.ref-wrap') && (ok.querySelector('.ref-wrap').innerHTML = ref ? `Your reference number is <b>${ref}</b>.` : '');
         ok.classList.add('show');
         form.reset();
-        uploads.forEach(u => u.dispatchEvent(new Event('change')));
+        uploadInputs.forEach(u => u.dispatchEvent(new Event('change')));
         ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      };
+      const uploadInputs = [...form.querySelectorAll('input[type="file"][data-upload]')];
+      // Spam trap: bots fill the hidden "website" field — pretend success, send nothing
+      if (form.querySelector('[name="website"]')?.value) { finish(''); return; }
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+      try {
+        await Promise.all(uploadInputs.map(u => u._ready).filter(Boolean));
+        const uploaded = uploadInputs.filter(u => u._payload).map(u => u.dataset.label || u.name);
+        if (uploaded.length) btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Uploading…';
+        const jobs = [];
+        if (cfg.WEB3FORMS_KEY) jobs.push(sendEmail(form, fields, info, cfg.SHEETS_URL ? uploaded : []).then(() => ({ kind: 'email' })));
+        if (cfg.SHEETS_URL) jobs.push(sendSheet(form, fields, uploadInputs).then(o => ({ kind: 'sheet', ref: o.ref })));
+        const results = await Promise.allSettled(jobs);
+        const good = results.filter(r => r.status === 'fulfilled').map(r => r.value);
+        if (!good.length) {
+          const first = results.find(r => r.status === 'rejected');
+          throw first ? first.reason : new Error('Could not send');
+        }
+        results.filter(r => r.status === 'rejected').forEach(r => console.warn('Form partly failed:', r.reason));
+        finish((good.find(g => g.kind === 'sheet') || {}).ref || '');
       } catch (ex) {
-        const msg = ex && ex.message && !/fetch|network|JSON/i.test(ex.message) ? ex.message : 'Could not send right now';
-        showError(`${msg}. Please try again, or call us on <a href="tel:${(cfg.PHONE || '').replace(/\s/g, '')}">${cfg.PHONE || ''}</a>.`);
+        const msg = ex && ex.message && !/fetch|network|JSON|load failed/i.test(ex.message) ? ex.message : 'Could not send right now';
+        showError(`${msg}. Please try again, or ${callUs()}.`);
       } finally {
         btn.disabled = false;
         btn.innerHTML = btnHTML;

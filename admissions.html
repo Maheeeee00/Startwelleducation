@@ -19,7 +19,7 @@
   <div class="container">
     <div>
       <span><i class="fa-solid fa-phone"></i> +92 340 1501700</span>
-      <span class="hide-sm"><i class="fa-solid fa-envelope"></i> startwelleducation@gmail.com</span>
+      <span class="hide-sm"><i class="fa-solid fa-envelope"></i> startwelleducationbhimber@gmail.com</span>
       <span class="hide-sm"><i class="fa-regular fa-clock"></i> Mon – Sat: 8:00 AM – 2:00 PM</span>
     </div>
     <div class="socials">
@@ -140,7 +140,7 @@
     <div class="form-card reveal" style="max-width:920px;margin:0 auto">
       <form id="admissionForm" data-sheet="admission" novalidate>
         <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <h3 class="form-step"><span>1</span> Student details</h3>
+        <h3 class="form-step"><span></span> Student details</h3>
         <div class="form-grid">
           <div class="field full"><label for="a_name">Student Full Name *</label><input id="a_name" name="student_name" required maxlength="120" placeholder="As on B-Form"></div>
           <div class="field"><label for="a_gender">Gender</label><select id="a_gender" name="gender"><option value="">Select</option><option>Male</option><option>Female</option></select></div>
@@ -149,21 +149,23 @@
           <div class="field"><label for="a_dept">Department</label><select id="a_dept" name="department"><option>Regular</option><option>Hifz Department</option></select></div>
           <div class="field full"><label for="a_prev">Previous School (if any)</label><input id="a_prev" name="previous_school" maxlength="160" placeholder="School name"></div>
         </div>
-        <h3 class="form-step"><span>2</span> Photo &amp; documents <small>(optional)</small></h3>
+        <div data-needs-sheet>
+        <h3 class="form-step"><span></span> Photo &amp; documents <small>(optional)</small></h3>
         <div class="form-grid">
           <label class="upload">
-            <input type="file" name="student_photo" data-upload="photo" accept="image/*">
+            <input type="file" name="student_photo" data-upload="photo" data-label="Student photo" accept="image/*">
             <span class="upload-preview"></span>
             <span class="upload-info"><strong><i class="fa-solid fa-camera"></i> Student photo</strong><small>Passport-size photo · JPG or PNG</small></span>
           </label>
           <label class="upload">
-            <input type="file" name="bform" data-upload="doc" accept="image/*,application/pdf">
+            <input type="file" name="bform" data-upload="doc" data-label="B-Form / Birth Certificate" accept="image/*,application/pdf">
             <span class="upload-preview"></span>
             <span class="upload-info"><strong><i class="fa-solid fa-id-card"></i> B-Form / Birth Certificate</strong><small>Photo or PDF · max 5 MB</small></span>
           </label>
         </div>
         <p class="upload-note"><i class="fa-solid fa-lock"></i> Files are stored privately with the school office and used only for admission.</p>
-        <h3 class="form-step"><span>3</span> Parent / guardian details</h3>
+        </div>
+        <h3 class="form-step"><span></span> Parent / guardian details</h3>
         <div class="form-grid">
           <div class="field"><label for="a_guardian">Father / Guardian Name *</label><input id="a_guardian" name="guardian_name" required maxlength="120"></div>
           <div class="field"><label for="a_phone">Phone / WhatsApp *</label><input id="a_phone" name="guardian_phone" type="tel" required maxlength="30" placeholder="03XX XXXXXXX"></div>
@@ -172,7 +174,7 @@
           <div class="field full"><label for="a_notes">Anything we should know?</label><textarea id="a_notes" name="notes" maxlength="2000" placeholder="Siblings at Start Well, special needs, transport, questions…"></textarea></div>
         </div>
         <button type="submit" class="btn btn-primary" style="margin-top:22px">Submit Application <i class="fa-solid fa-paper-plane"></i></button>
-        <div class="form-success" role="status"><i class="fa-solid fa-circle-check"></i> Application received! Your reference number is <b class="ref"></b>. Our admission office will call you shortly.</div>
+        <div class="form-success" role="status"><i class="fa-solid fa-circle-check"></i> Application received! <span class="ref-wrap"></span> Our admission office will call you shortly.</div>
         <div class="form-error" role="alert"></div>
       </form>
     </div>
@@ -234,7 +236,7 @@
         <ul class="footer-contact">
           <li><i class="fa-solid fa-location-dot"></i><span>Bhimber, Azad Jammu &amp; Kashmir, Pakistan</span></li>
           <li><i class="fa-solid fa-phone"></i><span>+92 340 1501700</span></li>
-          <li><i class="fa-solid fa-envelope"></i><span>startwelleducation@gmail.com</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>startwelleducationbhimber@gmail.com</span></li>
           <li><i class="fa-regular fa-clock"></i><span>Mon – Sat: 8:00 AM – 2:00 PM</span></li>
         </ul>
       </div>

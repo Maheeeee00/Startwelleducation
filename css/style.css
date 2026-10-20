@@ -20,8 +20,8 @@
   --max:1200px;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.65;font-size:16px;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip}
+body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.65;font-size:16px;overflow-x:hidden;overflow-x:clip}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;margin:0 0 .5em;color:var(--navy);font-weight:700}
@@ -369,8 +369,8 @@ table.schedule tr:nth-child(even) td{background:var(--cream)}
 
 @media (max-width:1180px){
   .menu-toggle{display:block}
-  .nav{position:fixed;top:0;right:0;height:100vh;overflow-y:auto;visibility:hidden;width:min(330px,88vw);background:#fff;flex-direction:column;align-items:stretch;padding:90px 22px 30px;gap:4px;box-shadow:-20px 0 50px rgba(0,0,0,.2);transform:translateX(100%);transition:transform .35s}
-  .nav.open{transform:none;visibility:visible}
+  .nav{position:fixed;top:0;right:0;height:100vh;overflow-y:auto;visibility:hidden;width:min(330px,88vw);background:#fff;flex-direction:column;align-items:stretch;padding:90px 22px 30px;gap:4px;box-shadow:-20px 0 50px rgba(0,0,0,.2);clip-path:inset(0 0 0 100%);transition:clip-path .35s ease,visibility 0s .35s}
+  .nav.open{clip-path:inset(0 0 0 -60px);visibility:visible;transition:clip-path .35s ease}
   .nav a{padding:14px 18px}
   .nav .btn{margin:14px 0 0;justify-content:center}
   .nav-close{display:block!important;position:absolute;top:22px;right:22px}
@@ -714,3 +714,13 @@ button[disabled]{opacity:.75;cursor:wait}
 .team-lead-grid{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
 .team-lead-grid .member{flex:0 1 300px}
 .member .ph.ph-photo img{object-position:center}
+
+/* Contact info card: action buttons fill the space at the bottom */
+.info-card{display:flex;flex-direction:column}
+.info-actions{margin-top:auto;padding-top:32px;display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+.info-actions .btn{padding:12px 20px;font-size:.9rem}
+.btn-wa{background:#25d366;color:#fff}.btn-wa:hover{background:#1ebe5b;transform:translateY(-2px)}
+.info-card .info-row a{word-break:break-word}
+.form-success .ref-wrap:empty{display:none}
+#admissionForm{counter-reset:step}
+.form-step span::before{counter-increment:step;content:counter(step)}
