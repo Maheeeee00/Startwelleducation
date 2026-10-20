@@ -1,64 +1,82 @@
-START WELL EDUCATION — CONNECT THE WEBSITE FORMS TO GOOGLE SHEETS
-=================================================================
+START WELL EDUCATION — GOOGLE SHEETS BACKEND (ALL WEBSITE DATA)
+================================================================
 Takes about 10 minutes. Do it once, signed in as startwelleducation@gmail.com.
+Every tab and column is created AUTOMATICALLY — you never type headings.
 
-WHAT YOU GET
-- Contact page form  -> saved in tab "Contact Enquiries"  (Ref: ENQ-0001, ENQ-0002 ...)
-- Online Admission form (Admissions page) -> saved in tab "Admissions" (Ref: ADM-0001 ...)
-- An email alert to startwelleducation@gmail.com for every submission.
-  Press "Reply" in Gmail to answer the parent directly (if they gave an email).
-- A "Status" drop-down in each tab: New / Contacted / In Progress / Admitted / Closed
+WHAT GOES INTO THE SHEET
+ Website -> Sheet (forms)
+  • Contact Enquiries   every message from the Contact page   (ENQ-0001 …)
+  • Admissions          every online application               (ADM-0001 …)
+                        incl. STUDENT PHOTO (shown inside the sheet) and
+                        B-FORM (link). Files are saved PRIVATELY in Google Drive:
+                        Start Well Website Uploads / Admissions / ADM-0001 Name /
+  • Email alert to startwelleducation@gmail.com for each one (Reply = answer parent)
+  • "Status" drop-down: New / Contacted / In Progress / Admitted / Closed
+
+ Sheet -> Website (content you edit in the sheet)
+  • Gallery        photos on the Gallery page   (Preview column shows each photo)
+  • News Ticker    the moving bar on the Home page
+  • Holidays       the list on the School Calendar page
+  These start filled with what the website shows today.
+  Edit a row -> the website updates within seconds (refresh the page).
+  "Show on Website" = No hides a row without deleting it.
+  "Order" sets the order (1 first).
 
 STEP 1 — Create the Google Sheet
-  1. Go to sheets.google.com and create a Blank spreadsheet.
-  2. Name it: Start Well Website Data
+  sheets.google.com -> Blank spreadsheet -> name it "Start Well Website Data"
 
 STEP 2 — Add the script
-  1. In the sheet: Extensions -> Apps Script
-  2. Delete everything in Code.gs
-  3. Open the file  google-apps-script/Code.gs  (in this website folder),
-     copy ALL of it, paste it in, and click Save (disk icon).
+  Extensions -> Apps Script -> delete everything in Code.gs ->
+  paste ALL of google-apps-script/Code.gs -> Save (disk icon)
 
 STEP 3 — Run setup once
-  1. At the top, choose the function  setup  from the drop-down, click Run.
-  2. Google asks for permission: Review permissions -> choose your account
-     -> "Advanced" -> "Go to ... (unsafe)" -> Allow.
-     (This warning is normal for your own scripts. It needs access to this
-      sheet and to send email alerts from your Gmail.)
-  3. Go back to the sheet: the tabs "Contact Enquiries" and "Admissions" now exist.
-  Optional: run  testSubmission  to add one sample row to each tab and get
-  two sample emails. Delete those rows afterwards.
+  Choose function "setup" at the top -> Run.
+  Allow permissions: Review permissions -> your account -> Advanced ->
+  "Go to … (unsafe)" -> Allow. (Normal for your own script. It needs: this
+  sheet, Gmail to send alerts, Drive to store uploads and gallery photos.)
+  Back in the sheet you now have 5 tabs + a new menu "Start Well Website".
+  Two Drive folders are created: "Start Well Website Uploads" (private)
+  and "Start Well Website Gallery".
+  Optional: run "testSubmission" to add sample rows, then delete them.
 
-STEP 4 — Publish it as a Web app
-  1. Click Deploy -> New deployment
-  2. Click the gear icon -> Web app
-  3. Execute as:      Me (startwelleducation@gmail.com)
-     Who has access:  Anyone
-  4. Click Deploy, then COPY the "Web app URL"
-     (it looks like https://script.google.com/macros/s/AKfycb..../exec)
-  Check: open that URL in a browser — you should see {"ok":true, ...}
+STEP 4 — Publish as a Web app
+  Deploy -> New deployment -> gear icon -> Web app
+    Execute as: Me        Who has access: Anyone
+  Deploy -> COPY the Web app URL (https://script.google.com/macros/s/…/exec)
+  Check: open the URL in a browser -> you should see {"ok":true, …}
 
 STEP 5 — Put the URL in the website
-  1. Open  js/config.js
-  2. Paste the URL between the quotes:
-       SHEETS_URL: 'https://script.google.com/macros/s/AKfycb..../exec',
-  3. Save, upload/commit to GitHub. Vercel publishes it automatically.
+  js/config.js ->  SHEETS_URL: 'https://script.google.com/macros/s/…/exec',
+  Save -> upload/commit to GitHub -> Vercel publishes automatically.
 
 STEP 6 — Test on the live site
-  Send one message from the Contact page and one from Admissions -> Apply Online.
-  Both should show a reference number, appear in the sheet, and arrive in Gmail.
+  • Contact page: send a message.
+  • Admissions -> Apply Online: attach a photo + B-Form and submit.
+  • Change a headline in "News Ticker" -> refresh the Home page.
 
 -----------------------------------------------------------------
+ADDING GALLERY PHOTOS (easiest way)
+  1. Upload photos into the Drive folder "Start Well Website Gallery".
+  2. In the sheet: menu Start Well Website -> Add photos from Drive.
+  3. Each new photo gets a row (title from the file name). Change Title /
+     Category if you like. Done — it's on the website.
+  Photos in that folder are made "Anyone with the link can view" so the
+  website can show them. Admission uploads are NEVER made public.
+  You can also paste any Google Drive photo link (shared "Anyone with the
+  link") or a website path like images/photo.jpg into "Image Link".
+
 GOOD TO KNOW
-- If you EDIT the script later: Deploy -> Manage deployments -> pencil icon
-  -> Version: "New version" -> Deploy. This keeps the SAME URL.
-  (Do NOT use "New deployment" again, that creates a different URL.)
-- Turn off email alerts: in Code.gs set  SEND_EMAIL_ALERTS = false
-- Send alerts to another address: change  NOTIFY_EMAIL  at the top of Code.gs
-- Add a new field to a form: add it to the form in the HTML (with a name="")
-  and to that form's "fields" list in Code.gs. A new column is added
-  automatically; old rows are not touched.
-- Spam protection: a hidden trap field silently drops most bots.
-- Privacy: only people you share the Google Sheet with can see the data.
-  Don't make the sheet public.
-- Free Gmail can send about 100 alert emails per day — plenty for a school.
+- If you EDIT the script after deploying: Deploy -> Manage deployments ->
+  pencil -> Version: New version -> Deploy. (Keeps the SAME URL.)
+- Menu "Set up / repair all tabs" re-creates any missing tab or column.
+  It never deletes data. Renamed a column by mistake? Run it to restore.
+- Turn off email alerts: Code.gs -> SEND_EMAIL_ALERTS = false
+- Website content is cached for speed; any edit in the sheet clears it.
+  If a change doesn't show, use menu -> "Refresh website now".
+- If the sheet can't be reached, the website keeps showing its built-in
+  gallery/ticker/holidays — nothing breaks.
+- Uploads: photos are shrunk in the parent's phone before sending (fast on
+  mobile data). PDFs up to 5 MB.
+- Privacy: don't share the sheet or the Uploads folder publicly. Share the
+  sheet only with staff who need it.
+- Free Gmail sends ~100 alert emails per day — plenty for a school.

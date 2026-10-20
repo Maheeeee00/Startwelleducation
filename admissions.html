@@ -149,7 +149,21 @@
           <div class="field"><label for="a_dept">Department</label><select id="a_dept" name="department"><option>Regular</option><option>Hifz Department</option></select></div>
           <div class="field full"><label for="a_prev">Previous School (if any)</label><input id="a_prev" name="previous_school" maxlength="160" placeholder="School name"></div>
         </div>
-        <h3 class="form-step"><span>2</span> Parent / guardian details</h3>
+        <h3 class="form-step"><span>2</span> Photo &amp; documents <small>(optional)</small></h3>
+        <div class="form-grid">
+          <label class="upload">
+            <input type="file" name="student_photo" data-upload="photo" accept="image/*">
+            <span class="upload-preview"></span>
+            <span class="upload-info"><strong><i class="fa-solid fa-camera"></i> Student photo</strong><small>Passport-size photo · JPG or PNG</small></span>
+          </label>
+          <label class="upload">
+            <input type="file" name="bform" data-upload="doc" accept="image/*,application/pdf">
+            <span class="upload-preview"></span>
+            <span class="upload-info"><strong><i class="fa-solid fa-id-card"></i> B-Form / Birth Certificate</strong><small>Photo or PDF · max 5 MB</small></span>
+          </label>
+        </div>
+        <p class="upload-note"><i class="fa-solid fa-lock"></i> Files are stored privately with the school office and used only for admission.</p>
+        <h3 class="form-step"><span>3</span> Parent / guardian details</h3>
         <div class="form-grid">
           <div class="field"><label for="a_guardian">Father / Guardian Name *</label><input id="a_guardian" name="guardian_name" required maxlength="120"></div>
           <div class="field"><label for="a_phone">Phone / WhatsApp *</label><input id="a_phone" name="guardian_phone" type="tel" required maxlength="30" placeholder="03XX XXXXXXX"></div>
