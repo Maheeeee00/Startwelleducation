@@ -83,7 +83,7 @@ const CONTENT = {
       ['Yes', '', 'images/award-ceremony.jpg', 'Award Presentation', 'Events', 4],
       ['Yes', '', 'images/welcome-ceremony.jpg', 'Welcome Ceremony', 'Events', 5],
       ['Yes', '', 'images/guests-ceremony.jpg', 'Honourable Guests', 'Events', 6],
-      ['Yes', '', 'images/guest-portrait.jpg', 'Distinguished Guest', 'People', 7],
+      ['Yes', '', 'images/guest-portrait.jpg', 'Sir Khalid Mehmood — Principal, Bhotosial Campus', 'People', 7],
       ['Yes', '', 'images/principal.jpg', 'Ali Hussnain — Principal', 'People', 8],
       ['Yes', '', 'images/logo.jpg', 'Our Emblem', 'People', 9],
     ],
