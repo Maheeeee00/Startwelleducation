@@ -10,6 +10,6 @@
 // ============================================================
 window.SW_CONFIG = {
   WEB3FORMS_KEY: 'e4e31ba9-d70c-4a49-89b7-76dd3898ab13',
-  SHEETS_URL: '',
+  SHEETS_URL: 'https://script.google.com/macros/s/AKfycbzfMzsM8Ju0ByIj5WCeBxUCToZKWjqT2XiQYieDActS0gEBjM6dV6SgbAji_J4ICxsa/exec',
   PHONE: '+92 340 1501700',
 };
