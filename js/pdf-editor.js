@@ -18,14 +18,15 @@
       undoBtn = q('[data-ed-undo]'), delBtn = q('[data-ed-del]'), zoomLabel = q('[data-ed-zoomlabel]');
 
   var LINE = 1.2, BASE = 0.95;              // line height and baseline (× font size)
+  var BOXPAD = 4;                            // space between a box's border and its text (points)
   var HINTS = {
-    select: 'Click anything you added to select it. Drag to move it. Press Delete to remove it.',
+    select: 'Click anything you added to select it. Drag to move it. Click the red ✕ (or press Delete) to remove it.',
     edittext: 'Click any text in the PDF to change it. Type your new words, then click outside.',
     text: 'Click where you want new text, then type.',
     draw: 'Draw with your mouse or finger — great for signatures and ticks.',
     highlight: 'Drag across text to highlight it.',
     whiteout: 'Drag over anything you want to hide. It will be covered with white.',
-    rect: 'Drag to draw a box.',
+    rect: 'Drag to draw a box, then type inside it. Click a box to change its text; click ✕ to remove it.',
     image: 'Choose a picture or a photo of your signature. Then drag it into place.'
   };
   var toolColor = { text: '#111111', edittext: '#111111', draw: '#1a3ec8', highlight: '#ffeb3b', rect: '#e53935', select: '#111111', whiteout: '#ffffff', image: '#111111' };
@@ -189,10 +190,15 @@
     S.objs.forEach(function (o) {
       if (o.page !== n) return;
       var sel = o.id === S.sel ? ' sel' : '';
-      if (o.type === 'rect') {
+      if (o.type === 'rect' && o.mode === 'box') {
+        var pad = BOXPAD * sc;
+        html += '<div data-id="' + o.id + '" class="ed-o ed-box' + sel + '" style="left:' + o.x * sc + 'px;top:' + o.y * sc + 'px;width:' + o.w * sc + 'px;height:' + o.h * sc +
+          'px;border:' + Math.max(1, o.width * sc) + 'px solid ' + o.color + '"><div class="ed-boxtxt" data-placeholder="Type inside the box" style="padding:' + pad + 'px;font-size:' + (o.size || 12) * sc + 'px;color:' + (o.tcolor || '#111111') +
+          ';font-weight:' + (o.bold ? 700 : 400) + '">' + esc(o.text || '') + '</div><span class="ed-handle"></span></div>';
+      } else if (o.type === 'rect') {
         var fill = o.mode === 'whiteout' ? '#ffffff' : o.mode === 'highlight' ? o.color : 'none';
         var op = o.mode === 'highlight' ? ' fill-opacity="0.38"' : '';
-        var stroke = o.mode === 'box' ? ' stroke="' + o.color + '" stroke-width="' + o.width * sc + '"' : (o.mode === 'whiteout' ? ' stroke="#cfd6e4" stroke-dasharray="4 3" stroke-width="1" class="wo-edge"' : '');
+        var stroke = o.mode === 'whiteout' ? ' stroke="#cfd6e4" stroke-dasharray="4 3" stroke-width="1" class="wo-edge"' : '';
         svg += '<rect data-id="' + o.id + '" class="ed-o' + sel + '" x="' + o.x * sc + '" y="' + o.y * sc + '" width="' + o.w * sc + '" height="' + o.h * sc + '" fill="' + fill + '"' + op + stroke + '/>';
       } else if (o.type === 'path') {
         svg += '<polyline data-id="' + o.id + '" class="ed-o' + sel + '" fill="none" stroke="' + o.color + '" stroke-width="' + o.width * sc +
@@ -207,6 +213,22 @@
     });
     p.svg.innerHTML = svg;
     p.layer.innerHTML = html;
+    placeDelete(p);
+  }
+  // Red ✕ on the selected object: one click removes it
+  function placeDelete(p) {
+    var o = S.sel && byId(S.sel);
+    if (!o || o.page !== p.n) return;
+    var sc = S.scale, x, y;
+    if (o.type === 'path') {
+      x = Math.max.apply(null, o.pts.map(function (q2) { return q2[0]; })); y = Math.min.apply(null, o.pts.map(function (q2) { return q2[1]; }));
+    } else if (o.type === 'text') {
+      var el = elFor(o.id); x = o.x + (el ? el.offsetWidth / sc : 40); y = o.y;
+    } else { x = o.x + o.w; y = o.y; }
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'ed-x'; b.textContent = '✕'; b.title = 'Remove'; b.setAttribute('aria-label', 'Remove this');
+    b.dataset.del = o.id; b.style.left = x * sc + 'px'; b.style.top = y * sc + 'px';
+    p.layer.appendChild(b);
   }
   function redrawAll() { S.pages.forEach(function (p) { drawObjs(p.n); }); syncButtons(); }
   function cssFamily(f) { return f === 'serif' ? "'Times New Roman',Times,serif" : f === 'mono' ? "'Courier New',Courier,monospace" : 'Helvetica,Arial,sans-serif'; }
@@ -223,19 +245,26 @@
   }
   document.querySelectorAll('[data-tool]').forEach(function (b) { b.addEventListener('click', function () { setTool(b.dataset.tool); }); });
 
-  function select(id, focusText) {
+  function select(id, focusText, at) {
     if (S.sel && S.sel !== id) finishText(S.sel);
     S.sel = id;
-    S.pages.forEach(function (p) { p.el.querySelectorAll('.ed-o').forEach(function (e) { e.classList.toggle('sel', e.dataset.id == id); }); });
+    S.pages.forEach(function (p) {
+      p.el.querySelectorAll('.ed-o').forEach(function (e) { e.classList.toggle('sel', e.dataset.id == id); });
+      p.layer.querySelectorAll('.ed-x').forEach(function (b) { b.remove(); });
+      placeDelete(p);
+    });
     var o = id && byId(id);
     if (o) {
       if (o.color && o.type !== 'image') colorIn.value = o.color;
-      if (o.type === 'text') sizeIn.value = String(nearestSize(o.size));
+      if (o.type === 'text' || isBox(o)) sizeIn.value = String(nearestSize(o.size || 12));
+      if (isBox(o)) boldBtn.setAttribute('aria-pressed', String(!!o.bold));
       if (o.width) widthIn.value = String(o.width);
     }
-    if (o && o.type === 'text' && focusText) editText(o);
+    if (o && (o.type === 'text' || isBox(o)) && focusText) editText(o, at);
     syncButtons();
   }
+  function isBox(o) { return o && o.type === 'rect' && o.mode === 'box'; }
+  function textEl(o) { var el = elFor(o.id); return el && isBox(o) ? el.querySelector('.ed-boxtxt') : el; }
   function nearestSize(s) {
     var best = 12, opts = Array.prototype.map.call(sizeIn.options, function (x) { return +x.value; });
     opts.forEach(function (v) { if (Math.abs(v - s) < Math.abs(best - s)) best = v; });
@@ -247,19 +276,25 @@
   }
   function elFor(id) { return pagesEl.querySelector('[data-id="' + id + '"]'); }
 
-  function editText(o) {
-    var el = elFor(o.id); if (!el) return;
+  // at = where the person clicked: put the cursor there. New "Type here" text and words being replaced are fully selected.
+  function editText(o, at) {
+    var el = textEl(o); if (!el) return;
     el.contentEditable = 'true'; el.spellcheck = true; el.classList.add('editing');
     el.focus();
-    var r = document.createRange(); r.selectNodeContents(el);
-    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    var sel = window.getSelection(), r = null;
+    var selectAll = o.text === 'Type here' || (o.source != null && !at);
+    if (!selectAll && at && document.caretRangeFromPoint) r = document.caretRangeFromPoint(at.x, at.y);
+    else if (!selectAll && at && document.caretPositionFromPoint) { var cp = document.caretPositionFromPoint(at.x, at.y); if (cp) { r = document.createRange(); r.setStart(cp.offsetNode, cp.offset); } }
+    if (!r || !el.contains(r.startContainer)) { r = document.createRange(); r.selectNodeContents(el); if (!selectAll) r.collapse(false); }
+    sel.removeAllRanges(); sel.addRange(r);
   }
   function finishText(id) {
-    var o = byId(id), el = elFor(id);
-    if (!o || o.type !== 'text' || !el || el.contentEditable !== 'true') return;
+    var o = byId(id), el = o && textEl(o);
+    if (!o || (o.type !== 'text' && !isBox(o)) || !el || el.contentEditable !== 'true') return;
     el.contentEditable = 'false'; el.classList.remove('editing');
     var t = el.innerText.replace(/ /g, ' ').replace(/\n$/, '');
-    if (t !== o.text) { snapshot(); o.text = t; }
+    if (t !== (o.text || '')) { snapshot(); o.text = t; }
+    if (isBox(o)) return;
     if (!o.text.trim() && !o.cover) { S.objs = S.objs.filter(function (x) { return x !== o; }); drawObjs(o.page); }
   }
 
@@ -273,8 +308,11 @@
     var p = S.pages[+pageEl.dataset.n], at = pt(e, p);
     var objEl = e.target.closest('.ed-o'), hot = e.target.closest('.ed-hot');
 
-    if (objEl && objEl.classList.contains('editing')) return;          // typing / selecting text inside
-    if (objEl && (S.tool === 'select' || S.tool === 'text' || S.tool === 'edittext' || S.tool === 'image')) {
+    var delBtnEl = e.target.closest('.ed-x');
+    if (delBtnEl) { e.preventDefault(); S.sel = +delBtnEl.dataset.del; del(); return; }
+    if (e.target.closest('.editing')) return;                           // typing / selecting text inside
+    var boxHit = objEl && objEl.classList.contains('ed-box');
+    if (objEl && (S.tool === 'select' || S.tool === 'text' || S.tool === 'edittext' || S.tool === 'image' || (S.tool === 'rect' && boxHit))) {
       var o = byId(+objEl.dataset.id); if (!o) return;
       e.preventDefault();
       var resizing = e.target.classList.contains('ed-handle');
@@ -284,7 +322,7 @@
       return;
     }
     if (S.tool === 'edittext' && hot) { e.preventDefault(); editExisting(p, p.items[+hot.dataset.i]); return; }
-    if (S.sel) { finishText(S.sel); select(null); if (S.tool === 'select' || S.tool === 'edittext' || S.tool === 'text') return; }
+    if (S.sel) { finishText(S.sel); select(null); if (S.tool === 'select' || S.tool === 'edittext' || S.tool === 'text' || S.tool === 'rect') return; }
 
     if (S.tool === 'text') {
       e.preventDefault(); snapshot();
@@ -304,6 +342,7 @@
     if (S.tool === 'highlight' || S.tool === 'whiteout' || S.tool === 'rect') {
       e.preventDefault(); snapshot();
       var rc = { id: S.nextId++, type: 'rect', page: p.n, x: at[0], y: at[1], w: 0, h: 0, mode: S.tool === 'rect' ? 'box' : S.tool, color: colorIn.value, width: +widthIn.value };
+      if (rc.mode === 'box') { rc.text = ''; rc.size = +sizeIn.value; rc.bold = boldBtn.getAttribute('aria-pressed') === 'true'; rc.tcolor = '#111111'; }
       S.objs.push(rc);
       drag = { kind: 'box', o: rc, p: p, start: at, id: e.pointerId };
       pageEl.setPointerCapture(e.pointerId);
@@ -343,7 +382,8 @@
     var o = d.o;
     if (d.kind === 'draw' && o.pts.length < 2) o.pts.push([o.pts[0][0] + 0.5, o.pts[0][1] + 0.5]); // a dot
     if (d.kind === 'box' && (o.w < 3 || o.h < 3)) { S.objs = S.objs.filter(function (x) { return x !== o; }); S.hist.pop(); }
-    if ((d.kind === 'move') && !d.moved && o.type === 'text') { drawObjs(d.p.n); select(o.id, true); return; }
+    if ((d.kind === 'move') && !d.moved && (o.type === 'text' || isBox(o))) { drawObjs(d.p.n); select(o.id, true, e ? { x: e.clientX, y: e.clientY } : null); return; }
+    if (d.kind === 'box' && isBox(o) && S.objs.indexOf(o) > -1) { drawObjs(d.p.n); select(o.id, true); syncButtons(); return; }
     drawObjs(d.p.n);
     if (d.kind === 'move' || d.kind === 'resize') select(o.id);
     syncButtons();
@@ -359,8 +399,9 @@
     }
   });
   pagesEl.addEventListener('focusout', function (e) {
-    var el = e.target.closest && e.target.closest('.ed-text.editing'); if (!el) return;
-    setTimeout(function () { if (document.activeElement !== el) finishText(+el.dataset.id); }, 0);
+    var el = e.target.closest && e.target.closest('.ed-text.editing, .ed-boxtxt.editing'); if (!el) return;
+    var id = +(el.dataset.id || el.parentNode.dataset.id);
+    setTimeout(function () { if (document.activeElement !== el) finishText(id); }, 0);
   });
 
   // Edit text that is already in the PDF: cover it and put an editable copy on top
@@ -406,11 +447,11 @@
     var o = S.sel && byId(S.sel);
     if (o && o.type !== 'image' && !(o.type === 'rect' && o.mode === 'whiteout')) { changeSel(function (x) { x.color = colorIn.value; }); }
   });
-  sizeIn.addEventListener('change', function () { var o = S.sel && byId(S.sel); if (o && o.type === 'text') changeSel(function (x) { x.size = +sizeIn.value; }); });
+  sizeIn.addEventListener('change', function () { var o = S.sel && byId(S.sel); if (o && (o.type === 'text' || isBox(o))) changeSel(function (x) { x.size = +sizeIn.value; }); });
   widthIn.addEventListener('change', function () { var o = S.sel && byId(S.sel); if (o && (o.type === 'path' || (o.type === 'rect' && o.mode === 'box'))) changeSel(function (x) { x.width = +widthIn.value; }); });
   boldBtn.addEventListener('click', function () {
     var o = S.sel && byId(S.sel);
-    if (o && o.type === 'text') { changeSel(function (x) { x.bold = !x.bold; }); }
+    if (o && (o.type === 'text' || isBox(o))) { changeSel(function (x) { x.bold = !x.bold; }); }
     else boldBtn.setAttribute('aria-pressed', String(boldBtn.getAttribute('aria-pressed') !== 'true'));
   });
   function del() {
@@ -500,6 +541,55 @@
       .then(function (buf) { return doc.embedPng(buf); })
       .then(function (im) { return { image: im, w: c.width / SH, h: c.height / SH }; });
   }
+  // Measure a line: the PDF font if it can write it, otherwise the browser (Urdu, emoji…)
+  var mctx = document.createElement('canvas').getContext('2d');
+  function lineWidth(f, s2, size, bold) {
+    if (canWrite(f, s2)) return f.widthOfTextAtSize(s2, size);
+    mctx.font = (bold ? '700 ' : '') + size + 'px Helvetica,Arial,sans-serif'; return mctx.measureText(s2).width;
+  }
+  function wrap(f, text, size, maxW, bold) {
+    var out = [];
+    text.split('\n').forEach(function (para) {
+      if (!para.trim()) { out.push(''); return; }
+      var line = '';
+      para.split(/(\s+)/).forEach(function (word) {
+        var test = line + word;
+        if (!line || lineWidth(f, test.replace(/\s+$/, ''), size, bold) <= maxW) { line = test; return; }
+        out.push(line.replace(/\s+$/, ''));
+        line = word.trim() ? word : '';
+        while (line && lineWidth(f, line, size, bold) > maxW && line.length > 1) { // very long word: cut it
+          var k = line.length - 1;
+          while (k > 1 && lineWidth(f, line.slice(0, k), size, bold) > maxW) k--;
+          out.push(line.slice(0, k)); line = line.slice(k);
+        }
+      });
+      out.push(line.replace(/\s+$/, ''));
+    });
+    return out;
+  }
+  // Text typed inside a box: wrapped to the box width, starting at the top-left inside the border
+  function drawBoxText(doc, pg, box, o, fontP) {
+    return fontP.then(function (f) {
+      var size = o.size || 12, lh = size * LINE, inset = BOXPAD + (o.width || 0) / 2;
+      var lines = wrap(f, o.text, size, Math.max(10, o.w - 2 * inset), o.bold);
+      var color = o.tcolor || '#111111';
+      return lines.reduce(function (c2, ln, k) {
+        return c2.then(function () {
+          var topY = o.y + inset + k * lh;
+          if (!ln || topY + size > o.y + o.h + size * 0.3) return;   // stays inside the box
+          if (canWrite(f, ln)) {
+            var p3 = toPdf(box, o.x + inset, box.h - (topY + size * BASE));
+            pg.drawText(ln, { x: p3.x, y: p3.y, size: size, font: f, color: rgb(color), rotate: L.degrees(p3.rotate) });
+            return;
+          }
+          return lineImage(doc, ln, size, color, o.bold, 'sans').then(function (im) {
+            var p4 = toPdf(box, o.x + inset, box.h - topY - im.h);
+            pg.drawImage(im.image, { x: p4.x, y: p4.y, width: im.w, height: im.h, rotate: L.degrees(p4.rotate) });
+          });
+        });
+      }, Promise.resolve());
+    });
+  }
   function dataBytes(src) { var b = atob(src.split(',')[1]), u = new Uint8Array(b.length); for (var i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u; }
   var FONT = { sans: ['Helvetica', 'HelveticaBold'], serif: ['TimesRoman', 'TimesRomanBold'], mono: ['Courier', 'CourierBold'] };
 
@@ -525,6 +615,7 @@
             else { opt.borderColor = rgb(o.color); opt.borderWidth = o.width; }
             var p0 = toPdf(box, o.x, box.h - o.y - o.h);
             pg.drawRectangle(Object.assign(opt, { x: p0.x, y: p0.y, rotate: L.degrees(p0.rotate) }));
+            if (o.mode === 'box' && o.text && o.text.trim()) return drawBoxText(doc, pg, box, o, font(o));
             return;
           }
           if (o.type === 'path') {
