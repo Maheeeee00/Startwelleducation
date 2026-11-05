@@ -86,7 +86,8 @@
   <div class="container tool-app pdf-tool">
     <div class="tool-privacy reveal"><i class="fa-solid fa-shield-halved"></i><div><strong>Private &amp; free</strong>Everything happens in your own browser. Your files are never uploaded to any server.</div></div>
     <div class="tabs chips" role="tablist" aria-label="Choose a tool">
-      <button class="chip" type="button" data-tab="merge" aria-pressed="true">🔗 Merge PDFs</button>
+      <button class="chip" type="button" data-tab="edit" aria-pressed="true">🖊️ Edit PDF</button>
+      <button class="chip" type="button" data-tab="merge" aria-pressed="false">🔗 Merge PDFs</button>
       <button class="chip" type="button" data-tab="text" aria-pressed="false">✏️ Add text</button>
       <button class="chip" type="button" data-tab="images" aria-pressed="false">🖼️ Images → PDF</button>
       <button class="chip" type="button" data-tab="pages" aria-pressed="false">✂️ Split, rotate &amp; delete pages</button>
@@ -94,8 +95,54 @@
       <button class="chip" type="button" data-tab="watermark" aria-pressed="false">💧 Watermark</button>
     </div>
 
+    <!-- EDIT PDF -->
+    <section class="panel" data-panel="edit">
+      <h2>Edit a PDF</h2>
+      <p>Change the words already in a PDF, add your own text, draw or sign, highlight, white-out mistakes, add boxes and pictures — then download your edited PDF.</p>
+      <label class="drop" data-ed-drop><input type="file" accept="application/pdf,.pdf" data-ed-input>
+        <i class="fa-solid fa-file-pen drop-ico"></i><strong>Choose a PDF to edit</strong> or drag it here<small>Your file stays on your device</small></label>
+      <div class="ed" data-ed hidden>
+        <div class="ed-bar" role="toolbar" aria-label="Editing tools">
+          <div class="ed-group">
+            <button type="button" class="ed-tool" data-tool="select" aria-pressed="false" title="Select &amp; move"><i class="fa-solid fa-arrow-pointer"></i><span>Select</span></button>
+            <button type="button" class="ed-tool" data-tool="edittext" aria-pressed="false" title="Edit existing text"><i class="fa-solid fa-i-cursor"></i><span>Edit text</span></button>
+            <button type="button" class="ed-tool" data-tool="text" aria-pressed="false" title="Add new text"><i class="fa-solid fa-font"></i><span>Add text</span></button>
+            <button type="button" class="ed-tool" data-tool="draw" aria-pressed="false" title="Draw / sign"><i class="fa-solid fa-signature"></i><span>Draw</span></button>
+            <button type="button" class="ed-tool" data-tool="highlight" aria-pressed="false" title="Highlight"><i class="fa-solid fa-highlighter"></i><span>Highlight</span></button>
+            <button type="button" class="ed-tool" data-tool="whiteout" aria-pressed="false" title="White-out"><i class="fa-solid fa-eraser"></i><span>White-out</span></button>
+            <button type="button" class="ed-tool" data-tool="rect" aria-pressed="false" title="Box"><i class="fa-regular fa-square"></i><span>Box</span></button>
+            <button type="button" class="ed-tool" data-tool="image" aria-pressed="false" title="Picture or signature image"><i class="fa-regular fa-image"></i><span>Picture</span></button>
+          </div>
+          <div class="ed-group">
+            <label class="ed-ctl" title="Colour"><input type="color" value="#111111" data-ed-color aria-label="Colour"></label>
+            <label class="ed-ctl" title="Text size"><select data-ed-size aria-label="Text size">
+              <option value="8">8</option><option value="10">10</option><option value="12" selected>12</option><option value="14">14</option><option value="16">16</option><option value="20">20</option><option value="24">24</option><option value="32">32</option><option value="48">48</option></select></label>
+            <button type="button" class="ed-tool ed-b" data-ed-bold aria-pressed="false" title="Bold"><b>B</b></button>
+            <label class="ed-ctl" title="Line thickness"><select data-ed-width aria-label="Line thickness">
+              <option value="1">Thin</option><option value="2" selected>Normal</option><option value="4">Thick</option><option value="7">Marker</option></select></label>
+          </div>
+          <div class="ed-group">
+            <button type="button" class="ed-tool" data-ed-undo title="Undo (Ctrl+Z)"><i class="fa-solid fa-rotate-left"></i><span>Undo</span></button>
+            <button type="button" class="ed-tool" data-ed-del title="Delete selected (Delete key)"><i class="fa-regular fa-trash-can"></i><span>Delete</span></button>
+            <button type="button" class="ed-tool ed-z" data-ed-zoom="-0.25" title="Zoom out">−</button>
+            <span class="ed-zoom" data-ed-zoomlabel>100%</span>
+            <button type="button" class="ed-tool ed-z" data-ed-zoom="0.25" title="Zoom in">+</button>
+          </div>
+          <div class="ed-group ed-end">
+            <span class="ed-name" data-ed-name></span>
+            <button type="button" class="btn btn-ghost" data-ed-change>Change PDF</button>
+            <button type="button" class="btn btn-primary" data-ed-save><i class="fa-solid fa-download"></i> Save &amp; download</button>
+          </div>
+        </div>
+        <div class="ed-hint" data-ed-hint></div>
+        <div class="ed-pages" data-ed-pages></div>
+        <input type="file" accept="image/*" data-ed-img hidden>
+      </div>
+      <div class="status" data-ed-status></div>
+    </section>
+
     <!-- MERGE -->
-    <section class="panel" data-panel="merge">
+    <section class="panel" data-panel="merge" hidden>
       <h2>Merge PDFs</h2>
       <p>Join several PDF files into one. Use the arrows to put them in order.</p>
       <label class="drop"><input type="file" accept="application/pdf,.pdf" multiple data-input="merge">
@@ -259,7 +306,7 @@
     <section id="guides" class="block reveal">
       <h2>Step-by-step guides</h2>
 
-      <details class="guide" open>
+      <details class="guide">
         <summary>Turn photos of my homework into one PDF</summary>
         <div class="body">
           <ol>
@@ -323,6 +370,7 @@
 <script src="js/vendor/pdf-lib.min.js"></script>
 <script src="js/vendor/pdfjs/pdf.min.js"></script>
 <script src="js/pdf-toolbox.js"></script>
+<script src="js/pdf-editor.js"></script>
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
