@@ -21,6 +21,16 @@ PAGES (menu structure):
   Gallery ........... gallery.html
   Contact ........... contact.html
 
+SWE TOOLS (free student tools, all run in the visitor's browser):
+  tools.html ............ SWE Tools hub (floating "SWE Tools" button opens it)
+  pdf-toolbox.html ...... merge, add text, photos -> PDF, split/rotate/delete
+                          pages, page numbers, watermark
+  marks-calculator.html . total, percentage, grade, pass/fail per subject
+  image-resizer.html .... shrink photos (e.g. under 200 KB, passport size)
+  word-counter.html ..... words, characters, word limit, reading time
+  Scripts: js/pdf-toolbox.js, js/tool-marks.js, js/tool-image.js,
+  js/tool-words.js. PDF libraries in js/vendor/ (pdf-lib MIT, pdf.js Apache-2.0).
+
 SOCIAL LINKS: Facebook (startwell.educationbhimber) and TikTok
 (@startwell.edu) are connected on every page. The Facebook page also
 shows a live feed on facebook.html.
