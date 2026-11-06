@@ -52,7 +52,7 @@ async function wandbox(code, stdin) {
     code,
     stdin,
     options: '',
-    'compiler-option-raw': '-std=c++17\n-O2\n-Wall',
+    'compiler-option-raw': '-std=c++17\n-O2\n-Wall\n-fdiagnostics-parseable-fixits\n-fno-diagnostics-color',
     'runtime-option-raw': '',
     save: false,
   });
@@ -80,7 +80,7 @@ async function godbolt(code, stdin) {
       const d = await post('https://godbolt.org/api/compiler/' + id + '/compile', {
         source: code,
         options: {
-          userArguments: '-std=c++17 -O2 -Wall',
+          userArguments: '-std=c++17 -O2 -Wall -fdiagnostics-parseable-fixits -fno-diagnostics-color',
           executeParameters: { args: [], stdin },
           compilerOptions: { executorRequest: true },
           filters: { execute: true },

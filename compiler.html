@@ -109,13 +109,15 @@
             <textarea id="cmpIn" spellcheck="false" placeholder="If your program uses cin, type the input here — one value per line." aria-label="Program input"></textarea>
           </div>
           <div class="cmp-panel cmp-outp">
-            <div class="cmp-ph"><span><i class="fa-solid fa-terminal"></i> Output</span><span class="cmp-status" id="cmpStatus">Ready</span></div>
+            <div class="cmp-ph"><span><i class="fa-solid fa-terminal"></i> Output</span><span class="cmp-ph-r"><button type="button" class="cmp-sol" id="cmpSol" hidden title="Show the solution for this error"><i class="fa-solid fa-lightbulb"></i>Solution</button><span class="cmp-status" id="cmpStatus">Ready</span></span></div>
+            <div class="cmp-solbox" id="cmpSolBox" hidden></div>
             <pre id="cmpOut" class="cmp-out" aria-live="polite">Press ▶ Run to compile and run your program.</pre>
           </div>
         </div>
       </div>
     </div>
     <div class="cmp-tips reveal">
+      <div><i class="fa-solid fa-lightbulb"></i><b>Stuck on an error?</b>Press the yellow <b>Solution</b> button — it explains the mistake and can fix it for you.</div>
       <div><i class="fa-solid fa-bolt"></i><b>Shortcut</b>Press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to run. <kbd>Tab</kbd> adds spaces.</div>
       <div><i class="fa-solid fa-floppy-disk"></i><b>Auto-saved</b>Your code is kept in this browser, so you can come back later.</div>
       <div><i class="fa-solid fa-cloud"></i><b>Runs online</b>Code is sent to a free online compiler to run, and is not saved there. Don&#39;t type passwords or personal data.</div>
@@ -124,6 +126,7 @@
   </div>
 </section>
 <script src="js/oop-programs.js"></script>
+<script src="js/solution.js"></script>
 <script src="js/compiler.js"></script>
 <footer class="footer">
   <div class="container">
