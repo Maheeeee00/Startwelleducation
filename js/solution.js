@@ -140,7 +140,7 @@
       var fixitsUsed = false;
       function useFixits() { d.fixits.forEach(function (f) { edits.push(f); }); fixitsUsed = d.fixits.length > 0; }
 
-      if ((m = /^expected '([;,)\]}>])' before (.*)/.exec(msg)) || (m = /^expected '([;)\]])' at end of input/.exec(msg))) {
+      if ((m = /^expected '([;,)\]}>])' before (.*)/.exec(msg)) || (m = /^expected '([;)\]])' at end of (?:input|member declaration)/.exec(msg))) {
         var ch = m[1];
         useFixits();
         add({ title: ch === ';' ? 'Semicolon (;) missing hai' : 'Bracket "' + ch + '" missing hai', key: d.line,

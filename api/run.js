@@ -22,6 +22,9 @@ function limited(ip) {
   return list.length > PER_MINUTE;
 }
 
+const ERR_RE = /(^|\n)[^\n]*:\d+:\d+: (?:fatal )?error:|(^|\n)[^\n]*: (?:fatal )?error:|collect2: error|undefined reference to|ld returned \d+ exit status/;
+function hasCompileError(s) { return ERR_RE.test(String(s || '')); }
+
 function cut(s) {
   s = String(s || '');
   return s.length > MAX_OUTPUT ? s.slice(0, MAX_OUTPUT) + '\n… (output cut: too long)' : s;
@@ -52,13 +55,12 @@ async function wandbox(code, stdin) {
     code,
     stdin,
     options: '',
-    'compiler-option-raw': '-std=c++17\n-O2\n-Wall\n-fdiagnostics-parseable-fixits\n-fno-diagnostics-color',
+    'compiler-option-raw': '-std=c++17\n-Wall\n-fdiagnostics-parseable-fixits\n-fno-diagnostics-color',
     'runtime-option-raw': '',
     save: false,
   });
-  // When compilation fails Wandbox sends no program_* fields at all.
-  const ran = d.program_message !== undefined || d.program_output !== undefined || d.program_error !== undefined;
-  const compiled = ran || d.status === '0' || !/\berror\b/i.test(d.compiler_error || '');
+  // A real compile failure always has a GCC "error:" line (warnings never do).
+  const compiled = !hasCompileError(d.compiler_error || d.compiler_message || '');
   return {
     backend: 'Wandbox',
     compile_error: compiled ? '' : cut(d.compiler_error || d.compiler_message),
@@ -80,7 +82,7 @@ async function godbolt(code, stdin) {
       const d = await post('https://godbolt.org/api/compiler/' + id + '/compile', {
         source: code,
         options: {
-          userArguments: '-std=c++17 -O2 -Wall -fdiagnostics-parseable-fixits -fno-diagnostics-color',
+          userArguments: '-std=c++17 -Wall -fdiagnostics-parseable-fixits -fno-diagnostics-color',
           executeParameters: { args: [], stdin },
           compilerOptions: { executorRequest: true },
           filters: { execute: true },
@@ -93,7 +95,8 @@ async function godbolt(code, stdin) {
       const ex = d.execResult || d;
       const build = ex.buildResult || d.buildResult || {};
       const buildErr = ceText(build.stderr);
-      const didRun = ex.didExecute !== false && build.code !== undefined ? build.code === 0 : ex.didExecute !== false;
+      const failed = ex.didExecute === false || (build.code !== undefined && build.code !== 0) || hasCompileError(buildErr);
+      const didRun = !failed;
       return {
         backend: 'Compiler Explorer',
         compile_error: didRun ? '' : cut(buildErr || ceText(d.stderr) || 'Compilation failed'),
@@ -108,18 +111,30 @@ async function godbolt(code, stdin) {
   throw last || new Error('Compiler Explorer unavailable');
 }
 
+// Ask Compiler Explorer first; if it has not answered in 2.5 s, ask Wandbox too and use whichever answers first.
+const cache = new Map();
+function delay(ms) { return new Promise((r) => setTimeout(r, ms)); }
 async function run(code, stdin) {
+  const key = code + '\u0000' + stdin;
+  if (cache.has(key)) return Object.assign({}, cache.get(key), { cached: true, time_ms: 0 });
   const started = Date.now();
   const errors = [];
-  for (const fn of [wandbox, godbolt]) {
-    try {
-      const r = await fn(code, stdin);
-      return Object.assign({ ok: true, time_ms: Date.now() - started }, r);
-    } catch (e) {
-      errors.push((fn.name || 'backend') + ': ' + (e && e.message));
-    }
+  let firstFailed;
+  const failedEarly = new Promise((r) => { firstFailed = r; });
+  const attempt = (fn, wait) => wait.then(() => fn(code, stdin)).catch((e) => {
+    errors.push((fn.name || 'backend') + ': ' + (e && e.message));
+    firstFailed();
+    throw e;
+  });
+  try {
+    // Wandbox starts after 2.5 s, or at once if Compiler Explorer fails first
+    const r = await Promise.any([attempt(godbolt, Promise.resolve()), attempt(wandbox, Promise.race([delay(2500), failedEarly]))]);
+    const out = Object.assign({ ok: true, time_ms: Date.now() - started }, r);
+    if (!out.signal) { cache.set(key, out); if (cache.size > 200) cache.delete(cache.keys().next().value); }
+    return out;
+  } catch (e) {
+    return { ok: false, error: 'The online compiler is busy or unreachable right now. Please try again in a minute.', details: errors };
   }
-  return { ok: false, error: 'The online compiler is busy or unreachable right now. Please try again in a minute.', details: errors };
 }
 
 const HELLO = '#include <iostream>\nint main(){ std::cout << "Hello from Start Well!" << std::endl; return 0; }';

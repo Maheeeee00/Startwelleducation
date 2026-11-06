@@ -1131,3 +1131,19 @@ button[disabled]{opacity:.75;cursor:wait}
 .subj-cards-2{grid-template-columns:repeat(2,1fr)}
 @media (min-width:1100px){.course-map{grid-template-columns:repeat(3,1fr);max-width:none}}
 @media (max-width:900px){.subj-cards-2{grid-template-columns:1fr}}
+.sol-wait{display:flex;align-items:center;gap:10px;background:#fff;border:1px dashed #f6b93b;border-radius:12px;padding:14px;margin-bottom:12px;color:#5a4300;font-weight:700}
+.sol-spin{width:18px;height:18px;border-radius:50%;border:3px solid #f6e3a8;border-top-color:#f2711c;animation:solSpin .8s linear infinite;flex:none}
+@keyframes solSpin{to{transform:rotate(360deg)}}
+.sol-ok{display:flex;align-items:center;gap:10px;background:#e6f7ec;border:1px solid #b7e4c7;border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.sol-ok>i{color:#16a34a;font-size:1.4rem}
+.sol-ok b{display:block;color:#14532d}
+.sol-ok span{font-size:.82rem;color:#2f6b45}
+.sol-ai{background:#eef2ff;border-radius:10px;padding:8px 12px;font-size:.88rem;color:#1f3a8a;margin:6px 0}
+.sol-full{margin:0 0 8px;background:#0d1530;border-radius:10px;padding:8px 0;font:13px/1.55 ui-monospace,Consolas,monospace;overflow:auto;white-space:pre;max-height:360px;color:#e6ebff}
+.sol-full span{display:block;padding:0 12px 0 0}
+.sol-full span i{display:inline-block;width:34px;padding-right:10px;text-align:right;color:#4d5b8c;font-style:normal;user-select:none}
+.sol-full span.fa{background:rgba(39,194,106,.2);color:#9dffc4}
+.sol-full span.fa i{color:#5fe28f}
+.sol-out-h,.sol-why-h{font-weight:800;color:#0f1f4b;margin:12px 0 6px;font-size:.88rem}
+.sol-out{margin:0;background:#070d22;color:#d7f5df;border-radius:10px;padding:10px 12px;font:13px/1.5 ui-monospace,Consolas,monospace;white-space:pre-wrap;max-height:180px;overflow:auto}
+.sol-manual{background:#fff7e6;border-radius:10px;padding:10px 12px;color:#7a4b00}

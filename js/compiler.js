@@ -144,6 +144,7 @@
         try { return JSON.parse(t); } catch (e) { return { ok: false, error: r.status === 404 ? 'The compiler service is not available on this copy of the site.' : 'Unexpected reply from the compiler (HTTP ' + r.status + ').' }; }
       });
     }).then(function (d) {
+      norm(d);
       if (!d.ok) { setStatus('Error', 'bad'); show(d.error || 'Something went wrong. Please try again.', 'err'); return; }
       if (d.compile_error) {
         setStatus('Compile error', 'bad');
@@ -187,10 +188,41 @@
   runBtn.addEventListener('click', run);
 
   // ---- Solution helper ----
-  var lastSolution = null, undoCode = null;
+  // A compile error must never be shown as "program ran" (safety net for any backend)
+  function norm(d) {
+    var ERR = /:\d+:\d+: (?:fatal )?error:|collect2: error|undefined reference to/;
+    if (d && d.ok && !d.compile_error && !d.stdout && ERR.test((d.warnings || '') + '\n' + (d.stderr || ''))) {
+      d.compile_error = (d.warnings || '') + '\n' + (d.stderr || '');
+      d.stderr = ''; d.exit_code = null;
+    }
+    return d;
+  }
+  function callRun(src, stdin) {
+    return fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: src, stdin: stdin }) })
+      .then(function (r) { return r.json(); }).then(norm);
+  }
+  var aiReady = null;
+  function aiAvailable() {
+    if (aiReady === null) aiReady = fetch('/api/fix').then(function (r) { return r.ok ? r.json() : { ai: false }; })
+      .then(function (j) { return !!j.ai; }, function () { return false; });
+    return aiReady;
+  }
+  function problemText(d) {
+    if (d.compile_error) return d.compile_error;
+    var t = [];
+    if (d.signal) t.push('Program crashed: ' + d.signal);
+    if (d.exit_code != null && d.exit_code !== 0) t.push('Exit code ' + d.exit_code);
+    if (d.stderr) t.push('stderr: ' + d.stderr);
+    t.push('Output was: ' + (d.stdout || '(nothing)'));
+    return t.join('\n');
+  }
+  function works(d) { return d && d.ok && !d.compile_error && !d.signal && (d.exit_code == null || d.exit_code === 0); }
+
+  var lastSolution = null, undoCode = null, solToken = 0;
   function hideSolution() {
     solBtn.hidden = true; solBox.hidden = true; out.hidden = false;
     solBtn.classList.remove('open');
+    solToken++;
   }
   function offerSolution(d, sent) {
     if (!window.SWSolution) return;
@@ -198,63 +230,127 @@
       stderr: d.stderr, stdout: d.stdout, signal: d.signal, exit_code: d.exit_code });
     var ex = find(current);
     res.original = ex && ex.code !== sent.code ? ex : null;
-    res.code = sent.code;
-    if (!res.items.length && !res.fixed && !res.original) return;
+    res.code = sent.code; res.stdin = sent.stdin; res.first = d;
+    res.realError = !!(d.compile_error || d.signal || (d.exit_code != null && d.exit_code !== 0));
+    res.state = 'new';
     lastSolution = res;
     solBtn.hidden = false;
     solBtn.classList.remove('pulse'); void solBtn.offsetWidth; solBtn.classList.add('pulse');
   }
+
+  // Build a complete, TESTED corrected program: apply sure fixes, compile, repeat; then ask the AI helper if needed.
+  function solve(r) {
+    var my = solToken, cur = r.code, d = r.first, round = 0;
+    var titles = {}; r.items.forEach(function (it) { titles[it.title] = 1; });
+    function stale() { return my !== solToken || lastSolution !== r; }
+    function step() {
+      if (stale()) return;
+      var a = round === 0 ? r : window.SWSolution.analyze({ code: cur, stdin: r.stdin, compile_error: d.compile_error,
+        stderr: d.stderr, stdout: d.stdout, signal: d.signal, exit_code: d.exit_code });
+      if (round > 0) a.items.forEach(function (it) { if (!titles[it.title]) { titles[it.title] = 1; it.later = true; r.items.push(it); } });
+      if (!a.fixed || round >= 6) return tryAI();
+      cur = a.fixed; round++;
+      return callRun(cur, r.stdin).then(function (res) {
+        if (stale()) return;
+        d = res;
+        if (!res.ok) return finish(null);
+        if (works(res)) return finish({ code: cur, result: res, by: 'rules' });
+        if (!res.compile_error) return tryAI(res);
+        return step();
+      }, function () { finish(null); });
+    }
+    function tryAI() {
+      if (!r.realError) return finish(null);
+      return aiAvailable().then(function (ok) {
+        if (!ok || stale()) return finish(null);
+        r.state = 'ai'; paint();
+        return fetch('/api/fix', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code: r.code, error: problemText(r.first), stdin: r.stdin }) })
+          .then(function (x) { return x.json(); })
+          .then(function (j) {
+            if (stale()) return;
+            if (!j.ok || !j.code) return finish(null);
+            return callRun(j.code, r.stdin).then(function (res) {
+              if (stale()) return;
+              if (works(res)) finish({ code: j.code, result: res, by: 'ai', note: j.explanation });
+              else finish(null);
+            });
+          });
+      }).catch(function () { finish(null); });
+    }
+    function finish(sol) {
+      if (stale()) return;
+      r.solution = sol; r.state = 'done'; paint();
+    }
+    r.state = 'working'; paint();
+    step();
+  }
+
+  function paint() { if (!solBox.hidden && lastSolution) renderSolution(); }
   function renderSolution() {
-    var S = window.SWSolution, r = lastSolution, h = '', esc = S.esc;
+    var S = window.SWSolution, r = lastSolution, h = '', esc = S.esc, sol = r.solution;
     var n = r.items.length;
     h += '<div class="sol-head"><i class="fa-solid fa-lightbulb"></i><div><b>Solution</b><span>' +
       (n ? n + (n > 1 ? ' problems' : ' problem') + ' found' : 'Here is what you can do') + '</span></div>' +
       '<button type="button" class="sol-x" data-act="back" title="Back to the output">&times;</button></div>';
+
+    if (r.state === 'working' || r.state === 'ai') {
+      h += '<div class="sol-wait"><span class="sol-spin"></span>' + (r.state === 'ai' ? 'Checking with the AI helper and testing its answer…' : 'Finding the fix and testing the corrected program…') + '</div>';
+    } else if (sol) {
+      var df = S.diff(r.code, sol.code) || [], added = {};
+      df.forEach(function (x) { if (x[0] === '+') added[x[2]] = 1; });
+      var lines = sol.code.replace(/\n$/, '').split('\n');
+      h += '<div class="sol-ok"><i class="fa-solid fa-circle-check"></i><div><b>Corrected full program — tested ✓</b><span>It compiles and runs. Changed lines are green.</span></div></div>';
+      if (sol.note) h += '<p class="sol-ai"><b>AI helper:</b> ' + esc(sol.note) + '</p>';
+      h += '<pre class="sol-full">' + lines.map(function (l, i) {
+        return '<span class="' + (added[i + 1] ? 'fa' : '') + '"><i>' + (i + 1) + '</i>' + (esc(l) || ' ') + '</span>';
+      }).join('') + '</pre>';
+      var outp = (sol.result.stdout || '').replace(/\s+$/, '');
+      h += '<div class="sol-out-h">Output of the corrected program</div><pre class="sol-out">' + esc(outp ? outp.split('\n').slice(0, 12).join('\n') + (outp.split('\n').length > 12 ? '\n…' : '') : '(prints nothing)') + '</pre>';
+      h += '<div class="sol-acts"><button type="button" class="sol-go" data-act="apply"><i class="fa-solid fa-wand-magic-sparkles"></i>Use this code &amp; Run</button>' +
+        '<button type="button" class="sol-b" data-act="copyfix"><i class="fa-regular fa-copy"></i>Copy full code</button></div>';
+    } else if (r.state === 'done' && r.realError) {
+      h += '<p class="sol-note sol-manual">This mistake needs your own decision, so read the steps below, change the line, and press <b>Run</b> again.</p>';
+    }
+
+    if (n) h += '<div class="sol-why-h">' + (sol ? 'What was wrong' : 'What is wrong') + '</div>';
     r.items.forEach(function (it, i) {
       h += '<div class="sol-item"><div class="sol-t"><span class="sol-n">' + (i + 1) + '</span><b>' + esc(it.title) + '</b>' +
-        (it.line ? '<span class="sol-line">Line ' + it.line + '</span>' : '') +
-        (it.auto ? '<span class="sol-auto">Auto-fix</span>' : '') + '</div>' +
-        (it.src != null && it.src.trim() ? '<pre class="sol-src">' + esc(it.src.replace(/^\s+/, '')) + '</pre>' : '') +
+        (it.line && !it.later ? '<span class="sol-line">Line ' + it.line + '</span>' : '') +
+        (sol && sol.by === 'rules' && it.auto ? '<span class="sol-auto">Fixed</span>' : '') + '</div>' +
+        (it.src != null && it.src.trim() && !it.later ? '<pre class="sol-src">' + esc(it.src.replace(/^\s+/, '')) + '</pre>' : '') +
         '<p><em>Kyun?</em> ' + it.why + '</p><p><em>Kya karein?</em> ' + it.how + '</p></div>';
     });
+
     var acts = '';
-    if (r.fixed) {
-      var df = S.diff(r.code, r.fixed);
-      if (df && df.length) {
-        h += '<div class="sol-diff-h"><i class="fa-solid fa-wand-magic-sparkles"></i> Corrected code — changes</div><pre class="sol-diff">' +
-          df.map(function (x) {
-            if (x[0] === '…') return '<span class="dm">   …</span>';
-            var cls = x[0] === '+' ? 'da' : x[0] === '-' ? 'dr' : 'dc';
-            return '<span class="' + cls + '">' + (x[0] === ' ' ? ' ' : x[0]) + ' ' + esc(x[1]) + '</span>';
-          }).join('') + '</pre>';
-      }
-      acts += '<button type="button" class="sol-go" data-act="apply"><i class="fa-solid fa-wand-magic-sparkles"></i>Apply fix &amp; Run</button>';
-      acts += '<button type="button" class="sol-b" data-act="copyfix"><i class="fa-regular fa-copy"></i>Copy fixed code</button>';
-    }
     if (r.original) acts += '<button type="button" class="sol-b" data-act="orig"><i class="fa-solid fa-rotate-left"></i>Load original lesson code</button>';
     acts += '<button type="button" class="sol-b" data-act="back"><i class="fa-solid fa-terminal"></i>Show error</button>';
-    if (!r.fixed && r.items.length) h += '<p class="sol-note">Yeh ghalti khud theek karni hogi — upar diye tareeqe se line badlo aur dobara <b>Run</b> dabao.</p>';
-    else if (r.fixed) h += '<p class="sol-note">Fix lagane ke baad bhi error aaye to dobara <b>Solution</b> dabao — ek ghalti theek hone par agli nazar aati hai.</p>';
     h += '<div class="sol-acts">' + acts + '</div>';
     solBox.innerHTML = h;
   }
   solBtn.addEventListener('click', function () {
-    if (!lastSolution) return;
+    var r = lastSolution;
+    if (!r) return;
     if (!solBox.hidden) { solBox.hidden = true; out.hidden = false; solBtn.classList.remove('open'); return; }
-    renderSolution();
     solBox.hidden = false; out.hidden = true; solBtn.classList.add('open'); solBtn.classList.remove('pulse');
+    if (r.state === 'new') solve(r); else renderSolution();
     solBox.scrollTop = 0;
     if (window.innerWidth < 900) solBox.scrollIntoView({ block: 'nearest' });
   });
   solBox.addEventListener('click', function (ev) {
     var b = ev.target.closest('[data-act]'); if (!b) return;
-    var act = b.getAttribute('data-act'), r = lastSolution;
+    var act = b.getAttribute('data-act'), r = lastSolution, sol = r && r.solution;
     if (act === 'back') { solBox.hidden = true; out.hidden = false; solBtn.classList.remove('open'); }
-    else if (act === 'apply' && r && r.fixed) { undoCode = code.value; replaceCode(r.fixed); showUndo(); run(); }
+    else if (act === 'apply' && sol) { undoCode = code.value; replaceCode(sol.code); showUndo(); run(); }
     else if (act === 'orig' && r && r.original) { undoCode = code.value; replaceCode(r.original.code); showUndo(); run(); }
-    else if (act === 'copyfix' && r && r.fixed) {
+    else if (act === 'copyfix' && sol) {
       var ok = function () { b.innerHTML = '<i class="fa-solid fa-check"></i>Copied'; };
-      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(r.fixed).then(ok, function () {});
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(sol.code).then(ok, fallback);
+      else fallback();
+      function fallback() {
+        var t = document.createElement('textarea'); t.value = sol.code; t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select(); try { document.execCommand('copy'); ok(); } catch (e) {} t.remove();
+      }
     }
   });
   function replaceCode(text) {
