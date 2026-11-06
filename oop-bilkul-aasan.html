@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ur-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OOP Bilkul Aasan | Start Well Education</title>
+<meta name="description" content="OOP Bilkul Aasan — OOP lessons in easy Roman Urdu by Start Well Education, Bhimber.">
+<link rel="icon" href="images/logo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f1e6;--surf:#fffdf5;--ink:#1d2b22;--mute:#5d6b61;--green:#1f6b4a;--ball:#c2332b;--kraft:#b9803f;--line:#d9d4bf;--code:#17241c;--codeink:#e8efe0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101a14;--surf:#17241c;--ink:#e8efe0;--mute:#9db0a2;--green:#5fc48f;--ball:#ef6b60;--kraft:#d9a15d;--line:#2b3d31;--code:#0b120e;--codeink:#e8efe0}}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif}
+header{padding:2.2rem 1.2rem 1rem;max-width:880px;margin:auto}
+h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,7vw,3.6rem);font-weight:800}
+h1 span{color:var(--ball)}
+.lead{color:var(--mute);max-width:60ch;margin:.6rem 0 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:2px solid var(--line)}
+nav div{max-width:880px;margin:auto;display:flex;gap:.4rem;overflow-x:auto;padding:.6rem 1.2rem}
+nav button{flex:none;border:2px solid var(--line);background:var(--surf);color:var(--ink);font:700 .9rem Nunito,sans-serif;padding:.4rem .8rem;border-radius:999px;cursor:pointer}
+nav button[aria-current=true]{background:var(--green);border-color:var(--green);color:#fff}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--kraft);outline-offset:2px}
+main{max-width:880px;margin:auto;padding:1.4rem 1.2rem 4rem}
+h2{font-size:clamp(1.7rem,5vw,2.4rem);color:var(--green)}
+.eq{font-size:1.15rem;font-weight:700;margin:.8rem 0 1.2rem;padding:.8rem 1rem;border-left:6px solid var(--ball);background:var(--surf)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:640px){.two{grid-template-columns:1fr}}
+.box{background:var(--surf);border:2px solid var(--line);border-radius:14px;padding:1rem}
+.box.c{border-top:6px solid var(--green)}.box.m{border-top:6px solid var(--kraft)}
+.box h3{font-size:1.15rem}
+.box ul{margin:.4rem 0 0;padding-left:1.1rem}
+pre{background:var(--code);color:var(--codeink);border-radius:10px;padding:1rem;overflow-x:auto;font:14px/1.55 ui-monospace,Menlo,Consolas,monospace;margin:1rem 0}
+.tip{background:var(--kraft);color:#1d1408;border-radius:10px;padding:.7rem 1rem;font-weight:700;margin:1rem 0}
+.demo{border:2px dashed var(--green);border-radius:14px;padding:1rem;margin:1.2rem 0;background:var(--surf)}
+.demo>h3{font-size:1.1rem;margin-bottom:.5rem}
+.btn{border:0;background:var(--green);color:#fff;font:700 .95rem Nunito,sans-serif;padding:.5rem .9rem;border-radius:8px;cursor:pointer;margin:.2rem .3rem .2rem 0}
+.btn.r{background:var(--ball)}.btn.k{background:var(--kraft);color:#1d1408}
+.out{min-height:2.4rem;margin-top:.6rem;padding:.6rem .8rem;border-radius:8px;background:var(--bg);font-weight:700}
+.objs{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.6rem}
+.obj{background:var(--bg);border:2px solid var(--green);border-radius:10px;padding:.5rem .8rem;min-width:130px}
+input{font:inherit;padding:.45rem .6rem;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:10rem;max-width:100%}
+textarea{width:100%;font:inherit;border:2px solid var(--line);border-radius:8px;padding:.5rem;background:var(--bg);color:var(--ink)}
+.step{display:none}.step.on{display:block}
+.nextrow{display:flex;justify-content:space-between;margin-top:2rem}
+table{border-collapse:collapse;min-width:640px;width:100%}
+td,th{border:2px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top}
+th{background:var(--green);color:#fff}
+.wrap{overflow-x:auto}
+.hw label{display:block;font-weight:700;margin-top:.8rem}
+.hint{display:none;color:var(--mute);font-size:.95rem;margin:.3rem 0 0}
+.hint.on{display:block}
+@media(prefers-reduced-motion:no-preference){.ch{animation:in .35s ease}@keyframes in{from{opacity:0;transform:translateY(8px)}}}
+</style>
+<style id="sw-bar-css">
+.swbar{position:relative;z-index:20;background:#0f1f4b;color:#fff;font:600 14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;border-bottom:3px solid #f2711c}
+.swbar .swin{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 14px;flex-wrap:wrap}
+.swbar a{color:#fff;text-decoration:none}
+.swbar .swlogo{display:flex;align-items:center;gap:9px;margin-right:auto;min-width:0}
+.swbar .swlogo img{width:34px;height:36px;object-fit:cover;border-radius:6px;flex:none}
+.swbar .swlogo b{display:block;font-size:15px;letter-spacing:.01em}
+.swbar .swlogo small{display:block;color:#f6b93b;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+.swbar .swlinks{display:flex;gap:6px;flex-wrap:wrap}
+.swbar .swlinks a{padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.1);white-space:nowrap}
+.swbar .swlinks a:hover{background:rgba(255,255,255,.2)}
+.swbar .swlinks a.swc{background:#f2711c}
+.swbar .swlinks a.swc:hover{background:#d95f10}
+@media (max-width:560px){.swbar .swlogo small{display:none}.swbar .swlinks{width:100%}.swbar .swlinks a{flex:1;text-align:center;padding:7px 6px}}
+.sw-try{display:inline-flex;align-items:center;gap:.45rem;margin:.6rem .5rem .2rem 0;padding:.55rem 1rem;border-radius:999px;background:#0f1f4b;color:#fff !important;font:700 .92rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;box-shadow:0 6px 16px -8px rgba(15,31,75,.7)}
+.sw-try:hover{background:#f2711c}
+.sw-try svg{width:14px;height:14px;fill:currentColor}
+</style>
+</head>
+<body>
+<div class="swbar" role="navigation" aria-label="Start Well Education"><div class="swin">
+<a class="swlogo" href="programming.html"><img src="images/logo.jpg" alt="Start Well Education logo"><span><b>Start Well Education</b><small>Programming · OOP</small></span></a>
+<span class="swlinks"><a href="programming.html">&#8592; Programming</a><a href="oop-lectures.html">OOP Lectures</a><a class="swc" href="compiler.html">C++ Compiler</a></span>
+</div></div>
+
+<header>
+<h1>OOP <span>Bilkul Aasan</span></h1>
+<p class="lead">Cricket aur Bhimber Mart ki misaalon se OOP seekho. Har chapter me chhota sa demo hai, khud click karke dekho.</p>
+</header>
+<nav><div id="nav" role="tablist"></div></nav>
+<main id="main"></main>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const C=[
+{id:'class',t:'Class aur Object',eq:'Class = Naqsha / Design. Object = Us naqshe se bana hua ghar / asli cheez.',
+ c:['Class = Player ka naqsha: naam, runs, batting','Object = Babar, Rizwan, Shaheen'],
+ m:['Class = Order ka naqsha: price, quantity, bill','Object = Ali ka order, Ahmed ka order'],
+ code:`class Player {          // CLASS - Naqsha
+  string naam;
+  int runs;
+  void batting() {
+    cout << "Batting kar raha hai";
+  }
+};
+
+int main() {
+  Player babar;         // OBJECT - Asli player
+  Player rizwan;        // Doosra OBJECT
+}`,
+ tip:'Yaad rakho: Class 1 hoti hai, Object 100 ban sakte hain. Jaise 1 naqsha, 100 ghar.',demo:'d1'},
+{id:'data',t:'Data aur Function',eq:'Data = Saman jo pada hua hai. Function = Kaam jo ho raha hai.',
+ c:['Data: naam, runs, team','Function: batting(), bowling()'],
+ m:['Data: customer = Ali, price = 2500, quantity = 2','Function: bill banana, payment lena, parcel bhejna'],
+ code:`// PF me: Data ek jagah, Function doosri jagah
+int price = 2500;
+void billBanao(int p) { ... }
+
+// OOP me: Data + Function ek hi dabbe (class) me
+class Order {
+  int price;
+  void billBanao() { ... }
+};`,
+ tip:'PF = alag alag. OOP = dono ek dabbe me band.',demo:'d2'},
+{id:'enc',t:'Encapsulation',eq:'Apna saman dabbe me band kar do, taake bahar wala haath na lagaye.',
+ c:['Babar ka bat Babar ke paas hai. Shaheen uska bat nahi utha sakta.'],
+ m:['JazzCash PIN sirf Payment wale dabbe me hai. Order wala dabba usko nahi dekh sakta.'],
+ code:`class Order {
+private:               // Band - bahar wala nahi dekh sakta
+  int price = 2500;
+
+public:                // Khula - bahar wala use kar sakta hai
+  void billBanao() {
+    cout << price * 2;
+  }
+};`,
+ tip:'private = tala laga diya. public = darwaza khula hai.',demo:'d3'},
+{id:'inh',t:'Inheritance',eq:'Ek class ka sara kaam doosri class ko mil jaye, dobara likhne ki zaroorat nahi.',
+ c:['Baap = Player (naam, runs, batting)','Beta = Batsman: baap ka sab + six marna','Beta = Bowler: baap ka sab + wicket lena'],
+ m:['Baap = Payment (payment lena)','Beta = COD Payment: baap ka kaam + cash lena','Beta = JazzCash Payment: baap ka kaam + mobile se lena'],
+ code:`class Player {                       // Baap
+  string naam;
+  void batting() { cout << "Batting"; }
+};
+
+class Batsman: public Player {       // Beta - baap ka sab le liya
+  void sixMaro() { cout << "Six!"; }
+};`,
+ tip:'Inheritance = copy-paste se bachna. Baap ne likh diya, beta dobara nahi likhega.',demo:'d4'},
+{id:'poly',t:'Polymorphism',eq:'Naam ek hi, kaam alag alag. Jaise ek lafz ke 2 matlab.',
+ c:['Sab kehte hain "Khelo": Batsman = batting, Bowler = bowling, Keeper = keeping'],
+ m:['Sab kehte hain "Payment Karo": COD = cash do, JazzCash = mobile se bhejo, Bank = card se karo'],
+ code:`class Player {
+  void khelo() { cout << "Khel raha hai"; }
+};
+class Batsman: public Player {
+  void khelo() { cout << "Batting kar raha hai"; }
+};
+class Bowler: public Player {
+  void khelo() { cout << "Bowling kar raha hai"; }
+};`,
+ tip:'Naam 1, kaam alag. Bas itna yaad rakho.',demo:'d5'},
+{id:'abs',t:'Abstraction',eq:'Andar kya ho raha hai wo mat dikhao, sirf button dikhao.',
+ c:['TV pe sirf score dikhta hai. Andar ka hisaab kitab nahi.'],
+ m:['Customer ko sirf "Order Karo" button dikhta hai. Bill aur payment andar chhupe hain.','Mobile: WhatsApp pe Send dabao, message chala jata hai. Server ka pata nahi.'],
+ code:`class Order {
+public:
+  void orderKaro() {      // Bahar ko sirf ye dikhta hai
+    billBanao();
+    paymentLo();
+  }
+private:
+  void billBanao() { ... }
+  void paymentLo() { ... }
+};`,
+ tip:'Andar ka kaam chupao, sirf zaroori cheez dikhao.',demo:'d6'},
+{id:'sum',t:'Summary aur Homework',sum:1}
+];
+
+const nav=$('#nav'),main=$('#main');
+C.forEach((x,i)=>{const b=document.createElement('button');b.textContent=(i<6?(i+1)+'. ':'')+(x.sum?'Summary':x.t);b.onclick=()=>go(x.id);b.dataset.id=x.id;nav.append(b)});
+
+const demos={
+d1(){return `<h3>Try karo: Player class se objects banao</h3>
+<input id="pn" placeholder="Player ka naam" aria-label="Player ka naam"> <button class="btn" id="mk">Object banao</button>
+<div class="objs" id="objs"></div><div class="out" id="o1">1 class se jitne chaho objects bana lo.</div>`},
+d2(){return `<h3>Try karo: Order ka data aur function</h3>
+<div class="two"><div class="box m"><b>Data (saman)</b><br>Customer: Ali<br>Price: 2500<br>Quantity: 2</div>
+<div class="box c"><b>Function (kaam)</b><br><button class="btn" data-f="Bill ban gaya: 5000">billBanao()</button><button class="btn k" data-f="Payment le li">paymentLo()</button><button class="btn r" data-f="Parcel chala gaya">parcelBhejo()</button></div></div>
+<div class="out" id="o2">Kisi function pe click karo.</div>`},
+d3(){return `<h3>Try karo: private ka tala</h3>
+<p style="margin:.2rem 0">Order class me <b>price</b> private hai aur <b>billBanao()</b> public.</p>
+<button class="btn r" data-e="Error: price private hai. Bahar se haath nahi laga sakte.">order.price (bahar se)</button>
+<button class="btn" data-e="Bill = 5000. Public function andar ja kar price use kar sakta hai.">order.billBanao()</button>
+<div class="out" id="o3">Dono try karo.</div>`},
+d4(){return `<h3>Try karo: Beta ko baap se kya mila?</h3>
+<button class="btn" data-k="Batsman">Batsman</button><button class="btn k" data-k="Bowler">Bowler</button>
+<div class="out" id="o4">Beta chuno.</div>`},
+d5(){return `<h3>Try karo: Ek naam, alag kaam</h3>
+<b>khelo()</b> bolo:<br>
+<button class="btn" data-p="Batsman.khelo() = Batting kar raha hai">Batsman</button><button class="btn k" data-p="Bowler.khelo() = Bowling kar raha hai">Bowler</button><button class="btn r" data-p="Keeper.khelo() = Keeping kar raha hai">Keeper</button><br>
+<b>paymentKaro()</b> bolo:<br>
+<button class="btn" data-p="COD.paymentKaro() = Cash do">COD</button><button class="btn k" data-p="JazzCash.paymentKaro() = Mobile se bhejo">JazzCash</button><button class="btn r" data-p="Bank.paymentKaro() = Card se karo">Bank</button>
+<div class="out" id="o5">Naam wohi, jawab alag.</div>`},
+d6(){return `<h3>Try karo: Customer ka view</h3>
+<button class="btn" id="ord">Order Karo</button><button class="btn k" id="peek">Andar dekho</button>
+<div class="out" id="o6">Customer ko sirf button dikhta hai.</div>`}
+};
+const wire={
+d1(){let n=0;const objs=$('#objs');$('#mk').onclick=()=>{const v=$('#pn').value.trim()||'Player '+(++n);let r=0;const d=document.createElement('div');d.className='obj';const draw=()=>d.innerHTML=`<b>${esc(v)}</b><br>runs: ${r}<br>`;draw();const b=document.createElement('button');b.className='btn r';b.textContent='batting()';b.onclick=()=>{r+=4;draw();d.append(b);$('#o1').textContent=v+' ne batting ki: +4 runs'};d.append(b);objs.append(d);$('#pn').value='';$('#o1').textContent='Naya object bana: '+v+'. Total objects: '+objs.children.length}},
+d2(){document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>$('#o2').textContent=b.dataset.f)},
+d3(){document.querySelectorAll('[data-e]').forEach(b=>b.onclick=()=>$('#o3').textContent=b.dataset.e)},
+d4(){document.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=b.dataset.k,own=k=='Batsman'?'sixMaro()':'wicketLo()';$('#o4').innerHTML=`${k} ko baap se mila: naam, batting()<br>${k} ka apna: ${own}`})},
+d5(){document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>$('#o5').textContent=b.dataset.p)},
+d6(){$('#ord').onclick=()=>$('#o6').textContent='Order ho gaya!';let on=0;$('#peek').onclick=()=>{on=!on;$('#peek').textContent=on?'Wapas chupao':'Andar dekho';$('#o6').textContent=on?'Andar: billBanao() > paymentLo() > parcelBhejo(). Customer ko ye nahi dikhta.':'Customer ko sirf button dikhta hai.'}}
+};
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+function summary(){return `<h2 class="ch">Poora Course, 1 Table me</h2>
+<div class="wrap box" style="margin-top:1rem"><table><tr><th>Topic</th><th>Cricket</th><th>Bhimber Mart</th><th>1 Line</th></tr>
+<tr><td><b>Class / Object</b></td><td>Player ka naqsha / Babar</td><td>Order ka naqsha / Ali ka order</td><td>Naqsha 1, cheezain 100</td></tr>
+<tr><td><b>Encapsulation</b></td><td>Babar ka bat sirf Babar ke paas</td><td>PIN sirf Payment dabbe me</td><td>Saman dabbe me band</td></tr>
+<tr><td><b>Inheritance</b></td><td>Batsman ko Player ka sab mila</td><td>COD ko Payment ka sab mila</td><td>Baap ka saman bete ko</td></tr>
+<tr><td><b>Polymorphism</b></td><td>Khelo: batting / bowling</td><td>Payment Karo: cash / JazzCash</td><td>Naam 1, kaam alag</td></tr>
+<tr><td><b>Abstraction</b></td><td>TV pe sirf score</td><td>Customer ko sirf button</td><td>Andar ka kaam chupao</td></tr></table></div>
+<h2 style="margin-top:2rem">Homework: Apni Bhimber Mart</h2>
+<p class="lead">Ye 4 jawab de do, OOP 50% clear ho jayega.</p>
+<div class="box hw">
+<label for="h1">1. Class kya hogi?</label><textarea id="h1" rows="2"></textarea><p class="hint">Misaal: Order, Customer, Product, Payment</p>
+<label for="h2">2. Object kya hoga?</label><textarea id="h2" rows="2"></textarea><p class="hint">Misaal: Ali ka order, Ahmed ka order</p>
+<label for="h3">3. Data kya hoga?</label><textarea id="h3" rows="2"></textarea><p class="hint">Misaal: customer ka naam, price 2500, quantity 2</p>
+<label for="h4">4. Function kya hoga?</label><textarea id="h4" rows="2"></textarea><p class="hint">Misaal: bill banana, payment lena, parcel bhejna</p>
+<button class="btn k" id="rev" style="margin-top:1rem">Misaal dekho</button></div>`}
+
+function go(id,push){
+ const i=C.findIndex(x=>x.id==id);const x=C[i<0?0:i];const k=i<0?0:i;
+ document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.id==x.id));
+ let h;
+ if(x.sum){h=summary()}else{
+ h=`<div class="ch"><h2>Chapter ${k+1}: ${x.t}</h2><div class="eq">${x.eq}</div>
+ <div class="two"><div class="box c"><h3>Cricket</h3><ul>${x.c.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+ <div class="box m"><h3>Bhimber Mart</h3><ul>${x.m.map(s=>`<li>${s}</li>`).join('')}</ul></div></div>
+ <pre><code>${esc(x.code)}</code></pre><div class="tip">${x.tip}</div>
+ <div class="demo">${demos[x.demo]()}</div></div>`}
+ const p=C[k-1],n=C[k+1];
+ h+=`<div class="nextrow">${p?`<button class="btn k" data-go="${p.id}">Pichla</button>`:'<span></span>'}${n?`<button class="btn" data-go="${n.id}">Agla</button>`:''}</div>`;
+ main.innerHTML=h;
+ if(!x.sum)wire[x.demo]();else $('#rev').onclick=()=>document.querySelectorAll('.hint').forEach(e=>e.classList.add('on'));
+ main.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+ if(location.hash!=='#'+x.id)history.replaceState(null,'','#'+x.id);
+ window.scrollTo(0,0);
+}
+addEventListener('hashchange',()=>go(location.hash.slice(1)));
+go(location.hash.slice(1)||'class');
+</script>
+<script id="sw-try-js">
+(function(){
+  var main=document.getElementById("main");if(!main)return;
+  var ICON='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>';
+  function exId(){var h=(location.hash||'#class').slice(1);return ['class','data','enc','inh','poly','abs'].indexOf(h)>=0?'aasan-'+h:'';}
+  function add(){
+    if(main.querySelector('.sw-try'))return;
+    var id=exId(),pre=main.querySelector('pre');if(!id||!pre)return;
+    var a=document.createElement('a');a.className='sw-try';a.href='compiler.html#ex='+id;
+    a.innerHTML=ICON+'Try in compiler';a.title='Open this code in the online C++ compiler and run it';
+    var anchor=pre;anchor.parentNode.insertBefore(a,anchor.nextSibling);
+  }
+  new MutationObserver(add).observe(main,{childList:true});add();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ur-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OOP Interactive Lectures | Start Well Education</title>
+<meta name="description" content="OOP Interactive Lectures — OOP lessons in easy Roman Urdu by Start Well Education, Bhimber.">
+<link rel="icon" href="images/logo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f1e6;--surf:#fffdf5;--ink:#1d2b22;--mute:#5d6b61;--green:#1f6b4a;--ball:#c2332b;--kraft:#b9803f;--line:#d9d4bf;--code:#17241c;--ci:#e8efe0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101a14;--surf:#17241c;--ink:#e8efe0;--mute:#9db0a2;--green:#5fc48f;--ball:#ef6b60;--kraft:#d9a15d;--line:#2b3d31;--code:#0b120e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;line-height:1.15;margin:0}
+header,main{max-width:860px;margin:auto;padding:0 1.2rem}
+header{padding-top:2rem}
+h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:800}h1 span{color:var(--ball)}
+.lead{color:var(--mute);margin:.5rem 0 1rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:2px solid var(--line)}
+nav div{max-width:860px;margin:auto;display:flex;gap:.4rem;overflow-x:auto;padding:.6rem 1.2rem;align-items:center}
+nav button{flex:none;border:2px solid var(--line);background:var(--surf);color:var(--ink);font:700 .9rem Nunito,sans-serif;padding:.35rem .7rem;border-radius:999px;cursor:pointer}
+nav button[aria-current=true]{background:var(--green);border-color:var(--green);color:#fff}
+nav button.ok{border-color:var(--kraft)}
+nav .sc{flex:none;margin-left:auto;font-weight:700;color:var(--mute);padding-left:.8rem}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--kraft);outline-offset:2px}
+main{padding-bottom:4rem}
+h2{font-size:clamp(1.6rem,5vw,2.2rem);color:var(--green);margin:1.4rem 0 .8rem}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:640px){.g{grid-template-columns:1fr}}
+.box{background:var(--surf);border:2px solid var(--line);border-radius:14px;padding:.9rem 1rem}
+.box.r{border-top:6px solid var(--kraft)}.box.i{border-top:6px solid var(--green)}
+.box h3{font-size:1.1rem}
+pre{background:var(--code);color:var(--ci);border-radius:10px;padding:1rem;overflow-x:auto;font:14px/1.55 ui-monospace,Menlo,Consolas,monospace;margin:1rem 0 .5rem}
+.btn{border:0;background:var(--green);color:#fff;font:700 .95rem Nunito,sans-serif;padding:.5rem .9rem;border-radius:8px;cursor:pointer}
+.out{margin-top:.6rem;padding:.6rem .8rem;border-radius:8px;background:var(--surf);border:2px dashed var(--green);font-weight:700;display:none}
+.out.on{display:block}
+.q{margin-top:1.4rem;border:2px solid var(--green);border-radius:14px;padding:1rem;background:var(--surf)}
+.opt{display:block;width:100%;text-align:left;margin:.4rem 0;padding:.55rem .8rem;font:600 1rem Nunito,sans-serif;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);cursor:pointer}
+.opt.good{border-color:var(--green);background:var(--green);color:#fff}
+.opt.bad{border-color:var(--ball);background:var(--ball);color:#fff}
+.fb{margin:.5rem 0 0;font-weight:700;min-height:1.5rem}
+textarea{width:100%;font:inherit;border:2px solid var(--line);border-radius:8px;padding:.5rem;background:var(--bg);color:var(--ink);margin-top:.4rem}
+.nr{display:flex;justify-content:space-between;margin-top:1.5rem}
+.btn.k{background:var(--kraft);color:#1d1408}
+</style>
+<style id="sw-bar-css">
+.swbar{position:relative;z-index:20;background:#0f1f4b;color:#fff;font:600 14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;border-bottom:3px solid #f2711c}
+.swbar .swin{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 14px;flex-wrap:wrap}
+.swbar a{color:#fff;text-decoration:none}
+.swbar .swlogo{display:flex;align-items:center;gap:9px;margin-right:auto;min-width:0}
+.swbar .swlogo img{width:34px;height:36px;object-fit:cover;border-radius:6px;flex:none}
+.swbar .swlogo b{display:block;font-size:15px;letter-spacing:.01em}
+.swbar .swlogo small{display:block;color:#f6b93b;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+.swbar .swlinks{display:flex;gap:6px;flex-wrap:wrap}
+.swbar .swlinks a{padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.1);white-space:nowrap}
+.swbar .swlinks a:hover{background:rgba(255,255,255,.2)}
+.swbar .swlinks a.swc{background:#f2711c}
+.swbar .swlinks a.swc:hover{background:#d95f10}
+@media (max-width:560px){.swbar .swlogo small{display:none}.swbar .swlinks{width:100%}.swbar .swlinks a{flex:1;text-align:center;padding:7px 6px}}
+.sw-try{display:inline-flex;align-items:center;gap:.45rem;margin:.6rem .5rem .2rem 0;padding:.55rem 1rem;border-radius:999px;background:#0f1f4b;color:#fff !important;font:700 .92rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;box-shadow:0 6px 16px -8px rgba(15,31,75,.7)}
+.sw-try:hover{background:#f2711c}
+.sw-try svg{width:14px;height:14px;fill:currentColor}
+</style>
+</head>
+<body>
+<div class="swbar" role="navigation" aria-label="Start Well Education"><div class="swin">
+<a class="swlogo" href="programming.html"><img src="images/logo.jpg" alt="Start Well Education logo"><span><b>Start Well Education</b><small>Programming · OOP</small></span></a>
+<span class="swlinks"><a href="programming.html">&#8592; Programming</a><a href="oop-bilkul-aasan.html">OOP Bilkul Aasan</a><a class="swc" href="compiler.html">C++ Compiler</a></span>
+</div></div>
+
+<header><h1>OOP <span>Interactive Lectures</span></h1>
+<p class="lead">Har lecture me real life example, industry example, C++ code (chala ke dekho) aur quiz. Pehle 12 lectures yahan hain.</p></header>
+<nav><div id="nav"></div></nav>
+<main id="m"></main>
+<script>
+const L=[
+['Introduction aur Objects','Aapka mobile ek object hai: uski state (battery 80%, naam) aur behavior (call, photo) hai.','Bank software me har Account ek object hai: balance (data) aur deposit(), withdraw() (kaam).','class Account {\n  double balance;\npublic:\n  void deposit(double x){ balance += x; }\n};','Account bana: balance = 5000. deposit(500) chala. Balance = 5500','Object kis se milkar banta hai?',['Sirf data','Sirf function','Data aur behavior dono','Sirf class ka naam'],2,'Object = state (data) + behavior (functions).'],
+['Encapsulation aur Interface','ATM machine: aap sirf buttons dabate ho. Andar cash ginne ki machine nahi dekhte.','Payment gateway (JazzCash, Easypaisa) apna logic chupa kar sirf pay() button deta hai.','class Atm {\n  int cash = 100000;   // private\npublic:\n  bool withdraw(int x){\n    if(x <= cash){ cash -= x; return true; }\n    return false;\n  }\n};','withdraw(5000) = true\natm.cash (bahar se) = Error: private','Interface kya hota hai?',['Andar ka code','Bahar ka dikhne wala hissa (buttons)','Memory ka naam','Compiler'],1,'Interface bahar ka darwaza hai. Implementation andar chupi rehti hai.'],
+['Abstraction, Class, Inheritance','Gaari chalane ke liye steering, brake, accelerator chahiye. Engine ke piston ka hisaab nahi.','Food delivery app: Rider class me naam, location, order rakhte hain. Rider ki pasandeeda chai ka data nahi.','class Vehicle { public: void start(){} };\nclass Car : public Vehicle {\npublic: void ac(){}\n};','Car ne Vehicle ka start() mufat me liya aur apna ac() joda.','Abstraction ka matlab?',['Sab kuch dikhao','Sirf zaroori cheez rakho','Code copy karo','Class delete karo'],1,'Zaroori cheez rakho, baaqi chhodo.'],
+['Inheritance ke Concepts','Jaanwar baap hai: khana, sona. Sher beta hai, uska apna kaam dahaarna.','E-commerce me Product baap, Phone aur Shirt beta. Phone me warranty extra, Shirt me size.','class Shape { public: virtual void draw() = 0; };  // abstract\nclass Circle : public Shape {\npublic: void draw(){ cout << "O"; }\n};','Shape s;  = Error (abstract)\nCircle c; c.draw();  = O','Abstract class ka object ban sakta hai?',['Haan','Nahi, sirf uska beta banta hai','Sirf pointer','Sirf static'],1,'Abstract class sirf template hoti hai. Object concrete beta ka banta hai.'],
+['Association, Composition, Aggregation','Ghar aur kamre (composition): ghar gira to kamre khatam. Team aur player (aggregation): team khatam, player zinda.','Order aur OrderItem composition hai. Hospital aur Doctor aggregation. Doctor aur Patient association.','class Engine {};\nclass Car  { Engine e; };    // composition\nclass Team { Player* p; };   // aggregation','Car delete = Engine bhi delete\nTeam delete = Player zinda','Composition me parent khatam hone par part ka kya hota hai?',['Zinda rehta hai','Saath khatam','Copy ban jata hai','Kuch nahi'],1,'Composition me part parent ke saath marta hai.'],
+['Polymorphism','Aap "Awaaz do" bolein: kutta bhonke, billi meow kare, murgha kukroo kare.','Payment system: pay() COD, Card, JazzCash ke liye alag. Checkout ka code ek hi.','Payment* p = new JazzCash();\np->pay(2500);   // JazzCash::pay chalega','COD = cash lo\nJazzCash = mobile account se\nCard = card charge','Polymorphism ka fayda?',['Naya type aaye to purana code na badalna','Code zyada hona','Variables badhna','Compile tez hona'],0,'Naya payment type add karo, checkout code wahi rahega.'],
+['C++ me Class','Class ghar ka naqsha hai, object bana hua ghar. public gate hai, private tijori.','Game me Player class: health aur score private. takeDamage() public.','class Player {\n  int health = 100;   // private\npublic:\n  void hit(){ health -= 10; }\n};\nPlayer p; p.hit();','p.hit() = health 90\np.health = Error: private','class me members ka default access kya hota hai?',['public','private','protected','koi nahi'],1,'class me default private hai. struct me public.'],
+['Constructor','Naya phone kharidte hi factory settings milti hain. Constructor bhi object ko shuru ki settings deta hai.','Database connection class: constructor connection khol deta hai, har user ko manually nahi karna padta.','class Student {\n  string name; int age;\npublic:\n  Student() : name("NA"), age(0) {}\n  Student(string n, int a) : name(n), age(a) {}\n};','Student s1;  = NA, 0\nStudent s2("Ali", 20);  = Ali, 20','Constructor ka return type kya hota hai?',['int','void','Koi nahi','bool'],2,'Constructor ka koi return type nahi hota, naam class jaisa hota hai.'],
+['Copy Constructor, Destructor, this','Shallow copy = dost ko apne ghar ki chaabi di (ek hi ghar). Deep copy = uske liye naya ghar bana diya.','Image buffer class: shallow copy se dono delete karein to crash (double free). Deep copy safe hai.','Buf(const Buf& o){\n  n = o.n; p = new int[n];\n  for(int i=0;i<n;i++) p[i] = o.p[i];  // deep\n}\n~Buf(){ delete[] p; }','b2 = b1 (deep)\nAlag memory. b1 delete hua to b2 safe.','Pointer wali class me default copy kya karti hai?',['Deep copy','Shallow copy','Kuch nahi','Delete'],1,'Default copy sirf address copy karti hai (shallow). Deep copy khud likhni padti hai.'],
+['this Pointer aur const Functions','"Mera naam" bolte waqt "mera" this hai. Const = museum ki cheez: dekh sakte ho, chhoo nahi sakte.','Banking report: getBalance() const hona chahiye, taake report balance ghalti se na badal de.','class Acc {\n  double b = 0;\npublic:\n  double get() const { return b; }   // read only\n  Acc& add(double x){ b += x; return *this; }\n};','a.add(100).add(50)\nChain chali: balance = 150','const member function kya karta hai?',['Object badal deta hai','Object ko nahi badalta','Object delete karta hai','Naya object banata hai'],1,'const function object ke data ko change nahi kar sakta.'],
+['const, Initializer List, static','static = school ke total students ka counter. Har student ka apna nahi, sab ka ek.','Server par active connections ka count: static counter har naye connection par badhta hai.','class User {\n  static int count;\npublic:\n  User(){ count++; }\n  static int total(){ return count; }\n};\nint User::count = 0;','3 User bane\nUser::total() = 3','static data member ki kitni copies hoti hain?',['Har object ki alag','Poori class ki sirf ek','Do','Koi nahi'],1,'static member class ka hota hai aur sab objects ke beech share hota hai.'],
+['static Functions aur Array of Objects','Class ki attendance register: students ki array, har entry ek object.','Online store: Product products[100] array par loop chala kar inventory check hoti hai.','Student s[3];                 // 3 objects\nfor(int i = 0; i < 3; i++)\n  s[i].show();','Teeno objects ka default constructor chala (3 dafa).','static member function me this milta hai?',['Haan','Nahi','Kabhi kabhi','Sirf const me'],1,'static function kisi object ka nahi hota, is liye this nahi hota.']
+];
+const nav=document.getElementById('nav'),m=document.getElementById('m');
+const res={};
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+L.forEach((l,i)=>{const b=document.createElement('button');b.textContent='L'+(i+1);b.dataset.i=i;b.onclick=()=>show(i);nav.append(b)});
+const sc=document.createElement('span');sc.className='sc';nav.append(sc);
+function tally(){const n=Object.values(res).filter(v=>v).length;sc.textContent='Score: '+n+' / '+L.length;nav.querySelectorAll('button').forEach(b=>b.classList.toggle('ok',res[b.dataset.i]===true))}
+function show(i){
+ const l=L[i];
+ nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',b.dataset.i==i));
+ m.innerHTML=`<h2>Lecture ${i+1}: ${esc(l[0])}</h2>
+ <div class="g"><div class="box r"><h3>Real life</h3><p>${esc(l[1])}</p></div><div class="box i"><h3>Industry</h3><p>${esc(l[2])}</p></div></div>
+ <h3 style="margin-top:1.2rem">Programming</h3><pre><code>${esc(l[3])}</code></pre>
+ <button class="btn" id="run">Code chalao</button><div class="out" id="out"><pre style="margin:0;background:none;padding:0;color:inherit;white-space:pre-wrap">${esc(l[4])}</pre></div>
+ <div class="q"><h3>Quiz</h3><p>${esc(l[5])}</p><div id="o"></div><p class="fb" id="fb"></p></div>
+ <div class="box" style="margin-top:1rem"><h3>Apni zindagi se example likho</h3><textarea rows="2" placeholder="Is lecture ka ek example apne ghar, school ya kaam se likho..." aria-label="Apna example"></textarea></div>
+ <div class="nr">${i>0?`<button class="btn k" data-g="${i-1}">Pichla</button>`:'<span></span>'}${i<L.length-1?`<button class="btn" data-g="${i+1}">Agla</button>`:''}</div>`;
+ $r=document.getElementById('run');$r.onclick=()=>document.getElementById('out').classList.toggle('on');
+ const o=document.getElementById('o'),fb=document.getElementById('fb');
+ l[6].forEach((t,k)=>{const b=document.createElement('button');b.className='opt';b.textContent=t;b.onclick=()=>{
+  if(o.dataset.d)return;o.dataset.d=1;
+  o.children[l[7]].classList.add('good');
+  if(k==l[7]){fb.textContent='Sahi! '+l[8];res[i]=true}else{b.classList.add('bad');fb.textContent='Galat. '+l[8];res[i]=false}
+  tally()};o.append(b)});
+ if(res[i]!==undefined){}
+ m.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>show(+b.dataset.g));
+ history.replaceState(null,'','#l'+(i+1));window.scrollTo(0,0);
+}
+var $r;
+tally();
+const s=parseInt(location.hash.slice(2))||1;show(Math.min(Math.max(s,1),L.length)-1);
+</script>
+<script id="sw-try-js">
+(function(){
+  var main=document.getElementById("m");if(!main)return;
+  var ICON='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>';
+  function exId(){var n=parseInt((location.hash||'#l1').slice(2),10);return n>=1&&n<=12?'lec'+n:'';}
+  function add(){
+    if(main.querySelector('.sw-try'))return;
+    var id=exId(),pre=main.querySelector('pre');if(!id||!pre)return;
+    var a=document.createElement('a');a.className='sw-try';a.href='compiler.html#ex='+id;
+    a.innerHTML=ICON+'Try in compiler';a.title='Open this code in the online C++ compiler and run it';
+    var anchor=(main.querySelector('#run')||pre);anchor.parentNode.insertBefore(a,anchor.nextSibling);
+  }
+  new MutationObserver(add).observe(main,{childList:true});add();
+})();
+</script>
+</body>
+</html>
