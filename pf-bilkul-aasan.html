@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ur-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PF Bilkul Aasan | Start Well Education</title>
+<meta name="description" content="PF Bilkul Aasan — Programming Fundamentals lessons in easy Roman Urdu by Start Well Education, Bhimber.">
+<link rel="icon" href="images/logo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f1e6;--surf:#fffdf5;--ink:#1d2b22;--mute:#5d6b61;--green:#1f6b4a;--ball:#c2332b;--kraft:#b9803f;--line:#d9d4bf;--code:#17241c;--ci:#e8efe0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101a14;--surf:#17241c;--ink:#e8efe0;--mute:#9db0a2;--green:#5fc48f;--ball:#ef6b60;--kraft:#d9a15d;--line:#2b3d31;--code:#0b120e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;line-height:1.15;margin:0}
+header,main{max-width:880px;margin:auto;padding:0 1.2rem}
+header{padding-top:2rem}
+h1{font-size:clamp(2.2rem,7vw,3.6rem);font-weight:800}h1 span{color:var(--ball)}
+.lead{color:var(--mute);max-width:60ch;margin:.6rem 0 1rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:2px solid var(--line)}
+nav div{max-width:880px;margin:auto;display:flex;gap:.4rem;overflow-x:auto;padding:.6rem 1.2rem}
+nav button{flex:none;border:2px solid var(--line);background:var(--surf);color:var(--ink);font:700 .9rem Nunito,sans-serif;padding:.4rem .8rem;border-radius:999px;cursor:pointer}
+nav button[aria-current=true]{background:var(--green);border-color:var(--green);color:#fff}
+button:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--kraft);outline-offset:2px}
+main{padding-top:1.4rem;padding-bottom:4rem}
+h2{font-size:clamp(1.7rem,5vw,2.4rem);color:var(--green)}
+.eq{font-size:1.15rem;font-weight:700;margin:.8rem 0 1.2rem;padding:.8rem 1rem;border-left:6px solid var(--ball);background:var(--surf)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:640px){.two{grid-template-columns:1fr}}
+.box{background:var(--surf);border:2px solid var(--line);border-radius:14px;padding:1rem}
+.box.c{border-top:6px solid var(--green)}.box.m{border-top:6px solid var(--kraft)}
+.box h3{font-size:1.15rem}.box ul,.box ol{margin:.4rem 0 0;padding-left:1.2rem}
+pre{background:var(--code);color:var(--ci);border-radius:10px;padding:1rem;overflow-x:auto;font:14px/1.55 ui-monospace,Menlo,Consolas,monospace;margin:1rem 0}
+.tip{background:var(--kraft);color:#1d1408;border-radius:10px;padding:.7rem 1rem;font-weight:700;margin:1rem 0}
+.demo{border:2px dashed var(--green);border-radius:14px;padding:1rem;margin:1.2rem 0;background:var(--surf)}
+.demo>h3{font-size:1.1rem;margin-bottom:.5rem}
+.btn{border:0;background:var(--green);color:#fff;font:700 .95rem Nunito,sans-serif;padding:.5rem .9rem;border-radius:8px;cursor:pointer;margin:.2rem .3rem .2rem 0}
+.btn.r{background:var(--ball)}.btn.k{background:var(--kraft);color:#1d1408}
+.out{min-height:2.4rem;margin-top:.6rem;padding:.6rem .8rem;border-radius:8px;background:var(--bg);font-weight:700;white-space:pre-wrap}
+input,select{font:inherit;padding:.4rem .6rem;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:8rem;max-width:100%}
+textarea{width:100%;font:inherit;border:2px solid var(--line);border-radius:8px;padding:.5rem;background:var(--bg);color:var(--ink)}
+.st{padding:.3rem .6rem;border-radius:6px;margin:.2rem 0;background:var(--bg)}.st.on{background:var(--green);color:#fff}
+.cells{display:flex;gap:.4rem;flex-wrap:wrap;margin:.5rem 0}
+.cell{border:2px solid var(--green);border-radius:8px;padding:.3rem .7rem;text-align:center;background:var(--bg);cursor:pointer;font:700 1rem Nunito,sans-serif;color:var(--ink)}
+.cell small{display:block;color:var(--mute);font-weight:600}
+.cell.on{background:var(--green);color:#fff}.cell.on small{color:#fff}
+.wrap{overflow-x:auto}table{border-collapse:collapse;min-width:520px;width:100%}
+td,th{border:2px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top}th{background:var(--green);color:#fff}
+.hint{display:none;color:var(--mute);font-size:.95rem;margin:.2rem 0 0}.hint.on{display:block}
+label{display:block;font-weight:700;margin-top:.8rem}
+.nr{display:flex;justify-content:space-between;margin-top:2rem}
+@media(prefers-reduced-motion:no-preference){.ch{animation:in .35s ease}@keyframes in{from{opacity:0;transform:translateY(8px)}}}
+</style>
+<style id="sw-bar-css">
+.swbar{position:relative;z-index:20;background:#0f1f4b;color:#fff;font:600 14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;border-bottom:3px solid #f2711c}
+.swbar .swin{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 14px;flex-wrap:wrap}
+.swbar a{color:#fff;text-decoration:none}
+.swbar .swlogo{display:flex;align-items:center;gap:9px;margin-right:auto;min-width:0}
+.swbar .swlogo img{width:34px;height:36px;object-fit:cover;border-radius:6px;flex:none}
+.swbar .swlogo b{display:block;font-size:15px;letter-spacing:.01em}
+.swbar .swlogo small{display:block;color:#f6b93b;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+.swbar .swlinks{display:flex;gap:6px;flex-wrap:wrap}
+.swbar .swlinks a{padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.1);white-space:nowrap}
+.swbar .swlinks a:hover{background:rgba(255,255,255,.2)}
+.swbar .swlinks a.swc{background:#f2711c}
+.swbar .swlinks a.swc:hover{background:#d95f10}
+@media (max-width:560px){.swbar .swlogo small{display:none}.swbar .swlinks{width:100%}.swbar .swlinks a{flex:1;text-align:center;padding:7px 6px}}
+.sw-try{display:inline-flex;align-items:center;gap:.45rem;margin:.6rem .5rem .2rem 0;padding:.55rem 1rem;border-radius:999px;background:#0f1f4b;color:#fff !important;font:700 .92rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;box-shadow:0 6px 16px -8px rgba(15,31,75,.7)}
+.sw-try:hover{background:#f2711c}
+.sw-try svg{width:14px;height:14px;fill:currentColor}
+</style>
+</head>
+<body>
+<div class="swbar" role="navigation" aria-label="Start Well Education"><div class="swin">
+<a class="swlogo" href="programming.html"><img src="images/logo.jpg" alt="Start Well Education logo"><span><b>Start Well Education</b><small>Programming · PF</small></span></a>
+<span class="swlinks"><a href="programming.html">&#8592; Programming</a><a href="oop-bilkul-aasan.html">Next: OOP</a><a class="swc" href="compiler.html">C++ Compiler</a></span>
+</div></div>
+
+<header>
+<h1>PF <span>Bilkul Aasan</span></h1>
+<p class="lead">Procedural Programming ko Cricket aur Bhimber Mart ki misaalon se seekho. Har chapter me chhota demo hai, khud click karke dekho.</p>
+</header>
+<nav><div id="nav"></div></nav>
+<main id="m"></main>
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const C=[
+{id:'pf',t:'PF kya hai?',eq:'PF = Procedural Programming. Program ko chote chote steps me tor do aur ek ke baad ek chalao.',
+ c:['Gully cricket: ek hi banda sab kuch karta hai','1. Batting 2. Bowling 3. Keeping 4. Score likhna'],
+ m:['1. Customer ka naam 2. Cheez ka naam 3. Price 4. Bill 5. Payment','Sab kaam ek jagah, koi dabba nahi, koi team nahi'],
+ code:`int main() {
+  // Step 1
+  cout << "Naam lo";
+  // Step 2
+  cout << "Price lo";
+  // Step 3
+  cout << "Bill banao";
+  return 0;
+}`,tip:'Yaad rakho: PF me program oopar se neeche chalta hai, jaise copy pe line by line likhte ho.',demo:'d1'},
+{id:'data',t:'Data',eq:'PF me data alag pada hota hai. Ye 4 kisam ke hote hain, bas yehi yaad karo.',
+ c:['int: Runs = 50, Wickets = 2','float: Average = 45.5','char: Grade = \'A\'','string: Naam = "Babar"'],
+ m:['int: Price = 2500, Quantity = 2','float: Discount = 10.5','char: Size = \'L\'','string: Customer = "Ali"'],
+ code:`int runs = 50;          // Data
+string naam = "Babar";  // Data
+float average = 45.5;   // Data`,tip:'Yaad rakho: Data = wo cheezain jo tum likhte ho, jaise copy pe naam aur number.',demo:'d2'},
+{id:'fn',t:'Function',eq:'Function = ek kaam jo baar baar karna hai, usko ek naam de do.',
+ c:['Baar baar score badhana hai to function bana do: scoreBarhao()'],
+ m:['Baar baar bill banana hai to function bana do: billBanao()','Har customer ke liye usi ko bula lo'],
+ code:`// Function banaya - kaam likh diya
+void billBanao(int price, int qty) {
+  cout << "Bill = " << price * qty;
+}
+
+int main() {
+  billBanao(2500, 2);   // Ali ke liye
+  billBanao(1000, 5);   // Ahmed ke liye
+}`,tip:'Function = ek baar likho, 100 baar bulao. PF me data (price = 2500) bahar pada hai aur koi bhi usko badal sakta hai.',demo:'d3'},
+{id:'if',t:'If-Else',eq:'Agar ye hua to ye karo, warna wo karo.',
+ c:['Agar score 100 se zyada hai to Jeet Gaye','Warna Haar Gaye'],
+ m:['Agar payment COD hai to cash lo','Warna agar JazzCash hai to mobile se lo','Warna card se lo'],
+ code:`if (payment == "COD") {
+  cout << "Cash Lo";
+} else if (payment == "JazzCash") {
+  cout << "Mobile se Lo";
+} else {
+  cout << "Card se Lo";
+}`,tip:'Yaad rakho: If-Else = chowk pe khare ho ke sochna, dayen jaun ya bayen jaun.',demo:'d4'},
+{id:'loop',t:'Loop',eq:'Ek hi kaam 100 baar karna hai to 100 baar likhna nahi, loop laga do.',
+ c:['6 balls karani hain: 6 baar bowling likhoge? Nahi, loop lagao.'],
+ m:['10 customers ka bill: 10 baar likhoge? Nahi, loop lagao.'],
+ code:`// 1. For: jab pata ho kitni baar
+for (int i = 1; i <= 6; i++) {
+  cout << "Ball " << i << " karwao";
+}
+
+// 2. While: jab tak kaam khatam na ho
+while (customerHai) { cout << "Bill Banao"; }
+
+// 3. Do-While: pehle karo, phir socho
+do { cout << "Khelo"; } while (matchKhatamNahiHua);`,tip:'Yaad rakho: loop = ek hi gaana baar baar bajana.',demo:'d5'},
+{id:'arr',t:'Array',eq:'Ek hi naam ke neeche bohat sa saman rakhna.',
+ c:['11 players ke naam alag variable me? Nahi. Ek array: players'],
+ m:['10 cheezon ke price alag alag? Nahi. Ek array: prices'],
+ code:`int runs[3] = {50, 30, 100};   // 3 players ke runs
+cout << runs[0];               // Babar ke 50
+cout << runs[1];               // Rizwan ke 30
+
+string customers[3] = {"Ali", "Ahmed", "Sara"};`,tip:'Yaad rakho: array = ek hi almari ke 10 khane. Almari ka naam 1, saman 10. Gintii 0 se shuru hoti hai.',demo:'d6'},
+{id:'end',t:'Faide, PF vs OOP, Homework',end:1}
+];
+const nav=$('#nav'),m=$('#m');
+C.forEach((x,i)=>{const b=document.createElement('button');b.textContent=(i<6?(i+1)+'. ':'')+(x.end?'Faide aur Homework':x.t);b.dataset.id=x.id;b.onclick=()=>go(x.id);nav.append(b)});
+
+const D={
+d1(){return `<h3>Try karo: Program line by line chalta hai</h3><div id="sl"></div><button class="btn" id="nx">Agla step chalao</button><button class="btn k" id="rs">Dobara</button><div class="out" id="o">Abhi koi step nahi chala.</div>`},
+d2(){return `<h3>Try karo: Ye kis type ka data hai?</h3><div class="out" id="vq" style="font-size:1.4rem"></div><div><button class="btn" data-t="int">int</button><button class="btn k" data-t="float">float</button><button class="btn r" data-t="char">char</button><button class="btn" data-t="string">string</button></div><div class="out" id="o">Type chuno.</div>`},
+d3(){return `<h3>Try karo: Ek baar likho, kai baar bulao</h3>Price <input id="p" type="number" value="2500"> Qty <input id="q" type="number" value="2"> <button class="btn" id="go">billBanao() bulao</button><div class="out" id="o">Function abhi tak 0 baar bulaya gaya.</div>`},
+d4(){return `<h3>Try karo: Faisla</h3>Payment: <select id="s"><option>COD</option><option>JazzCash</option><option>Card</option></select> <button class="btn" id="go">Chalao</button><div class="out" id="o"></div><hr style="border:1px solid var(--line)">Score: <input id="sc" type="number" value="120"> <button class="btn k" id="go2">Match check</button><div class="out" id="o2"></div>`},
+d5(){return `<h3>Try karo: Loop</h3>Balls <input id="n" type="number" min="1" max="12" value="6"> <button class="btn" id="go">for loop chalao</button><div class="out" id="o">Loop chalao.</div><div style="margin-top:.8rem">Customers abhi baaki: <b id="cn">5</b> <button class="btn k" id="wh">while loop: bill banao</button></div><div class="out" id="o2"></div>`},
+d6(){return `<h3>Try karo: Array ke khane</h3><div class="cells" id="cl"></div><button class="btn r" id="bad">runs[3] maango</button><div class="out" id="o">Kisi khane pe click karo.</div>`}
+};
+const W={
+d1(){const S=['Naam lo','Cheez ka naam lo','Price lo','Bill banao','Payment lo'];let k=0;const sl=$('#sl');
+ const draw=()=>sl.innerHTML=S.map((s,i)=>`<div class="st ${i<k?'on':''}">Step ${i+1}: ${s}</div>`).join('');draw();
+ $('#nx').onclick=()=>{if(k<S.length){k++;draw();$('#o').textContent=k<S.length?'Step '+k+' khatam. Ab agla.':'Program khatam. Sab oopar se neeche, ek ke baad ek.'}};
+ $('#rs').onclick=()=>{k=0;draw();$('#o').textContent='Abhi koi step nahi chala.'}},
+d2(){const Q=[['50','int'],['45.5','float'],["'A'",'char'],['"Babar"','string'],['2500','int'],['10.5','float'],["'L'",'char'],['"Ali"','string']];let i=0;
+ const show=()=>$('#vq').textContent=Q[i][0];show();
+ document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{const ok=b.dataset.t==Q[i][1];$('#o').textContent=ok?'Sahi! '+Q[i][0]+' = '+Q[i][1]:'Galat. '+Q[i][0]+' ka type hai '+Q[i][1];if(ok){i=(i+1)%Q.length;show()}})},
+d3(){let n=0;$('#go').onclick=()=>{const p=+$('#p').value,q=+$('#q').value;n++;$('#o').textContent='billBanao('+p+', '+q+') = '+(p*q)+'\nFunction 1 baar likha, '+n+' baar bulaya gaya.'}},
+d4(){const R={COD:'Cash Lo',JazzCash:'Mobile se Lo'};$('#go').onclick=()=>{const v=$('#s').value;$('#o').textContent=R[v]||'Card se Lo'};
+ $('#go2').onclick=()=>$('#o2').textContent=+$('#sc').value>100?'Jeet Gaye':'Haar Gaye'},
+d5(){$('#go').onclick=()=>{const n=Math.min(12,Math.max(1,+$('#n').value||1));let s='';for(let i=1;i<=n;i++)s+='Ball '+i+' karwao\n';$('#o').textContent=s.trim()};
+ let c=5;$('#wh').onclick=()=>{if(c>0){c--;$('#cn').textContent=c;$('#o2').textContent=c>0?'Bill bana diya. Abhi '+c+' customer baaki.':'Customer khatam, loop ruk gaya.'}else $('#o2').textContent='Koi customer nahi bacha.'}},
+d6(){const R=[50,30,100];const cl=$('#cl');R.forEach((v,i)=>{const b=document.createElement('button');b.className='cell';b.innerHTML=`${v}<small>runs[${i}]</small>`;b.onclick=()=>{cl.querySelectorAll('.cell').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#o').textContent='runs['+i+'] = '+v+['',' (Rizwan)',' (teesra player)'][i]};cl.append(b)});
+ $('#o').textContent='Array me 3 khane hain: 0, 1, 2.';
+ $('#bad').onclick=()=>$('#o').textContent='runs[3] ka khana hai hi nahi! Array me sirf 0, 1, 2 hote hain.'}
+};
+function endPage(){return `<h2 class="ch">PF ke Faide aur Nuksan</h2><div class="wrap box" style="margin-top:1rem"><table><tr><th>Faide</th><th>Nuksan</th></tr>
+<tr><td>Chota program jaldi banta hai</td><td>Bara program sambhalna mushkil</td></tr>
+<tr><td>Samajhna aasan hai</td><td>Data khula hota hai, koi bhi badal sakta hai</td></tr>
+<tr><td>Ek banda sab kar leta hai</td><td>Ek banda thak jata hai, gully cricket jaisa</td></tr>
+<tr><td>Function se kaam dobara use hota hai</td><td>Ek galti ho to poora program ruk jata hai</td></tr></table></div>
+<h2 style="margin-top:2rem">PF vs OOP</h2><div class="wrap box" style="margin-top:1rem"><table><tr><th>PF</th><th>OOP</th></tr>
+<tr><td>Gully cricket: 1 banda sab kuch</td><td>Pakistan team: har banda apna kaam</td></tr>
+<tr><td>Data aur function alag alag</td><td>Data aur function ek dabbe me band</td></tr>
+<tr><td>Program line by line chalta hai</td><td>Program dabbon (objects) se chalta hai</td></tr>
+<tr><td>Chote kaam ke liye best (calculator, chota bill)</td><td>Bare kaam ke liye best (Daraz, WhatsApp, Bhimber Mart app)</td></tr></table></div>
+<h2 style="margin-top:2rem">Roadmap</h2><div class="two" style="margin-top:.8rem"><div class="box c"><h3>Step 1: Pehle PF</h3><p>PF bunyad hai. PF ke baghair OOP samajh nahi aayegi.</p></div><div class="box m"><h3>Step 2: Phir OOP</h3><p>PF ke data + function ko dabbe me band kar do, bas OOP ban gayi.</p></div></div>
+<h2 style="margin-top:2rem">Homework: Bhimber Mart ka PF program</h2>
+<div class="box"><label for="h1">1. Customer ka naam lo (Data)</label><textarea id="h1" rows="2"></textarea><p class="hint">string customer = "Ali";</p>
+<label for="h2">2. Payment COD ho to cash lo (If-Else)</label><textarea id="h2" rows="2"></textarea><p class="hint">if (payment == "COD") { cout &lt;&lt; "Cash Lo"; }</p>
+<label for="h3">3. 5 customers ka bill banao (Loop)</label><textarea id="h3" rows="2"></textarea><p class="hint">for (int i = 1; i &lt;= 5; i++) { billBanao(...); }</p>
+<label for="h4">4. 5 prices ek jagah rakho (Array)</label><textarea id="h4" rows="2"></textarea><p class="hint">int prices[5] = {2500, 1000, 800, 1500, 300};</p>
+<button class="btn k" id="rev" style="margin-top:1rem">Misaal dekho</button></div>`}
+function go(id){
+ let i=C.findIndex(x=>x.id==id);if(i<0)i=0;const x=C[i];
+ nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',b.dataset.id==x.id));
+ let h=x.end?endPage():`<div class="ch"><h2>Chapter ${i+1}: ${x.t}</h2><div class="eq">${x.eq}</div>
+ <div class="two"><div class="box c"><h3>Cricket</h3><ul>${x.c.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div><div class="box m"><h3>Bhimber Mart</h3><ul>${x.m.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div></div>
+ <pre><code>${esc(x.code)}</code></pre><div class="tip">${x.tip}</div><div class="demo">${D[x.demo]()}</div></div>`;
+ const p=C[i-1],n=C[i+1];
+ h+=`<div class="nr">${p?`<button class="btn k" data-go="${p.id}">Pichla</button>`:'<span></span>'}${n?`<button class="btn" data-go="${n.id}">Agla</button>`:''}</div>`;
+ m.innerHTML=h;
+ if(x.end)$('#rev').onclick=()=>m.querySelectorAll('.hint').forEach(e=>e.classList.add('on'));else W[x.demo]();
+ m.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+ if(location.hash!=='#'+x.id)history.replaceState(null,'','#'+x.id);window.scrollTo(0,0);
+}
+addEventListener('hashchange',()=>go(location.hash.slice(1)));
+go(location.hash.slice(1)||'pf');
+</script>
+<script id="sw-try-js">
+(function(){
+  var main=document.getElementById("m");if(!main)return;
+  var ICON='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>';
+  function exId(){var h=(location.hash||'#pf').slice(1);var M={pf:'intro',data:'data',fn:'fn','if':'if',loop:'loop',arr:'arr'};return M[h]?'pf-'+M[h]:'';}
+  function add(){
+    if(main.querySelector('.sw-try'))return;
+    var id=exId(),pre=main.querySelector('pre');if(!id||!pre)return;
+    var a=document.createElement('a');a.className='sw-try';a.href='compiler.html#ex='+id;
+    a.innerHTML=ICON+'Try in compiler';a.title='Open this code in the online C++ compiler and run it';
+    var anchor=pre;anchor.parentNode.insertBefore(a,anchor.nextSibling);
+  }
+  new MutationObserver(add).observe(main,{childList:true});add();
+})();
+</script>
+</body>
+</html>

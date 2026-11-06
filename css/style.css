@@ -1126,3 +1126,8 @@ button[disabled]{opacity:.75;cursor:wait}
 .sol-b{display:inline-flex;align-items:center;gap:7px;background:#fff;color:#0f1f4b;border:1px solid var(--line);border-radius:10px;padding:9px 13px;font:700 .85rem var(--font-body);cursor:pointer}
 .sol-b:hover{border-color:#0f1f4b}
 @media (max-width:600px){.cmp-solbox{padding:12px;max-height:none}.sol-acts>*{flex:1 1 100%;justify-content:center}.cmp-ph{flex-wrap:wrap}}
+.subj-pf{background:linear-gradient(135deg,#e2600d,#f6b93b);box-shadow:0 14px 28px -12px rgba(242,113,28,.8)}
+.sc-orange{background:linear-gradient(135deg,#b84a06,#e2600d 60%,#f6a03b)}
+.subj-cards-2{grid-template-columns:repeat(2,1fr)}
+@media (min-width:1100px){.course-map{grid-template-columns:repeat(3,1fr);max-width:none}}
+@media (max-width:900px){.subj-cards-2{grid-template-columns:1fr}}

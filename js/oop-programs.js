@@ -1,4 +1,4 @@
-/* Ready-to-run C++ programs for the OOP lessons (used by compiler.html). Every program is tested with g++ -std=c++17. */
+/* Ready-to-run C++ programs for the PF and OOP lessons (used by compiler.html). Every program is tested with g++ -std=c++17. */
 window.SW_OOP_PROGRAMS = [
  {
   "id": "start-hello",
@@ -6,6 +6,43 @@ window.SW_OOP_PROGRAMS = [
   "title": "Hello: naam pucho (cin)",
   "stdin": "Ali",
   "code": "// Pehla program: naam pucho aur salam karo\n// Neeche \"Input\" box me apna naam likho, phir Run dabao.\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string naam;\n    cout << \"Apna naam likho: \";\n    if (!(cin >> naam)) naam = \"Student\";\n    cout << \"\\nAssalam-o-Alaikum, \" << naam << \"!\" << endl;\n    cout << \"Start Well Education me C++ seekhne ka shukriya.\" << endl;\n    return 0;\n}\n"
+ },
+ {
+  "id": "pf-intro",
+  "group": "PF Bilkul Aasan",
+  "title": "Chapter 1: PF kya hai?",
+  "code": "// PF Chapter 1: PF kya hai? — program oopar se neeche, step by step chalta hai\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    // Step 1: naam lo\n    string naam = \"Ali\";\n    cout << \"Step 1: Customer ka naam = \" << naam << endl;\n\n    // Step 2: price lo\n    int price = 2500;\n    cout << \"Step 2: Price = \" << price << endl;\n\n    // Step 3: bill banao\n    int qty = 2;\n    cout << \"Step 3: Bill = \" << price * qty << endl;\n    return 0;\n}\n"
+ },
+ {
+  "id": "pf-data",
+  "group": "PF Bilkul Aasan",
+  "title": "Chapter 2: Data",
+  "code": "// PF Chapter 2: Data — 4 kisam: int, float, char, string\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int runs = 50;            // poora number\n    float average = 45.5;     // point wala number\n    char grade = 'A';         // ek akshar\n    string naam = \"Babar\";    // text\n\n    cout << \"Naam: \" << naam << endl;\n    cout << \"Runs: \" << runs << endl;\n    cout << \"Average: \" << average << endl;\n    cout << \"Grade: \" << grade << endl;\n    return 0;\n}\n"
+ },
+ {
+  "id": "pf-fn",
+  "group": "PF Bilkul Aasan",
+  "title": "Chapter 3: Function",
+  "code": "// PF Chapter 3: Function — ek baar likho, baar baar bulao\n#include <iostream>\nusing namespace std;\n\nvoid billBanao(int price, int qty) {\n    cout << \"Bill = \" << price * qty << endl;\n}\n\nint main() {\n    billBanao(2500, 2);   // Ali ke liye\n    billBanao(1000, 5);   // Ahmed ke liye\n    return 0;\n}\n"
+ },
+ {
+  "id": "pf-if",
+  "group": "PF Bilkul Aasan",
+  "title": "Chapter 4: If-Else",
+  "stdin": "JazzCash",
+  "code": "// PF Chapter 4: If-Else — Input box me COD, JazzCash ya Card likh kar Run karo\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string payment;\n    cout << \"Payment ka tareeqa: \";\n    if (!(cin >> payment)) payment = \"COD\";\n    cout << payment << endl;\n\n    if (payment == \"COD\") {\n        cout << \"Cash Lo\" << endl;\n    } else if (payment == \"JazzCash\") {\n        cout << \"Mobile se Lo\" << endl;\n    } else {\n        cout << \"Card se Lo\" << endl;\n    }\n    return 0;\n}\n"
+ },
+ {
+  "id": "pf-loop",
+  "group": "PF Bilkul Aasan",
+  "title": "Chapter 5: Loop",
+  "code": "// PF Chapter 5: Loop — for, while, do-while\n#include <iostream>\nusing namespace std;\n\nint main() {\n    // 1. For: jab pata ho kitni baar\n    for (int i = 1; i <= 6; i++) {\n        cout << \"Ball \" << i << \" karwao\" << endl;\n    }\n\n    // 2. While: jab tak kaam khatam na ho\n    int customers = 3;\n    while (customers > 0) {\n        cout << \"Bill banao (baqi customers: \" << customers << \")\" << endl;\n        customers--;\n    }\n\n    // 3. Do-While: pehle karo, phir socho\n    int over = 1;\n    do {\n        cout << \"Over \" << over << \" khelo\" << endl;\n        over++;\n    } while (over <= 2);\n    return 0;\n}\n"
+ },
+ {
+  "id": "pf-arr",
+  "group": "PF Bilkul Aasan",
+  "title": "Chapter 6: Array",
+  "code": "// PF Chapter 6: Array — ek naam, bohat sa saman. Ginti 0 se shuru!\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int runs[3] = {50, 30, 100};\n    string players[3] = {\"Babar\", \"Rizwan\", \"Fakhar\"};\n\n    cout << players[0] << \" ke runs: \" << runs[0] << endl;\n    cout << players[1] << \" ke runs: \" << runs[1] << endl;\n\n    int total = 0;\n    for (int i = 0; i < 3; i++) {\n        total += runs[i];\n    }\n    cout << \"Total runs: \" << total << endl;\n    return 0;\n}\n"
  },
  {
   "id": "aasan-class",
