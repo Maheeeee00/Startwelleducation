@@ -1151,3 +1151,19 @@ button[disabled]{opacity:.75;cursor:wait}
 .swe-tools{padding:7px;gap:0}
 .swe-tools .swe-ico{width:44px;height:44px;font-size:1.25rem}
 @media (max-width:600px){.swe-tools{padding:6px}.swe-tools .swe-ico{width:40px;height:40px;font-size:1.15rem}}
+/* Learn Well hub */
+.lw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:980px;margin:0 auto}
+.lw-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-sm);color:inherit;transition:.3s}
+.lw-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.lw-top{height:170px;display:grid;place-items:center;font-size:3.6rem;color:#fff;position:relative;overflow:hidden}
+.lw-top::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.12);right:-70px;bottom:-110px}
+.lw-body{padding:26px 28px 28px;display:flex;flex-direction:column;flex:1}
+.lw-body h3{font-size:1.5rem;margin:10px 0 8px}
+.lw-body p{color:var(--muted);margin:0 0 16px;flex:1}
+.lw-body .link{font-weight:800;color:var(--orange);display:inline-flex;align-items:center;gap:8px}
+.lw-strip{display:flex;align-items:center;gap:16px;max-width:980px;margin:28px auto 0;padding:18px 22px;border-radius:18px;background:linear-gradient(135deg,#0b1533,#0f1f4b 60%,#1f3a8a);color:#dbe2ff;box-shadow:var(--shadow-sm);transition:.25s}
+.lw-strip:hover{transform:translateY(-3px);color:#fff}
+.lw-strip b{color:#fff}
+.lw-strip>i{margin-left:auto;color:var(--gold)}
+.lw-code{flex:none;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#e2600d,#f6b93b);color:#fff;display:grid;place-items:center;font:800 1rem ui-monospace,Consolas,monospace}
+@media (max-width:760px){.lw-grid{grid-template-columns:1fr}.lw-top{height:140px}.lw-strip{align-items:flex-start}}
