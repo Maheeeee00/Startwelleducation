@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ur-Latn">
+<head>
+<meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W93FNHKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Big Tech Database Interview &amp; Docker – Level 3 | Startwell</title>
+<link rel="canonical" href="https://www.startwell.edu.pk/database-big-tech">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Startwell Education Bhimber">
+<meta property="og:title" content="Big Tech Database Interview &amp; Docker – Level 3 | Startwell">
+<meta property="og:url" content="https://www.startwell.edu.pk/database-big-tech">
+<meta property="og:image" content="https://www.startwell.edu.pk/images/school-building.jpg">
+<meta property="og:description" content="Prepare for Big Tech database interviews: Docker, SQL rounds, ACID, indexing, system design, replication, MongoDB, Redis, PostgreSQL and a mock interview.">
+<meta name="description" content="Prepare for Big Tech database interviews: Docker, SQL rounds, ACID, indexing, system design, replication, MongoDB, Redis, PostgreSQL and a mock interview.">
+<link rel="icon" href="images/logo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f1e6;--surf:#fffdf5;--ink:#1d2b22;--mute:#5d6b61;--green:#1f6b4a;--ball:#c2332b;--kraft:#b9803f;--line:#d9d4bf;--code:#17241c;--ci:#e8efe0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101a14;--surf:#17241c;--ink:#e8efe0;--mute:#9db0a2;--green:#5fc48f;--ball:#ef6b60;--kraft:#d9a15d;--line:#2b3d31;--code:#0b120e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;line-height:1.15;margin:0}
+header,main{max-width:900px;margin:auto;padding:0 1.2rem}
+header{padding-top:2rem}
+.tag{display:inline-block;background:var(--ball);color:#fff;font:800 .85rem 'Baloo 2',sans-serif;padding:.15rem .7rem;border-radius:999px;letter-spacing:.04em}
+h1{font-size:clamp(2rem,7vw,3.3rem);font-weight:800;margin-top:.4rem}h1 span{color:var(--ball)}
+.lead{color:var(--mute);max-width:64ch;margin:.6rem 0 1rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:2px solid var(--line)}
+nav div{max-width:900px;margin:auto;display:flex;gap:.4rem;overflow-x:auto;padding:.6rem 1.2rem}
+nav button{flex:none;border:2px solid var(--line);background:var(--surf);color:var(--ink);font:700 .9rem Nunito,sans-serif;padding:.35rem .8rem;border-radius:999px;cursor:pointer}
+nav button[aria-current=true]{background:var(--green);border-color:var(--green);color:#fff}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--kraft);outline-offset:2px}
+main{padding-top:1.4rem;padding-bottom:4rem}
+h2{font-size:clamp(1.6rem,5vw,2.3rem);color:var(--green)}
+h3{font-size:1.1rem}
+.prob{font-size:1.05rem;font-weight:700;margin:.8rem 0 1rem;padding:.8rem 1rem;border-left:6px solid var(--ball);background:var(--surf)}
+.note{font-size:.92rem;color:var(--mute);margin:.5rem 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.box{background:var(--surf);border:2px solid var(--line);border-radius:14px;padding:.9rem 1rem}
+pre{background:var(--code);color:var(--ci);border-radius:10px;padding:.8rem;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:.4rem 0}
+.lab{border:2px dashed var(--green);border-radius:14px;padding:1rem;margin:1.2rem 0;background:var(--surf)}
+.btn{border:0;background:var(--green);color:#fff;font:700 .92rem Nunito,sans-serif;padding:.45rem .9rem;border-radius:8px;cursor:pointer;margin:.25rem .35rem .25rem 0}
+.btn.k{background:var(--kraft);color:#1d1408}.btn.r{background:var(--ball)}
+.out{margin-top:.6rem;padding:.6rem .8rem;border-radius:8px;background:var(--bg);font-weight:700;white-space:pre-wrap}
+.wrap{overflow-x:auto;margin:.3rem 0}
+table{border-collapse:collapse;min-width:220px}
+td,th{border:2px solid var(--line);padding:.3rem .7rem;text-align:left;font-size:.93rem;white-space:nowrap}
+th{background:var(--green);color:#fff}
+.co{display:inline-block;background:var(--kraft);color:#1d1408;font:800 .8rem 'Baloo 2',sans-serif;padding:.05rem .6rem;border-radius:999px;margin-right:.4rem}
+details{background:var(--surf);border:2px solid var(--line);border-radius:12px;margin:.5rem 0}
+details[open]{border-color:var(--green)}summary{cursor:pointer;padding:.6rem 1rem;font-weight:700}details>div{padding:0 1rem 1rem}
+label{display:block;margin:.3rem 0;font-weight:600;cursor:pointer}
+.q{margin:1.2rem 0;padding:1rem;border:2px solid var(--line);border-radius:14px;background:var(--surf)}
+.ok{color:var(--green);font-weight:700}.bd{color:var(--ball);font-weight:700}
+.fl{display:flex;align-items:center;gap:.4rem;margin:.8rem 0}.nd{flex:1;text-align:center;padding:.6rem .3rem;border:2px solid var(--line);border-radius:12px;background:var(--bg);font-weight:700;transition:.2s}.nd.on{background:var(--green);color:#fff;border-color:var(--green);transform:scale(1.05)}.ar{font-weight:800;color:var(--mute)}.st{display:inline-block;padding:.1rem .7rem;border-radius:999px;color:#fff;font-weight:800}.s2{background:var(--green)}.s4{background:var(--kraft);color:#1d1408}.s5{background:var(--ball)}
+@media(prefers-reduced-motion:no-preference){.ch{animation:in .35s ease}@keyframes in{from{opacity:0;transform:translateY(8px)}}}
+</style>
+<style id="sw-bar-css">
+.swbar{position:relative;z-index:20;background:#0f1f4b;color:#fff;font:600 14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;border-bottom:3px solid #f2711c}
+.swbar .swin{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 14px;flex-wrap:wrap}
+.swbar a{color:#fff;text-decoration:none}
+.swbar .swlogo{display:flex;align-items:center;gap:9px;margin-right:auto;min-width:0}
+.swbar .swlogo img{width:34px;height:36px;object-fit:cover;border-radius:6px;flex:none}
+.swbar .swlogo b{display:block;font-size:15px;letter-spacing:.01em}
+.swbar .swlogo small{display:block;color:#f6b93b;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+.swbar .swlinks{display:flex;gap:6px;flex-wrap:wrap}
+.swbar .swlinks a{padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.1);white-space:nowrap}
+.swbar .swlinks a:hover{background:rgba(255,255,255,.2)}
+.swbar .swlinks a.swc{background:#f2711c}
+.swbar .swlinks a.swc:hover{background:#d95f10}
+@media (max-width:560px){.swbar .swlogo small{display:none}.swbar .swlinks{width:100%}.swbar .swlinks a{flex:1;text-align:center;padding:7px 6px}}
+.sw-try{display:inline-flex;align-items:center;gap:.45rem;margin:.6rem .5rem .2rem 0;padding:.55rem 1rem;border-radius:999px;background:#0f1f4b;color:#fff !important;font:700 .92rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;box-shadow:0 6px 16px -8px rgba(15,31,75,.7)}
+.sw-try:hover{background:#f2711c}
+.sw-try svg{width:14px;height:14px;fill:currentColor}
+.two>*{min-width:0}
+</style>
+</head>
+<body>
+<div class="swbar" role="navigation" aria-label="Startwell Education"><div class="swin">
+<a class="swlogo" href="/programming"><img src="images/logo.jpg" alt="Startwell Education logo"><span><b>Startwell Education</b><small>Programming · Database L3</small></span></a>
+<span class="swlinks"><a href="/programming">&#8592; Programming</a><a href="/database-bilkul-aasan">← Level 1</a><a class="swc" href="/compiler">C++ Compiler</a></span>
+</div></div>
+
+<header>
+<span class="tag">LEVEL 3 - BIG TECH</span>
+<h1>Big Tech Interview <span>aur Docker</span></h1>
+<p class="lead">Google, Meta, Amazon jaisi companies ke database interviews ke patterns, aur Docker (2026 me industry ka standard). Pehle Docker lab, phir SQL rounds, concepts, system design aur Mock Interview.</p>
+<p class="note">Sawal public interview-prep sites aur candidates ki reports (Interview Query, Glassdoor, PracHub, Exponent, DataDriven, Interview Kickstart) ke patterns par likhe hain, Nov 2026 tak. Companies khud sawal nahi deti, aur har interview alag hota hai. Ek guide ke mutabiq window functions sab se zyada poochhe jane wala advanced topic hai, is liye SQL Rounds me unpar zor hai.</p>
+</header>
+<nav><div id="nav"></div></nav>
+<main id="m"></main>
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const tb=(h,r)=>`<div class="wrap"><table><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr>${r.map(a=>`<tr>${a.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+/* ---------- content ---------- */
+const DQ=[
+['Production me database kaise deploy karte ho?','Docker container me, seedha installation nahi. Image se har jagah same environment milta hai (laptop, test, production). Data ke liye volume lagate hain, password env ya secrets se dete hain, aur config version control me rakhte hain.'],
+['Container aur Virtual Machine me farq?','VM me poora guest OS hota hai (bhari, minutes me boot). Container host ka kernel share karta hai, sirf app aur uski libraries hoti hain (halka, seconds me start).'],
+['Database container me volume kyun zaroori hai?','Container delete ho to uske andar ka data bhi delete ho jata hai. Volume host par alag rehta hai, is liye container naya ban jaye to bhi data bach jata hai.'],
+['Image, Container, Volume me farq?','Image = tayyar naqsha (read only, jaise mysql:8). Container = us image ka chalta hua instance. Volume = data ka mehfooz store jo container se alag hai.']];
+const CQ=[
+['ACID kya hai?','Atomicity: sab ho ya kuch nahi. Consistency: rules na tootein. Isolation: transactions ek doosre me dakhal na dein. Durability: commit ke baad data crash me bhi mehfooz. Misaal: bank transfer me debit aur credit ek saath hon.'],
+['Isolation levels aur unke masle?','Read Uncommitted (dirty read ho sakta hai), Read Committed, Repeatable Read, Serializable (sab se mehfooz, sab se sust). Masle: dirty read, non-repeatable read, phantom read. Zyada isolation = kam concurrency.'],
+['Index andar se kaise kaam karta hai?','Aam taur par B-Tree: sorted structure, lookup O(log n). Composite index (a, b) me leftmost-prefix rule lagta hai: a ya a+b par chalega, sirf b par nahi. Write sust hote hain aur memory lagti hai.'],
+['SQL ya NoSQL, kab kya?','SQL: structured data, joins, transactions (payments). NoSQL: flexible schema, bohat bara scale, simple access pattern (key-value, documents, cache). Aksar dono saath use hote hain.'],
+['CAP theorem?','Distributed system me network partition ke waqt Consistency aur Availability me se ek chunna padta hai. Partition tolerance asal me chhoot nahi sakti. Banking consistency chunti hai, social feed availability.'],
+['Normalization vs Denormalization?','Normalization duplication kam karta hai aur updates safe rakhta hai. Denormalization read tez karne ke liye jaan boojh kar duplicate data rakhta hai (reporting, bare scale). Faisla read/write ratio par.'],
+['Replication aur replication lag?','Primary par write, replicas par read (read scaling aur failover). Replica thoda peeche reh sakta hai (lag), isliye abhi likha hua data replica par na mile. Critical read primary se karo.'],
+['Sharding aur partitioning?','Partitioning: ek hi server par table ko hisson me todna. Sharding: data ko kai servers par todna. Shard key aise chuno ke load barabar baante (hot shard na bane).'],
+['Deadlock kya hai?','2 transactions ek doosre ka lock intezar karein to dono atak jate hain. DB ek ko rollback kar deta hai. Bachao: locks hamesha ek hi tarteeb me lo, transactions chhoti rakho, retry lagao.'],
+['WHERE aur HAVING, UNION aur UNION ALL?','WHERE grouping se pehle rows chaantta hai, HAVING grouping ke baad groups. UNION duplicate hata deta hai (sust), UNION ALL nahi (tez).']];
+const SY=[
+['URL shortener ka database design?','Table urls(short_code PK, long_url, created_at, user_id). short_code pe index/PK. Read bohat zyada, is liye Redis cache aur replicas. Scale par short_code ke hash se shard. Counter ya base62 se unique code, collision check.'],
+['Facebook jaisa friends system: schema aur mutual friends?','friendships(user_id, friend_id) dono taraf row ya ordered pair, index (user_id, friend_id). Mutual friends: dono ke friend lists ka intersection (JOIN ya INTERSECT). Bohat bare scale par graph database ya precomputed lists.'],
+['Payment system me data kaise mehfooz rakhoge?','ACID transactions, double-entry ledger (har lenden ki 2 entries, kabhi delete nahi), idempotency key duplicate se bachane ke liye, balances audit ho sakein. Paisa kabhi eventual consistency par nahi.'],
+['Read-heavy app slow hai, kya karoge?','Pehle naapo (EXPLAIN, slow query log). Phir index, N+1 hatao, pagination, Redis cache, read replicas, aakhir me sharding. Seedha sharding ki taraf kabhi nahi jate.'],
+['Zero downtime schema change kaise?','Expand and contract: naya column add (nullable), code dono ko likhe, data backfill chhote batches me, code naye column se padhe, phir purana hatao. Bari table par lock wala ALTER mat chalao.']];
+const SQ=[
+{co:'Meta',q:'Doosri sab se zyada salary (2nd highest salary) nikalo.',h:'MAX aur subquery, ya DENSE_RANK. Agar sirf 1 hi salary ho to NULL aana chahiye.',
+ a:`SELECT MAX(salary) AS second_highest\nFROM employees\nWHERE salary < (SELECT MAX(salary) FROM employees);\n-- ya: DENSE_RANK() OVER (ORDER BY salary DESC) = 2`,
+ th:['second_highest'],tr:[['95000']]},
+{co:'Amazon',q:'Har manager ki team ka size batao.',h:'Self join: employees ko employees se jodo (manager_id = id).',
+ a:`SELECT m.name, COUNT(*) AS team_size\nFROM employees e\nJOIN employees m ON e.manager_id = m.id\nGROUP BY m.name\nORDER BY team_size DESC;`,
+ th:['name','team_size'],tr:[['Sara','2'],['Zain','1'],['Hina','1']]},
+{co:'Google',q:'Har din kitne alag users login hue (daily active users)?',h:'GROUP BY date aur COUNT(DISTINCT user_id). DISTINCT bhoolna aam ghalti hai.',
+ a:`SELECT login_date, COUNT(DISTINCT user_id) AS dau\nFROM logins\nGROUP BY login_date\nORDER BY login_date;`,
+ th:['login_date','dau'],tr:[['2026-01-01','2'],['2026-01-02','2'],['2026-01-03','3']]},
+{co:'Meta / Google',q:'Har department me sab se zyada salary wala employee (top per group).',h:'Window function: RANK() OVER (PARTITION BY ... ORDER BY ...). Barabri par dono chahiye to RANK, sirf ek to ROW_NUMBER.',
+ a:`SELECT dept, name, salary FROM (\n  SELECT *, RANK() OVER (PARTITION BY dept\n                         ORDER BY salary DESC) AS rk\n  FROM employees) t\nWHERE rk = 1;`,
+ th:['dept','name','salary'],tr:[['HR','Zain','80000'],['IT','Sara','120000'],['Sales','Hina','95000']]},
+{co:'Amazon',q:'Wo employees jinki salary unke department ke average se zyada hai.',h:'AVG() OVER (PARTITION BY dept) se har row ke saath average le aao, phir filter.',
+ a:`SELECT name, dept, salary FROM (\n  SELECT *, AVG(salary) OVER (PARTITION BY dept) AS avg_d\n  FROM employees) t\nWHERE salary > avg_d;`,
+ th:['name','dept','salary'],tr:[['Sara','IT','120000'],['Zain','HR','80000'],['Hina','Sales','95000']]},
+{co:'Google',q:'Wo users nikalo jo lagatar 3 din login hue (streak, gaps and islands).',h:'login_date minus ROW_NUMBER() har streak me same value deti hai. Us par GROUP BY aur HAVING COUNT(*) >= 3.',
+ a:`-- PostgreSQL\nSELECT DISTINCT user_id FROM (\n  SELECT user_id,\n    login_date - ROW_NUMBER() OVER (\n      PARTITION BY user_id ORDER BY login_date)::int AS grp\n  FROM logins) t\nGROUP BY user_id, grp\nHAVING COUNT(*) >= 3;`,
+ th:['user_id'],tr:[['1']]},
+{co:'Meta / Amazon',q:'Wo employees nikalo jo kisi ke manager nahi hain. (NOT IN ka NULL trap yaad rakho.)',h:'manager_id me NULL hai. NOT IN (SELECT manager_id ...) me NULL aaye to koi row nahi milti. NOT EXISTS use karo.',
+ a:`SELECT name FROM employees e\nWHERE NOT EXISTS (\n  SELECT 1 FROM employees x\n  WHERE x.manager_id = e.id);`,
+ th:['name'],tr:[['Ali'],['Ahmed'],['Bilal'],['Noor']]}
+];
+const ST=[
+['Linux Mac ya Windows (WSL) par Docker Desktop install karo, phir terminal kholo.','docker --version'],
+['4 databases, har ek 1 command se (sirf lab ke liye, password 12345).','docker run --name bhimber-mysql -e MYSQL_ROOT_PASSWORD=12345 -p 3306:3306 -d mysql:8\ndocker run --name bhimber-postgres -e POSTGRES_PASSWORD=12345 -p 5432:5432 -d postgres:15\ndocker run --name bhimber-mongo -p 27017:27017 -d mongo\ndocker run --name bhimber-redis -p 6379:6379 -d redis']];
+const COMPOSE=`services:
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: bhimber_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: 12345
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  mysql_data:
+  postgres_data:`;
+/* ---------- tabs ---------- */
+const TABS=['L0 Docker','SQL Rounds','Concepts','System Design','Replication Lab','AWS/VPS Lab','MongoDB','Redis Lab','PostgreSQL','Mongo/Redis Docker','API Lab','Mock Interview'];
+const nav=$('#nav'),m=$('#m');
+TABS.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t;b.dataset.i=i;b.onclick=()=>go(i);nav.append(b)});
+const qa=a=>a.map(q=>`<details><summary>${esc(q[0])}</summary><div>${esc(q[1])}</div></details>`).join('');
+const DBS=[['bhimber-mysql','mysql:8','3306'],['bhimber-postgres','postgres:15','5432'],['bhimber-mongo','mongo','27017'],['bhimber-redis','redis','6379']];
+function docker(){
+ m.innerHTML=`<div class="ch"><h2>L0: Industry databases kaise chalati hai</h2>
+ <div class="prob">Docker ke baghair 2026 me database course adhoora hai. Interview sawal: "Database production me kaise deploy karte ho?" Jawab: Docker container me, setup.exe se nahi.</div>
+ <div class="two"><div class="box"><h3>Pehle (masla)</h3><p>"Sir MySQL Windows pe install nahi ho raha." Har laptop alag, har server alag.</p></div><div class="box"><h3>Ab (Docker)</h3><p>1 command, MySQL, PostgreSQL, MongoDB, Redis sab chalu. Har jagah same.</p></div></div>
+ <h3 style="margin-top:1.2rem">Pehla qadam</h3>${ST.map(s=>`<p>${s[0]}</p><pre>${esc(s[1])}</pre>`).join('')}
+ <div class="lab"><h3>Live Docker Lab (simulation)</h3><p class="note">Ye browser ke andar ka simulator hai, asli Docker nahi. Asli lab apne laptop par chalao. Task: 4 databases chalao aur docker ps dikhao.</p>
+ ${DBS.map((d,i)=>`<button class="btn" data-r="${i}">Run ${d[0].replace('bhimber-','')}</button>`).join('')}<button class="btn k" id="cu">docker compose up -d</button><button class="btn r" id="rm">Sab hatao</button>
+ <pre id="ps"></pre><div class="out" id="ms"></div></div>
+ <div class="lab"><h3>Volume lab: data kyun bachta hai?</h3><label><input type="checkbox" id="vl"> Volume lagao (-v mysql_data:/var/lib/mysql)</label>
+ <button class="btn" id="w">Data likho (INSERT Ali)</button><button class="btn r" id="rc">Container delete karke dobara banao</button><div class="out" id="vo"></div></div>
+ <h3>docker-compose.yml: poore project ki ek file</h3><pre>${esc(COMPOSE)}</pre>
+ <pre>docker compose up -d      # teeno database chalu
+docker compose down       # band (volume bacha rehta hai)
+docker ps                 # kya kya chal raha hai</pre>
+ <p class="note">Purani Compose files me pehli line version: '3.8' hoti thi. Naye Docker Compose me ye line zaroori nahi. Naye Docker me command docker compose (space ke saath) hai, purane me docker-compose.</p>
+ <div class="box"><h3>Backup aur aage ke labs</h3><pre>docker exec bhimber-mysql mysqldump -uroot -p12345 bhimber_db > backup.sql</pre><p>Aage: Replication Lab aur AWS/VPS Lab wale tabs dekho.</p><p class="bd">Production me password 12345 kabhi nahi. Secrets ya env file use karo aur database port internet par khula mat chhodo.</p></div>
+ <h3 style="margin-top:1.2rem">Docker interview sawal</h3>${qa(DQ)}</div>`;
+ const on=new Set();const ps=()=>{$('#ps').textContent='NAMES              IMAGE          PORTS\n'+(on.size?[...on].sort().map(i=>DBS[i][0].padEnd(19)+DBS[i][1].padEnd(15)+'0.0.0.0:'+DBS[i][2]+'->'+DBS[i][2]).join('\n'):'(koi container nahi)');$('#ms').textContent=on.size==4?'4 / 4 databases chal rahe hain. Lab pass!':on.size+' / 4 databases chal rahe hain.'};
+ m.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{on.add(+b.dataset.r);ps()});
+ $('#cu').onclick=()=>{[0,1].forEach(i=>on.add(i));on.add(3);ps();$('#ms').textContent+=' Compose se mysql, postgres, redis ek saath chale. Mongo alag chalao.'};
+ $('#rm').onclick=()=>{on.clear();ps()};ps();
+ let rows=[];const vo=$('#vo');vo.textContent='Pehle data likho.';
+ $('#w').onclick=()=>{rows=['Ali'];vo.textContent='Table me data: Ali';};
+ $('#rc').onclick=()=>{if($('#vl').checked)vo.textContent='Container naya ban gaya. Data: '+(rows.join(', ')||'khali')+'  (volume me tha, bach gaya)';else{rows=[];vo.textContent='Container naya ban gaya. Data: khali. Volume nahi tha, data ud gaya!'}}}
+function sql(){
+ m.innerHTML=`<div class="ch"><h2>SQL Rounds: aksar poochhe jane wale sawal</h2><p class="note">Pehle khud likho, phir Hint, phir Answer, aakhir me Chalao. Sab sawal in 2 tables par hain.</p>
+ <div class="two"><div><b>employees</b>${tb(['id','name','dept','salary','manager_id'],[[1,'Ali','IT',90000,2],[2,'Sara','IT',120000,'NULL'],[3,'Ahmed','HR',70000,4],[4,'Zain','HR',80000,'NULL'],[5,'Hina','Sales',95000,'NULL'],[6,'Bilal','Sales',60000,5],[7,'Noor','IT',85000,2]])}</div><div><b>logins</b>${tb(['user_id','login_date'],[[1,'2026-01-01'],[1,'2026-01-02'],[1,'2026-01-03'],[2,'2026-01-01'],[2,'2026-01-03'],[3,'2026-01-02'],[3,'2026-01-03']])}</div></div>
+ ${SQ.map((s,i)=>`<div class="q"><span class="co">${s.co}</span><b>Q${i+1}.</b> ${esc(s.q)}<details><summary>Hint</summary><div>${esc(s.h)}</div></details><details><summary>Answer</summary><div><pre>${esc(s.a)}</pre></div></details><button class="btn" data-q="${i}">Chalao</button><div id="r${i}"></div></div>`).join('')}
+ <div class="box"><h3>Jaldi yaad rakho</h3><p>Joins, GROUP BY aur window functions (RANK, ROW_NUMBER, AVG OVER) zyada tar rounds ka bunyadi hissa hain. NULL ka dhyan rakho, aur pehle clarifying sawal poochho (duplicates? ties? NULL?).</p></div></div>`;
+ m.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{const s=SQ[b.dataset.q];$('#r'+b.dataset.q).innerHTML=tb(s.th,s.tr)})}
+function plain(t,intro,a){m.innerHTML=`<div class="ch"><h2>${t}</h2><p class="note">${intro}</p>${qa(a)}</div>`}
+const MQ=[
+['MongoDB (document database) aur SQL me farq?','Mongo me data JSON jaisi documents me hota hai, schema flexible, collection table jaisi. SQL me fixed schema aur joins. Mongo tab acha jab data nested ho aur shape badalti rahe. Payments jaisi cheez ke liye aksar SQL.'],
+['Embedding aur Referencing me kya chunoge?','Embed: jo cheez hamesha saath padhi jaye (order ke andar items), 1 read me sab. Reference: bari, bohat badalne wali ya kai jagah share hone wali cheez (user profile). Ek document ki hadd 16 MB hai.'],
+['Aggregation pipeline kya hai?','Stages ki chain. Misaal: top 5 customers by paid amount: db.orders.aggregate([{$match:{status:"paid"}}, {$group:{_id:"$userId", total:{$sum:"$amount"}}}, {$sort:{total:-1}}, {$limit:5}]). $match pehle lagao taake index chale.'],
+['Mongo me index aur explain?','createIndex({email:1}) lagao. explain("executionStats") me COLLSCAN (poori collection scan) ki jagah IXSCAN dikhna chahiye. Compound index me ESR rule: Equality, Sort, Range ki tarteeb.'],
+['Replica set aur election?','1 primary aur kai secondaries. Primary girne par secondaries vote se naya primary chunti hain (majority chahiye, isliye aksar 3 nodes). Write primary par jata hai.'],
+['Sharding me shard key kaise chunte ho?','Ghalat key (sirf timestamp) se ek shard garam ho jata hai. Achi key: high cardinality, barabar taqseem, aur queries ke mutabiq. Hashed key barabar baantti hai lekin range queries kamzor.'],
+['Write concern aur read concern?','w:1 sirf primary ack karta hai. w:"majority" zyada tar nodes par likh ke ack deta hai (mehfooz, sust). Read concern majority sirf committed data padhata hai. Trade-off: safety ya speed.'],
+['Mongo me transactions hote hain?','Haan, multi-document ACID transactions (replica set par 4.0 se, sharded par 4.2 se). Lekin mehnge hain. Behtar design: data ek document me embed karo taake transaction kam lagey.']];
+const RQ=[
+['Redis itna tez kyun hai?','Data RAM me, simple data structures, commands ek single thread event loop me chalti hain (locking nahi). Limit: data RAM se bara nahi ho sakta.'],
+['Persistence: RDB vs AOF?','RDB: waqt waqt par snapshot (chhota file, tez restart, thoda data kho sakta hai). AOF: har write ka log (zyada durable, bari file). Aksar dono lagate hain.'],
+['Eviction policy kya hai?','Memory full ho to konsi keys hatayein: noeviction (error de), allkeys-lru (sab me se kam istemal wali), volatile-lru (sirf TTL wali), allkeys-lfu. Cache ke liye aksar allkeys-lru.'],
+['Cache-aside pattern?','App pehle cache dekhti hai. Miss ho to DB se padhti hai aur TTL ke saath cache me rakhti hai. Write par DB update karke cache key delete karte hain.'],
+['Cache stampede, penetration aur avalanche?','Stampede: mashhoor key expire hote hi hazaron requests DB par (hal: lock, early refresh). Penetration: jo key hai hi nahi uski baar baar query (hal: null cache, bloom filter). Avalanche: bohat si keys ek saath expire (hal: TTL me random jitter).'],
+['Leaderboard kaise banate ho?','Sorted set: ZADD board 150 ali. Top 10: ZREVRANGE board 0 9 WITHSCORES. Update O(log n).'],
+['Redis se rate limiter aur distributed lock?','Rate limit: INCR key, pehli baar EXPIRE. Lock: SET lock:order1 token NX PX 30000 (sirf tab set jab maujood na ho, khud expire). Chhodte waqt check karo ke token apna hai.'],
+['Redis aur Memcached me farq?','Redis me lists, hashes, sorted sets, persistence, replication, pub/sub. Memcached sirf simple key-value cache hai.']];
+const PQ=[
+['Replication: async aur sync me farq?','Async: primary commit karke aage barh jata hai, replica peeche reh sakta hai (tez, lekin failover par data khone ka khatra). Semi-sync ya sync: commit tab jab replica ne data receive kar liya (mehfooz, sust).'],
+['Replication lag me read-after-write kaise sambhalte ho?','User ne abhi likha aur replica par nahi mila. Hal: wo read primary se karo, ya user ko kuch second primary par rakho, ya replica ki lag check karo.'],
+['Split brain kya hai?','Network toot jaye aur 2 nodes dono khud ko primary samajh lein, dono par write ho aur data takraye. Bachao: quorum (majority), fencing, aur automatic failover tool.'],
+['RDS lein ya Docker par khud chalayein?','Managed (RDS): backup, patching, failover, monitoring khud, mehnga lekin kam mehnat. Khud (VPS): sasta aur poora control, lekin backup, security, upgrades teri zimmedari. Seekhne aur chhote project ke liye VPS, critical data ke liye aksar managed.'],
+['Database port internet par khula kyun nahi chhodte?','Bots turant 3306 par brute force shuru kar dete hain. Port sirf localhost ya private network par rakho, SSH tunnel ya VPN se jao, strong password aur firewall lagao.'],
+['Backup sahi hai ye kaise pata chalega?','Jab tak restore na karo pata nahi. Backup dusre server ya S3 par rakho, restore test karo, aur RPO (kitna data khona bardasht) aur RTO (kitni der me wapas) tay karo.']];
+const RC=`services:
+  primary:
+    image: mysql:8.4
+    command: --server-id=1 --log-bin=mysql-bin --gtid-mode=ON --enforce-gtid-consistency=ON
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+    ports: ["3306:3306"]
+    volumes: [primary_data:/var/lib/mysql]
+  replica1:
+    image: mysql:8.4
+    command: --server-id=2 --relay-log=relay-bin --read-only=ON --gtid-mode=ON --enforce-gtid-consistency=ON
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+    ports: ["3307:3306"]
+    volumes: [replica1_data:/var/lib/mysql]
+  replica2:
+    image: mysql:8.4
+    command: --server-id=3 --relay-log=relay-bin --read-only=ON --gtid-mode=ON --enforce-gtid-consistency=ON
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+    ports: ["3308:3306"]
+    volumes: [replica2_data:/var/lib/mysql]
+volumes:
+  primary_data:
+  replica1_data:
+  replica2_data:`;
+const RS_=[['Step 1: teeno servers chalao','docker compose up -d\ndocker ps'],
+['Step 2: primary par replication user banao','docker compose exec primary mysql -uroot -p12345 -e "CREATE USER \'repl\'@\'%\' IDENTIFIED BY \'replpass\'; GRANT REPLICATION SLAVE ON *.* TO \'repl\'@\'%\';"'],
+['Step 3: dono replicas ko primary se jodo','for r in replica1 replica2; do\n  docker compose exec $r mysql -uroot -p12345 -e "CHANGE REPLICATION SOURCE TO SOURCE_HOST=\'primary\', SOURCE_USER=\'repl\', SOURCE_PASSWORD=\'replpass\', SOURCE_AUTO_POSITION=1, GET_SOURCE_PUBLIC_KEY=1; START REPLICA; SET GLOBAL super_read_only=ON;"\ndone'],
+['Step 4: check karo (dono Yes aane chahiye)','docker compose exec replica1 mysql -uroot -p12345 -e "SHOW REPLICA STATUS\\G" | grep -E "Replica_(IO|SQL)_Running:"'],
+['Step 5: test: primary par likho, replica se padho','docker compose exec primary mysql -uroot -p12345 -e "CREATE DATABASE lab; CREATE TABLE lab.t (id INT PRIMARY KEY); INSERT INTO lab.t VALUES (1);"\ndocker compose exec replica1 mysql -uroot -p12345 -e "SELECT * FROM lab.t;"'],
+['Step 6: failover ka tajurba','docker compose stop primary\n# replica1 ko primary banao:\ndocker compose exec replica1 mysql -uroot -p12345 -e "STOP REPLICA; RESET REPLICA ALL; SET GLOBAL super_read_only=OFF; SET GLOBAL read_only=OFF;"']];
+function repl(){
+ m.innerHTML=`<div class="ch"><h2>Replication Lab: 1 Primary + 2 Replicas</h2><div class="prob">Write primary par, read replicas par. Read load baant jata hai aur primary girne par copy mil jati hai. Docker ke baghair ek laptop par ye mumkin hi nahi.</div>
+ <div class="lab"><h3>Simulator</h3><p class="note">Replication lag: <b id="lv">1000</b> ms</p><input type="range" id="lg" min="0" max="3000" step="250" value="1000" style="width:100%" aria-label="Replication lag">
+ <button class="btn" id="w">Primary par INSERT</button><button class="btn r" id="we">Replica par INSERT</button><button class="btn k" id="d2">Replica 2 band / chalu</button><button class="btn k" id="rs">Reset</button>
+ <div class="two" id="bx" style="margin-top:.6rem"></div><div class="out" id="o">INSERT dabao, phir foran replicas ko dekho.</div></div>
+ <h3>Asli lab (apne laptop par)</h3><p class="note">docker-compose.yml:</p><pre>${esc(RC)}</pre>${RS_.map(s=>`<p><b>${s[0]}</b></p><pre>${esc(s[1])}</pre>`).join('')}
+ <p class="note">Dhyan: root user par read_only lagu nahi hota, isliye Step 3 me super_read_only=ON lagaya. Asli system me app ke liye alag user aur automatic failover tool (jaise managed service ya Orchestrator) use hota hai. Password 12345 sirf lab ke liye.</p>
+ <h3>Interview sawal</h3>${qa(PQ.slice(0,3))}</div>`;
+ let P=[],R=[{r:[],up:1},{r:[],up:1}],n=0;
+ const draw=()=>{const b=$('#bx');if(!b)return;b.innerHTML=[['Primary (3306)',P,1],['Replica 1 (3307)',R[0].r,R[0].up],['Replica 2 (3308)',R[1].r,R[1].up]].map(x=>`<div class="box"><b>${x[0]}</b> ${x[2]?'<span class="ok">UP</span>':'<span class="bd">DOWN</span>'}<br>rows: ${x[1].join(', ')||'-'}</div>`).join('')};
+ $('#lg').oninput=e=>$('#lv').textContent=e.target.value;
+ $('#w').onclick=()=>{const v=++n,lag=+$('#lg').value;P.push(v);R.forEach(x=>{if(x.up)setTimeout(()=>{if(x.up&&!x.r.includes(v)){x.r.push(v);draw()}},lag)});draw();$('#o').textContent='Primary par id '+v+' likha. Replicas par '+lag+' ms baad pahunchega. Is dauran replica se padho to purana data milega (replication lag).'};
+ $('#we').onclick=()=>$('#o').textContent='ERROR 1290: The MySQL server is running with the --super-read-only option so it cannot execute this statement. Replica sirf padhne ke liye hai.';
+ $('#d2').onclick=()=>{const x=R[1];x.up=!x.up;if(x.up){x.r=[...P];$('#o').textContent='Replica 2 wapas aaya aur primary se catch up kar liya (GTID auto position).'}else $('#o').textContent='Replica 2 band. Primary aur Replica 1 chalte rahe, write ruka nahi.';draw()};
+ $('#rs').onclick=()=>{P=[];R.forEach(x=>{x.r=[];x.up=1});n=0;$('#o').textContent='Reset.';draw()};
+ draw()}
+function vps(){
+ const S=[['1. Server lo','AWS EC2 (Ubuntu 24.04, t3.small) ya koi VPS (DigitalOcean, Hetzner ya local provider). Key pair download karo.','ssh -i key.pem ubuntu@SERVER_IP'],
+['2. Docker install karo','','curl -fsSL https://get.docker.com | sudo sh\nsudo usermod -aG docker $USER   # phir dobara login'],
+['3. Firewall','AWS me Security Group: sirf port 22, aur wo bhi apni IP se. 3306 kabhi public nahi.','sudo ufw allow OpenSSH\nsudo ufw enable'],
+['4. Secrets .env me','Strong password, 12345 nahi. .env ko git me mat daalo.','echo "MYSQL_ROOT_PASSWORD=$(openssl rand -base64 24)" > .env\nchmod 600 .env'],
+['5. docker-compose.yml','Port sirf localhost par (127.0.0.1), restart policy, volume.','services:\n  mysql:\n    image: mysql:8.4\n    env_file: .env\n    ports: ["127.0.0.1:3306:3306"]\n    volumes: [mysql_data:/var/lib/mysql]\n    restart: unless-stopped\nvolumes:\n  mysql_data:'],
+['6. Chalao','','docker compose up -d\ndocker compose logs -f mysql'],
+['7. Bahar se kaise jao','Database ko khola nahi, SSH tunnel se jao. Phir laptop par localhost:3306 se connect.','ssh -i key.pem -L 3306:127.0.0.1:3306 ubuntu@SERVER_IP'],
+['8. Backup','Roz chalao (cron se) aur server se bahar copy karo.','docker compose exec -T mysql sh -c \'mysqldump -uroot -p"$MYSQL_ROOT_PASSWORD" --all-databases\' | gzip > backup-$(date +%F).sql.gz\naws s3 cp backup-$(date +%F).sql.gz s3://my-bucket/']];
+ const CK=[['Port sirf 127.0.0.1 par (public nahi)',1],['Strong password, .env me',1],['Firewall: sirf SSH khula',0],['Volume lagi hai',0],['restart: unless-stopped',0],['Roz ka backup',0],['Backup dusri jagah (S3) par',0],['Restore test kar liya',0]];
+ m.innerHTML=`<div class="ch"><h2>AWS / VPS Deployment Lab</h2><div class="prob">Laptop se asli server tak: apna database Docker me VPS par chalao, mehfooz tareeqe se. Freelancing me aksar yehi maanga jata hai.</div>
+ ${S.map(s=>`<h3 style="margin-top:1rem">${s[0]}</h3>${s[1]?`<p style="margin:.2rem 0">${s[1]}</p>`:''}<pre>${esc(s[2])}</pre>`).join('')}
+ <div class="lab"><h3>Kya tumhara setup production ready hai?</h3>${CK.map((c,i)=>`<label><input type="checkbox" data-c="${i}"> ${c[0]}</label>`).join('')}<div class="out" id="o"></div></div>
+ <p class="note">Real kaam ke liye managed database (AWS RDS) bhi option hai: backup, patching aur failover khud ho jate hain, lekin mehnga hota hai.</p>
+ <h3>Interview sawal</h3>${qa(PQ.slice(3))}</div>`;
+ const f=()=>{const c=[...m.querySelectorAll('[data-c]')].map(x=>x.checked),n=c.filter(Boolean).length,crit=CK.some((k,i)=>k[1]&&!c[i]);$('#o').innerHTML=n+' / 8. '+(crit?'<span class="bd">KHATRA: port ya password theek nahi. Ye 2 cheezain pehle theek karo.</span>':n==8?'<span class="ok">Production ready. Shabash!</span>':'<span class="ok">Bunyad theek hai, baaqi cheezain bhi lagao.</span>')};
+ m.querySelectorAll('[data-c]').forEach(x=>x.onchange=f);f()}
+function mongo(){
+ plain('MongoDB: interview sawal','Mongo me data documents (JSON jaisi) me hota hai. Pehle ye example samjho:',MQ);
+ m.firstChild.insertAdjacentHTML('beforeend','<pre>'+esc('// ek order document (items andar embed)\n{ _id: 1, userId: 7, status: "paid", amount: 2500,\n  items: [{ name: "Shirt", qty: 2 }] }\n\n// SQL: SELECT * FROM orders WHERE status=\'paid\' AND amount>2000 ORDER BY amount DESC LIMIT 5\ndb.orders.find({ status: "paid", amount: { $gt: 2000 } })\n  .sort({ amount: -1 }).limit(5)')+'</pre>')}
+const RD={};
+function rcmd(line){const a=line.trim().match(/"[^"]*"|\S+/g)||[];if(!a.length)return'';const c=a[0].toUpperCase(),k=a[1],A=a.slice(2).map(s=>s.replace(/^"|"$/g,''));
+ let x=RD[k];if(x&&x.exp&&Date.now()>x.exp){delete RD[k];x=null}
+ switch(c){
+ case'SET':RD[k]={t:'s',v:A[0]};return'OK';
+ case'SETEX':RD[k]={t:'s',v:A[1],exp:Date.now()+A[0]*1000};return'OK';
+ case'GET':return x?(x.t=='s'?x.v:'WRONGTYPE'):'(nil)';
+ case'INCR':{const n=(x?+x.v:0)+1;RD[k]={t:'s',v:String(n),exp:x&&x.exp};return'(integer) '+n}
+ case'EXPIRE':if(!x)return'(integer) 0';x.exp=Date.now()+A[0]*1000;return'(integer) 1';
+ case'TTL':return!x?'(integer) -2':x.exp?'(integer) '+Math.ceil((x.exp-Date.now())/1000):'(integer) -1';
+ case'DEL':if(x){delete RD[k];return'(integer) 1'}return'(integer) 0';
+ case'LPUSH':{const l=x?x.v:[];A.forEach(v=>l.unshift(v));RD[k]={t:'l',v:l};return'(integer) '+l.length}
+ case'LRANGE':return x?x.v.map((v,i)=>(i+1)+') "'+v+'"').join('\n'):'(empty)';
+ case'HSET':{const h=x?x.v:{};h[A[0]]=A[1];RD[k]={t:'h',v:h};return'(integer) 1'}
+ case'HGETALL':return x?Object.entries(x.v).map(([f,v],i)=>(2*i+1)+') "'+f+'"\n'+(2*i+2)+') "'+v+'"').join('\n'):'(empty)';
+ case'ZADD':{const z=x?x.v:{};z[A[1]]=+A[0];RD[k]={t:'z',v:z};return'(integer) 1'}
+ case'ZRANGE':return x?Object.entries(x.v).sort((p,q)=>p[1]-q[1]).map(([mm,s],i)=>(i+1)+') "'+mm+'" ('+s+')').join('\n'):'(empty)';
+ default:return'ERR command nahi mili. Chalti hain: SET GET SETEX INCR EXPIRE TTL DEL LPUSH LRANGE HSET HGETALL ZADD ZRANGE'}}
+function redis(){
+ const EX=['SET name Ali','GET name','SETEX otp 10 4821','TTL otp','INCR rate:5','LPUSH recent shirt','HSET user:1 naam Ali','HGETALL user:1','ZADD board 150 ali','ZADD board 90 sara','ZRANGE board 0 -1'];
+ m.innerHTML=`<div class="ch"><h2>Redis Lab: commands khud chalao</h2><div class="prob">Redis = RAM me chalne wala key-value store. Cache, rate limiter, leaderboard aur lock, sab me kaam aata hai. Ye chhota simulator hai (sirf kuch commands).</div>
+ <div class="lab"><div>${EX.map((e,i)=>`<button class="btn k" data-e="${i}">${esc(e)}</button>`).join('')}</div>
+ <input type="text" id="ci" placeholder="Command likho aur Enter dabao, jaise: GET name" aria-label="Redis command" style="width:100%;margin-top:.5rem;padding:.5rem .7rem;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit"><pre id="lg" style="min-height:6rem">127.0.0.1:6379&gt; </pre></div>
+ <div class="box"><h3>Challenge: rate limiter banao</h3><p>INCR rate:5 ko 6 baar chalao. Jab count 5 se oopar jaye to 429 hona chahiye. Pehli INCR ke baad EXPIRE rate:5 60 lagao taake 60 second baad reset ho. SETEX ke baad TTL chalao aur ginti ghatti dekho.</p></div>
+ <h3 style="margin-top:1rem">Interview sawal</h3>${qa(RQ)}</div>`;
+ const lg=$('#lg'),ci=$('#ci');lg.textContent='';
+ const run=l=>{if(!l.trim())return;lg.textContent+='127.0.0.1:6379> '+l+'\n'+rcmd(l)+'\n';lg.scrollTop=lg.scrollHeight};
+ ci.onkeydown=e=>{if(e.key=='Enter'){run(ci.value);ci.value=''}};
+ m.querySelectorAll('[data-e]').forEach(b=>b.onclick=()=>run(EX[b.dataset.e]))}
+const PGQ=[
+['PostgreSQL me MVCC kya hai?','Har UPDATE purani row ko mitata nahi, nayi version banata hai. Padhne wale purani version dekhte hain, isliye readers aur writers ek doosre ko block nahi karte. Purani (dead) versions ko VACUUM saaf karta hai. Na ho to table bloat hoti hai.'],
+['EXPLAIN aur EXPLAIN ANALYZE me farq?','EXPLAIN sirf andaza (plan) dikhata hai. EXPLAIN ANALYZE query asal me chalata hai aur asli waqt aur rows batata hai. UPDATE ya DELETE par ANALYZE lagao to BEGIN aur ROLLBACK ke andar lagao. Seq Scan, Index Scan, Bitmap Heap Scan aur Index Only Scan padhna aana chahiye.'],
+['Postgres ke index types?','B-tree (default, barabar, chhota bara, ORDER BY), GIN (JSONB, arrays, full text), GiST (geometry, ranges), BRIN (bohat bari time-ordered tables), Hash. Partial index (WHERE ke saath) aur covering index (INCLUDE) bhi hote hain.'],
+['Window functions ki misalein aur GROUP BY se farq?','ROW_NUMBER, RANK, DENSE_RANK (ranking), LAG, LEAD (pichli ya agli row), running total: SUM(amount) OVER (ORDER BY day). GROUP BY rows ko collapse kar deta hai, window function har row rakhta hai aur saath me hisaab deta hai.'],
+['CTE aur subquery me farq?','CTE (WITH) query ko parhne me aasan banata hai aur recursive ho sakta hai. Postgres 12 se aam CTE aksar inline ho jata hai (MATERIALIZED likho to alag chalta hai). Performance ke liye EXPLAIN dekho.'],
+['JSONB kab use karte ho?','Jab kuch fields flexible hon (settings, attributes). GIN index lagao. Operators: -> aur ->> (nikalo), @> (contains). Joins wala asli data phir bhi normal columns me rakho.'],
+['UPSERT aur idempotency?','INSERT ... ON CONFLICT (idempotency_key) DO NOTHING ya DO UPDATE SET ... Ek statement me insert ya update, race condition se mehfooz. Duplicate order rokne ke liye behtareen.'],
+['Postgres me connection pooling kyun zaroori?','Har connection ke liye alag process banta hai, ye bhari hai. Hazaron connections ki jagah PgBouncer jaisa pooler lagao jo chand asli connections baant deta hai.']];
+const MRQ=[
+['Mongo replica set me 3 node kyun, 2 kyun nahi?','Election ke liye majority chahiye. 3 nodes me 1 gir jaye to 2 (majority) bache rehte hain. 2 nodes me 1 girne par majority nahi, koi primary nahi ban sakta. Arbiter data nahi rakhta lekin vote deta hai.'],
+['Redis Sentinel aur Redis Cluster me farq?','Sentinel: ek primary aur replicas ki nigrani aur automatic failover, data ek node ke size tak. Cluster: data ko kai nodes par shard karta hai (16384 hash slots) aur failover bhi deta hai.'],
+['Redis replication me data kho sakta hai?','Haan. Replication aam taur par async hoti hai, primary girne se pehle jo writes replica tak nahi pahunchi wo kho sakti hain. Zaroori data sirf Redis par mat chhodo, asli database me rakho.']];
+function pgsql(){
+ m.innerHTML=`<div class="ch"><h2>PostgreSQL: MVCC, EXPLAIN, Window Functions</h2><div class="prob">Bohat si companies Postgres use karti hain. Interview me MVCC, VACUUM aur EXPLAIN ke sawal aam hain.</div>
+ <div class="lab"><h3>MVCC aur VACUUM simulator</h3><p class="note">Har UPDATE nayi version banata hai aur purani dead ho jati hai. VACUUM dead versions saaf karta hai.</p><button class="btn" id="u">UPDATE salary</button><button class="btn r" id="dl">DELETE ek row</button><button class="btn k" id="vc">VACUUM</button><button class="btn k" id="rs">Reset</button><div id="t"></div><div class="out" id="o"></div></div>
+ <h3>Docker me Postgres aur EXPLAIN</h3><pre>${esc("docker run --name bhimber-postgres -e POSTGRES_PASSWORD=12345 -p 5432:5432 -v pg_data:/var/lib/postgresql/data -d postgres:15\n\ndocker exec -it bhimber-postgres psql -U postgres\n\nEXPLAIN ANALYZE SELECT * FROM students WHERE email = 'ali@test.com';")}</pre>
+ <h3>Window function ka example</h3><pre>${esc('SELECT name, dept, salary,\n  RANK() OVER (PARTITION BY dept ORDER BY salary DESC) AS rk,\n  LAG(salary) OVER (PARTITION BY dept ORDER BY salary DESC) AS prev_salary\nFROM employees;')}</pre>
+ <h3>Interview sawal</h3>${qa(PGQ)}</div>`;
+ let T=[];const init=()=>{T=[{i:1,n:'Ali',s:90,d:0},{i:2,n:'Sara',s:120,d:0},{i:3,n:'Ahmed',s:70,d:0}]};
+ const draw=(msg)=>{const L=T.filter(x=>!x.d).length,D=T.length-L;$('#t').innerHTML=tb(['row id','naam','salary','tuple'],T.map(x=>[x.i,x.n,x.s,x.d?'DEAD (purani version)':'live']));$('#o').textContent='Table me '+T.length+' tuples: '+L+' live, '+D+' dead.'+(msg?'\n'+msg:'')+(D>=3?'\nBohat dead tuples: table bloat. VACUUM chalao.':'')};
+ const pick=()=>{const l=T.filter(x=>!x.d);return l[Math.floor(Math.random()*l.length)]};
+ init();draw();
+ $('#u').onclick=()=>{const x=pick();if(!x)return draw('Koi live row nahi.');x.d=1;T.push({i:x.i,n:x.n,s:x.s+5,d:0});draw('UPDATE: row '+x.i+' ki nayi version bani, purani dead ho gayi.')};
+ $('#dl').onclick=()=>{const x=pick();if(!x)return draw('Koi live row nahi.');x.d=1;draw('DELETE: row '+x.i+' dead mark hui, abhi disk par hai.')};
+ $('#vc').onclick=()=>{T=T.filter(x=>!x.d);draw('VACUUM: dead tuples saaf, jagah dobara use hogi.')};
+ $('#rs').onclick=()=>{init();draw()}}
+const MCOM=`services:
+  mongo1:
+    image: mongo:7
+    command: ["mongod","--replSet","rs0","--bind_ip_all"]
+    ports: ["27017:27017"]
+    volumes: [mongo1_data:/data/db]
+  mongo2:
+    image: mongo:7
+    command: ["mongod","--replSet","rs0","--bind_ip_all"]
+    ports: ["27018:27017"]
+    volumes: [mongo2_data:/data/db]
+  mongo3:
+    image: mongo:7
+    command: ["mongod","--replSet","rs0","--bind_ip_all"]
+    ports: ["27019:27017"]
+    volumes: [mongo3_data:/data/db]
+volumes:
+  mongo1_data:
+  mongo2_data:
+  mongo3_data:`;
+const MST=[['Step 1: teeno chalao','docker compose up -d'],
+['Step 2: replica set shuru karo','docker compose exec mongo1 mongosh --eval \'rs.initiate({_id:"rs0",members:[{_id:0,host:"mongo1:27017"},{_id:1,host:"mongo2:27017"},{_id:2,host:"mongo3:27017"}]})\''],
+['Step 3: status dekho (1 PRIMARY, 2 SECONDARY)','docker compose exec mongo1 mongosh --eval \'rs.status().members.map(m => m.name + " " + m.stateStr)\''],
+['Step 4: primary band karo, election dekho','docker compose stop mongo1\n# kuch second baad mongo2 ya mongo3 se:\ndocker compose exec mongo2 mongosh --eval \'rs.status().members.map(m => m.name + " " + m.stateStr)\'']];
+const RCOM=`services:
+  redis-primary:
+    image: redis:7
+    ports: ["6379:6379"]
+  redis-replica:
+    image: redis:7
+    command: redis-server --replicaof redis-primary 6379
+    ports: ["6380:6379"]`;
+const RST=[['Redis Step 1: chalao aur check karo','docker compose up -d\ndocker compose exec redis-replica redis-cli INFO replication   # role:slave, master_link_status:up'],
+['Redis Step 2: primary par likho, replica se padho','docker compose exec redis-primary redis-cli SET a 1\ndocker compose exec redis-replica redis-cli GET a'],
+['Redis Step 3: replica par write (error aayega)','docker compose exec redis-replica redis-cli SET b 2   # READONLY error']];
+function mrdock(){
+ m.innerHTML=`<div class="ch"><h2>Mongo aur Redis ki Replication Docker me</h2><div class="prob">Interview sawal: "Primary gir jaye to kya hota hai?" Mongo me election hoti hai, aur majority chahiye. Neeche khud dekho.</div>
+ <div class="lab"><h3>Mongo election simulator (3 nodes)</h3><p class="note">Kisi node ko band karo. 1 band: election ke baad naya primary. 2 band: majority nahi, primary nahi.</p><div class="two" id="bx"></div><button class="btn" id="wr">Write karo</button><div class="out" id="o"></div></div>
+ <h3>Mongo asli lab</h3><pre>${esc(MCOM)}</pre>${MST.map(s=>`<p><b>${s[0]}</b></p><pre>${esc(s[1])}</pre>`).join('')}
+ <p class="note">Host laptop se connect karna ho to members ke naam (mongo1 wagairah) resolve nahi honge. Isliye commands container ke andar (mongosh) chalaye hain.</p>
+ <h3>Redis asli lab</h3><pre>${esc(RCOM)}</pre>${RST.map(s=>`<p><b>${s[0]}</b></p><pre>${esc(s[1])}</pre>`).join('')}
+ <p class="note">Automatic failover ke liye Redis Sentinel lagta hai. Password aur ports sirf lab ke liye, production me secrets aur private network.</p>
+ <h3>Interview sawal</h3>${qa(MRQ)}</div>`;
+ const N=[{u:1,p:1},{u:1,p:0},{u:1,p:0}];let tm;
+ const draw=()=>{const b=$('#bx');if(!b)return;b.innerHTML=N.map((x,i)=>`<div class="box"><b>mongo${i+1}</b><br>${x.u?(x.p?'<span class="ok">PRIMARY</span>':'SECONDARY'):'<span class="bd">DOWN</span>'}<br><button class="btn ${x.u?'r':'k'}" data-n="${i}">${x.u?'Band karo':'Chalu karo'}</button></div>`).join('')};
+ const elect=()=>{clearTimeout(tm);const al=N.filter(x=>x.u).length;
+  if(al<2){N.forEach(x=>x.p=0);$('#o').textContent='Majority (2 / 3) nahi hai. Koi PRIMARY nahi, write nahi ho sakta.';draw();return}
+  if(N.some(x=>x.u&&x.p)){$('#o').textContent='Primary chal raha hai. Majority maujood hai.';draw();return}
+  $('#o').textContent='Primary nahi hai. Election chal rahi hai...';draw();
+  tm=setTimeout(()=>{const i=N.findIndex(x=>x.u);if(i>=0&&$('#o')){N[i].p=1;$('#o').textContent='Election khatam. mongo'+(i+1)+' naya PRIMARY bana.';draw()}},1200)};
+ $('#bx').onclick=e=>{const b=e.target.closest('[data-n]');if(!b)return;const x=N[b.dataset.n];x.u=x.u?0:1;if(!x.u)x.p=0;elect()};
+ $('#wr').onclick=()=>$('#o').textContent=N.some(x=>x.u&&x.p)?'Write primary par ho gaya aur secondaries ko replicate hoga.':'MongoServerError: not primary. Write nahi hua.';
+ draw();$('#o').textContent='Sab theek hai. Koi node band karke dekho.'}
+const APQ=[
+['PUT aur PATCH me farq?','PUT poora resource badalta hai (saare fields bhejne padte hain). PATCH sirf bheje hue fields badalta hai. SQL me dono UPDATE hain.'],
+['401 aur 403 me farq?','401: token nahi diya ya ghalat hai (tum kaun ho, pata nahi). 403: tum kaun ho pata hai, lekin is cheez ka haq nahi.'],
+['Kaun se HTTP methods idempotent hain?','GET, PUT, DELETE (aur HEAD, OPTIONS). POST nahi, isliye duplicate se bachne ke liye Idempotency-Key lagate hain.'],
+['REST aur GraphQL me farq?','REST me har resource ka endpoint hota hai aur server tay karta hai kya milega. GraphQL me ek endpoint hota hai aur client khud fields likhta hai (kam over aur under fetching). GraphQL me errors ke saath bhi aksar 200 aata hai, aur caching mushkil.'],
+['Pagination: offset aur cursor me kya farq?','Offset (page, limit): aasan, lekin bara OFFSET sust hota hai aur beech me data badle to rows chhoot ya doobara aa sakti hain. Cursor (WHERE id > last_id): tez aur stable, lekin seedha page 50 par nahi ja sakte.'],
+['Database ka error client ko kyun nahi dikhate?','Andar ki tafseel (table ke naam, SQL) hacker ke kaam aati hai. Client ko saaf 500 ya 503 aur request id do, asli error server log me rakho.']];
+let AP,AO,AK,AC;
+const apReset=()=>{AP=[{id:1,name:'Shirt',price:2500,category:'shirt',stock:10},{id:2,name:'Shoes',price:4000,category:'shoes',stock:5},{id:3,name:'Polo',price:1800,category:'shirt',stock:8}];AO=[{id:101,user_id:1,product_id:1,qty:2},{id:102,user_id:2,product_id:2,qty:1}];AK={};AC=0};
+const nf=()=>({s:404,sql:`-- 0 rows mili`,rows:[],body:{error:'Product not found'}});
+const un=()=>({s:401,sql:null,rows:[],body:{error:'Token nahi diya, pehle login karo'},h:{'WWW-Authenticate':'Bearer'}});
+const ord=id=>({l:'GET: order '+id+' (token chahiye)',m:'GET',u:'/api/orders/'+id,a:1,f:q=>{if(!q.tok)return un();const o=AO.find(x=>x.id==id);if(!o)return nf();if(o.user_id!=1)return{s:403,sql:`SELECT user_id FROM orders WHERE id = ${id};`,rows:[{user_id:o.user_id}],body:{error:'Ye order tumhara nahi hai'}};const p=AP.find(x=>x.id==o.product_id)||{};return{s:200,sql:`SELECT o.id AS order_id, u.name AS user, p.name AS product, o.qty\nFROM orders o\nJOIN users u ON o.user_id = u.id\nJOIN products p ON o.product_id = p.id\nWHERE o.id = ${id};`,rows:[{order_id:o.id,user:'Ali',product:p.name,qty:o.qty}],body:{id:o.id,user:{id:1,name:'Ali'},items:[{product:p.name,qty:o.qty}]}}}});
+const AX=[
+{l:'GET: saare products',m:'GET',u:'/api/products',f:()=>{const r=AP.map(({id,name,price})=>({id,name,price}));return{s:200,sql:`SELECT id, name, price FROM products;`,rows:r,body:{data:r}}}},
+{l:'GET: filter + pagination',m:'GET',u:'/api/products?category=shirt&page=1&limit=1',f:()=>{const f=AP.filter(x=>x.category=='shirt'),r=f.slice(0,1);return{s:200,sql:`SELECT * FROM products WHERE category = 'shirt'\nORDER BY id LIMIT 1 OFFSET 0;\n-- total ke liye: SELECT COUNT(*) FROM products WHERE category = 'shirt';`,rows:r,body:{page:1,limit:1,total:f.length,data:r}}}},
+{l:'GET: ek product (id 2)',m:'GET',u:'/api/products/2',f:()=>{const r=AP.filter(x=>x.id==2);return r.length?{s:200,sql:`SELECT * FROM products WHERE id = 2;`,rows:r,body:r[0]}:nf()}},
+{l:'GET: product jo hai hi nahi (404)',m:'GET',u:'/api/products/99',f:()=>({s:404,sql:`SELECT * FROM products WHERE id = 99;`,rows:[],body:{error:'Product not found'}})},
+{l:'POST: naya product (201)',m:'POST',u:'/api/products',b:{name:'Cap',price:800,category:'hat',stock:20},f:()=>{const id=Math.max(0,...AP.map(x=>x.id))+1,n={id,name:'Cap',price:800,category:'hat',stock:20};AP.push(n);return{s:201,sql:`INSERT INTO products (name, price, category, stock)\nVALUES ('Cap', 800, 'hat', 20);`,rows:[n],body:n,h:{Location:'/api/products/'+id}}}},
+{l:'POST: ghalat data (422 validation)',m:'POST',u:'/api/products',b:{name:'',price:-5},f:()=>({s:422,sql:null,rows:[],body:{error:'Validation failed',details:[{field:'name',msg:'khali nahi ho sakta'},{field:'price',msg:'0 se bara hona chahiye'}]}})},
+{l:'PUT: poora product badlo',m:'PUT',u:'/api/products/2',b:{name:'Shoes Pro',price:4500,category:'shoes',stock:5},f:()=>{const x=AP.find(p=>p.id==2);if(!x)return nf();Object.assign(x,{name:'Shoes Pro',price:4500,category:'shoes',stock:5});return{s:200,sql:`UPDATE products\nSET name = 'Shoes Pro', price = 4500, category = 'shoes', stock = 5\nWHERE id = 2;`,rows:[x],body:x}}},
+{l:'PATCH: sirf price badlo',m:'PATCH',u:'/api/products/2',b:{price:3999},f:()=>{const x=AP.find(p=>p.id==2);if(!x)return nf();x.price=3999;return{s:200,sql:`UPDATE products SET price = 3999 WHERE id = 2;`,rows:[x],body:x}}},
+{l:'DELETE: product mitao (204)',m:'DELETE',u:'/api/products/3',f:()=>{const i=AP.findIndex(p=>p.id==3);if(i<0)return nf();AP.splice(i,1);return{s:204,sql:`DELETE FROM products WHERE id = 3;`,rows:[],body:null}}},
+ord(101),ord(102),
+{l:'POST: order + Idempotency-Key',m:'POST',u:'/api/orders',a:1,hd:1,b:{product_id:1,qty:1},f:q=>{if(!q.tok)return un();if(AK.k)return{s:200,sql:`SELECT * FROM orders WHERE idempotency_key = 'abc-123';\n-- UNIQUE ne duplicate roka, purana order wapas`,rows:[AK.k],body:AK.k,h:{'Idempotent-Replayed':'true'}};const id=Math.max(0,...AO.map(x=>x.id))+1,o={id,user_id:1,product_id:1,qty:1};AO.push(o);AK.k=o;return{s:201,sql:`INSERT INTO orders (user_id, product_id, qty, idempotency_key)\nVALUES (1, 1, 1, 'abc-123');`,rows:[o],body:o,h:{Location:'/api/orders/'+id}}}},
+{l:'GET: search (rate limit 5)',m:'GET',u:'/api/search?q=shirt',f:()=>{AC++;if(AC>5)return{s:429,sql:null,rows:[],body:{error:'Bohat zyada requests, thoda ruko'},h:{'Retry-After':'30'}};const r=AP.filter(x=>/shirt/i.test(x.name));return{s:200,sql:`SELECT * FROM products WHERE name LIKE '%shirt%';`,rows:r,body:{data:r},h:{'X-RateLimit-Remaining':String(5-AC)}}}},
+{l:'GET: server error (DB band, 500)',m:'GET',u:'/api/report',f:()=>({s:500,sql:`-- ERROR: connection refused (database server band hai)`,rows:[],body:{error:'Internal Server Error',request_id:'req-8f3a'}})},
+{l:'POST: GraphQL (sirf maange fields)',m:'POST',u:'/graphql',b:{query:'{ product(id: 2) { name price } }'},f:()=>{const x=AP.find(p=>p.id==2);return{s:200,sql:`SELECT name, price FROM products WHERE id = 2;`,rows:x?[{name:x.name,price:x.price}]:[],body:x?{data:{product:{name:x.name,price:x.price}}}:{data:{product:null},errors:[{message:'Not found'}]}}}}
+];
+function api(){
+ const ST={200:'OK',201:'Created',204:'No Content',401:'Unauthorized',403:'Forbidden',404:'Not Found',422:'Unprocessable Entity',429:'Too Many Requests',500:'Internal Server Error'};
+ const cls=s=>s<300?'s2':s<500?'s4':'s5';
+ const tbo=r=>r.length?tb(Object.keys(r[0]),r.map(o=>Object.values(o))):'<p class="note">(0 rows)</p>';
+ m.innerHTML=`<div class="ch"><h2>API Lab: database se JSON tak</h2>
+ <div class="prob">API = restaurant ka waiter. Client (customer) order deta hai, API (waiter) kitchen (database) se cheez laata hai aur plate (JSON) me wapas deta hai. Customer kitchen me nahi jata.</div>
+ <div class="lab"><h3>Live: request bhejo aur safar dekho</h3><select id="ps" aria-label="API request chuno" style="max-width:100%;padding:.4rem;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit"></select>
+ <label><input type="checkbox" id="tk"> Token bhejo (Ali ka login)</label><button class="btn" id="sd">Request bhejo</button><button class="btn k" id="rs">Database reset</button>
+ <div class="fl"><div class="nd" id="n0">Client<br><small>Browser / App</small></div><span class="ar">&rarr;</span><div class="nd" id="n1">API Server<br><small>Node / Express</small></div><span class="ar">&rarr;</span><div class="nd" id="n2">Database<br><small>MySQL</small></div></div>
+ <div class="out" id="lg">Request chuno aur Bhejo dabao.</div>
+ <div class="two"><div><h3>1. HTTP Request</h3><pre id="rq"></pre></div><div><h3>2. SQL jo chali</h3><pre id="sq"></pre></div></div>
+ <div class="two"><div><h3>3. Database ne diya</h3><div id="rw"></div></div><div><h3>4. JSON Response</h3><div id="rp"></div></div></div>
+ <h3>Database ki halat (products)</h3><div id="db"></div></div>
+ <h3>HTTP methods aur SQL (CRUD)</h3>${tb(['Method','Kaam','SQL','Idempotent?','Success code'],[['GET','Padhna','SELECT','Haan','200'],['POST','Naya banana','INSERT','Nahi','201'],['PUT','Poora badalna','UPDATE (saare fields)','Haan','200'],['PATCH','Thoda badalna','UPDATE (kuch fields)','Aksar','200'],['DELETE','Mitana','DELETE','Haan','204']])}
+ <h3 style="margin-top:1rem">API ki qismein</h3>${tb(['Qism','Kab','Misaal'],[['REST (HTTP + JSON)','Aam web aur mobile apps','GET /api/products'],['GraphQL','Client khud fields chune, 1 endpoint','POST /graphql { product { name } }'],['gRPC','Services ke beech tez, binary','Internal microservices'],['WebSocket','Live do-tarfa (chat, score)','Live cricket score'],['Webhook','Doosra server tumhe call kare','JazzCash payment confirm'],['SOAP (XML)','Purane bank / enterprise systems','Legacy integration']])}
+ <h3 style="margin-top:1rem">Status codes</h3>${tb(['Code','Matlab'],[['200 / 201 / 204','Theek / ban gaya / theek, body khali'],['400 / 422','Ghalat request / validation fail'],['401 / 403','Login nahi / haq nahi'],['404 / 409','Mila nahi / takraav (duplicate)'],['429','Bohat zyada requests (rate limit)'],['500 / 503','Server ghalti / service band']])}
+ <h3 style="margin-top:1rem">Interview sawal</h3>${qa(APQ)}</div>`;
+ apReset();const sel=$('#ps');AX.forEach((x,i)=>{const o=document.createElement('option');o.value=i;o.textContent=x.l;sel.append(o)});
+ const dbv=()=>{if($('#db'))$('#db').innerHTML=tbo(AP)};
+ let T=[];const clr=()=>{['#rq','#sq','#rw','#rp'].forEach(s=>$(s).innerHTML='');$('#lg').textContent='';[0,1,2].forEach(k=>$('#n'+k).classList.remove('on'))};
+ $('#sd').onclick=()=>{T.forEach(clearTimeout);T=[];clr();const x=AX[sel.value],tok=$('#tk').checked,res=x.f({tok}),js=x.b?JSON.stringify(x.b,null,2):'';
+  const rq=x.m+' '+x.u+' HTTP/1.1\nHost: api.bhimber.pk\nAccept: application/json'+(x.a&&tok?'\nAuthorization: Bearer eyJhbGciOi...':'')+(x.hd?'\nIdempotency-Key: abc-123':'')+(x.b?'\nContent-Type: application/json\n\n'+js:'');
+  const hd=Object.assign({'Content-Type':'application/json'},res.h||{});
+  const rp='HTTP/1.1 '+res.s+' '+(ST[res.s]||'')+'\n'+Object.entries(hd).map(([k,v])=>k+': '+v).join('\n')+'\n\n'+(res.body===null?'(khali body)':JSON.stringify(res.body,null,2));
+  const S=[[0,'1. Client request bhejta hai',()=>$('#rq').textContent=rq],[1,'2. API server token aur data check karta hai',()=>{}]];
+  if(res.sql)S.push([2,'3. Server database se SQL ke zariye poochhta hai',()=>$('#sq').textContent=res.sql],[2,'4. Database rows wapas deta hai',()=>$('#rw').innerHTML=tbo(res.rows)]);
+  else S.push([1,'(Check yahin fail hua: database tak request gayi hi nahi)',()=>{$('#sq').textContent='-- koi SQL nahi chali';$('#rw').innerHTML='<p class="note">(database se kuch nahi aaya)</p>'}]);
+  S.push([1,'5. Server rows ko JSON me badalta hai',()=>{}],[0,'6. Client ko response mil gaya',()=>{$('#rp').innerHTML='<span class="st '+cls(res.s)+'">'+res.s+' '+(ST[res.s]||'')+'</span><pre>'+esc(rp)+'</pre>';dbv()}]);
+  S.forEach((s,i)=>T.push(setTimeout(()=>{if(!$('#lg'))return;[0,1,2].forEach(k=>$('#n'+k).classList.toggle('on',k==s[0]));$('#lg').textContent+=s[1]+'\n';s[2]()},i*650)))};
+ $('#rs').onclick=()=>{T.forEach(clearTimeout);apReset();clr();$('#lg').textContent='Database wapas shuru ki halat me.';dbv()};
+ dbv()}
+let TM=null;
+function mock(){
+ const all=[...DQ,...CQ,...SY,...MQ,...RQ,...PQ,...PGQ,...MRQ,...APQ];if(!TM)TM={l:[...all].sort(()=>Math.random()-.5),i:0,ok:0};const T=TM;
+ if(T.i>=T.l.length){m.innerHTML=`<div class="ch"><h2>Mock Interview khatam</h2><div class="prob">Score: ${T.ok} / ${T.l.length}. ${T.ok>=T.l.length*.75?'Tayyar ho. Ab SQL Rounds dobara timer laga ke karo.':T.ok>=T.l.length*.5?'Achha hai. Jo na aaye wo tabs dobara parho.':'Concepts aur Docker tabs dobara parho, phir koshish karo.'}</div><button class="btn" id="ag">Dobara shuru</button></div>`;$('#ag').onclick=()=>{TM=null;mock()};return}
+ const c=T.l[T.i];
+ m.innerHTML=`<div class="ch"><h2>Mock Interview</h2><p class="note">Sawal ${T.i+1} / ${T.l.length}. Pehle zubaan se jawab do.</p><div class="prob">${esc(c[0])}</div><button class="btn k" id="sh">Answer dekho</button><div id="an"></div></div>`;
+ $('#sh').onclick=()=>{$('#an').innerHTML=`<div class="box">${esc(c[1])}</div><p>Tumhe pata tha?</p><button class="btn" id="y">Haan</button><button class="btn r" id="n">Nahi</button>`;$('#y').onclick=()=>{T.ok++;T.i++;mock()};$('#n').onclick=()=>{T.i++;mock()}}}
+function go(i){
+ nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',b.dataset.i==i));
+ [docker,sql,()=>plain('Concepts: theory jo har jagah poochhi jati hai','Short, saaf jawab do: pehle definition, phir ek misaal, phir trade-off.',CQ),()=>plain('System Design: database wale sawal','Pehle requirements poochho (read ya write zyada, scale kitna), phir design batao.',SY),repl,vps,mongo,redis,pgsql,mrdock,api,mock][i]();
+ history.replaceState(null,'','#t'+i);window.scrollTo(0,0)}
+go(Math.min(Math.max(parseInt(location.hash.slice(2))||0,0),11));
+</script>
+<script id="sw-try-js">
+(function(){
+  var main=document.getElementById("m");if(!main)return;
+  var ICON='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>';
+  function exId(){return '';}
+  function add(){
+    if(main.querySelector('.sw-try'))return;
+    var id=exId(),pre=main.querySelector('pre');if(!id||!pre)return;
+    var a=document.createElement('a');a.className='sw-try';a.href='/compiler#ex='+id;
+    a.innerHTML=ICON+'Try in compiler';a.title='Open this code in the online C++ compiler and run it';
+    var anchor=pre;anchor.parentNode.insertBefore(a,anchor.nextSibling);
+  }
+  new MutationObserver(add).observe(main,{childList:true});add();
+})();
+</script>
+</body>
+</html>

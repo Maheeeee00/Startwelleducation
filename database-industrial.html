@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ur-Latn">
+<head>
+<meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W93FNHKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Database Interview Crack – Industrial Level 2 | Startwell</title>
+<link rel="canonical" href="https://www.startwell.edu.pk/database-industrial">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Startwell Education Bhimber">
+<meta property="og:title" content="Database Interview Crack – Industrial Level 2 | Startwell">
+<meta property="og:url" content="https://www.startwell.edu.pk/database-industrial">
+<meta property="og:image" content="https://www.startwell.edu.pk/images/school-building.jpg">
+<meta property="og:description" content="8 real production database problems: N+1 queries, indexes, connection pools, caching, idempotency, rate limiting, with live demos and a mock interview.">
+<meta name="description" content="8 real production database problems: N+1 queries, indexes, connection pools, caching, idempotency, rate limiting, with live demos and a mock interview.">
+<link rel="icon" href="images/logo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f1e6;--surf:#fffdf5;--ink:#1d2b22;--mute:#5d6b61;--green:#1f6b4a;--ball:#c2332b;--kraft:#b9803f;--line:#d9d4bf;--code:#17241c;--ci:#e8efe0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101a14;--surf:#17241c;--ink:#e8efe0;--mute:#9db0a2;--green:#5fc48f;--ball:#ef6b60;--kraft:#d9a15d;--line:#2b3d31;--code:#0b120e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;line-height:1.15;margin:0}
+header,main{max-width:900px;margin:auto;padding:0 1.2rem}
+header{padding-top:2rem}
+.tag{display:inline-block;background:var(--ball);color:#fff;font:800 .85rem 'Baloo 2',sans-serif;padding:.15rem .7rem;border-radius:999px;letter-spacing:.04em}
+h1{font-size:clamp(2rem,7vw,3.4rem);font-weight:800;margin-top:.4rem}h1 span{color:var(--ball)}
+.lead{color:var(--mute);max-width:62ch;margin:.6rem 0 1rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:2px solid var(--line)}
+nav div{max-width:900px;margin:auto;display:flex;gap:.4rem;overflow-x:auto;padding:.6rem 1.2rem}
+nav button{flex:none;border:2px solid var(--line);background:var(--surf);color:var(--ink);font:700 .9rem Nunito,sans-serif;padding:.35rem .75rem;border-radius:999px;cursor:pointer}
+nav button[aria-current=true]{background:var(--green);border-color:var(--green);color:#fff}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--kraft);outline-offset:2px}
+main{padding-top:1.4rem;padding-bottom:4rem}
+h2{font-size:clamp(1.6rem,5vw,2.3rem);color:var(--green)}
+.prob{font-size:1.1rem;font-weight:700;margin:.8rem 0 1rem;padding:.8rem 1rem;border-left:6px solid var(--ball);background:var(--surf)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.box{background:var(--surf);border:2px solid var(--line);border-radius:14px;padding:.9rem 1rem}
+h3{font-size:1.1rem}
+pre{background:var(--code);color:var(--ci);border-radius:10px;padding:.8rem;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:.4rem 0}
+.bd{color:var(--ball)}.gd{color:var(--green)}
+.lab{border:2px dashed var(--green);border-radius:14px;padding:1rem;margin:1.2rem 0;background:var(--surf)}
+.btn{border:0;background:var(--green);color:#fff;font:700 .95rem Nunito,sans-serif;padding:.5rem 1rem;border-radius:8px;cursor:pointer;margin:.3rem .4rem .3rem 0}
+.btn.k{background:var(--kraft);color:#1d1408}.btn.r{background:var(--ball)}
+input[type=range]{width:100%;accent-color:var(--green)}
+input[type=text]{width:100%;font:inherit;padding:.5rem .7rem;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.out{margin-top:.6rem;padding:.6rem .8rem;border-radius:8px;background:var(--bg);font-weight:700;white-space:pre-wrap}
+.bar{height:20px;border-radius:6px;margin:.2rem 0 .6rem;min-width:4px;transition:width .3s}
+.b1{background:var(--ball)}.b2{background:var(--green)}
+.cnt{display:flex;gap:.6rem;flex-wrap:wrap}.cnt div{flex:1;min-width:130px;text-align:center;padding:.5rem;border-radius:10px;background:var(--bg);border:2px solid var(--line)}.cnt b{display:block;font:800 1.8rem 'Baloo 2',sans-serif}
+.rsm{background:var(--kraft);color:#1d1408;border-radius:10px;padding:.7rem 1rem;font-weight:700;margin:1rem 0}
+details{background:var(--surf);border:2px solid var(--line);border-radius:12px;margin:.5rem 0}
+details[open]{border-color:var(--green)}summary{cursor:pointer;padding:.6rem 1rem;font-weight:700}details p{margin:0;padding:0 1rem 1rem}
+label{display:block;margin:.3rem 0;font-weight:600;cursor:pointer}
+.ml{display:flex;justify-content:space-between;gap:.5rem;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--line)}
+.nr{display:flex;justify-content:space-between;margin-top:2rem}
+.hero{display:flex;gap:.6rem;flex-wrap:wrap;margin:.4rem 0 1rem}.hero span{background:var(--surf);border:2px solid var(--line);padding:.2rem .7rem;border-radius:999px;font-weight:700;font-size:.9rem}
+@media(prefers-reduced-motion:no-preference){.ch{animation:in .35s ease}@keyframes in{from{opacity:0;transform:translateY(8px)}}}
+</style>
+<style id="sw-bar-css">
+.swbar{position:relative;z-index:20;background:#0f1f4b;color:#fff;font:600 14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;border-bottom:3px solid #f2711c}
+.swbar .swin{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 14px;flex-wrap:wrap}
+.swbar a{color:#fff;text-decoration:none}
+.swbar .swlogo{display:flex;align-items:center;gap:9px;margin-right:auto;min-width:0}
+.swbar .swlogo img{width:34px;height:36px;object-fit:cover;border-radius:6px;flex:none}
+.swbar .swlogo b{display:block;font-size:15px;letter-spacing:.01em}
+.swbar .swlogo small{display:block;color:#f6b93b;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+.swbar .swlinks{display:flex;gap:6px;flex-wrap:wrap}
+.swbar .swlinks a{padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.1);white-space:nowrap}
+.swbar .swlinks a:hover{background:rgba(255,255,255,.2)}
+.swbar .swlinks a.swc{background:#f2711c}
+.swbar .swlinks a.swc:hover{background:#d95f10}
+@media (max-width:560px){.swbar .swlogo small{display:none}.swbar .swlinks{width:100%}.swbar .swlinks a{flex:1;text-align:center;padding:7px 6px}}
+.sw-try{display:inline-flex;align-items:center;gap:.45rem;margin:.6rem .5rem .2rem 0;padding:.55rem 1rem;border-radius:999px;background:#0f1f4b;color:#fff !important;font:700 .92rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;box-shadow:0 6px 16px -8px rgba(15,31,75,.7)}
+.sw-try:hover{background:#f2711c}
+.sw-try svg{width:14px;height:14px;fill:currentColor}
+.two>*{min-width:0}
+</style>
+</head>
+<body>
+<div class="swbar" role="navigation" aria-label="Startwell Education"><div class="swin">
+<a class="swlogo" href="/programming"><img src="images/logo.jpg" alt="Startwell Education logo"><span><b>Startwell Education</b><small>Programming · Database L2</small></span></a>
+<span class="swlinks"><a href="/programming">&#8592; Programming</a><a href="/database-big-tech">Level 3 →</a><a class="swc" href="/compiler">C++ Compiler</a></span>
+</div></div>
+
+<header>
+<span class="tag">LEVEL 2 - INDUSTRIAL</span>
+<h1>Industrial Level: <span>Interview Crack</span></h1>
+<p class="lead">Database Systems ke 8 asli production problems (University of Bhimber, CS-211L Lab Manual). Har lab me: masla, ghalat code, sahi code, live demo, interview sawal aur resume line. Aakhir me Mock Interview.</p>
+<div class="hero"><span>8 Labs</span><span>Live demos</span><span>16 interview sawal</span><span>Mock Interview</span></div>
+</header>
+<nav><div id="nav"></div></nav>
+<main id="m"></main>
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const A=[
+{t:'N+1 Query',p:'100 orders laane ke liye 1 query, phir har order ka user naam laane ke liye 100 queries. Total 101 queries. API slow.',
+ bad:`SELECT * FROM orders LIMIT 100;
+-- phir loop me 100 baar:
+SELECT name FROM users WHERE id = ?;`,
+ good:`SELECT o.id, o.amount, u.name
+FROM orders o
+JOIN users u ON o.user_id = u.id
+LIMIT 100;`,
+ qa:[['N+1 problem kya hai aur kaise pakadte ho?','Ek query list ki, phir har row ke liye ek aur query. Query log, SET profiling = 1 ya APM tool me queries ki ginti dekh kar pakadte hain. Hal: JOIN, ya IN (...) se batch query, ORM me eager loading.'],['JOIN hamesha behtar hota hai?','Nahi. Bohat bare data ya bohat relations me JOIN bhari ho sakta hai. Tab 2 queries: pehle orders, phir users WHERE id IN (...), aur memory me jor do.']],
+ r:'Fixed N+1 queries using JOIN, reducing 101 queries to 1 per request.',d:'d1'},
+{t:'Index aur EXPLAIN',p:'50 hazaar students me email se dhoondna. Bina index ke database har row dekhta hai (Full Table Scan). Index lagao to seedha pahunchta hai.',
+ bad:`SELECT * FROM students WHERE email = 'ali@test.com';
+EXPLAIN ANALYZE ...   -- Full Table Scan`,
+ good:`CREATE INDEX idx_email ON students(email);
+EXPLAIN ANALYZE ...   -- Index Scan, 100x tez`,
+ qa:[['Clustered aur Non-Clustered index me farq?','Clustered: table ka data usi order me rakha hota hai (InnoDB me primary key), table me sirf 1. Non-clustered: alag structure jisme key aur row ka pointer hota hai, kai ban sakte hain.'],['Har column pe index kyun nahi lagate?','Index memory leta hai aur INSERT, UPDATE, DELETE ko sust karta hai kyunke index bhi update hota hai. Sirf WHERE, JOIN aur ORDER BY wale columns pe lagao.']],
+ r:'Diagnosed slow queries with EXPLAIN ANALYZE and added indexes, replacing full table scans.',d:'d2'},
+{t:'Connection Pool',p:'Har request pe nayi connection kholo to server pe Too many connections error aata hai. Pool me chand connections baar baar istemal hoti hain.',
+ bad:`// har request pe naya
+const conn = mysql.createConnection(...);`,
+ good:`const pool = mysql.createPool({
+  connectionLimit: 20,
+  host: 'localhost',
+  database: 'bhimber_db'
+});
+pool.query(...)  // khud release ho jata hai`,
+ qa:[['Connection pool kya karta hai?','Pehle se khuli connections ka set. Request aati hai to pool se connection udhaar leti hai aur kaam ke baad wapas kar deti hai. Connection kholne ka mehnga kaam baar baar nahi hota.'],['Pool ka size 1000 kar dun?','Nahi. Database ki max_connections aur CPU ki limit hoti hai. Zyada connections se context switching aur slowdown hota hai. Chota pool aur queue behtar hai.']],
+ r:'Introduced connection pooling (limit 20), eliminating Too many connections errors.',d:'d3'},
+{t:'Debounce aur Cache',p:'User Bhimber University likhe to 18 API calls DB tak pahunchti hain. Hal: frontend debounce 500 ms aur backend cache.',
+ bad:`input.onkeyup = () =>
+  fetch('/api/search?q=' + q);   // har key pe`,
+ good:`let timer;
+function searchAPI(q){
+  clearTimeout(timer);
+  timer = setTimeout(() =>
+    fetch('/api/search?q=' + q), 500);
+}
+// Backend: SETEX search:bhimber 300 result`,
+ qa:[['Debounce aur throttle me farq?','Debounce: user ruk jaye tab ek baar chalao (search box). Throttle: har X ms me ziyada se ziyada ek baar chalao (scroll, resize).'],['Cache invalidation kaise karte hain?','TTL se khud expire (jaise 300 second), ya data badalte hi key delete. Cache invalidation mushkil hai, ye interview ka mashhoor jumla hai.']],
+ r:'Added 500 ms debounce and Redis caching (TTL 5 min) to cut search API load.',d:'d4'},
+{t:'Idempotency Key',p:'User ne Pay button 2 baar dabaya. Idempotency key UNIQUE ho to doosri request duplicate order nahi banati. Stripe aur JazzCash API yehi karti hain.',
+ bad:`INSERT INTO orders (user_id, amount)
+VALUES (1, 500);   -- 2 click = 2 orders`,
+ good:`CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT, amount DECIMAL(10,2),
+  idempotency_key VARCHAR(100) UNIQUE
+);
+-- 2nd insert fail, purana order wapas do`,
+ qa:[['Idempotent ka matlab kya hai?','Ek hi request kitni bhi baar bheji jaye, nateeja ek hi ho. PUT aur DELETE idempotent hote hain. POST nahi hota, isliye key lagate hain.'],['Retry me paisa 2 baar kat jaye to kya karoge?','Client idempotency key banata hai, server UNIQUE constraint se check karta hai, aur duplicate par purana response wapas deta hai.']],
+ r:'Implemented idempotency keys (UNIQUE constraint) to prevent duplicate orders on retries.',d:'d5'},
+{t:'Rate Limiting',p:'Ek user ya bot 70 baar API maare to DB girne lage. Redis me counter rakho, limit cross ho to 429.',
+ bad:`// koi limit nahi
+// user 1 minute me 10,000 requests`,
+ good:`INCR rate_limit:5
+EXPIRE rate_limit:5 60   -- pehli dafa
+-- count > 60  =>  429 Too Many Requests`,
+ qa:[['Rate limiting kyun zaroori hai?','Database aur server ko abuse, bots aur DDoS se bachane ke liye, aur sab users ko barabar hissa dene ke liye. Limit cross ho to HTTP 429.'],['Fixed window ka masla kya hai?','Window ke aakhir aur agli window ke shuru me 2 guna requests guzar sakti hain. Sliding window ya token bucket behtar hain.']],
+ r:'Built Redis-based rate limiting (60 req/min per user) returning HTTP 429.',d:'d6'},
+{t:'Email Bounce',p:'Ghalat email par bounce aaye to dobara mat bhejo, warna sender reputation kharab ho jati hai.',
+ bad:`SELECT * FROM users;
+-- sab ko bhej do, bounced ko bhi`,
+ good:`UPDATE email_logs
+SET status='bounced', bounce_reason='Mailbox not found'
+WHERE email='wrong@gmail.com';
+
+SELECT * FROM users WHERE email NOT IN
+ (SELECT email FROM email_logs WHERE status='bounced');`,
+ qa:[['Hard bounce aur soft bounce?','Hard: email maujood hi nahi (permanent), dobara mat bhejo. Soft: inbox full ya server down (temporary), baad me retry karo.'],['NOT IN me NULL ka kya masla hai?','Agar subquery me NULL aa jaye to NOT IN kuch bhi return nahi karta. NOT EXISTS ya LEFT JOIN ... IS NULL zyada mehfooz hain.']],
+ r:'Handled email bounces via webhooks and a suppression list to protect sender reputation.',d:'d7'},
+{t:'Mega Lab',p:'E-commerce API: GET /api/products/search. Agar 500 concurrent users bina crash ke sambhal gayi to A+. Saari labs ek jagah.',
+ bad:`GET /api/products/search
+-- sab rows, bina index, har request pe nayi connection`,
+ good:`GET /api/products/search?page=1&limit=20
+-- index on name, pool, Redis cache 2 min,
+-- rate limit, idempotency on POST /api/order`,
+ qa:[['Search API ko 500 users ke liye kaise tayyar karoge?','Pagination (page, limit), name pe index, connection pool, Redis cache 2 minute, rate limit, aur POST order par idempotency. Phir JMeter se load test karke check.'],['OFFSET pagination me kya masla hai?','OFFSET bohat bara ho to database utni rows skip karta hai, sust hota hai. Keyset pagination behtar: WHERE id > last_id ORDER BY id LIMIT 20.']],
+ r:'Load-tested a product search API for 500 concurrent users using pagination, indexing, pooling, caching and rate limiting.',d:'d8'}
+];
+let TM=null;
+const D={
+d1:()=>`<h3>Live: queries ginte jao</h3>Orders: <b id="v">100</b><input id="s" type="range" min="10" max="500" value="100"><div id="o"></div><small>Maan liya: har query ka network round trip 5 ms.</small>`,
+d2:()=>`<h3>Live: EXPLAIN chalao</h3>Rows: <b id="v">50000</b><input id="s" type="range" min="1000" max="1000000" step="1000" value="50000"><label><input type="checkbox" id="ix"> CREATE INDEX idx_email lagao</label><div class="out" id="o"></div>`,
+d3:()=>`<h3>Live: concurrent requests</h3>Requests: <b id="v">200</b><input id="s" type="range" min="10" max="500" value="200"><div class="two"><div class="box"><h3 class="bd">Bina pool</h3><div id="o1"></div></div><div class="box"><h3 class="gd">Pool (20)</h3><div id="o2"></div></div></div><small>MySQL ki default max_connections = 151.</small>`,
+d4:()=>`<h3>Live: jaldi jaldi type karo</h3><input type="text" id="i" placeholder="Bhimber University likho..." aria-label="Search"><div class="cnt" style="margin-top:.6rem"><div><b id="k">0</b>keystrokes</div><div><b id="a" class="bd">0</b>API calls (debounce nahi)</div><div><b id="b" class="gd">0</b>API calls (debounce 500 ms)</div></div><button class="btn k" id="rs">Reset</button>`,
+d5:()=>`<h3>Live: double click</h3><label><input type="checkbox" id="ik"> Idempotency key lagao</label><button class="btn" id="go">Pay dabao (2 baar jaldi)</button><button class="btn k" id="rs">Reset</button><div class="out" id="o"></div><div id="t"></div>`,
+d6:()=>`<h3>Live: API ko hit karo</h3><p style="margin:0">Demo limit: 5 requests per 10 second.</p><button class="btn" id="go">Hit API</button><div class="cnt" style="margin-top:.4rem"><div><b id="c">0</b>count</div><div><b id="w">10</b>window reset (sec)</div></div><div class="out" id="o">Hit karo.</div>`,
+d7:()=>`<h3>Live: bounce webhook</h3><div id="u"></div><button class="btn" id="go">Campaign bhejo</button><div class="out" id="o"></div>`,
+d8:()=>`<h3>Live: 500 users ka load test</h3>${[['pag','Pagination (page, limit)'],['idx','Index on product name'],['pool','Connection pool'],['cache','Redis cache 2 min'],['rl','Rate limiting'],['idem','Idempotency on POST /order']].map(x=>`<label><input type="checkbox" data-k="${x[0]}"> ${x[1]}</label>`).join('')}<div class="out" id="o"></div><div class="bar b2" id="br" style="width:5%"></div><small>Ye ek simulation hai, asli load test JMeter se hota hai.</small>`
+};
+let iv=0;
+const W={
+d1(){const f=()=>{const n=+$('#s').value;$('#v').textContent=n;const a=(n+1)*5,b=8+Math.round(n*.02);$('#o').innerHTML=`<b class="bd">N+1: ${n+1} queries, ${a} ms</b><div class="bar b1" style="width:100%"></div><b class="gd">JOIN: 1 query, ${b} ms</b><div class="bar b2" style="width:${Math.max(1,b/a*100)}%"></div>`};$('#s').oninput=f;f()},
+d2(){const f=()=>{const n=+$('#s').value,ix=$('#ix').checked;$('#v').textContent=n;const sc=n*.003,ig=.05;
+ $('#o').textContent=ix?`type: ref\nkey: idx_email\nrows examined: ~${Math.ceil(Math.log2(n))}\ntime: ~${ig} ms\n${Math.round(sc/ig)}x tez`:`type: ALL (Full Table Scan)\nkey: NULL\nrows examined: ${n.toLocaleString()}\ntime: ~${sc.toFixed(1)} ms`};$('#s').oninput=$('#ix').onchange=f;f()},
+d3(){const f=()=>{const n=+$('#s').value;$('#v').textContent=n;const e=Math.max(0,n-151);
+ $('#o1').innerHTML=`Connections khuli: ${Math.min(n,151)}<br><b class="bd">Errors: ${e}${e?' (Too many connections)':''}</b>`;
+ $('#o2').innerHTML=`Connections khuli: 20<br>Queue me intezar: ${Math.max(0,n-20)}<br><b class="gd">Errors: 0</b>`};$('#s').oninput=f;f()},
+d4(){let k=0,a=0,b=0,t;const u=()=>{$('#k').textContent=k;$('#a').textContent=a;$('#b').textContent=b};
+ $('#i').oninput=()=>{k++;a++;clearTimeout(t);t=setTimeout(()=>{b++;u()},500);u()};
+ $('#rs').onclick=()=>{k=a=b=0;$('#i').value='';clearTimeout(t);u()}},
+d5(){let T=[];const draw=m=>{$('#o').textContent=m||'Pay dabao.';$('#t').innerHTML=T.length?`<div class="box" style="margin-top:.6rem"><b>orders table</b><br>${T.map(o=>`id ${o.id}: Rs 500, key: ${o.k||'NULL'}`).join('<br>')}</div>`:''};
+ $('#go').onclick=()=>{const k=$('#ik').checked?'abc-123':null;let m='';for(let i=1;i<=2;i++){if(k&&T.some(o=>o.k==k))m+=`Request ${i}: UNIQUE error, purana order #${T.find(o=>o.k==k).id} wapas diya.\n`;else{T.push({id:T.length+1,k});m+=`Request ${i}: order #${T.length} ban gaya.\n`}}
+  draw(m+(T.length>1&&!k?'\nDuplicate order! Customer se 2 baar paisa liya.':''))};
+ $('#rs').onclick=()=>{T=[];draw()};draw()},
+d6(){let c=0,st=0;const w=()=>{if(st&&Date.now()-st>10000){c=0;st=0}$('#c').textContent=c;$('#w').textContent=st?Math.max(0,Math.ceil(10-(Date.now()-st)/1000)):10};
+ $('#go').onclick=()=>{w();if(!st)st=Date.now();c++;$('#c').textContent=c;$('#o').textContent=c>5?'429 Too Many Requests. Thoda ruko.':'200 OK ('+c+' / 5)'};
+ clearInterval(iv);iv=setInterval(w,500)},
+d7(){const U=[['ali@test.com',0],['wrong@gmail.com',0],['sara@test.com',0],['nope@xyz.com',0]];const draw=()=>$('#u').innerHTML=U.map((x,i)=>`<div class="ml"><span>${x[0]} ${x[1]?'<b class="bd">(bounced)</b>':''}</span><button class="btn ${x[1]?'k':'r'}" data-i="${i}">${x[1]?'Wapas theek':'Bounce hua'}</button></div>`).join('');
+ draw();$('#u').onclick=e=>{const b=e.target.closest('[data-i]');if(b){U[b.dataset.i][1]^=1;draw()}};
+ $('#go').onclick=()=>{const ok=U.filter(x=>!x[1]).map(x=>x[0]);$('#o').textContent='Bheja gaya: '+(ok.join(', ')||'koi nahi')+'\nSkip (bounced): '+(U.filter(x=>x[1]).map(x=>x[0]).join(', ')||'koi nahi')}},
+d8(){const W8={pag:.15,idx:.2,pool:.2,cache:.2,rl:.1,idem:.1};const f=()=>{let p=.05;document.querySelectorAll('[data-k]').forEach(c=>{if(c.checked)p+=W8[c.dataset.k]});const n=Math.round(500*p),g=p>=.95?'A+':p>=.8?'A':p>=.6?'B':p>=.4?'C':'F';
+ $('#o').textContent=`Bach gaye: ${n} / 500 users\nGrade: ${g}`;$('#br').style.width=Math.max(3,p*100)+'%'};document.querySelectorAll('[data-k]').forEach(c=>c.onchange=f);f()}
+};
+const nav=$('#nav'),m=$('#m');
+A.forEach((x,i)=>{const b=document.createElement('button');b.textContent='Lab '+(i+1);b.title=x.t;b.dataset.i=i;b.onclick=()=>go(i);nav.append(b)});
+const mb=document.createElement('button');mb.textContent='Mock Interview';mb.dataset.i='mock';mb.onclick=()=>go('mock');nav.append(mb);
+function mock(){
+ const all=A.flatMap((x,i)=>x.qa.map(q=>({lab:i,t:x.t,q:q[0],a:q[1]})));
+ if(!TM)TM={list:[...all].sort(()=>Math.random()-.5),i:0,ok:0,weak:{},show:0};
+ const T=TM;
+ if(T.i>=T.list.length){const w=Object.keys(T.weak);m.innerHTML=`<h2 class="ch">Mock Interview khatam</h2><div class="prob">Score: ${T.ok} / ${T.list.length}. ${T.ok>=13?'Interview ke liye tayyar!':T.ok>=8?'Achha hai, thodi aur practice.':'Labs dobara parho aur phir koshish karo.'}</div>${w.length?`<div class="box"><h3>Inko dobara parho</h3><p>${w.map(i=>`<button class="btn k" data-l="${i}">Lab ${+i+1}: ${A[i].t}</button>`).join('')}</p></div>`:''}<button class="btn" id="again">Dobara shuru karo</button>`;
+  $('#again').onclick=()=>{TM=null;mock()};m.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>go(+b.dataset.l));return}
+ const c=T.list[T.i];
+ m.innerHTML=`<h2 class="ch">Mock Interview</h2><p class="lead">Sawal ${T.i+1} / ${T.list.length}. Pehle khud zubaan se jawab do, phir answer dekho.</p><div class="prob">${esc(c.q)}<br><small>Lab ${c.lab+1}: ${esc(c.t)}</small></div>
+ <button class="btn k" id="sh">Answer dekho</button><div id="an"></div>`;
+ $('#sh').onclick=()=>{$('#an').innerHTML=`<div class="box">${esc(c.a)}</div><p>Tumhe pata tha?</p><button class="btn" id="y">Haan, pata tha</button><button class="btn r" id="n">Nahi</button>`;
+  $('#y').onclick=()=>{T.ok++;T.i++;mock()};$('#n').onclick=()=>{T.weak[c.lab]=1;T.i++;mock()}}}
+function go(i){
+ clearInterval(iv);
+ nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',b.dataset.i==i));
+ if(i=='mock'){mock();history.replaceState(null,'','#mock');window.scrollTo(0,0);return}
+ const x=A[i];
+ m.innerHTML=`<div class="ch"><h2>Lab ${i+1}: ${x.t}</h2><div class="prob">${x.p}</div>
+ <div class="two"><div><h3 class="bd">Ghalat (mat karo)</h3><pre>${esc(x.bad)}</pre></div><div><h3 class="gd">Sahi (industry)</h3><pre>${esc(x.good)}</pre></div></div>
+ <div class="lab">${D[x.d]()}</div>
+ <h3>Interview sawal</h3>${x.qa.map(q=>`<details><summary>${esc(q[0])}</summary><p>${esc(q[1])}</p></details>`).join('')}
+ <div class="rsm">Resume me likho: ${esc(x.r)}<br><small>Apne asli numbers khud naap kar likhna.</small></div>
+ <div class="nr">${i>0?`<button class="btn k" data-g="${i-1}">Pichla</button>`:'<span></span>'}<button class="btn" data-g="${i<A.length-1?i+1:'mock'}">${i<A.length-1?'Agla Lab':'Mock Interview'}</button></div></div>`;
+ W[x.d]();m.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>go(b.dataset.g=='mock'?'mock':+b.dataset.g));
+ history.replaceState(null,'','#lab'+(i+1));window.scrollTo(0,0);
+}
+const h=location.hash;go(h=='#mock'?'mock':Math.min(Math.max(parseInt(h.slice(4))||1,1),A.length)-1);
+</script>
+<script id="sw-try-js">
+(function(){
+  var main=document.getElementById("m");if(!main)return;
+  var ICON='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>';
+  function exId(){return '';}
+  function add(){
+    if(main.querySelector('.sw-try'))return;
+    var id=exId(),pre=main.querySelector('pre');if(!id||!pre)return;
+    var a=document.createElement('a');a.className='sw-try';a.href='/compiler#ex='+id;
+    a.innerHTML=ICON+'Try in compiler';a.title='Open this code in the online C++ compiler and run it';
+    var anchor=pre;anchor.parentNode.insertBefore(a,anchor.nextSibling);
+  }
+  new MutationObserver(add).observe(main,{childList:true});add();
+})();
+</script>
+</body>
+</html>
