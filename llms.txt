@@ -41,6 +41,18 @@ Contact: +92 340 1501700. Hours: Monday to Saturday, 8:00 AM to 2:00 PM. Website
 - [PF Bilkul Aasan](https://www.startwell.edu.pk/pf-bilkul-aasan): Programming Fundamentals chapters with runnable examples.
 - [OOP Bilkul Aasan](https://www.startwell.edu.pk/oop-bilkul-aasan): Object-Oriented Programming chapters with runnable examples.
 - [OOP Lectures](https://www.startwell.edu.pk/oop-lectures): 12 interactive lectures with quizzes.
+- [OOP Lecture 1: Introduction aur Objects](https://www.startwell.edu.pk/oop-lecture-introduction-objects): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 2: Encapsulation aur Interface](https://www.startwell.edu.pk/oop-lecture-encapsulation-interface): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 3: Abstraction, Class, Inheritance](https://www.startwell.edu.pk/oop-lecture-abstraction-class-inheritance): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 4: Inheritance ke Concepts](https://www.startwell.edu.pk/oop-lecture-inheritance-concepts): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 5: Association, Composition, Aggregation](https://www.startwell.edu.pk/oop-lecture-association-composition-aggregation): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 6: Polymorphism](https://www.startwell.edu.pk/oop-lecture-polymorphism): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 7: C++ me Class](https://www.startwell.edu.pk/oop-lecture-class-in-cpp): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 8: Constructor](https://www.startwell.edu.pk/oop-lecture-constructor): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 9: Copy Constructor, Destructor, this](https://www.startwell.edu.pk/oop-lecture-copy-constructor-destructor-this): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 10: this Pointer aur const Functions](https://www.startwell.edu.pk/oop-lecture-this-pointer-const-functions): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 11: const, Initializer List, static](https://www.startwell.edu.pk/oop-lecture-const-initializer-list-static): Real-life and industry examples, C++ code and a quiz.
+- [OOP Lecture 12: static Functions aur Array of Objects](https://www.startwell.edu.pk/oop-lecture-static-functions-array-of-objects): Real-life and industry examples, C++ code and a quiz.
 - [C++ Compiler](https://www.startwell.edu.pk/compiler): Free online C++ compiler with lesson programs.
 - [Database Level 1: Bilkul Aasan](https://www.startwell.edu.pk/database-bilkul-aasan): 12 database lectures with live SQL practice in the browser.
 - [Database Level 2: Industrial](https://www.startwell.edu.pk/database-industrial): 8 real production database problems, interview questions and a mock interview.

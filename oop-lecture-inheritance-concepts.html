@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W93FNHKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+</script>
+<!-- End Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OOP Lecture 4: Inheritance ke Concepts | Startwell</title>
+<link rel="canonical" href="https://www.startwell.edu.pk/oop-lecture-inheritance-concepts">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Startwell Education Bhimber">
+<meta property="og:title" content="OOP Lecture 4: Inheritance ke Concepts | Startwell">
+<meta property="og:url" content="https://www.startwell.edu.pk/oop-lecture-inheritance-concepts">
+<meta property="og:image" content="https://www.startwell.edu.pk/images/school-building.jpg">
+<meta property="og:description" content="Lecture 4 of our free OOP course in Roman Urdu: Inheritance ke Concepts — real-life and industry examples, C++ code you can run online, and a quiz.">
+<meta name="description" content="Lecture 4 of our free OOP course in Roman Urdu: Inheritance ke Concepts — real-life and industry examples, C++ code you can run online, and a quiz.">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.startwell.edu.pk/"}, {"@type": "ListItem", "position": 2, "name": "Programming", "item": "https://www.startwell.edu.pk/programming"}, {"@type": "ListItem", "position": 3, "name": "OOP Lectures", "item": "https://www.startwell.edu.pk/oop-lectures"}, {"@type": "ListItem", "position": 4, "name": "Lecture 4: Inheritance ke Concepts", "item": "https://www.startwell.edu.pk/oop-lecture-inheritance-concepts"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "OOP Lecture 4: Inheritance ke Concepts", "url": "https://www.startwell.edu.pk/oop-lecture-inheritance-concepts", "inLanguage": "ur-Latn", "isAccessibleForFree": true, "learningResourceType": "Lecture", "educationalLevel": "Beginner", "teaches": "Inheritance ke Concepts", "isPartOf": {"@type": "Course", "name": "C++ and Databases in Roman Urdu", "url": "https://www.startwell.edu.pk/programming"}, "provider": {"@type": "School", "name": "Startwell Education", "url": "https://www.startwell.edu.pk/"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="preloader"><div class="pl-inner"><img src="images/logo.jpg" alt="" width="180" height="192"><div class="pl-bar"></div><small>START WELL TO END WELL</small></div></div>
+<div class="scroll-progress"></div>
+<div class="topbar">
+  <div class="container">
+    <div>
+      <span><i class="fa-solid fa-phone"></i> +92 340 1501700</span>
+      <span class="hide-sm"><i class="fa-solid fa-envelope"></i> startwelleducationbhimber@gmail.com</span>
+      <span class="hide-sm"><i class="fa-regular fa-clock"></i> Mon – Sat: 8:00 AM – 2:00 PM</span>
+    </div>
+    <div class="socials">
+      <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </div>
+</div>
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+      <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+    </a>
+    <nav class="nav">
+      <button class="menu-toggle nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <a href="/">Home</a>
+      <a href="/aboutus">About Us</a>
+      <div class="nav-item">
+        <a href="/academics">Academics <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Academics pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/curriculum"><i class="fa-solid fa-book-open"></i>Curriculum</a>
+          <a href="/faculty"><i class="fa-solid fa-chalkboard-user"></i>Faculty &amp; Staff</a>
+          <a href="/calendar"><i class="fa-regular fa-calendar-days"></i>School Calendar</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/activities">Activities <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Activities pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/online-activities"><i class="fa-brands fa-tiktok"></i>Online Activities</a>
+          <a href="/facebook"><i class="fa-brands fa-facebook"></i>Facebook Page</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/teams">Teams <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Teams pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/junior-media-team"><i class="fa-solid fa-video"></i>Junior Media Team</a>
+          <a href="/senior-media-team"><i class="fa-solid fa-microphone-lines"></i>Senior Media Team</a>
+          <a href="/spelling-bee"><i class="fa-solid fa-spell-check"></i>StartWell Spelling Bee</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/learn-well">Learn Well <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Learn Well pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/projects"><i class="fa-solid fa-diagram-project"></i>Projects</a>
+          <a href="/tools"><i class="fa-solid fa-screwdriver-wrench"></i>Free Student Tools</a>
+        </div>
+      </div>
+      <a href="/admissions">Admissions</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/contact" class="btn btn-primary">Contact Us</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-banner">
+  <div class="banner-art" aria-hidden="true"><span class="r1"></span><span class="r2"></span><img src="images/logo.jpg" alt="" width="180" height="192"></div>
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold)">OOP Lecture 4 of 12</span>
+    <h1>Inheritance ke Concepts</h1>
+    <p class="lead" style="color:#c7d0ea;max-width:620px">Object-Oriented Programming in C++, explained in easy Roman Urdu.</p>
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/programming">Programming</a> &nbsp;/&nbsp; <a href="/oop-lectures">OOP Lectures</a> &nbsp;/&nbsp; Lecture 4</div>
+  </div>
+</section>
+<section>
+  <div class="container">
+<div class="prose lec">
+<div class="lec-grid"><div class="lec-box lr"><h2>Real life example</h2><p>Jaanwar baap hai: khana, sona. Sher beta hai, uska apna kaam dahaarna.</p></div><div class="lec-box li"><h2>Industry example</h2><p>E-commerce me Product baap, Phone aur Shirt beta. Phone me warranty extra, Shirt me size.</p></div></div>
+<h2>C++ code</h2>
+<pre class="lec-code"><code>class Shape { public: virtual void draw() = 0; };  // abstract
+class Circle : public Shape {
+public: void draw(){ cout &lt;&lt; &quot;O&quot;; }
+};</code></pre>
+<h3>What happens when it runs</h3>
+<pre class="lec-out">Shape s;  = Error (abstract)
+Circle c; c.draw();  = O</pre>
+<p><a class="btn btn-primary" href="/compiler#ex=lec4"><i class="fa-solid fa-play"></i> Run the full program in the compiler</a> &nbsp; <a class="btn btn-ghost" href="/oop-lectures#l4">Interactive version</a></p>
+<div class="lec-quiz"><h2>Quiz</h2><p>Abstract class ka object ban sakta hai?</p><div class="lq-opts" data-ans="1"><button type="button" class="lq-opt" data-k="0">Haan</button><button type="button" class="lq-opt" data-k="1">Nahi, sirf uska beta banta hai</button><button type="button" class="lq-opt" data-k="2">Sirf pointer</button><button type="button" class="lq-opt" data-k="3">Sirf static</button></div><p class="lq-fb" aria-live="polite" hidden>Abstract class sirf template hoti hai. Object concrete beta ka banta hai.</p></div>
+<h2>Try it yourself</h2>
+<p>Write one example of <strong>Inheritance ke Concepts</strong> from your own home, school or work. Then change the program in the compiler and run it again.</p>
+<div class="lec-nav"><a class="btn btn-ghost" href="/oop-lecture-abstraction-class-inheritance">&larr; Lecture 3</a><a class="btn btn-primary" href="/oop-lecture-association-composition-aggregation">Lecture 5 &rarr;</a></div>
+<h2>All 12 OOP lectures</h2>
+<ol class="lec-all"><li><a href="/oop-lecture-introduction-objects">Lecture 1: Introduction aur Objects</a></li><li><a href="/oop-lecture-encapsulation-interface">Lecture 2: Encapsulation aur Interface</a></li><li><a href="/oop-lecture-abstraction-class-inheritance">Lecture 3: Abstraction, Class, Inheritance</a></li><li class="cur"><a href="/oop-lecture-inheritance-concepts">Lecture 4: Inheritance ke Concepts</a></li><li><a href="/oop-lecture-association-composition-aggregation">Lecture 5: Association, Composition, Aggregation</a></li><li><a href="/oop-lecture-polymorphism">Lecture 6: Polymorphism</a></li><li><a href="/oop-lecture-class-in-cpp">Lecture 7: C++ me Class</a></li><li><a href="/oop-lecture-constructor">Lecture 8: Constructor</a></li><li><a href="/oop-lecture-copy-constructor-destructor-this">Lecture 9: Copy Constructor, Destructor, this</a></li><li><a href="/oop-lecture-this-pointer-const-functions">Lecture 10: this Pointer aur const Functions</a></li><li><a href="/oop-lecture-const-initializer-list-static">Lecture 11: const, Initializer List, static</a></li><li><a href="/oop-lecture-static-functions-array-of-objects">Lecture 12: static Functions aur Array of Objects</a></li></ol>
+</div>
+  </div>
+</section>
+<script>
+document.querySelectorAll('.lq-opts').forEach(function(box){box.addEventListener('click',function(ev){var b=ev.target.closest('.lq-opt');if(!b||box.dataset.done)return;box.dataset.done=1;var a=+box.dataset.ans,fb=box.parentNode.querySelector('.lq-fb');box.children[a].classList.add('good');if(+b.dataset.k!==a)b.classList.add('bad');fb.textContent=(+b.dataset.k===a?'Sahi! ':'Galat. ')+fb.textContent;fb.hidden=false;});});
+</script>
+<section>
+  <div class="container">
+    <div class="cta reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Admissions Open</span>
+        <h2>Give your child the right start.</h2>
+        <p>Seats are limited. Visit our campus, meet our teachers and see why families trust Startwell Education.</p>
+      </div>
+      <div class="actions">
+        <a href="/contact" class="btn btn-primary">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="tel:+923401501700" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand" style="margin-bottom:18px">
+          <img src="images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+          <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+        </a>
+        <p>A place where young minds are given wings to fly — combining strong academics, good character and a caring environment.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-h">Quick Links</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/aboutus">About Us</a></li>
+          <li><a href="/academics">Academics</a></li>
+          <li><a href="/activities">Activities</a></li>
+          <li><a href="/faculty">Faculty &amp; Staff</a></li>
+          <li><a href="/calendar">School Calendar</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Explore</p>
+        <ul>
+          <li><a href="/junior-media-team">Junior Media Team</a></li>
+          <li><a href="/senior-media-team">Senior Media Team</a></li>
+          <li><a href="/spelling-bee">StartWell Spelling Bee</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/learn-well">Learn Well</a></li>
+          <li><a href="/tools">Free Student Tools</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Get in Touch</p>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i><span>Bhimber, Azad Jammu &amp; Kashmir, Pakistan</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+92 340 1501700</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>startwelleducationbhimber@gmail.com</span></li>
+          <li><i class="fa-regular fa-clock"></i><span>Mon – Sat: 8:00 AM – 2:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-links"><a href="/news">News</a><a href="/campuses">Campuses</a><a href="/admission-process">Admission Process</a><a href="/privacy-policy">Privacy Policy</a></div>
+  <div class="footer-bottom">© <span class="year-now">2026</span> Startwell Education, Bhimber — <em>Start Well to End Well</em>. All rights reserved.</div>
+</footer>
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<a href="/tools" class="swe-tools" aria-label="Free Student Tools" title="Free Student Tools"><span class="swe-ico"><i class="fa-solid fa-screwdriver-wrench"></i></span></a>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
