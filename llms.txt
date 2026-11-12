@@ -1,0 +1,54 @@
+# Startwell Education
+
+> Startwell Education is a school in Bhimber, Azad Jammu & Kashmir, Pakistan, offering education from Playgroup to Matric (Class 10). It also runs free online tools for students and a free programming course in Roman Urdu (C++ and Databases).
+
+Contact: +92 340 1501700. Hours: Monday to Saturday, 8:00 AM to 2:00 PM. Website: https://www.startwell.edu.pk/
+
+## School
+
+- [Home](https://www.startwell.edu.pk/): Overview of the school, programs and admissions.
+- [About Us](https://www.startwell.edu.pk/aboutus): About Startwell Education.
+- [Academics](https://www.startwell.edu.pk/academics): Programs from Playgroup to Class 10.
+- [Curriculum](https://www.startwell.edu.pk/curriculum): What students study at each stage.
+- [Faculty & Staff](https://www.startwell.edu.pk/faculty): Teachers and principal's profile.
+- [Admissions](https://www.startwell.edu.pk/admissions): Admissions information for session 2026-27.
+- [Admission Process](https://www.startwell.edu.pk/admission-process): Steps to apply, documents and FAQs.
+- [Campuses](https://www.startwell.edu.pk/campuses): Campus addresses and classes.
+- [News](https://www.startwell.edu.pk/news): Announcements and events.
+- [School Calendar](https://www.startwell.edu.pk/calendar): Term dates and holidays.
+- [Contact Us](https://www.startwell.edu.pk/contact): Contact details and campus information.
+
+## Student life
+
+- [Activities](https://www.startwell.edu.pk/activities): Sports, arts and school events.
+- [Junior Media Team](https://www.startwell.edu.pk/junior-media-team): Student anchors and reporters.
+- [Senior Media Team](https://www.startwell.edu.pk/senior-media-team): Senior student media productions.
+- [StartWell Spelling Bee](https://www.startwell.edu.pk/spelling-bee): The school spelling competition.
+- [Projects](https://www.startwell.edu.pk/projects): Student science, art, media and community projects.
+- [Gallery](https://www.startwell.edu.pk/gallery): Photos of ceremonies and events.
+
+## Free tools for students
+
+- [Free Student Tools](https://www.startwell.edu.pk/tools): Overview of all free tools. No sign-up, no ads, files stay on the user's device.
+- [PDF Toolbox](https://www.startwell.edu.pk/pdf-toolbox): Edit, merge, split and rotate PDFs, convert photos to PDF, add page numbers and watermarks.
+- [Image Resizer](https://www.startwell.edu.pk/image-resizer): Reduce photo size in KB and resize dimensions for forms.
+- [Marks Calculator](https://www.startwell.edu.pk/marks-calculator): Total, percentage, grade and pass/fail for each subject.
+- [Word Counter](https://www.startwell.edu.pk/word-counter): Count words and characters in English and Urdu, with word limit and reading time.
+
+## Free programming course in Roman Urdu
+
+- [Programming](https://www.startwell.edu.pk/programming): Overview of the free course: Programming Fundamentals (PF), OOP and Databases.
+- [PF Bilkul Aasan](https://www.startwell.edu.pk/pf-bilkul-aasan): Programming Fundamentals chapters with runnable examples.
+- [OOP Bilkul Aasan](https://www.startwell.edu.pk/oop-bilkul-aasan): Object-Oriented Programming chapters with runnable examples.
+- [OOP Lectures](https://www.startwell.edu.pk/oop-lectures): 12 interactive lectures with quizzes.
+- [C++ Compiler](https://www.startwell.edu.pk/compiler): Free online C++ compiler with lesson programs.
+- [Database Level 1: Bilkul Aasan](https://www.startwell.edu.pk/database-bilkul-aasan): 12 database lectures with live SQL practice in the browser.
+- [Database Level 2: Industrial](https://www.startwell.edu.pk/database-industrial): 8 real production database problems, interview questions and a mock interview.
+- [Database Level 3: Big Tech and Docker](https://www.startwell.edu.pk/database-big-tech): Docker, SQL interview rounds, system design, replication, MongoDB, Redis and PostgreSQL.
+
+## Other
+
+- [Learn Well](https://www.startwell.edu.pk/learn-well): Projects, programming lessons and free student tools.
+- [Teams](https://www.startwell.edu.pk/teams): Media Teams and the StartWell Spelling Bee.
+- [Online Activities](https://www.startwell.edu.pk/online-activities): Online learning activities.
+- [Privacy Policy](https://www.startwell.edu.pk/privacy-policy): How the website and tools handle information.

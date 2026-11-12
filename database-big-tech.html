@@ -86,10 +86,20 @@ label{display:block;margin:.3rem 0;font-weight:600;cursor:pointer}
 .sw-try svg{width:14px;height:14px;fill:currentColor}
 .two>*{min-width:0}
 </style>
+<style id="sw-toc-css">
+.sw-toc{max-width:900px;margin:0 auto;padding:1.5rem 1.2rem 3rem;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+.sw-toc h2{font-size:1.4rem;margin:0 0 .4rem}
+.sw-toc p{margin:0 0 .8rem;opacity:.85}
+.sw-toc ol{margin:0;padding-left:1.4rem;columns:2;column-gap:2rem}
+.sw-toc li{margin:.2rem 0;break-inside:avoid}
+.sw-toc a{color:inherit;font-weight:600}
+.sw-toc .sw-more{margin-top:1rem;font-size:.95rem}
+@media(max-width:600px){.sw-toc ol{columns:1}}
+</style>
 </head>
 <body>
 <div class="swbar" role="navigation" aria-label="Startwell Education"><div class="swin">
-<a class="swlogo" href="/programming"><img src="images/logo.jpg" alt="Startwell Education logo"><span><b>Startwell Education</b><small>Programming · Database L3</small></span></a>
+<a class="swlogo" href="/programming"><img src="images/logo.jpg" alt="Startwell Education logo" width="180" height="192"><span><b>Startwell Education</b><small>Programming · Database L3</small></span></a>
 <span class="swlinks"><a href="/programming">&#8592; Programming</a><a href="/database-bilkul-aasan">← Level 1</a><a class="swc" href="/compiler">C++ Compiler</a></span>
 </div></div>
 
@@ -493,6 +503,9 @@ function go(i){
  history.replaceState(null,'','#t'+i);window.scrollTo(0,0)}
 go(Math.min(Math.max(parseInt(location.hash.slice(2))||0,0),11));
 </script>
+<section class="sw-toc" aria-labelledby="sw-toc-h"><h2 id="sw-toc-h">Big Tech Interview aur Docker — Database Level 3</h2><p>Level 3 of our free Database course: Docker, SQL interview rounds, core concepts, system design, replication, AWS/VPS setup, MongoDB, Redis, PostgreSQL and an API lab, ending with a mock interview.</p><ol><li><a href="/database-big-tech#t0">Docker (L0)</a></li><li><a href="/database-big-tech#t1">SQL Rounds</a></li><li><a href="/database-big-tech#t2">Concepts</a></li><li><a href="/database-big-tech#t3">System Design</a></li><li><a href="/database-big-tech#t4">Replication Lab</a></li><li><a href="/database-big-tech#t5">AWS/VPS Lab</a></li><li><a href="/database-big-tech#t6">MongoDB</a></li><li><a href="/database-big-tech#t7">Redis Lab</a></li><li><a href="/database-big-tech#t8">PostgreSQL</a></li><li><a href="/database-big-tech#t9">Mongo/Redis Docker</a></li><li><a href="/database-big-tech#t10">API Lab</a></li><li><a href="/database-big-tech#t11">Mock Interview</a></li></ol>
+<p class="sw-more">More free lessons: <a href="/programming">Programming course</a> · <a href="/compiler">Online C++ compiler</a> · <a href="/tools">Free Student Tools</a> — by <a href="/">Startwell Education, Bhimber</a>.</p></section>
+<script>window.addEventListener('hashchange',function(){location.reload()});</script>
 <script id="sw-try-js">
 (function(){
   var main=document.getElementById("m");if(!main)return;

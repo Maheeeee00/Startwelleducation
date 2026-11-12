@@ -87,10 +87,20 @@ label{display:block;margin:.3rem 0;font-weight:600;cursor:pointer}
 .sw-try svg{width:14px;height:14px;fill:currentColor}
 .two>*{min-width:0}
 </style>
+<style id="sw-toc-css">
+.sw-toc{max-width:900px;margin:0 auto;padding:1.5rem 1.2rem 3rem;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+.sw-toc h2{font-size:1.4rem;margin:0 0 .4rem}
+.sw-toc p{margin:0 0 .8rem;opacity:.85}
+.sw-toc ol{margin:0;padding-left:1.4rem;columns:2;column-gap:2rem}
+.sw-toc li{margin:.2rem 0;break-inside:avoid}
+.sw-toc a{color:inherit;font-weight:600}
+.sw-toc .sw-more{margin-top:1rem;font-size:.95rem}
+@media(max-width:600px){.sw-toc ol{columns:1}}
+</style>
 </head>
 <body>
 <div class="swbar" role="navigation" aria-label="Startwell Education"><div class="swin">
-<a class="swlogo" href="/programming"><img src="images/logo.jpg" alt="Startwell Education logo"><span><b>Startwell Education</b><small>Programming · Database L2</small></span></a>
+<a class="swlogo" href="/programming"><img src="images/logo.jpg" alt="Startwell Education logo" width="180" height="192"><span><b>Startwell Education</b><small>Programming · Database L2</small></span></a>
 <span class="swlinks"><a href="/programming">&#8592; Programming</a><a href="/database-big-tech">Level 3 →</a><a class="swc" href="/compiler">C++ Compiler</a></span>
 </div></div>
 
@@ -250,6 +260,9 @@ function go(i){
 }
 const h=location.hash;go(h=='#mock'?'mock':Math.min(Math.max(parseInt(h.slice(4))||1,1),A.length)-1);
 </script>
+<section class="sw-toc" aria-labelledby="sw-toc-h"><h2 id="sw-toc-h">Industrial Level: Interview Crack — Database Level 2</h2><p>Level 2 of our free Database course: 8 real production problems, each with wrong and right code, a live demo, interview questions and a resume line, followed by a mock interview.</p><ol><li><a href="/database-industrial#lab1">N+1 Query</a></li><li><a href="/database-industrial#lab2">Index aur EXPLAIN</a></li><li><a href="/database-industrial#lab3">Connection Pool</a></li><li><a href="/database-industrial#lab4">Debounce aur Cache</a></li><li><a href="/database-industrial#lab5">Idempotency Key</a></li><li><a href="/database-industrial#lab6">Rate Limiting</a></li><li><a href="/database-industrial#lab7">Email Bounce</a></li><li><a href="/database-industrial#lab8">Mega Lab</a></li><li><a href="/database-industrial#mock">Mock Interview</a></li></ol>
+<p class="sw-more">More free lessons: <a href="/programming">Programming course</a> · <a href="/compiler">Online C++ compiler</a> · <a href="/tools">Free Student Tools</a> — by <a href="/">Startwell Education, Bhimber</a>.</p></section>
+<script>window.addEventListener('hashchange',function(){location.reload()});</script>
 <script id="sw-try-js">
 (function(){
   var main=document.getElementById("m");if(!main)return;
