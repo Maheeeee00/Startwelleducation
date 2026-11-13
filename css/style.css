@@ -1255,3 +1255,10 @@ img{height:auto}
 .prose .news-card ul{margin:6px 0 0}
 .kw-line{max-width:820px;margin:0 auto 22px;text-align:center;color:var(--muted)}
 .kw-line a{color:var(--orange);font-weight:700}
+
+/* Contact Us button with dropdown */
+.nav-cta>a.btn{display:inline-flex;align-items:center;gap:8px}
+.nav-cta>a.btn .caret{color:#fff}
+.nav-cta .dropdown{left:auto;right:0}
+.nav-item.nav-cta.active>a{background:var(--orange);color:#fff}
+@media (max-width:1180px){.nav-cta .sub-toggle{top:20px}.nav-cta>a.btn .caret{display:none}}
