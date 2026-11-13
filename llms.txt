@@ -14,6 +14,13 @@ Contact: +92 340 1501700. Hours: Monday to Saturday, 8:00 AM to 2:00 PM. Website
 - [Admissions](https://www.startwell.edu.pk/admissions): Admissions information for session 2026-27.
 - [Admission Process](https://www.startwell.edu.pk/admission-process): Steps to apply, documents and FAQs.
 - [Campuses](https://www.startwell.edu.pk/campuses): Campus addresses and classes.
+- [Schools in Bhimber](https://www.startwell.edu.pk/schools-in-bhimber): Overview of programs, campuses and how to choose a school.
+- [Early Years](https://www.startwell.edu.pk/early-years): Playgroup to Prep.
+- [Primary School](https://www.startwell.edu.pk/primary-school): Class 1 to 5.
+- [Matric (Secondary)](https://www.startwell.edu.pk/matric-secondary): Class 9 and 10, Science and Arts groups.
+- [Hifz Department](https://www.startwell.edu.pk/hifz): Hifz ul Quran, directed by Qari Suleman Ayub.
+- [Bhotosial Campus](https://www.startwell.edu.pk/campuses/bhotosial-campus): Campus led by Sir Khalid Mehmood.
+- [Parent FAQs](https://www.startwell.edu.pk/faq): Admissions, documents and visits.
 - [News](https://www.startwell.edu.pk/news): Announcements and events.
 - [School Calendar](https://www.startwell.edu.pk/calendar): Term dates and holidays.
 - [Contact Us](https://www.startwell.edu.pk/contact): Contact details and campus information.
@@ -26,6 +33,20 @@ Contact: +92 340 1501700. Hours: Monday to Saturday, 8:00 AM to 2:00 PM. Website
 - [StartWell Spelling Bee](https://www.startwell.edu.pk/spelling-bee): The school spelling competition.
 - [Projects](https://www.startwell.edu.pk/projects): Student science, art, media and community projects.
 - [Gallery](https://www.startwell.edu.pk/gallery): Photos of ceremonies and events.
+
+## Blog
+
+- [Blog](https://www.startwell.edu.pk/blog): Research-based articles for parents.
+- [Education in Pakistan in Numbers: What the Latest Data Shows](https://www.startwell.edu.pk/blog/education-statistics-pakistan): Key education statistics for Pakistan: institutions, students, private school share, enrolment and out-of-school children, with global context from UNESCO 2026.
+- [Out-of-School Children in Pakistan: What the Data Says](https://www.startwell.edu.pk/blog/out-of-school-children-pakistan): 26.2 million children were out of school in Pakistan in 2021–22 (39%). See the numbers by level, wealth and distance, plus global data from UNESCO 2026.
+- [Private Schools in Pakistan: Why Nearly Half of Students Attend Them](https://www.startwell.edu.pk/blog/private-schools-pakistan-statistics): Nearly half of Pakistan’s students attend private schools. See the 2021–22 figures, UNESCO’s 2026 data, and what parents should check before choosing one.
+- [Why Early Years Education Matters: Evidence from Pakistan and the World](https://www.startwell.edu.pk/blog/early-years-education-pakistan): Why early childhood education matters: evidence from UNESCO’s 2026 report, pre-primary enrolment in Pakistan, and what good early years look like.
+- [Choosing a School in Bhimber: Facilities, Distance and Class Size](https://www.startwell.edu.pk/blog/choosing-school-bhimber-facilities): How to choose a school in Bhimber, AJK: check facilities, distance and class size, with national and AJK school-facility data from 2021–22.
+- [ASER Pakistan 2025: What Children Can Read and Do](https://www.startwell.edu.pk/blog/aser-2025-pakistan-findings): Key findings from ASER Pakistan 2025: out-of-school rate, what Class 3 and Class 5 children can read and do, and how government and private schools compare.
+- [How Well Do Children Learn in Rural AJK? ASER 2025 Findings](https://www.startwell.edu.pk/blog/aser-2025-ajk-learning): How well do children in rural Azad Jammu & Kashmir read and do maths? ASER 2025 results by class, compared with the national average.
+- [Government vs Private Schools in Rural AJK: Facilities and Teachers](https://www.startwell.edu.pk/blog/ajk-government-private-schools-aser-2025): ASER 2025 compares rural AJK government and private schools: electricity, water, toilets, playgrounds, libraries, labs and teacher qualifications.
+- [Early Childhood Education in Pakistan and AJK: What Parents Should Know](https://www.startwell.edu.pk/blog/early-childhood-education-aser-2025): How many Pakistani children aged 3–5 attend early childhood education? ASER 2025 and national statistics, plus what AJK schools offer.
+
 
 ## Free tools for students
 
