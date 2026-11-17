@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W93FNHKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+</script>
+<!-- End Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discrete Lecture 2: Truth Tables, Tautologies and Contradictions | Startwell</title>
+<link rel="canonical" href="https://www.startwell.edu.pk/discrete-lecture-2-truth-tables-tautologies">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Startwell Education Bhimber">
+<meta property="og:title" content="Discrete Lecture 2: Truth Tables, Tautologies and Contradictions | Startwell">
+<meta property="og:url" content="https://www.startwell.edu.pk/discrete-lecture-2-truth-tables-tautologies">
+<meta property="og:image" content="https://www.startwell.edu.pk/images/school-building.jpg">
+<meta property="og:description" content="Discrete Structures Lecture 2: build truth tables, 2ⁿ rows, tautology, contradiction and contingency — with a free truth table generator. English with Roman Urdu.">
+<meta name="description" content="Discrete Structures Lecture 2: build truth tables, 2ⁿ rows, tautology, contradiction and contingency — with a free truth table generator. English with Roman Urdu.">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.startwell.edu.pk/"}, {"@type": "ListItem", "position": 2, "name": "BS CS", "item": "https://www.startwell.edu.pk/programming"}, {"@type": "ListItem", "position": 3, "name": "Discrete Structures", "item": "https://www.startwell.edu.pk/discrete-structures"}, {"@type": "ListItem", "position": 4, "name": "Lecture 2: Truth Tables, Tautologies and Contradictions", "item": "https://www.startwell.edu.pk/discrete-lecture-2-truth-tables-tautologies"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Discrete Structures Lecture 2: Truth Tables, Tautologies and Contradictions", "url": "https://www.startwell.edu.pk/discrete-lecture-2-truth-tables-tautologies", "inLanguage": ["en", "ur-Latn"], "isAccessibleForFree": true, "learningResourceType": "Lecture notes", "educationalLevel": "BS Computer Science", "teaches": "Truth Tables, Tautologies and Contradictions", "isPartOf": {"@type": "Course", "name": "Discrete Structures (Roman Urdu + English)", "url": "https://www.startwell.edu.pk/discrete-structures"}, "provider": {"@type": "School", "name": "Startwell Education", "url": "https://www.startwell.edu.pk/"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="preloader"><div class="pl-inner"><img src="images/logo.jpg" alt="" width="180" height="192"><div class="pl-bar"></div><small>START WELL TO END WELL</small></div></div>
+<div class="scroll-progress"></div>
+<div class="topbar">
+  <div class="container">
+    <div>
+      <span><i class="fa-solid fa-phone"></i> +92 340 1501700</span>
+      <span class="hide-sm"><i class="fa-solid fa-envelope"></i> startwelleducationbhimber@gmail.com</span>
+      <span class="hide-sm"><i class="fa-regular fa-clock"></i> Mon – Sat: 8:00 AM – 2:00 PM</span>
+    </div>
+    <div class="socials">
+      <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </div>
+</div>
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+      <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+    </a>
+    <nav class="nav">
+      <button class="menu-toggle nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <a href="/">Home</a>
+      <a href="/aboutus">About Us</a>
+      <div class="nav-item">
+        <a href="/academics">Academics <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Academics pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/curriculum"><i class="fa-solid fa-book-open"></i>Curriculum</a>
+          <a href="/faculty"><i class="fa-solid fa-chalkboard-user"></i>Faculty &amp; Staff</a>
+          <a href="/calendar"><i class="fa-regular fa-calendar-days"></i>School Calendar</a>
+          <a href="/early-years"><i class="fa-solid fa-shapes"></i>Early Years</a>
+          <a href="/primary-school"><i class="fa-solid fa-pencil"></i>Primary School</a>
+          <a href="/matric-secondary"><i class="fa-solid fa-graduation-cap"></i>Matric (Secondary)</a>
+          <a href="/hifz"><i class="fa-solid fa-book-quran"></i>Hifz Department</a>
+          <a href="/activities"><i class="fa-solid fa-person-running"></i>Activities</a>
+          <a href="/online-activities"><i class="fa-brands fa-tiktok"></i>Online Activities</a>
+          <a href="/facebook"><i class="fa-brands fa-facebook"></i>Facebook Page</a>
+          <a href="/projects"><i class="fa-solid fa-diagram-project"></i>Projects</a>
+          <a href="/faq"><i class="fa-solid fa-circle-question"></i>Parent FAQs</a>
+        </div>
+      </div>
+      <div class="nav-item active">
+        <a href="/programming">BS CS <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show BS CS pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/pf-bilkul-aasan"><i class="fa-solid fa-list-ol"></i>PF — Programming Fundamentals</a>
+          <a href="/oop-bilkul-aasan"><i class="fa-solid fa-cubes"></i>OOP — Object-Oriented Programming</a>
+          <a href="/database-bilkul-aasan"><i class="fa-solid fa-database"></i>Database (SQL)</a>
+          <a href="/discrete-structures"><i class="fa-solid fa-diagram-project"></i>Discrete Structures</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/teams">Teams <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Teams pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/junior-media-team"><i class="fa-solid fa-video"></i>Junior Media Team</a>
+          <a href="/senior-media-team"><i class="fa-solid fa-microphone-lines"></i>Senior Media Team</a>
+          <a href="/spelling-bee"><i class="fa-solid fa-spell-check"></i>StartWell Spelling Bee</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/tools">Tools <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Tools pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/pdf-toolbox"><i class="fa-solid fa-file-pdf"></i>PDF Toolbox</a>
+          <a href="/image-resizer"><i class="fa-solid fa-image"></i>Image Resizer</a>
+          <a href="/marks-calculator"><i class="fa-solid fa-calculator"></i>Marks Calculator</a>
+          <a href="/word-counter"><i class="fa-solid fa-spell-check"></i>Word Counter</a>
+        </div>
+      </div>
+      <a href="/blog">Blog</a>
+      <a href="/gallery">Gallery</a>
+      <div class="nav-item nav-cta">
+        <a href="/contact" class="btn btn-primary">Contact Us <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Contact pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/contact"><i class="fa-solid fa-phone"></i>Contact Us</a>
+          <a href="/admissions"><i class="fa-solid fa-user-plus"></i>Admissions</a>
+          <a href="/admission-process"><i class="fa-solid fa-list-check"></i>Admission Process</a>
+          <a href="/campuses"><i class="fa-solid fa-school"></i>Our Campuses</a>
+        </div>
+      </div>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-banner">
+  <div class="banner-art" aria-hidden="true"><span class="r1"></span><span class="r2"></span><img src="/images/logo.jpg" alt="" width="180" height="192"></div>
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold)">Discrete Structures · Lecture 2</span>
+    <h1>Truth Tables, Tautologies and Contradictions</h1>
+    <p class="lead" style="color:#c7d0ea;max-width:680px">Week 1, slot 2 · CLO-1, CLO-2 · Bloom C3 · Prerequisite: Lecture 1 · Reference: Rosen 7th, Logic and Proofs</p>
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/programming">BS CS</a> &nbsp;/&nbsp; <a href="/discrete-structures">Discrete Structures</a> &nbsp;/&nbsp; Lecture 2</div>
+  </div>
+</section>
+<section>
+  <div class="container">
+<div class="prose lec ds">
+<h2>Learning objectives</h2>
+<ol>
+<li>Build a truth table for any compound proposition.</li>
+<li>Know that n variables give 2ⁿ rows.</li>
+<li>Classify a proposition as tautology, contradiction or contingency.</li>
+<li>Use truth tables to decide when two statements agree.</li>
+</ol>
+<blockquote class="ru">
+<p><strong>Roman Urdu.</strong> Is lecture mein hum compound proposition ka truth table banana seekhte hain. n variables ke liye 2ⁿ rows hoti hain. Phir dekhte hain ke koi statement hamesha sahih (tautology), hamesha ghalat (contradiction) ya kabhi sahih kabhi ghalat (contingency) hai.</p>
+</blockquote>
+<h2>Core concepts</h2>
+<p><strong>Definition.</strong> A <strong>tautology</strong> is always true. A <strong>contradiction</strong> is always false. A <strong>contingency</strong> is sometimes true and sometimes false.</p>
+<p><strong>Method for building a table:</strong> (1) list variables; (2) write all 2ⁿ combinations in a fixed order, starting TT…T and ending FF…F; (3) add one column per sub-expression, working from the innermost brackets outwards; (4) the last column is the answer.</p>
+<p><strong>Theorem.</strong> A table with n variables has 2ⁿ rows. Reason: each variable independently takes 2 values, so by the product rule there are 2 · 2 · … · 2 = 2ⁿ combinations.</p>
+<div class="tt-tool" id="ttTool">
+  <h3>Try it: truth table maker</h3>
+  <p>Type a statement using p, q, r, s. Use the buttons or type <code>!</code> (not), <code>&amp;</code> (and), <code>|</code> (or), <code>^</code> (xor), <code>-&gt;</code> (implies), <code>&lt;-&gt;</code> (iff).</p>
+  <div class="tt-row"><input id="ttIn" type="text" value="(p -> q) & p -> q" aria-label="Logical statement" spellcheck="false" autocomplete="off"><button type="button" class="btn btn-primary" id="ttGo">Make table</button></div>
+  <div class="tt-keys">
+    <button type="button" data-k="¬">¬ not</button><button type="button" data-k="∧">∧ and</button><button type="button" data-k="∨">∨ or</button><button type="button" data-k="⊕">⊕ xor</button><button type="button" data-k="→">→ implies</button><button type="button" data-k="↔">↔ iff</button><button type="button" data-k="(">(</button><button type="button" data-k=")">)</button>
+  </div>
+  <div id="ttOut" class="tt-out" aria-live="polite"></div>
+</div>
+<script>
+(function(){
+  var inp=document.getElementById('ttIn'),out=document.getElementById('ttOut');
+  function tok(s){
+    s=s.replace(/<->|<=>|↔/g,' IFF ').replace(/->|=>|→/g,' IMP ').replace(/[¬!~]/g,' NOT ').replace(/&&|[&∧]|\band\b/gi,' AND ').replace(/\|\||[|∨]|\bor\b/gi,' OR ').replace(/[⊕^]|\bxor\b/gi,' XOR ').replace(/\bnot\b/gi,' NOT ').replace(/\(/g,' ( ').replace(/\)/g,' ) ');
+    return s.trim().split(/\s+/).filter(Boolean);
+  }
+  function parse(tk){
+    var i=0;
+    function peek(){return tk[i]} function eat(x){if(tk[i]!==x)throw new Error('Expected '+x);i++}
+    function prim(){var t=tk[i++];if(t==='NOT'){var a=prim();return function(v){return!a(v)}}
+      if(t==='('){var e=iff();eat(')');return e}
+      if(/^[pqrsPQRS]$/.test(t||'')){var n=t.toLowerCase();vars[n]=1;return function(v){return v[n]}}
+      if(t==='T'||t==='F'){var c=t==='T';return function(){return c}}
+      throw new Error(t?('Unexpected "'+t+'"'):'Statement ended too early')}
+    function and(){var a=prim();while(peek()==='AND'){i++;var b=prim();a=(function(x,y){return function(v){return x(v)&&y(v)}})(a,b)}return a}
+    function or(){var a=and();while(peek()==='OR'||peek()==='XOR'){var op=tk[i++],b=and();a=(function(x,y,o){return function(v){return o==='OR'?x(v)||y(v):x(v)!==y(v)}})(a,b,op)}return a}
+    function imp(){var a=or();if(peek()==='IMP'){i++;var b=imp();return function(v){return!a(v)||b(v)}}return a}
+    function iff(){var a=imp();while(peek()==='IFF'){i++;var b=imp();a=(function(x,y){return function(v){return x(v)===y(v)}})(a,b)}return a}
+    var vars={},f=iff();if(i<tk.length)throw new Error('Unexpected "'+tk[i]+'"');return{f:f,vars:Object.keys(vars).sort()};
+  }
+  function run(){
+    try{var r=parse(tok(inp.value));}catch(err){out.innerHTML='<p class="tt-err">'+err.message+'. Check brackets and symbols.</p>';return}
+    var v=r.vars,n=v.length,rows=[],t=0;
+    if(!n){out.innerHTML='<p class="tt-err">Use at least one variable: p, q, r or s.</p>';return}
+    var h='<div class="scroll"><table><thead><tr>'+v.map(function(x){return'<th>'+x+'</th>'}).join('')+'<th>Result</th></tr></thead><tbody>';
+    for(var m=0;m<(1<<n);m++){var a={};v.forEach(function(x,j){a[x]=!((m>>(n-1-j))&1)});var res=r.f(a);if(res)t++;
+      h+='<tr>'+v.map(function(x){return'<td>'+(a[x]?'T':'F')+'</td>'}).join('')+'<td class="'+(res?'tt-t':'tt-f')+'">'+(res?'T':'F')+'</td></tr>'}
+    h+='</tbody></table></div>';
+    var kind=t===(1<<n)?'Tautology — always true':t===0?'Contradiction — always false':'Contingency — sometimes true, sometimes false';
+    out.innerHTML='<p class="tt-kind"><b>'+(1<<n)+' rows</b> (2<sup>'+n+'</sup>) · '+kind+'</p>'+h;
+  }
+  document.getElementById('ttGo').addEventListener('click',run);
+  inp.addEventListener('keydown',function(ev){if(ev.key==='Enter')run()});
+  document.querySelectorAll('#ttTool .tt-keys button').forEach(function(b){b.addEventListener('click',function(){var s=inp.selectionStart||inp.value.length,k=b.dataset.k;inp.value=inp.value.slice(0,s)+' '+k+' '+inp.value.slice(inp.selectionEnd||s);inp.focus();})});
+  run();
+})();
+</script>
+<h2>Worked examples</h2>
+<p><strong>Example 1 (basic).</strong> Show p ∨ ¬p is a tautology and p ∧ ¬p a contradiction.</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>p</th>
+<th>¬p</th>
+<th>p ∨ ¬p</th>
+<th>p ∧ ¬p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+</tr>
+</tbody>
+</table></div>
+<p>The third column is all T and the fourth is all F, as claimed.</p>
+<p><strong>Example 2 (intermediate).</strong> Show (p ∨ q) ∧ ¬(p ∧ q) has the same truth values as p ⊕ q.</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>p</th>
+<th>q</th>
+<th>p∨q</th>
+<th>p∧q</th>
+<th>¬(p∧q)</th>
+<th>(p∨q) ∧ ¬(p∧q)</th>
+<th>p⊕q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table></div>
+<p>The last two columns match in all four rows, so "at least one but not both" is exactly XOR.</p>
+<p><strong>Example 3 (advanced).</strong> Show [(p → q) ∧ p] → q is a tautology.</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>p</th>
+<th>q</th>
+<th>p→q</th>
+<th>(p → q) ∧ p</th>
+<th>whole statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table></div>
+<p>The last column is all T. This tautology is the rule <em>modus ponens</em>, used again in Lecture 5.</p>
+<p><strong>Example 4 (computing).</strong> For <code>if (a &amp;&amp; (b || !a))</code>, a table over a and b shows the result equals a ∧ b. Check: when a = T, b ∨ ¬a = b; when a = F the whole thing is F. So the test <code>!a</code> inside is redundant and can be removed.</p>
+<h2>Computer science connection</h2>
+<p>Testing all input combinations of a condition; circuit verification. Checking every row costs 2ⁿ steps. Deciding satisfiability of a Boolean formula (SAT) is the classic NP-complete problem, which is why large circuits need smarter methods than tables.</p>
+<h2>Key takeaways</h2>
+<ul>
+<li>n variables → 2ⁿ rows.</li>
+<li>Tautology: all T. Contradiction: all F. Contingency: mixed.</li>
+<li>Build tables column by column from the inside out.</li>
+</ul>
+<blockquote class="ru">
+<p><strong>Roman Urdu.</strong> n variables ka truth table 2ⁿ rows ka hota hai. Agar aakhri column mein sab T ho to tautology, sab F ho to contradiction. Table banate waqt andar wale brackets se shuru karein.</p>
+</blockquote>
+<h2>Five revision questions</h2>
+<ol>
+<li>How many rows are in a truth table with 5 variables?</li>
+<li>Classify p → (p ∨ q).</li>
+<li>Build a table for (p → q) ∧ (q → p).</li>
+<li>Is (p ∧ q) → p a tautology? Justify.</li>
+<li>Simplify the condition <code>a || (a &amp;&amp; b)</code> using a table.</li>
+</ol>
+<p><strong>Homework.</strong> Build the 8-row table for (p ∧ q) → r and state its type. Write a short program that prints the truth table of any two-variable expression.</p>
+<h2>Quiz</h2><div class="lec-quiz"><p>3 variables ki truth table mein kitni rows?</p><div class="lq-opts" data-ans="2"><button type="button" class="lq-opt" data-k="0">3</button><button type="button" class="lq-opt" data-k="1">6</button><button type="button" class="lq-opt" data-k="2">8</button><button type="button" class="lq-opt" data-k="3">9</button></div><p class="lq-fb" aria-live="polite" hidden>2 ki power 3 = 8 rows.</p></div><script>document.querySelectorAll('.lq-opts').forEach(function(box){box.addEventListener('click',function(ev){var b=ev.target.closest('.lq-opt');if(!b||box.dataset.done)return;box.dataset.done=1;var a=+box.dataset.ans,fb=box.parentNode.querySelector('.lq-fb');box.children[a].classList.add('good');if(+b.dataset.k!==a)b.classList.add('bad');fb.textContent=(+b.dataset.k===a?'Sahi! ':'Galat. ')+fb.textContent;fb.hidden=false;});});</script>
+<div class="lec-nav"><a class="btn btn-ghost" href="/discrete-lecture-1-propositions-connectives">&larr; Lecture 1</a><a class="btn btn-primary" href="/discrete-lecture-3-logical-equivalence-laws">Lecture 3 &rarr;</a></div>
+<h2>All lectures</h2>
+<ol class="lec-all" start="0"><li><a href="/discrete-lecture-0-discrete-vs-continuous">Lecture 0: Discrete vs Continuous</a></li><li><a href="/discrete-lecture-1-propositions-connectives">Lecture 1: Propositions and Connectives</a></li><li class="cur"><a href="/discrete-lecture-2-truth-tables-tautologies">Lecture 2: Truth Tables, Tautologies and Contradictions</a></li><li><a href="/discrete-lecture-3-logical-equivalence-laws">Lecture 3: Logical Equivalence and the Laws of Logic</a></li><li><a href="/discrete-lecture-4-predicate-logic-quantifiers">Lecture 4: Predicate Logic and Quantifiers</a></li><li><a href="/discrete-lecture-5-rules-of-inference">Lecture 5: Rules of Inference</a></li><li><a href="/discrete-lecture-6-arguments-puzzles">Lecture 6: Logical Arguments and Puzzle Solving</a></li><li><a href="/discrete-lecture-7-direct-proof">Lecture 7: Direct Proof and Proof by Implication</a></li><li><a href="/discrete-lecture-8-proof-by-contraposition">Lecture 8: Proof by Contraposition</a></li><li><a href="/discrete-lecture-9-proof-by-contradiction">Lecture 9: Proof by Contradiction</a></li><li><a href="/discrete-lecture-10-mathematical-induction">Lecture 10: Mathematical Induction</a></li><li><a href="/discrete-lecture-11-strong-induction">Lecture 11: Strong Induction</a></li><li><a href="/discrete-lecture-12-proof-strategy">Lecture 12: Applications of Proofs and Proof Strategy</a></li></ol>
+</div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="cta reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Admissions Open</span>
+        <h2>Give your child the right start.</h2>
+        <p>Seats are limited. Visit our campus, meet our teachers and see why families trust Startwell Education.</p>
+      </div>
+      <div class="actions">
+        <a href="/contact" class="btn btn-primary">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="tel:+923401501700" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand" style="margin-bottom:18px">
+          <img src="images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+          <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+        </a>
+        <p>A place where young minds are given wings to fly — combining strong academics, good character and a caring environment.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-h">Quick Links</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/aboutus">About Us</a></li>
+          <li><a href="/academics">Academics</a></li>
+          <li><a href="/activities">Activities</a></li>
+          <li><a href="/faculty">Faculty &amp; Staff</a></li>
+          <li><a href="/calendar">School Calendar</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Explore</p>
+        <ul>
+          <li><a href="/junior-media-team">Junior Media Team</a></li>
+          <li><a href="/senior-media-team">Senior Media Team</a></li>
+          <li><a href="/spelling-bee">StartWell Spelling Bee</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/learn-well">Learn Well</a></li>
+          <li><a href="/tools">Free Student Tools</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Get in Touch</p>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i><span>Bhimber, Azad Jammu &amp; Kashmir, Pakistan</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+92 340 1501700</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>startwelleducationbhimber@gmail.com</span></li>
+          <li><i class="fa-regular fa-clock"></i><span>Mon – Sat: 8:00 AM – 2:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-links"><a href="/blog">Blog</a><a href="/news">News</a><a href="/faq">Parent FAQs</a><a href="/schools-in-bhimber">Schools in Bhimber</a><a href="/campuses">Campuses</a><a href="/admission-process">Admission Process</a><a href="/privacy-policy">Privacy Policy</a></div>
+  <div class="footer-bottom">© <span class="year-now">2026</span> Startwell Education, Bhimber — <em>Start Well to End Well</em>. All rights reserved.</div>
+</footer>
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<a href="/tools" class="swe-tools" aria-label="Free Student Tools" title="Free Student Tools"><span class="swe-ico"><i class="fa-solid fa-screwdriver-wrench"></i></span></a>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

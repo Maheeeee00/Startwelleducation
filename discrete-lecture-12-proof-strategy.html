@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W93FNHKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+</script>
+<!-- End Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discrete Lecture 12: Applications of Proofs and Proof Strategy | Startwell</title>
+<link rel="canonical" href="https://www.startwell.edu.pk/discrete-lecture-12-proof-strategy">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Startwell Education Bhimber">
+<meta property="og:title" content="Discrete Lecture 12: Applications of Proofs and Proof Strategy | Startwell">
+<meta property="og:url" content="https://www.startwell.edu.pk/discrete-lecture-12-proof-strategy">
+<meta property="og:image" content="https://www.startwell.edu.pk/images/school-building.jpg">
+<meta property="og:description" content="Discrete Structures Lecture 12: choosing the right proof method, proving recursive functions and loops correct with invariants, and finding the flaw in a wrong proof — English with Roman Urdu.">
+<meta name="description" content="Discrete Structures Lecture 12: choosing the right proof method, proving recursive functions and loops correct with invariants, and finding the flaw in a wrong proof — English with Roman Urdu.">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.startwell.edu.pk/"}, {"@type": "ListItem", "position": 2, "name": "BS CS", "item": "https://www.startwell.edu.pk/programming"}, {"@type": "ListItem", "position": 3, "name": "Discrete Structures", "item": "https://www.startwell.edu.pk/discrete-structures"}, {"@type": "ListItem", "position": 4, "name": "Lecture 12: Applications of Proofs and Proof Strategy", "item": "https://www.startwell.edu.pk/discrete-lecture-12-proof-strategy"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Discrete Structures Lecture 12: Applications of Proofs and Proof Strategy", "url": "https://www.startwell.edu.pk/discrete-lecture-12-proof-strategy", "inLanguage": ["en", "ur-Latn"], "isAccessibleForFree": true, "learningResourceType": "Lecture notes", "educationalLevel": "BS Computer Science", "teaches": "Applications of Proofs and Proof Strategy", "isPartOf": {"@type": "Course", "name": "Discrete Structures (Roman Urdu + English)", "url": "https://www.startwell.edu.pk/discrete-structures"}, "provider": {"@type": "School", "name": "Startwell Education", "url": "https://www.startwell.edu.pk/"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="preloader"><div class="pl-inner"><img src="images/logo.jpg" alt="" width="180" height="192"><div class="pl-bar"></div><small>START WELL TO END WELL</small></div></div>
+<div class="scroll-progress"></div>
+<div class="topbar">
+  <div class="container">
+    <div>
+      <span><i class="fa-solid fa-phone"></i> +92 340 1501700</span>
+      <span class="hide-sm"><i class="fa-solid fa-envelope"></i> startwelleducationbhimber@gmail.com</span>
+      <span class="hide-sm"><i class="fa-regular fa-clock"></i> Mon – Sat: 8:00 AM – 2:00 PM</span>
+    </div>
+    <div class="socials">
+      <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </div>
+</div>
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+      <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+    </a>
+    <nav class="nav">
+      <button class="menu-toggle nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <a href="/">Home</a>
+      <a href="/aboutus">About Us</a>
+      <div class="nav-item">
+        <a href="/academics">Academics <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Academics pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/curriculum"><i class="fa-solid fa-book-open"></i>Curriculum</a>
+          <a href="/faculty"><i class="fa-solid fa-chalkboard-user"></i>Faculty &amp; Staff</a>
+          <a href="/calendar"><i class="fa-regular fa-calendar-days"></i>School Calendar</a>
+          <a href="/early-years"><i class="fa-solid fa-shapes"></i>Early Years</a>
+          <a href="/primary-school"><i class="fa-solid fa-pencil"></i>Primary School</a>
+          <a href="/matric-secondary"><i class="fa-solid fa-graduation-cap"></i>Matric (Secondary)</a>
+          <a href="/hifz"><i class="fa-solid fa-book-quran"></i>Hifz Department</a>
+          <a href="/activities"><i class="fa-solid fa-person-running"></i>Activities</a>
+          <a href="/online-activities"><i class="fa-brands fa-tiktok"></i>Online Activities</a>
+          <a href="/facebook"><i class="fa-brands fa-facebook"></i>Facebook Page</a>
+          <a href="/projects"><i class="fa-solid fa-diagram-project"></i>Projects</a>
+          <a href="/faq"><i class="fa-solid fa-circle-question"></i>Parent FAQs</a>
+        </div>
+      </div>
+      <div class="nav-item active">
+        <a href="/programming">BS CS <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show BS CS pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/pf-bilkul-aasan"><i class="fa-solid fa-list-ol"></i>PF — Programming Fundamentals</a>
+          <a href="/oop-bilkul-aasan"><i class="fa-solid fa-cubes"></i>OOP — Object-Oriented Programming</a>
+          <a href="/database-bilkul-aasan"><i class="fa-solid fa-database"></i>Database (SQL)</a>
+          <a href="/discrete-structures"><i class="fa-solid fa-diagram-project"></i>Discrete Structures</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/teams">Teams <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Teams pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/junior-media-team"><i class="fa-solid fa-video"></i>Junior Media Team</a>
+          <a href="/senior-media-team"><i class="fa-solid fa-microphone-lines"></i>Senior Media Team</a>
+          <a href="/spelling-bee"><i class="fa-solid fa-spell-check"></i>StartWell Spelling Bee</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/tools">Tools <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Tools pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/pdf-toolbox"><i class="fa-solid fa-file-pdf"></i>PDF Toolbox</a>
+          <a href="/image-resizer"><i class="fa-solid fa-image"></i>Image Resizer</a>
+          <a href="/marks-calculator"><i class="fa-solid fa-calculator"></i>Marks Calculator</a>
+          <a href="/word-counter"><i class="fa-solid fa-spell-check"></i>Word Counter</a>
+        </div>
+      </div>
+      <a href="/blog">Blog</a>
+      <a href="/gallery">Gallery</a>
+      <div class="nav-item nav-cta">
+        <a href="/contact" class="btn btn-primary">Contact Us <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Contact pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/contact"><i class="fa-solid fa-phone"></i>Contact Us</a>
+          <a href="/admissions"><i class="fa-solid fa-user-plus"></i>Admissions</a>
+          <a href="/admission-process"><i class="fa-solid fa-list-check"></i>Admission Process</a>
+          <a href="/campuses"><i class="fa-solid fa-school"></i>Our Campuses</a>
+        </div>
+      </div>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-banner">
+  <div class="banner-art" aria-hidden="true"><span class="r1"></span><span class="r2"></span><img src="/images/logo.jpg" alt="" width="180" height="192"></div>
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold)">Discrete Structures · Lecture 12</span>
+    <h1>Applications of Proofs and Proof Strategy</h1>
+    <p class="lead" style="color:#c7d0ea;max-width:680px">Week 4, slot 3 · CLO-2, CLO-3, CLO-4 · Bloom C3–C4 · Prerequisite: Lectures 7–11 · Reference: Rosen 7th, Induction and Recursion; Logic and Proofs</p>
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/programming">BS CS</a> &nbsp;/&nbsp; <a href="/discrete-structures">Discrete Structures</a> &nbsp;/&nbsp; Lecture 12</div>
+  </div>
+</section>
+<section>
+  <div class="container">
+<div class="prose lec ds">
+<h2>Learning objectives</h2>
+<ol>
+<li>Choose the most suitable proof method for a given statement.</li>
+<li>Prove a recursive function correct by induction.</li>
+<li>Use a loop invariant to prove a loop correct.</li>
+<li>Find and explain the error in a flawed proof.</li>
+</ol>
+<blockquote class="ru">
+<p><strong>Roman Urdu.</strong> Is lecture mein hum proof ke tamam tareeqon ko aik jagah jama karte hain aur dekhte hain ke kaun sa tareeqa kab istemal karna chahiye. Hum induction se recursive function aur loop ki correctness sabit karte hain, aur ek ghalat proof ki ghalti pakadna seekhte hain.</p>
+</blockquote>
+<h2>Core concepts</h2>
+<p><strong>Proof strategy summary</strong></p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Statement looks like</th>
+<th>First method to try</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p → q with a clear definition for p</td>
+<td>Direct proof</td>
+<td>Unpack p, build q</td>
+</tr>
+<tr>
+<td>p → q with "not" in q, or q easy to negate</td>
+<td>Contraposition</td>
+<td>¬q gives clean algebra</td>
+</tr>
+<tr>
+<td>"There is no…", "… is irrational"</td>
+<td>Contradiction</td>
+<td>Negation gives a concrete object</td>
+</tr>
+<tr>
+<td>∀n ≥ n₀, formula or property of n</td>
+<td>Induction</td>
+<td>Property builds step by step</td>
+</tr>
+<tr>
+<td>Property depends on smaller cases</td>
+<td>Strong induction</td>
+<td>Hypothesis covers all earlier cases</td>
+</tr>
+<tr>
+<td>∃x P(x)</td>
+<td>Constructive: show a witness</td>
+<td>One example suffices</td>
+</tr>
+<tr>
+<td>∀x P(x) false</td>
+<td>Counterexample</td>
+<td>One example suffices</td>
+</tr>
+<tr>
+<td>p ↔ q</td>
+<td>Prove both directions</td>
+<td>Two implications</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Loop invariant.</strong> A condition that is true before the loop starts and stays true after every iteration. A proof has three parts: <strong>initialisation</strong> (true before the first iteration), <strong>maintenance</strong> (if true before an iteration, true after it) and <strong>termination</strong> (when the loop ends, the invariant gives the wanted result). It is induction on the number of iterations.</p>
+<h2>Worked examples</h2>
+<p><strong>Example 1 (basic). Choose the method.</strong>
+(a) "If n² is odd then n is odd": contraposition (or direct on the contrapositive). (b) "There is no rational number whose square is 2": contradiction. (c) "For every n ≥ 1, 1 + 2 + … + n = n(n + 1)/2": induction. (d) "Every amount ≥ 12 can be paid with 4- and 5-cent stamps": strong induction.</p>
+<p><strong>Example 2 (intermediate). A recursive function.</strong> Define fact(0) = 1 and fact(n) = n · fact(n − 1) for n ≥ 1. Prove fact(n) = n! for all n ≥ 0.
+Basis: fact(0) = 1 = 0!. Step: assume fact(k) = k!. Then fact(k + 1) = (k + 1)·fact(k) = (k + 1)·k! = (k + 1)!. ∎ The structure of the proof copies the structure of the recursion.</p>
+<p><strong>Example 3 (advanced). A loop invariant.</strong> Code: <code>s = 0; for i = 1 to n: s = s + i</code>. Claim: when the loop ends, s = n(n + 1)/2.
+Invariant: at the start of the iteration with index i, s = (i − 1)i/2.
+- Initialisation: i = 1, s = 0 = 0·1/2. True.
+- Maintenance: after the iteration, s = (i − 1)i/2 + i = i(i + 1)/2, which is the invariant for index i + 1.
+- Termination: the loop ends with i = n + 1, so s = n(n + 1)/2. ∎</p>
+<p><strong>Example 4 (error analysis). Find the flaw.</strong> "Theorem: all horses in any set of n horses have the same colour. Basis n = 1: trivial. Step: assume it for k horses. Take k + 1 horses. Remove one: the remaining k horses share a colour. Put it back and remove another: again the remaining k share a colour. The two groups overlap, so all k + 1 share a colour."
+The flaw is in the step for k = 1. With 2 horses, removing one leaves {horse B} and removing the other leaves {horse A}. The two groups do not overlap, so the argument does not link them. The step P(k) → P(k + 1) fails for k = 1, so the induction collapses even though the basis is true.</p>
+<h2>Computer science connection</h2>
+<p>Program verification and formal specification (CLO-3): loop invariants, preconditions and postconditions are the basis of tools such as Dafny, Frama-C and Hoare logic; proofs of recursive algorithms; reasoning about correctness before testing.</p>
+<h2>Key takeaways</h2>
+<ul>
+<li>Match the proof method to the shape of the statement.</li>
+<li>Loop invariants prove loops correct. They are induction on iterations.</li>
+<li>Every step of a proof must be justified for all cases it claims to cover.</li>
+</ul>
+<blockquote class="ru">
+<p><strong>Roman Urdu.</strong> Direct, contraposition, contradiction, induction aur strong induction — har tareeqay ka apna maqam hai. Loop invariant mein teen cheezen: shuru mein sahih, har iteration ke baad sahih, aur akhir mein matlub natija. Induction ka step har k ke liye sahih hona chahiye, warna proof ghalat hai.</p>
+</blockquote>
+<h2>Five revision questions</h2>
+<ol>
+<li>For each statement, name the best proof method: (a) √5 is irrational; (b) the sum of two even integers is even; (c) 2ⁿ ≥ n + 1 for n ≥ 0.</li>
+<li>State the three parts of a loop-invariant proof.</li>
+<li>Prove by induction that fact(n) ≥ 1 for all n ≥ 0.</li>
+<li>Why does the horse proof fail only at k = 1 and not elsewhere?</li>
+<li>Write an invariant for a loop that computes 2ⁿ by repeated doubling.</li>
+</ol>
+<p><strong>Homework (assignment 4).</strong> (a) Prove the correctness of a recursive function that sums the first n positive integers. (b) State and prove a loop invariant for a loop computing n! iteratively. (c) Write a one-page comparison of the five proof methods with one example each from your own course material.</p>
+<p><strong>Next:</strong> Week 5, Lectures 13–15 — Set Theory (coming soon).</p>
+<h2>Quiz</h2><div class="lec-quiz"><p>&#x27;Har prime odd hai&#x27; ko ghalat sabit karne ka tareeqa?</p><div class="lq-opts" data-ans="1"><button type="button" class="lq-opt" data-k="0">Induction</button><button type="button" class="lq-opt" data-k="1">Counterexample: 2</button><button type="button" class="lq-opt" data-k="2">Direct proof</button><button type="button" class="lq-opt" data-k="3">Contraposition</button></div><p class="lq-fb" aria-live="polite" hidden>Ek counterexample kaafi hai: 2 prime hai magar even.</p></div><script>document.querySelectorAll('.lq-opts').forEach(function(box){box.addEventListener('click',function(ev){var b=ev.target.closest('.lq-opt');if(!b||box.dataset.done)return;box.dataset.done=1;var a=+box.dataset.ans,fb=box.parentNode.querySelector('.lq-fb');box.children[a].classList.add('good');if(+b.dataset.k!==a)b.classList.add('bad');fb.textContent=(+b.dataset.k===a?'Sahi! ':'Galat. ')+fb.textContent;fb.hidden=false;});});</script>
+<div class="lec-nav"><a class="btn btn-ghost" href="/discrete-lecture-11-strong-induction">&larr; Lecture 11</a><a class="btn btn-primary" href="/discrete-structures">Back to course page &rarr;</a></div>
+<h2>All lectures</h2>
+<ol class="lec-all" start="0"><li><a href="/discrete-lecture-0-discrete-vs-continuous">Lecture 0: Discrete vs Continuous</a></li><li><a href="/discrete-lecture-1-propositions-connectives">Lecture 1: Propositions and Connectives</a></li><li><a href="/discrete-lecture-2-truth-tables-tautologies">Lecture 2: Truth Tables, Tautologies and Contradictions</a></li><li><a href="/discrete-lecture-3-logical-equivalence-laws">Lecture 3: Logical Equivalence and the Laws of Logic</a></li><li><a href="/discrete-lecture-4-predicate-logic-quantifiers">Lecture 4: Predicate Logic and Quantifiers</a></li><li><a href="/discrete-lecture-5-rules-of-inference">Lecture 5: Rules of Inference</a></li><li><a href="/discrete-lecture-6-arguments-puzzles">Lecture 6: Logical Arguments and Puzzle Solving</a></li><li><a href="/discrete-lecture-7-direct-proof">Lecture 7: Direct Proof and Proof by Implication</a></li><li><a href="/discrete-lecture-8-proof-by-contraposition">Lecture 8: Proof by Contraposition</a></li><li><a href="/discrete-lecture-9-proof-by-contradiction">Lecture 9: Proof by Contradiction</a></li><li><a href="/discrete-lecture-10-mathematical-induction">Lecture 10: Mathematical Induction</a></li><li><a href="/discrete-lecture-11-strong-induction">Lecture 11: Strong Induction</a></li><li class="cur"><a href="/discrete-lecture-12-proof-strategy">Lecture 12: Applications of Proofs and Proof Strategy</a></li></ol>
+</div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="cta reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Admissions Open</span>
+        <h2>Give your child the right start.</h2>
+        <p>Seats are limited. Visit our campus, meet our teachers and see why families trust Startwell Education.</p>
+      </div>
+      <div class="actions">
+        <a href="/contact" class="btn btn-primary">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="tel:+923401501700" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand" style="margin-bottom:18px">
+          <img src="images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+          <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+        </a>
+        <p>A place where young minds are given wings to fly — combining strong academics, good character and a caring environment.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-h">Quick Links</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/aboutus">About Us</a></li>
+          <li><a href="/academics">Academics</a></li>
+          <li><a href="/activities">Activities</a></li>
+          <li><a href="/faculty">Faculty &amp; Staff</a></li>
+          <li><a href="/calendar">School Calendar</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Explore</p>
+        <ul>
+          <li><a href="/junior-media-team">Junior Media Team</a></li>
+          <li><a href="/senior-media-team">Senior Media Team</a></li>
+          <li><a href="/spelling-bee">StartWell Spelling Bee</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/learn-well">Learn Well</a></li>
+          <li><a href="/tools">Free Student Tools</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Get in Touch</p>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i><span>Bhimber, Azad Jammu &amp; Kashmir, Pakistan</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+92 340 1501700</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>startwelleducationbhimber@gmail.com</span></li>
+          <li><i class="fa-regular fa-clock"></i><span>Mon – Sat: 8:00 AM – 2:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-links"><a href="/blog">Blog</a><a href="/news">News</a><a href="/faq">Parent FAQs</a><a href="/schools-in-bhimber">Schools in Bhimber</a><a href="/campuses">Campuses</a><a href="/admission-process">Admission Process</a><a href="/privacy-policy">Privacy Policy</a></div>
+  <div class="footer-bottom">© <span class="year-now">2026</span> Startwell Education, Bhimber — <em>Start Well to End Well</em>. All rights reserved.</div>
+</footer>
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<a href="/tools" class="swe-tools" aria-label="Free Student Tools" title="Free Student Tools"><span class="swe-ico"><i class="fa-solid fa-screwdriver-wrench"></i></span></a>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

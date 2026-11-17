@@ -56,7 +56,7 @@
   <url><loc>https://www.startwell.edu.pk/pf-bilkul-aasan</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.startwell.edu.pk/primary-school</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.startwell.edu.pk/privacy-policy</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.startwell.edu.pk/programming</loc><lastmod>2026-11-13</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.startwell.edu.pk/programming</loc><lastmod>2026-11-17</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.startwell.edu.pk/projects</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.startwell.edu.pk/schools-in-bhimber</loc><lastmod>2026-11-13</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.startwell.edu.pk/senior-media-team</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority></url>
@@ -64,4 +64,18 @@
   <url><loc>https://www.startwell.edu.pk/teams</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.startwell.edu.pk/tools</loc><lastmod>2026-11-13</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.startwell.edu.pk/word-counter</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-structures</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-0-discrete-vs-continuous</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-1-propositions-connectives</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-2-truth-tables-tautologies</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-3-logical-equivalence-laws</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-4-predicate-logic-quantifiers</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-5-rules-of-inference</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-6-arguments-puzzles</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-7-direct-proof</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-8-proof-by-contraposition</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-9-proof-by-contradiction</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-10-mathematical-induction</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-11-strong-induction</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.startwell.edu.pk/discrete-lecture-12-proof-strategy</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority></url>
 </urlset>

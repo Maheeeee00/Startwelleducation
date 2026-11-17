@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W93FNHKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+</script>
+<!-- End Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discrete Structures Lecture 8: Proof by Contraposition | Startwell</title>
+<link rel="canonical" href="https://www.startwell.edu.pk/discrete-lecture-8-proof-by-contraposition">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Startwell Education Bhimber">
+<meta property="og:title" content="Discrete Structures Lecture 8: Proof by Contraposition | Startwell">
+<meta property="og:url" content="https://www.startwell.edu.pk/discrete-lecture-8-proof-by-contraposition">
+<meta property="og:image" content="https://www.startwell.edu.pk/images/school-building.jpg">
+<meta property="og:description" content="Discrete Structures Lecture 8: proof by contraposition, when to use it instead of a direct proof, and proving biconditionals — English with Roman Urdu.">
+<meta name="description" content="Discrete Structures Lecture 8: proof by contraposition, when to use it instead of a direct proof, and proving biconditionals — English with Roman Urdu.">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.startwell.edu.pk/"}, {"@type": "ListItem", "position": 2, "name": "BS CS", "item": "https://www.startwell.edu.pk/programming"}, {"@type": "ListItem", "position": 3, "name": "Discrete Structures", "item": "https://www.startwell.edu.pk/discrete-structures"}, {"@type": "ListItem", "position": 4, "name": "Lecture 8: Proof by Contraposition", "item": "https://www.startwell.edu.pk/discrete-lecture-8-proof-by-contraposition"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Discrete Structures Lecture 8: Proof by Contraposition", "url": "https://www.startwell.edu.pk/discrete-lecture-8-proof-by-contraposition", "inLanguage": ["en", "ur-Latn"], "isAccessibleForFree": true, "learningResourceType": "Lecture notes", "educationalLevel": "BS Computer Science", "teaches": "Proof by Contraposition", "isPartOf": {"@type": "Course", "name": "Discrete Structures (Roman Urdu + English)", "url": "https://www.startwell.edu.pk/discrete-structures"}, "provider": {"@type": "School", "name": "Startwell Education", "url": "https://www.startwell.edu.pk/"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="preloader"><div class="pl-inner"><img src="images/logo.jpg" alt="" width="180" height="192"><div class="pl-bar"></div><small>START WELL TO END WELL</small></div></div>
+<div class="scroll-progress"></div>
+<div class="topbar">
+  <div class="container">
+    <div>
+      <span><i class="fa-solid fa-phone"></i> +92 340 1501700</span>
+      <span class="hide-sm"><i class="fa-solid fa-envelope"></i> startwelleducationbhimber@gmail.com</span>
+      <span class="hide-sm"><i class="fa-regular fa-clock"></i> Mon – Sat: 8:00 AM – 2:00 PM</span>
+    </div>
+    <div class="socials">
+      <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </div>
+</div>
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+      <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+    </a>
+    <nav class="nav">
+      <button class="menu-toggle nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <a href="/">Home</a>
+      <a href="/aboutus">About Us</a>
+      <div class="nav-item">
+        <a href="/academics">Academics <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Academics pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/curriculum"><i class="fa-solid fa-book-open"></i>Curriculum</a>
+          <a href="/faculty"><i class="fa-solid fa-chalkboard-user"></i>Faculty &amp; Staff</a>
+          <a href="/calendar"><i class="fa-regular fa-calendar-days"></i>School Calendar</a>
+          <a href="/early-years"><i class="fa-solid fa-shapes"></i>Early Years</a>
+          <a href="/primary-school"><i class="fa-solid fa-pencil"></i>Primary School</a>
+          <a href="/matric-secondary"><i class="fa-solid fa-graduation-cap"></i>Matric (Secondary)</a>
+          <a href="/hifz"><i class="fa-solid fa-book-quran"></i>Hifz Department</a>
+          <a href="/activities"><i class="fa-solid fa-person-running"></i>Activities</a>
+          <a href="/online-activities"><i class="fa-brands fa-tiktok"></i>Online Activities</a>
+          <a href="/facebook"><i class="fa-brands fa-facebook"></i>Facebook Page</a>
+          <a href="/projects"><i class="fa-solid fa-diagram-project"></i>Projects</a>
+          <a href="/faq"><i class="fa-solid fa-circle-question"></i>Parent FAQs</a>
+        </div>
+      </div>
+      <div class="nav-item active">
+        <a href="/programming">BS CS <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show BS CS pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/pf-bilkul-aasan"><i class="fa-solid fa-list-ol"></i>PF — Programming Fundamentals</a>
+          <a href="/oop-bilkul-aasan"><i class="fa-solid fa-cubes"></i>OOP — Object-Oriented Programming</a>
+          <a href="/database-bilkul-aasan"><i class="fa-solid fa-database"></i>Database (SQL)</a>
+          <a href="/discrete-structures"><i class="fa-solid fa-diagram-project"></i>Discrete Structures</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/teams">Teams <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Teams pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/junior-media-team"><i class="fa-solid fa-video"></i>Junior Media Team</a>
+          <a href="/senior-media-team"><i class="fa-solid fa-microphone-lines"></i>Senior Media Team</a>
+          <a href="/spelling-bee"><i class="fa-solid fa-spell-check"></i>StartWell Spelling Bee</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/tools">Tools <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Tools pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/pdf-toolbox"><i class="fa-solid fa-file-pdf"></i>PDF Toolbox</a>
+          <a href="/image-resizer"><i class="fa-solid fa-image"></i>Image Resizer</a>
+          <a href="/marks-calculator"><i class="fa-solid fa-calculator"></i>Marks Calculator</a>
+          <a href="/word-counter"><i class="fa-solid fa-spell-check"></i>Word Counter</a>
+        </div>
+      </div>
+      <a href="/blog">Blog</a>
+      <a href="/gallery">Gallery</a>
+      <div class="nav-item nav-cta">
+        <a href="/contact" class="btn btn-primary">Contact Us <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Contact pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/contact"><i class="fa-solid fa-phone"></i>Contact Us</a>
+          <a href="/admissions"><i class="fa-solid fa-user-plus"></i>Admissions</a>
+          <a href="/admission-process"><i class="fa-solid fa-list-check"></i>Admission Process</a>
+          <a href="/campuses"><i class="fa-solid fa-school"></i>Our Campuses</a>
+        </div>
+      </div>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-banner">
+  <div class="banner-art" aria-hidden="true"><span class="r1"></span><span class="r2"></span><img src="/images/logo.jpg" alt="" width="180" height="192"></div>
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold)">Discrete Structures · Lecture 8</span>
+    <h1>Proof by Contraposition</h1>
+    <p class="lead" style="color:#c7d0ea;max-width:680px">Week 3, slot 2 · CLO-2 · Bloom C3 · Prerequisite: Lectures 3 and 7 · Reference: Rosen 7th, Logic and Proofs</p>
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/programming">BS CS</a> &nbsp;/&nbsp; <a href="/discrete-structures">Discrete Structures</a> &nbsp;/&nbsp; Lecture 8</div>
+  </div>
+</section>
+<section>
+  <div class="container">
+<div class="prose lec ds">
+<h2>Learning objectives</h2>
+<ol>
+<li>Explain why p → q and ¬q → ¬p are interchangeable.</li>
+<li>Decide when contraposition is easier than a direct proof.</li>
+<li>Write a complete proof by contraposition.</li>
+<li>Prove biconditionals by proving both directions.</li>
+</ol>
+<blockquote class="ru">
+<p><strong>Roman Urdu.</strong> Kabhi p → q ko seedha sabit karna mushkil hota hai. Lecture 3 se hum jante hain ke p → q aur ¬q → ¬p barabar hain, is liye hum ¬q maan kar ¬p tak pohanchte hain. Isay proof by contraposition kehte hain.</p>
+</blockquote>
+<h2>Core concepts</h2>
+<p><strong>Method.</strong> To prove p → q: (1) assume ¬q; (2) show ¬p; (3) conclude ¬q → ¬p, hence p → q, because the two are equivalent.</p>
+<p><strong>When to use it.</strong> When q is a negative or "not" statement, or when ¬q gives a clean algebraic form (for example "n is even" gives n = 2k) while p is hard to unpack.</p>
+<p><strong>Biconditionals.</strong> To prove p ↔ q, prove p → q and q → p. To prove several statements are equivalent, prove a cycle of implications.</p>
+<p><strong>Misconception.</strong> Contraposition is not the converse. Proving ¬p → ¬q is not enough.</p>
+<h2>Worked examples</h2>
+<p><strong>Example 1 (basic). Theorem.</strong> If 3n + 2 is odd, then n is odd.
+Contrapositive: if n is even, then 3n + 2 is even. Proof: n = 2k, so 3n + 2 = 6k + 2 = 2(3k + 1), which is even. ∎</p>
+<p><strong>Example 2 (intermediate). Theorem.</strong> If n² is even, then n is even.
+Contrapositive: if n is odd, then n² is odd. This was proved in Lecture 7, Example 2. ∎ A direct attempt would need to take a square root, which is awkward. This is the kind of case where contraposition is clearly better.</p>
+<p><strong>Example 3 (advanced). Theorem.</strong> If n = ab with a and b positive integers, then a ≤ √n or b ≤ √n.
+Contrapositive: if a &gt; √n and b &gt; √n, then n ≠ ab. Proof: multiplying the two inequalities (all numbers positive), ab &gt; √n · √n = n, so ab ≠ n. ∎ Computing meaning: to find a factor of n it is enough to test divisors up to √n.</p>
+<p><strong>Example 4 (computing).</strong> A rule says "if the request is authorised, it carries a valid token." The contrapositive "if the token is invalid, deny the request" is the check that is actually coded. The two statements are logically the same rule.</p>
+<h2>Computer science connection</h2>
+<p>Security checks written as "deny unless…"; trial division up to √n in primality tests (Module 7); proving program properties by showing that any violation implies a precondition failure.</p>
+<h2>Key takeaways</h2>
+<ul>
+<li>p → q ≡ ¬q → ¬p, so proving either proves both.</li>
+<li>Contraposition beats a direct proof when ¬q is easier to use than p.</li>
+<li>Do not confuse contrapositive with converse.</li>
+</ul>
+<blockquote class="ru">
+<p><strong>Roman Urdu.</strong> Contraposition mein ¬q maan kar ¬p sabit karte hain. Yeh tab asaan hota hai jab q "not" wala statement ho. Converse (q → p) sabit karna contraposition nahi hai.</p>
+</blockquote>
+<h2>Five revision questions</h2>
+<ol>
+<li>State the contrapositive of "If n² is odd then n is odd."</li>
+<li>Prove: if 5n + 3 is even, then n is odd.</li>
+<li>Prove: if ab is odd, then a and b are both odd.</li>
+<li>Why does Example 3 imply a primality test only needs to check up to √n?</li>
+<li>Outline how to prove "n is even if and only if n² is even."</li>
+</ol>
+<p><strong>Homework.</strong> Prove by contraposition: (a) if 7n + 4 is even, then n is even; (b) for real x and y, if x + y ≥ 2 then x ≥ 1 or y ≥ 1. Then prove that n is even if and only if n² is even.</p>
+<h2>Quiz</h2><div class="lec-quiz"><p>p → q ki contrapositive?</p><div class="lq-opts" data-ans="2"><button type="button" class="lq-opt" data-k="0">q → p</button><button type="button" class="lq-opt" data-k="1">¬p → ¬q</button><button type="button" class="lq-opt" data-k="2">¬q → ¬p</button><button type="button" class="lq-opt" data-k="3">p ∧ ¬q</button></div><p class="lq-fb" aria-live="polite" hidden>Contrapositive ¬q → ¬p, aur ye original ke barabar hai.</p></div><script>document.querySelectorAll('.lq-opts').forEach(function(box){box.addEventListener('click',function(ev){var b=ev.target.closest('.lq-opt');if(!b||box.dataset.done)return;box.dataset.done=1;var a=+box.dataset.ans,fb=box.parentNode.querySelector('.lq-fb');box.children[a].classList.add('good');if(+b.dataset.k!==a)b.classList.add('bad');fb.textContent=(+b.dataset.k===a?'Sahi! ':'Galat. ')+fb.textContent;fb.hidden=false;});});</script>
+<div class="lec-nav"><a class="btn btn-ghost" href="/discrete-lecture-7-direct-proof">&larr; Lecture 7</a><a class="btn btn-primary" href="/discrete-lecture-9-proof-by-contradiction">Lecture 9 &rarr;</a></div>
+<h2>All lectures</h2>
+<ol class="lec-all" start="0"><li><a href="/discrete-lecture-0-discrete-vs-continuous">Lecture 0: Discrete vs Continuous</a></li><li><a href="/discrete-lecture-1-propositions-connectives">Lecture 1: Propositions and Connectives</a></li><li><a href="/discrete-lecture-2-truth-tables-tautologies">Lecture 2: Truth Tables, Tautologies and Contradictions</a></li><li><a href="/discrete-lecture-3-logical-equivalence-laws">Lecture 3: Logical Equivalence and the Laws of Logic</a></li><li><a href="/discrete-lecture-4-predicate-logic-quantifiers">Lecture 4: Predicate Logic and Quantifiers</a></li><li><a href="/discrete-lecture-5-rules-of-inference">Lecture 5: Rules of Inference</a></li><li><a href="/discrete-lecture-6-arguments-puzzles">Lecture 6: Logical Arguments and Puzzle Solving</a></li><li><a href="/discrete-lecture-7-direct-proof">Lecture 7: Direct Proof and Proof by Implication</a></li><li class="cur"><a href="/discrete-lecture-8-proof-by-contraposition">Lecture 8: Proof by Contraposition</a></li><li><a href="/discrete-lecture-9-proof-by-contradiction">Lecture 9: Proof by Contradiction</a></li><li><a href="/discrete-lecture-10-mathematical-induction">Lecture 10: Mathematical Induction</a></li><li><a href="/discrete-lecture-11-strong-induction">Lecture 11: Strong Induction</a></li><li><a href="/discrete-lecture-12-proof-strategy">Lecture 12: Applications of Proofs and Proof Strategy</a></li></ol>
+</div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="cta reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Admissions Open</span>
+        <h2>Give your child the right start.</h2>
+        <p>Seats are limited. Visit our campus, meet our teachers and see why families trust Startwell Education.</p>
+      </div>
+      <div class="actions">
+        <a href="/contact" class="btn btn-primary">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="tel:+923401501700" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand" style="margin-bottom:18px">
+          <img src="images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+          <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+        </a>
+        <p>A place where young minds are given wings to fly — combining strong academics, good character and a caring environment.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-h">Quick Links</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/aboutus">About Us</a></li>
+          <li><a href="/academics">Academics</a></li>
+          <li><a href="/activities">Activities</a></li>
+          <li><a href="/faculty">Faculty &amp; Staff</a></li>
+          <li><a href="/calendar">School Calendar</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Explore</p>
+        <ul>
+          <li><a href="/junior-media-team">Junior Media Team</a></li>
+          <li><a href="/senior-media-team">Senior Media Team</a></li>
+          <li><a href="/spelling-bee">StartWell Spelling Bee</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/learn-well">Learn Well</a></li>
+          <li><a href="/tools">Free Student Tools</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Get in Touch</p>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i><span>Bhimber, Azad Jammu &amp; Kashmir, Pakistan</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+92 340 1501700</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>startwelleducationbhimber@gmail.com</span></li>
+          <li><i class="fa-regular fa-clock"></i><span>Mon – Sat: 8:00 AM – 2:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-links"><a href="/blog">Blog</a><a href="/news">News</a><a href="/faq">Parent FAQs</a><a href="/schools-in-bhimber">Schools in Bhimber</a><a href="/campuses">Campuses</a><a href="/admission-process">Admission Process</a><a href="/privacy-policy">Privacy Policy</a></div>
+  <div class="footer-bottom">© <span class="year-now">2026</span> Startwell Education, Bhimber — <em>Start Well to End Well</em>. All rights reserved.</div>
+</footer>
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<a href="/tools" class="swe-tools" aria-label="Free Student Tools" title="Free Student Tools"><span class="swe-ico"><i class="fa-solid fa-screwdriver-wrench"></i></span></a>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

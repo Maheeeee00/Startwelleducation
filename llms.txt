@@ -1,6 +1,6 @@
 # Startwell Education
 
-> Startwell Education is a school in Bhimber, Azad Jammu & Kashmir, Pakistan, offering education from Playgroup to Matric (Class 10). It also runs free online tools for students and a free programming course in Roman Urdu (C++ and Databases).
+> Startwell Education is a school in Bhimber, Azad Jammu & Kashmir, Pakistan, offering education from Playgroup to Matric (Class 10). It also runs free online tools for students and a free programming course in Roman Urdu (C++, Databases and Discrete Structures).
 
 Contact: +92 340 1501700. Hours: Monday to Saturday, 8:00 AM to 2:00 PM. Website: https://www.startwell.edu.pk/
 
@@ -55,6 +55,23 @@ Contact: +92 340 1501700. Hours: Monday to Saturday, 8:00 AM to 2:00 PM. Website
 - [Image Resizer](https://www.startwell.edu.pk/image-resizer): Reduce photo size in KB and resize dimensions for forms.
 - [Marks Calculator](https://www.startwell.edu.pk/marks-calculator): Total, percentage, grade and pass/fail for each subject.
 - [Word Counter](https://www.startwell.edu.pk/word-counter): Count words and characters in English and Urdu, with word limit and reading time.
+
+## Discrete Structures (BS CS)
+
+- [Discrete Structures](https://www.startwell.edu.pk/discrete-structures): Free BS CS course in English and Roman Urdu: CLOs, 10 modules, 16-week schedule, references.
+- [Discrete Lecture 0: Discrete vs Continuous](https://www.startwell.edu.pk/discrete-lecture-0-discrete-vs-continuous): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 1: Propositions and Connectives](https://www.startwell.edu.pk/discrete-lecture-1-propositions-connectives): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 2: Truth Tables, Tautologies and Contradictions](https://www.startwell.edu.pk/discrete-lecture-2-truth-tables-tautologies): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 3: Logical Equivalence and the Laws of Logic](https://www.startwell.edu.pk/discrete-lecture-3-logical-equivalence-laws): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 4: Predicate Logic and Quantifiers](https://www.startwell.edu.pk/discrete-lecture-4-predicate-logic-quantifiers): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 5: Rules of Inference](https://www.startwell.edu.pk/discrete-lecture-5-rules-of-inference): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 6: Logical Arguments and Puzzle Solving](https://www.startwell.edu.pk/discrete-lecture-6-arguments-puzzles): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 7: Direct Proof and Proof by Implication](https://www.startwell.edu.pk/discrete-lecture-7-direct-proof): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 8: Proof by Contraposition](https://www.startwell.edu.pk/discrete-lecture-8-proof-by-contraposition): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 9: Proof by Contradiction](https://www.startwell.edu.pk/discrete-lecture-9-proof-by-contradiction): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 10: Mathematical Induction](https://www.startwell.edu.pk/discrete-lecture-10-mathematical-induction): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 11: Strong Induction](https://www.startwell.edu.pk/discrete-lecture-11-strong-induction): Notes with worked examples, Roman Urdu takeaways and a quiz.
+- [Discrete Lecture 12: Applications of Proofs and Proof Strategy](https://www.startwell.edu.pk/discrete-lecture-12-proof-strategy): Notes with worked examples, Roman Urdu takeaways and a quiz.
 
 ## Free programming course in Roman Urdu
 
