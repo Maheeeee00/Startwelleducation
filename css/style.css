@@ -1283,3 +1283,12 @@ img{height:auto}
 .tt-keys button{padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer;font:600 .9rem var(--font-body)}
 .tt-out td,.tt-out th{text-align:center}.tt-t{color:#16a34a;font-weight:700}.tt-f{color:#dc2626;font-weight:700}
 .tt-err{color:#dc2626;font-weight:700}.tt-kind{margin:8px 0}
+/* member photos */
+.mcard .av.av-photo,.lead-banner .av.av-photo{padding:0;overflow:hidden;background:#0f2a5f}
+.mcard .av.av-photo{width:128px;height:128px}
+.lead-banner .av.av-photo{width:120px;height:120px}
+.av-photo picture,.av-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.mcard .bio{font-size:.88rem;color:var(--muted);line-height:1.6;margin:12px 0 0}
+.lead-banner .info p+p{margin-top:8px}
+@media(max-width:980px){.mgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.mgrid{grid-template-columns:1fr}}
