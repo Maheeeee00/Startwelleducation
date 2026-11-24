@@ -1292,3 +1292,9 @@ img{height:auto}
 .lead-banner .info p+p{margin-top:8px}
 @media(max-width:980px){.mgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.mgrid{grid-template-columns:1fr}}
+/* Page banner: fixed heading size, keep text clear of the logo art */
+.page-banner{padding:90px 0 76px}
+.page-banner h1{font-size:clamp(1.85rem,1.3rem + 2vw,2.9rem);line-height:1.18;max-width:640px;text-wrap:balance}
+.page-banner .lead{font-size:1.05rem;max-width:600px!important}
+@media (min-width:901px){.page-banner .container>*{max-width:min(640px,calc(100% - 320px))}.page-banner .container>.breadcrumb{max-width:none}}
+@media (max-width:600px){.page-banner{padding:64px 0 54px}.page-banner h1{font-size:1.75rem}}
