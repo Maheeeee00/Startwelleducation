@@ -1,0 +1,21 @@
+Item,Category,Price (Rs),Quantity Sold,Stock Left
+Rice 5kg,Grocery,1450,32,8
+Flour 10kg,Grocery,1180,45,22
+Cooking Oil 1L,Grocery,560,60,14
+Sugar 1kg,Grocery,165,80,35
+Tea 450g,Grocery,980,28,6
+Milk Pack 1L,Dairy,270,95,40
+Yogurt 500g,Dairy,180,50,9
+Butter 200g,Dairy,520,18,12
+Cheese Slices,Dairy,650,12,5
+Shampoo 400ml,Personal Care,720,22,15
+Soap Bar,Personal Care,120,70,48
+Toothpaste,Personal Care,310,40,7
+Detergent 1kg,Household,590,33,20
+Dishwash Liquid,Household,390,27,11
+Tissue Box,Household,210,38,26
+Notebook A4,Stationery,180,64,30
+Ball Pens (pack),Stationery,150,55,4
+Geometry Box,Stationery,450,15,10
+Biscuits Family Pack,Snacks,240,72,18
+Juice 1L,Snacks,260,48,3

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W93FNHKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+</script>
+<!-- End Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICT Lecture 8: Cloud and Note-Taking | Startwell</title>
+<link rel="canonical" href="https://www.startwell.edu.pk/ict/lecture-8-cloud-storage-digital-note-taking">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Startwell Education Bhimber">
+<meta property="og:title" content="ICT Lecture 8: Cloud and Note-Taking | Startwell">
+<meta property="og:url" content="https://www.startwell.edu.pk/ict/lecture-8-cloud-storage-digital-note-taking">
+<meta property="og:image" content="https://www.startwell.edu.pk/images/school-building.jpg">
+<meta property="og:description" content="Google Drive, OneDrive and Dropbox compared; sharing permissions; folder structures and file naming conventions; Evernote and OneNote for notes; and the 3-2-1">
+<meta name="description" content="Google Drive, OneDrive and Dropbox compared; sharing permissions; folder structures and file naming conventions; Evernote and OneNote for notes; and the 3-2-1">
+<link rel="icon" href="/images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/ict/assets/ict.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.startwell.edu.pk/"}, {"@type": "ListItem", "position": 2, "name": "BS CS", "item": "https://www.startwell.edu.pk/programming"}, {"@type": "ListItem", "position": 3, "name": "ICT", "item": "https://www.startwell.edu.pk/ict"}, {"@type": "ListItem", "position": 4, "name": "Lecture Notes", "item": "https://www.startwell.edu.pk/ict/lecture-notes"}, {"@type": "ListItem", "position": 5, "name": "Lecture 8", "item": "https://www.startwell.edu.pk/ict/lecture-8-cloud-storage-digital-note-taking"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Applications of ICT – Lecture 8: Cloud Storage and Digital Note-Taking", "description": "Google Drive, OneDrive and Dropbox compared; sharing permissions; folder structures and file naming conventions; Evernote and OneNote for notes; and the 3-2-1 backup rule.", "url": "https://www.startwell.edu.pk/ict/lecture-8-cloud-storage-digital-note-taking", "inLanguage": ["en", "ur-Latn"], "isAccessibleForFree": true, "learningResourceType": "Lecture notes", "educationalLevel": "Undergraduate", "teaches": "Cloud Storage and Digital Note-Taking", "isPartOf": {"@type": "Course", "name": "Applications of ICT (ICT Bilkul Aasan)", "url": "https://www.startwell.edu.pk/ict"}, "provider": {"@type": "EducationalOrganization", "name": "Startwell Education", "url": "https://www.startwell.edu.pk/"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="preloader"><div class="pl-inner"><img src="/images/logo.jpg" alt="" width="180" height="192"><div class="pl-bar"></div><small>START WELL TO END WELL</small></div></div>
+<div class="scroll-progress"></div>
+<div class="topbar">
+  <div class="container">
+    <div>
+      <span><i class="fa-solid fa-phone"></i> +92 340 1501700</span>
+      <span class="hide-sm"><i class="fa-solid fa-envelope"></i> startwelleducationbhimber@gmail.com</span>
+      <span class="hide-sm"><i class="fa-regular fa-clock"></i> Mon – Sat: 8:00 AM – 2:00 PM</span>
+    </div>
+    <div class="socials">
+      <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </div>
+</div>
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="/images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+      <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+    </a>
+    <nav class="nav">
+      <button class="menu-toggle nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <a href="/">Home</a>
+      <a href="/aboutus">About Us</a>
+      <div class="nav-item">
+        <a href="/academics">Academics <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Academics pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/curriculum"><i class="fa-solid fa-book-open"></i>Curriculum</a>
+          <a href="/faculty"><i class="fa-solid fa-chalkboard-user"></i>Faculty &amp; Staff</a>
+          <a href="/calendar"><i class="fa-regular fa-calendar-days"></i>School Calendar</a>
+          <a href="/early-years"><i class="fa-solid fa-shapes"></i>Early Years</a>
+          <a href="/primary-school"><i class="fa-solid fa-pencil"></i>Primary School</a>
+          <a href="/matric-secondary"><i class="fa-solid fa-graduation-cap"></i>Matric (Secondary)</a>
+          <a href="/hifz"><i class="fa-solid fa-book-quran"></i>Hifz Department</a>
+          <a href="/activities"><i class="fa-solid fa-person-running"></i>Activities</a>
+          <a href="/online-activities"><i class="fa-brands fa-tiktok"></i>Online Activities</a>
+          <a href="/facebook"><i class="fa-brands fa-facebook"></i>Facebook Page</a>
+          <a href="/projects"><i class="fa-solid fa-diagram-project"></i>Projects</a>
+          <a href="/faq"><i class="fa-solid fa-circle-question"></i>Parent FAQs</a>
+        </div>
+      </div>
+      <div class="nav-item active">
+        <a href="/programming">BS CS <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show BS CS pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/pf-bilkul-aasan"><i class="fa-solid fa-list-ol"></i>PF — Programming Fundamentals</a>
+          <a href="/oop-bilkul-aasan"><i class="fa-solid fa-cubes"></i>OOP — Object-Oriented Programming</a>
+          <a href="/database-bilkul-aasan"><i class="fa-solid fa-database"></i>Database (SQL)</a>
+          <a href="/discrete-structures"><i class="fa-solid fa-diagram-project"></i>Discrete Structures</a>
+          <a href="/ict"><i class="fa-solid fa-laptop"></i>ICT — Applications of ICT</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/teams">Teams <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Teams pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/junior-media-team"><i class="fa-solid fa-video"></i>Junior Media Team</a>
+          <a href="/senior-media-team"><i class="fa-solid fa-microphone-lines"></i>Senior Media Team</a>
+          <a href="/spelling-bee"><i class="fa-solid fa-spell-check"></i>StartWell Spelling Bee</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/tools">Tools <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Tools pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/pdf-toolbox"><i class="fa-solid fa-file-pdf"></i>PDF Toolbox</a>
+          <a href="/image-resizer"><i class="fa-solid fa-image"></i>Image Resizer</a>
+          <a href="/marks-calculator"><i class="fa-solid fa-calculator"></i>Marks Calculator</a>
+          <a href="/word-counter"><i class="fa-solid fa-spell-check"></i>Word Counter</a>
+        </div>
+      </div>
+      <a href="/blog">Blog</a>
+      <a href="/gallery">Gallery</a>
+      <div class="nav-item nav-cta">
+        <a href="/contact" class="btn btn-primary">Contact Us <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Contact pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/contact"><i class="fa-solid fa-phone"></i>Contact Us</a>
+          <a href="/admissions"><i class="fa-solid fa-user-plus"></i>Admissions</a>
+          <a href="/admission-process"><i class="fa-solid fa-list-check"></i>Admission Process</a>
+          <a href="/campuses"><i class="fa-solid fa-school"></i>Our Campuses</a>
+        </div>
+      </div>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-banner">
+  <div class="banner-art" aria-hidden="true"><span class="r1"></span><span class="r2"></span><img src="/images/logo.jpg" alt="" width="180" height="192"></div>
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold)">Applications of ICT · Lecture 8</span>
+    <h1>Cloud Storage and Digital Note-Taking</h1>
+    <p class="lead" style="color:#c7d0ea;max-width:620px">Unit 2: Basic ICT Productivity Tools · CLO 2, CLO 3</p>
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/programming">BS CS</a> &nbsp;/&nbsp; <a href="/ict">ICT</a> &nbsp;/&nbsp; <a href="/ict/lecture-notes">Lecture Notes</a> &nbsp;/&nbsp; Lecture 8</div>
+  </div>
+</section>
+<section class="ict-shell"><div class="container"><div class="ict-wrap"><aside class="ict-side" aria-label="ICT course navigation"><p class="side-h">ICT Course Portal</p><a href="/ict"><i class="fa-solid fa-gauge"></i>Dashboard</a><a href="/ict/course-outline"><i class="fa-solid fa-list-check"></i>Course Outline</a><a href="/ict/lecture-notes"><i class="fa-solid fa-book-open"></i>Lecture Notes</a><a href="/ict/teaching-plan"><i class="fa-solid fa-chalkboard-user"></i>Teaching Plans</a><a href="/ict/presentations"><i class="fa-solid fa-person-chalkboard"></i>Presentations</a><a href="/ict/laboratory"><i class="fa-solid fa-flask"></i>Laboratory</a><a href="/ict/assignments"><i class="fa-solid fa-file-pen"></i>Assignments</a><a href="/ict/assessments"><i class="fa-solid fa-clipboard-question"></i>Assessments</a><a href="/ict/resources"><i class="fa-solid fa-book-bookmark"></i>Resources</a><a href="/ict/instructor-panel"><i class="fa-solid fa-user-tie"></i>Instructor Panel</a><div class="sub"><p class="side-h" style="margin-top:14px">Lectures</p><a href="/ict/lecture-1-ict-fundamentals-hardware-software-networks-storage" data-item="lecture-1"><span class="num">1</span>ICT Fundamentals<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-2-scope-of-ict-emerging-technologies" data-item="lecture-2"><span class="num">2</span>Scope and Emerging Tech<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-3-search-engines-web-research" data-item="lecture-3"><span class="num">3</span>Search and Web Research<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-4-email-formal-digital-communication" data-item="lecture-4"><span class="num">4</span>Email and Communication<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-5-microsoft-word-google-docs" data-item="lecture-5"><span class="num">5</span>Word and Google Docs<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-6-microsoft-excel-google-sheets" data-item="lecture-6"><span class="num">6</span>Excel and Google Sheets<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-7-microsoft-powerpoint-google-slides" data-item="lecture-7"><span class="num">7</span>PowerPoint and Slides<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-8-cloud-storage-digital-note-taking" data-item="lecture-8" class="on"><span class="num">8</span>Cloud and Note-Taking<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-9-ict-in-education-learning-management-systems" data-item="lecture-9"><span class="num">9</span>ICT in Education and LMS<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-10-ict-in-health-finance-shopping" data-item="lecture-10"><span class="num">10</span>Health, Finance and Shopping<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-11-digital-citizenship-netiquette" data-item="lecture-11"><span class="num">11</span>Digital Citizenship<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-12-digital-ethics-copyright-plagiarism-misinformation" data-item="lecture-12"><span class="num">12</span>Ethics, Copyright and Final Project<i class="fa-solid fa-check done-dot"></i></a></div></aside><div class="ict-main"><div class="ict-tools no-print"><button type="button" class="ict-btn" data-theme-toggle><i class="fa-solid fa-moon"></i> Dark mode</button><button type="button" class="ict-btn" data-print><i class="fa-solid fa-print"></i> Print</button><a class="ict-btn" href="/ict/presentations#l8-s1"><i class="fa-solid fa-person-chalkboard"></i> Slides</a><a class="ict-btn" href="/ict/lab-8"><i class="fa-solid fa-flask"></i> Lab 08</a></div><p><span class="ic-tag">Unit 2: Basic ICT Productivity Tools</span><span class="ic-tag acc">CLO 2</span><span class="ic-tag acc">CLO 3</span><span class="ic-tag">Week 8</span><span class="ic-tag">2 class hours + 2-hour lab</span></p><nav class="ic-toc no-print" aria-label="On this page"><a href="#obj">Objectives</a><a href="#intro">Introduction</a><a href="#theory">Explanation</a><a href="#terms">Terminology</a><a href="#example">Worked example</a><a href="#pak">Pakistan</a><a href="#case">Bhimber case</a><a href="#apps">Applications</a><a href="#procon">Pros & cons</a><a href="#compare">Comparison</a><a href="#diagram">Diagram</a><a href="#exam">Exam points</a><a href="#summary">Summary</a><a href="#questions">Questions</a><a href="#mcq">MCQs</a><a href="#tasks">Assignment</a><a href="#discuss">Discussion</a></nav><h2 id="obj">1. Learning objectives</h2><div class="ic-box hl"><p class="mut" style="margin:0">By the end of this lecture you should be able to:</p><ol><li>Compare Google Drive, OneDrive and Dropbox by storage, integration and sharing.</li><li>Set sharing permissions (Viewer, Commenter, Editor) and link access correctly.</li><li>Design a logical folder structure and apply a file naming convention.</li><li>Use OneNote or Evernote to organise course notes.</li><li>Apply the 3-2-1 backup rule and explain sync and version history.</li></ol></div><p><b>Relevant CLOs:</b> CLO 2 – Identify different ICT platforms and tools.; CLO 3 – Apply ICT tools in everyday, academic and professional activities.</p><h2 id="intro">2. Introduction</h2><p>Students lose work every semester: a USB drive is left in a computer lab, a phone is stolen, a laptop hard disk fails the night before a deadline. Cloud storage and good file habits prevent almost all of these disasters. In Lecture 1 we met cloud storage as an idea; now we use it properly. We compare the main services, learn to share files safely, design folders that make sense a year later, take organised digital notes and build a backup routine that would survive losing any single device.</p><div class="ic-ru"><p><b>Roman Urdu:</b> Cloud storage se aap ki files har device par mil jati hain aur share karna aasan hota hai. Sahi folder structure aur file ke naam rakhne ke usool waqt bachate hain. Sharing mein ‘View only’ sab se mehfooz hai. Backup ka usool: 3 copies, 2 alag jagah, 1 ghar se bahar (cloud).</p></div><h2 id="theory">3. Detailed explanation</h2><h3 id="s1">3.1 Cloud storage services</h3><p>Google Drive gives 15 GB free shared across Gmail, Drive and Google Photos, and integrates with Docs, Sheets, Slides and Classroom. Microsoft OneDrive gives 5 GB free (more with a Microsoft 365 or university account) and integrates with Word, Excel, PowerPoint and Windows File Explorer. Dropbox gives 2 GB free on its basic plan and is known for simple, reliable sync across devices. All three offer desktop and mobile apps that sync a local folder with the cloud, so a file edited on the lab computer appears on your phone. Free storage limits change over time, so check the provider’s current plan.</p><div class="ic-box"><b>Key points</b><ul><li>Google Drive: 15 GB free, Google Workspace integration</li><li>OneDrive: 5 GB free, Microsoft Office and Windows integration</li><li>Dropbox: 2 GB free, simple sync</li><li>All: web, desktop and mobile apps</li></ul></div><h3 id="s2">3.2 Sync, version history and offline access</h3><p>Sync means keeping the same files identical on several devices and the cloud. When you change a file on one device, the sync client uploads the change and other devices download it. Version history keeps earlier versions so you can restore yesterday’s copy if you overwrite something by mistake: in Google Docs use File → Version history, and in Drive or OneDrive right-click a file → Version history. Files can be made available offline so you can work during internet outages; changes upload when the connection returns. Deleted files go to the Bin/Recycle bin and can usually be restored for about 30 days.</p><div class="ic-box"><b>Key points</b><ul><li>Sync keeps devices identical</li><li>Version history restores older copies</li><li>Offline mode for outages</li><li>Bin keeps deleted files for a limited time</li></ul></div><h3 id="s3">3.3 Sharing and permissions</h3><p>Cloud sharing sends a link instead of a file copy, so everyone sees the latest version. Each person can be given a role: Viewer (can only see), Commenter (can see and comment) or Editor (can change, and by default share). Link sharing can be Restricted (only people added by name), limited to your organisation (for example everyone with a university account) or ‘Anyone with the link’. The safest default is Restricted or ‘Anyone with the link – Viewer’. Never give Editor access to people who do not need it, and remove access when a project ends. Owners can also prevent editors from re-sharing and disable downloading for viewers.</p><div class="ic-box"><b>Key points</b><ul><li>Viewer · Commenter · Editor · Owner</li><li>Restricted vs organisation vs anyone with link</li><li>Least privilege: give minimum access needed</li><li>Review and remove access regularly</li></ul></div><h3 id="s4">3.4 Folder structure and file naming</h3><p>A folder structure is a hierarchy that matches how you think about your work, for example University → Semester 1 → ICT → Lectures / Labs / Assignments / Exams. Keep it shallow (three or four levels) and consistent across subjects. A file naming convention makes files easy to sort and find: include what, who and when, avoid spaces and special characters, and use dates in YYYY-MM-DD format so files sort in order. Examples: ICT_Lab03_AliKhan_2026-03-14.docx, ICT_Assignment2_v2_AliKhan.pdf. Avoid names like ‘final final new.docx’.</p><div class="ic-box"><b>Key points</b><ul><li>Hierarchy: Year → Semester → Course → Type</li><li>3–4 levels deep</li><li>Course_Type_Number_Name_Date</li><li>YYYY-MM-DD dates; no spaces; version numbers v1, v2</li></ul></div><h3 id="s5">3.5 Digital note-taking and backup</h3><p>Microsoft OneNote organises notes into notebooks, sections and pages, like a ring binder; it accepts typed text, handwriting, images, audio and web clippings, and syncs through OneDrive. Evernote organises notes into notebooks and tags and offers powerful search, including text inside images on some plans. Google Keep offers quick notes and checklists. Digital notes are searchable and backed up, but only if you organise them. The 3-2-1 backup rule says: keep 3 copies of important data, on 2 different types of storage (for example laptop and USB drive), with 1 copy off-site (the cloud).</p><div class="ic-box"><b>Key points</b><ul><li>OneNote: notebooks → sections → pages</li><li>Evernote: notebooks + tags + search</li><li>Google Keep: quick notes, checklists</li><li>3-2-1 rule: 3 copies, 2 media, 1 off-site</li></ul></div><h2 id="terms">4. Technical terminology</h2><dl class="ic-def"><dt>Sync</dt><dd>Automatically keeping files identical across devices and the cloud.</dd><dt>Version history</dt><dd>Saved earlier versions of a file that can be restored.</dd><dt>Permission</dt><dd>The level of access given to a shared file: view, comment or edit.</dd><dt>Link sharing</dt><dd>Sharing a file by sending a URL rather than a copy.</dd><dt>Naming convention</dt><dd>A consistent rule for naming files.</dd><dt>Backup</dt><dd>An extra copy of data kept to recover from loss.</dd><dt>Off-site</dt><dd>Stored in a different physical location, such as the cloud.</dd><dt>Notebook</dt><dd>In OneNote/Evernote, a top-level container of notes.</dd></dl><h3>Important definitions</h3><div class="ic-box hl"><b>Cloud storage:</b> A service that stores files on remote servers accessible over the internet.</div><div class="ic-box hl"><b>File management:</b> Organising, naming, storing and backing up files so they can be found and protected.</div><div class="ic-box hl"><b>3-2-1 backup rule:</b> Keep three copies of data on two types of media with one copy off-site.</div><h2 id="example">5. Step-by-step example</h2><h3>Worked example: sharing a group folder safely</h3><ol class="ic-steps"><li>In Google Drive click New → Folder and name it ICT_GroupProject_SectionA.</li><li>Create subfolders: 01_Research, 02_Drafts, 03_Final, 04_Presentation.</li><li>Right-click the main folder → Share.</li><li>Add three group members by email as Editor.</li><li>Add the instructor as Commenter.</li><li>Keep General access as Restricted.</li><li>Click the settings gear and untick ‘Editors can change permissions and share’.</li><li>Click Send; members receive an email with the link.</li></ol><h2 id="pak">6. Pakistan-based examples</h2><div class="ic-grid two"><div class="ic-card"><h3>University accounts</h3><p>Many Pakistani universities provide Google Workspace for Education or Microsoft 365 accounts with larger cloud storage for students, accessed with the university email.</p></div><div class="ic-card"><h3>Load-shedding and backups</h3><p>In areas with power cuts, enabling auto-save and cloud sync means work typed before a cut is already saved when power returns.</p></div></div><h2 id="case">7. Bhimber case study</h2><div class="ic-box hl"><h3 style="margin-top:0">Case study: a lost USB drive in Bhimber</h3><p>A student at a college in Bhimber keeps all semester work on one USB drive. Two days before submission, the drive stops working. Her classmate, who uses Google Drive sync with a folder structure ICT → Labs → Lab01–Lab08 and file names like ICT_Lab05_Sana_2026-03-02.docx, simply opens the files on a lab computer. After this, the first student adopts the 3-2-1 rule: laptop copy, USB copy and a Google Drive copy, with weekly checks.</p><b>Questions for analysis</b><ol><li>Explain how the 3-2-1 rule protects her now.</li><li>Why does a date in YYYY-MM-DD format help?</li><li>What permission should she use when sharing her lab files with the instructor?</li></ol></div><h2 id="apps">8. Real-life applications</h2><ul><li>Group projects with shared folders</li><li>Submitting assignments via links</li><li>Photo and document backup</li><li>Accessing notes on phone during revision</li><li>Business document storage for small shops</li></ul><h2 id="procon">9. Advantages and disadvantages</h2><div class="ic-pc"><div class="ic-box pro"><h3><i class="fa-solid fa-circle-plus"></i> Advantages</h3><ul><li>Access from any device</li><li>Easy, controlled sharing</li><li>Automatic backup and version history</li><li>Saves money on physical storage</li></ul></div><div class="ic-box con"><h3><i class="fa-solid fa-circle-minus"></i> Disadvantages</h3><ul><li>Requires internet for sync and access</li><li>Free storage is limited</li><li>Privacy depends on account security</li><li>Wrong sharing settings can expose data</li></ul></div></div><h2 id="compare">10. Comparison table</h2><div class="ic-table"><table><caption class="mut" style="caption-side:top;text-align:left;padding:8px 12px;font-weight:600">Google Drive vs OneDrive vs Dropbox (basic free plans)</caption><thead><tr><th>Feature</th><th>Google Drive</th><th>OneDrive</th><th>Dropbox</th></tr></thead><tbody><tr><td>Free storage</td><td>15 GB (shared with Gmail/Photos)</td><td>5 GB</td><td>2 GB</td></tr><tr><td>Best integration</td><td>Docs, Sheets, Slides, Classroom</td><td>Word, Excel, PowerPoint, Windows</td><td>Works with many apps</td></tr><tr><td>Sharing roles</td><td>Viewer, Commenter, Editor</td><td>View, Edit</td><td>View, Edit</td></tr><tr><td>Version history</td><td>Yes</td><td>Yes</td><td>Yes (limited days on free plan)</td></tr><tr><td>Offline access</td><td>Yes</td><td>Yes (Files On-Demand)</td><td>Yes</td></tr></tbody></table></div><h2 id="diagram">11. Diagram: 3-2-1 backup</h2><div class="ic-flow" role="img" aria-label="3-2-1 backup: Original on laptop then Copy on USB/external drive then Copy in cloud then Weekly check"><span>Original on laptop</span><i class="fa-solid fa-arrow-right"></i><span>Copy on USB/external drive</span><i class="fa-solid fa-arrow-right"></i><span>Copy in cloud</span><i class="fa-solid fa-arrow-right"></i><span>Weekly check</span></div><p class="mut">Draw this flow in your notebook and label each stage with an example from this lecture.</p><h2 id="exam">12. Important points for examination</h2><div class="ic-box exam"><ul><li>Name three cloud storage services and one feature of each.</li><li>Explain Viewer, Commenter and Editor permissions.</li><li>Write a good file name for a given situation.</li><li>Explain the 3-2-1 backup rule.</li></ul></div><h2 id="summary">13. Lecture summary</h2><div class="ic-box hl"><ul><li>Drive, OneDrive and Dropbox store and sync files in the cloud.</li><li>Version history and the Bin recover mistakes.</li><li>Share with the least privilege needed; prefer Restricted links.</li><li>Use shallow folder structures and consistent naming with dates.</li><li>Use OneNote/Evernote for notes and follow the 3-2-1 backup rule.</li></ul></div><h2 id="questions">14. Short questions</h2><ol><li>What is sync?</li><li>Differentiate between Viewer and Editor permissions.</li><li>Write a good file name for your third ICT lab report.</li><li>What is version history used for?</li><li>State the 3-2-1 backup rule.</li><li>Name two digital note-taking apps.</li></ol><h3>Long questions</h3><ol><li>Compare Google Drive, OneDrive and Dropbox.</li><li>Explain how to organise and name files for a full semester, with an example structure.</li><li>Discuss sharing permissions and the risks of incorrect sharing.</li></ol><h2 id="mcq">15. MCQs with answers</h2><div data-quizset><p class="mut">Click an option to check your answer. <span class="qs-score" style="font-weight:700;color:var(--ic-pri)"></span></p><div class="iq" data-ans="1" data-why="View only prevents unwanted changes." data-reveal><p class="qt">The safest sharing permission for most files is:</p><button type="button" data-i="0">A. Anyone can edit</button><button type="button" data-i="1">B. View only</button><button type="button" data-i="2">C. Public</button><button type="button" data-i="3">D. Owner transfer</button><p class="fb" aria-live="polite"></p></div><div class="iq" data-ans="2" data-why="Year-month-day sorts in order." data-reveal><p class="qt">Which date format sorts files correctly?</p><button type="button" data-i="0">A. 14-3-26</button><button type="button" data-i="1">B. March 14</button><button type="button" data-i="2">C. 2026-03-14</button><button type="button" data-i="3">D. 14/03</button><p class="fb" aria-live="polite"></p></div><div class="iq" data-ans="0" data-why="File → Version history." data-reveal><p class="qt">Restoring yesterday’s copy of a Google Doc uses:</p><button type="button" data-i="0">A. Version history</button><button type="button" data-i="1">B. Recycle bin</button><button type="button" data-i="2">C. Format Painter</button><button type="button" data-i="3">D. Filter</button><p class="fb" aria-live="polite"></p></div><div class="iq" data-ans="0" data-why="One copy should be stored off-site, such as in the cloud." data-reveal><p class="qt">In the 3-2-1 rule, ‘1’ means:</p><button type="button" data-i="0">A. One copy off-site</button><button type="button" data-i="1">B. One password</button><button type="button" data-i="2">C. One device</button><button type="button" data-i="3">D. One folder</button><p class="fb" aria-live="polite"></p></div><div class="iq" data-ans="0" data-why="Like a ring binder." data-reveal><p class="qt">OneNote organises notes into:</p><button type="button" data-i="0">A. Notebooks, sections, pages</button><button type="button" data-i="1">B. Tables and charts</button><button type="button" data-i="2">C. Slides and layouts</button><button type="button" data-i="3">D. Emails and labels</button><p class="fb" aria-live="polite"></p></div><button type="button" class="ict-btn no-print" data-quiz-reset><i class="fa-solid fa-rotate-left"></i> Reset quiz</button></div><details class="ic-ans"><summary>Show answer key</summary><ol><li>B. View only — View only prevents unwanted changes.</li><li>C. 2026-03-14 — Year-month-day sorts in order.</li><li>A. Version history — File → Version history.</li><li>A. One copy off-site — One copy should be stored off-site, such as in the cloud.</li><li>A. Notebooks, sections, pages — Like a ring binder.</li></ol></details><h2 id="tasks">16. Assignment</h2><div class="ic-box hl"><p style="margin:0">Design and implement a complete folder structure for your current semester in Google Drive or OneDrive, rename at least ten files using a convention, share one folder as Viewer with the instructor and create a OneNote or Keep notebook for ICT with notes from three lectures. Submit a one-page report with screenshots and your naming rule.</p></div><h3>Homework</h3><p>Check your phone’s backup settings (Google One/iCloud/Google Photos). Write which data is backed up and which is not.</p><h2 id="discuss">17. Suggested classroom discussion</h2><ol><li>Is it safe to store national ID card scans in the cloud?</li><li>Why do people still lose files despite free cloud storage?</li><li>Should schools in Bhimber use cloud storage for student records?</li></ol><div class="ic-box"><b>Continue with this lecture:</b> <a href="/ict/lab-8">Lab 08: Cloud storage, file management, backup and sharing</a> · <a href="/ict/presentations#l8-s1">Slides</a> · <a href="/ict/teaching-plan#plan-8">Teaching plan</a></div><p class="no-print"><button type="button" class="ict-btn pri" data-complete="lecture-8"></button></p><div class="ic-nav no-print"><a class="ict-btn" href="/ict/lecture-7-microsoft-powerpoint-google-slides"><i class="fa-solid fa-arrow-left"></i> Lecture 7</a><a class="ict-btn pri" href="/ict/lecture-9-ict-in-education-learning-management-systems">Lecture 9 <i class="fa-solid fa-arrow-right"></i></a></div></div></div></div></section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand" style="margin-bottom:18px">
+          <img src="/images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+          <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+        </a>
+        <p>A place where young minds are given wings to fly — combining strong academics, good character and a caring environment.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-h">Quick Links</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/aboutus">About Us</a></li>
+          <li><a href="/academics">Academics</a></li>
+          <li><a href="/activities">Activities</a></li>
+          <li><a href="/faculty">Faculty &amp; Staff</a></li>
+          <li><a href="/calendar">School Calendar</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Explore</p>
+        <ul>
+          <li><a href="/junior-media-team">Junior Media Team</a></li>
+          <li><a href="/senior-media-team">Senior Media Team</a></li>
+          <li><a href="/spelling-bee">StartWell Spelling Bee</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/learn-well">Learn Well</a></li>
+          <li><a href="/tools">Free Student Tools</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Get in Touch</p>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i><span>Bhimber, Azad Jammu &amp; Kashmir, Pakistan</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+92 340 1501700</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>startwelleducationbhimber@gmail.com</span></li>
+          <li><i class="fa-regular fa-clock"></i><span>Mon – Sat: 8:00 AM – 2:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-links"><a href="/blog">Blog</a><a href="/news">News</a><a href="/faq">Parent FAQs</a><a href="/schools-in-bhimber">Schools in Bhimber</a><a href="/campuses">Campuses</a><a href="/admission-process">Admission Process</a><a href="/privacy-policy">Privacy Policy</a></div>
+  <div class="footer-bottom">© <span class="year-now">2026</span> Startwell Education, Bhimber — <em>Start Well to End Well</em>. All rights reserved.</div>
+</footer>
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<a href="/tools" class="swe-tools" aria-label="Free Student Tools" title="Free Student Tools"><span class="swe-ico"><i class="fa-solid fa-screwdriver-wrench"></i></span></a>
+<script src="/js/config.js"></script>
+<script src="/js/main.js"></script>
+<script src="/ict/assets/ict.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W93FNHKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+</script>
+<!-- End Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICT Lecture 6: Excel and Google Sheets | Startwell</title>
+<link rel="canonical" href="https://www.startwell.edu.pk/ict/lecture-6-microsoft-excel-google-sheets">
+<meta name="robots" content="index, follow">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Startwell Education Bhimber">
+<meta property="og:title" content="ICT Lecture 6: Excel and Google Sheets | Startwell">
+<meta property="og:url" content="https://www.startwell.edu.pk/ict/lecture-6-microsoft-excel-google-sheets">
+<meta property="og:image" content="https://www.startwell.edu.pk/images/school-building.jpg">
+<meta property="og:description" content="Spreadsheet basics: cells, ranges and formulas; SUM, AVERAGE, MIN, MAX, COUNT, IF and relative vs absolute references; sorting, filtering, conditional formatt">
+<meta name="description" content="Spreadsheet basics: cells, ranges and formulas; SUM, AVERAGE, MIN, MAX, COUNT, IF and relative vs absolute references; sorting, filtering, conditional formatt">
+<link rel="icon" href="/images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/ict/assets/ict.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.startwell.edu.pk/"}, {"@type": "ListItem", "position": 2, "name": "BS CS", "item": "https://www.startwell.edu.pk/programming"}, {"@type": "ListItem", "position": 3, "name": "ICT", "item": "https://www.startwell.edu.pk/ict"}, {"@type": "ListItem", "position": 4, "name": "Lecture Notes", "item": "https://www.startwell.edu.pk/ict/lecture-notes"}, {"@type": "ListItem", "position": 5, "name": "Lecture 6", "item": "https://www.startwell.edu.pk/ict/lecture-6-microsoft-excel-google-sheets"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Applications of ICT – Lecture 6: Microsoft Excel and Google Sheets", "description": "Spreadsheet basics: cells, ranges and formulas; SUM, AVERAGE, MIN, MAX, COUNT, IF and relative vs absolute references; sorting, filtering, conditional formatting and charts, using a Bhimber Mart sales sheet.", "url": "https://www.startwell.edu.pk/ict/lecture-6-microsoft-excel-google-sheets", "inLanguage": ["en", "ur-Latn"], "isAccessibleForFree": true, "learningResourceType": "Lecture notes", "educationalLevel": "Undergraduate", "teaches": "Microsoft Excel and Google Sheets", "isPartOf": {"@type": "Course", "name": "Applications of ICT (ICT Bilkul Aasan)", "url": "https://www.startwell.edu.pk/ict"}, "provider": {"@type": "EducationalOrganization", "name": "Startwell Education", "url": "https://www.startwell.edu.pk/"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="preloader"><div class="pl-inner"><img src="/images/logo.jpg" alt="" width="180" height="192"><div class="pl-bar"></div><small>START WELL TO END WELL</small></div></div>
+<div class="scroll-progress"></div>
+<div class="topbar">
+  <div class="container">
+    <div>
+      <span><i class="fa-solid fa-phone"></i> +92 340 1501700</span>
+      <span class="hide-sm"><i class="fa-solid fa-envelope"></i> startwelleducationbhimber@gmail.com</span>
+      <span class="hide-sm"><i class="fa-regular fa-clock"></i> Mon – Sat: 8:00 AM – 2:00 PM</span>
+    </div>
+    <div class="socials">
+      <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </div>
+</div>
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="/images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+      <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+    </a>
+    <nav class="nav">
+      <button class="menu-toggle nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <a href="/">Home</a>
+      <a href="/aboutus">About Us</a>
+      <div class="nav-item">
+        <a href="/academics">Academics <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Academics pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/curriculum"><i class="fa-solid fa-book-open"></i>Curriculum</a>
+          <a href="/faculty"><i class="fa-solid fa-chalkboard-user"></i>Faculty &amp; Staff</a>
+          <a href="/calendar"><i class="fa-regular fa-calendar-days"></i>School Calendar</a>
+          <a href="/early-years"><i class="fa-solid fa-shapes"></i>Early Years</a>
+          <a href="/primary-school"><i class="fa-solid fa-pencil"></i>Primary School</a>
+          <a href="/matric-secondary"><i class="fa-solid fa-graduation-cap"></i>Matric (Secondary)</a>
+          <a href="/hifz"><i class="fa-solid fa-book-quran"></i>Hifz Department</a>
+          <a href="/activities"><i class="fa-solid fa-person-running"></i>Activities</a>
+          <a href="/online-activities"><i class="fa-brands fa-tiktok"></i>Online Activities</a>
+          <a href="/facebook"><i class="fa-brands fa-facebook"></i>Facebook Page</a>
+          <a href="/projects"><i class="fa-solid fa-diagram-project"></i>Projects</a>
+          <a href="/faq"><i class="fa-solid fa-circle-question"></i>Parent FAQs</a>
+        </div>
+      </div>
+      <div class="nav-item active">
+        <a href="/programming">BS CS <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show BS CS pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/pf-bilkul-aasan"><i class="fa-solid fa-list-ol"></i>PF — Programming Fundamentals</a>
+          <a href="/oop-bilkul-aasan"><i class="fa-solid fa-cubes"></i>OOP — Object-Oriented Programming</a>
+          <a href="/database-bilkul-aasan"><i class="fa-solid fa-database"></i>Database (SQL)</a>
+          <a href="/discrete-structures"><i class="fa-solid fa-diagram-project"></i>Discrete Structures</a>
+          <a href="/ict"><i class="fa-solid fa-laptop"></i>ICT — Applications of ICT</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/teams">Teams <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Teams pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/junior-media-team"><i class="fa-solid fa-video"></i>Junior Media Team</a>
+          <a href="/senior-media-team"><i class="fa-solid fa-microphone-lines"></i>Senior Media Team</a>
+          <a href="/spelling-bee"><i class="fa-solid fa-spell-check"></i>StartWell Spelling Bee</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/tools">Tools <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Tools pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/pdf-toolbox"><i class="fa-solid fa-file-pdf"></i>PDF Toolbox</a>
+          <a href="/image-resizer"><i class="fa-solid fa-image"></i>Image Resizer</a>
+          <a href="/marks-calculator"><i class="fa-solid fa-calculator"></i>Marks Calculator</a>
+          <a href="/word-counter"><i class="fa-solid fa-spell-check"></i>Word Counter</a>
+        </div>
+      </div>
+      <a href="/blog">Blog</a>
+      <a href="/gallery">Gallery</a>
+      <div class="nav-item nav-cta">
+        <a href="/contact" class="btn btn-primary">Contact Us <i class="fa-solid fa-caret-down caret"></i></a>
+        <button class="sub-toggle" aria-label="Show Contact pages"><i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown">
+          <a href="/contact"><i class="fa-solid fa-phone"></i>Contact Us</a>
+          <a href="/admissions"><i class="fa-solid fa-user-plus"></i>Admissions</a>
+          <a href="/admission-process"><i class="fa-solid fa-list-check"></i>Admission Process</a>
+          <a href="/campuses"><i class="fa-solid fa-school"></i>Our Campuses</a>
+        </div>
+      </div>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-banner">
+  <div class="banner-art" aria-hidden="true"><span class="r1"></span><span class="r2"></span><img src="/images/logo.jpg" alt="" width="180" height="192"></div>
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold)">Applications of ICT · Lecture 6</span>
+    <h1>Microsoft Excel and Google Sheets</h1>
+    <p class="lead" style="color:#c7d0ea;max-width:620px">Unit 2: Basic ICT Productivity Tools · CLO 3</p>
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/programming">BS CS</a> &nbsp;/&nbsp; <a href="/ict">ICT</a> &nbsp;/&nbsp; <a href="/ict/lecture-notes">Lecture Notes</a> &nbsp;/&nbsp; Lecture 6</div>
+  </div>
+</section>
+<section class="ict-shell"><div class="container"><div class="ict-wrap"><aside class="ict-side" aria-label="ICT course navigation"><p class="side-h">ICT Course Portal</p><a href="/ict"><i class="fa-solid fa-gauge"></i>Dashboard</a><a href="/ict/course-outline"><i class="fa-solid fa-list-check"></i>Course Outline</a><a href="/ict/lecture-notes"><i class="fa-solid fa-book-open"></i>Lecture Notes</a><a href="/ict/teaching-plan"><i class="fa-solid fa-chalkboard-user"></i>Teaching Plans</a><a href="/ict/presentations"><i class="fa-solid fa-person-chalkboard"></i>Presentations</a><a href="/ict/laboratory"><i class="fa-solid fa-flask"></i>Laboratory</a><a href="/ict/assignments"><i class="fa-solid fa-file-pen"></i>Assignments</a><a href="/ict/assessments"><i class="fa-solid fa-clipboard-question"></i>Assessments</a><a href="/ict/resources"><i class="fa-solid fa-book-bookmark"></i>Resources</a><a href="/ict/instructor-panel"><i class="fa-solid fa-user-tie"></i>Instructor Panel</a><div class="sub"><p class="side-h" style="margin-top:14px">Lectures</p><a href="/ict/lecture-1-ict-fundamentals-hardware-software-networks-storage" data-item="lecture-1"><span class="num">1</span>ICT Fundamentals<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-2-scope-of-ict-emerging-technologies" data-item="lecture-2"><span class="num">2</span>Scope and Emerging Tech<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-3-search-engines-web-research" data-item="lecture-3"><span class="num">3</span>Search and Web Research<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-4-email-formal-digital-communication" data-item="lecture-4"><span class="num">4</span>Email and Communication<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-5-microsoft-word-google-docs" data-item="lecture-5"><span class="num">5</span>Word and Google Docs<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-6-microsoft-excel-google-sheets" data-item="lecture-6" class="on"><span class="num">6</span>Excel and Google Sheets<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-7-microsoft-powerpoint-google-slides" data-item="lecture-7"><span class="num">7</span>PowerPoint and Slides<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-8-cloud-storage-digital-note-taking" data-item="lecture-8"><span class="num">8</span>Cloud and Note-Taking<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-9-ict-in-education-learning-management-systems" data-item="lecture-9"><span class="num">9</span>ICT in Education and LMS<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-10-ict-in-health-finance-shopping" data-item="lecture-10"><span class="num">10</span>Health, Finance and Shopping<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-11-digital-citizenship-netiquette" data-item="lecture-11"><span class="num">11</span>Digital Citizenship<i class="fa-solid fa-check done-dot"></i></a><a href="/ict/lecture-12-digital-ethics-copyright-plagiarism-misinformation" data-item="lecture-12"><span class="num">12</span>Ethics, Copyright and Final Project<i class="fa-solid fa-check done-dot"></i></a></div></aside><div class="ict-main"><div class="ict-tools no-print"><button type="button" class="ict-btn" data-theme-toggle><i class="fa-solid fa-moon"></i> Dark mode</button><button type="button" class="ict-btn" data-print><i class="fa-solid fa-print"></i> Print</button><a class="ict-btn" href="/ict/presentations#l6-s1"><i class="fa-solid fa-person-chalkboard"></i> Slides</a><a class="ict-btn" href="/ict/lab-6"><i class="fa-solid fa-flask"></i> Lab 06</a></div><p><span class="ic-tag">Unit 2: Basic ICT Productivity Tools</span><span class="ic-tag acc">CLO 3</span><span class="ic-tag">Week 6</span><span class="ic-tag">2 class hours + 2-hour lab</span></p><nav class="ic-toc no-print" aria-label="On this page"><a href="#obj">Objectives</a><a href="#intro">Introduction</a><a href="#theory">Explanation</a><a href="#terms">Terminology</a><a href="#example">Worked example</a><a href="#pak">Pakistan</a><a href="#case">Bhimber case</a><a href="#apps">Applications</a><a href="#procon">Pros & cons</a><a href="#compare">Comparison</a><a href="#diagram">Diagram</a><a href="#exam">Exam points</a><a href="#summary">Summary</a><a href="#questions">Questions</a><a href="#mcq">MCQs</a><a href="#tasks">Assignment</a><a href="#discuss">Discussion</a></nav><h2 id="obj">1. Learning objectives</h2><div class="ic-box hl"><p class="mut" style="margin:0">By the end of this lecture you should be able to:</p><ol><li>Identify cells, ranges, rows, columns, worksheets and workbooks.</li><li>Write formulas with arithmetic operators and the order of operations.</li><li>Use SUM, AVERAGE, MIN, MAX, COUNT, COUNTIF and IF functions.</li><li>Explain relative and absolute references and use the fill handle.</li><li>Sort, filter, apply conditional formatting and create suitable charts.</li></ol></div><p><b>Relevant CLOs:</b> CLO 3 – Apply ICT tools in everyday, academic and professional activities.</p><h2 id="intro">2. Introduction</h2><p>A spreadsheet is a grid that calculates. Shopkeepers use it to track stock, teachers to compile results, accountants to prepare budgets and researchers to analyse survey data. The power of a spreadsheet is that formulas recalculate instantly when any number changes, so you can ask ‘what if?’ questions. In this lecture we build a sales sheet for Bhimber Mart, a fictional store in the main bazaar, and use it to learn the formulas and tools that cover most everyday spreadsheet work.</p><div class="ic-ru"><p><b>Roman Urdu:</b> Spreadsheet hisaab kitaab ka digital register hai. Har formula = se shuru hota hai. SUM, AVERAGE, IF jaise functions se total, average aur ‘Low stock’ jaise faisle khud ho jate hain. Sorting, filtering aur charts se data samajhna aasan hota hai. Hum Bhimber Mart ki sales sheet par practice karenge.</p></div><h2 id="theory">3. Detailed explanation</h2><h3 id="s1">3.1 Spreadsheet basics</h3><p>A workbook is the whole file; it contains one or more worksheets (tabs). Each sheet is a grid of columns labelled with letters (A, B, C …) and rows labelled with numbers (1, 2, 3 …). Their intersection is a cell, identified by its address, such as B4. A group of cells is a range, written with a colon, such as B2:B21. Cells hold text (labels), numbers, dates or formulas. The Name Box shows the selected cell’s address and the Formula Bar shows what the cell really contains. Excel is part of Microsoft Office; Google Sheets is free in a browser and saves to Drive automatically.</p><div class="ic-box"><b>Key points</b><ul><li>Workbook → Worksheets → Cells</li><li>Cell address: column letter + row number (C5)</li><li>Range: A1:D10</li><li>Formula Bar shows the real content</li></ul></div><h3 id="s2">3.2 Formulas and operators</h3><p>Every formula begins with an equals sign. It can use numbers, cell addresses and operators: + (add), - (subtract), * (multiply), / (divide) and ^ (power). Spreadsheets follow the mathematical order of operations, BODMAS/PEMDAS: brackets first, then powers, then multiplication and division, then addition and subtraction. So =2+3*4 gives 14 while =(2+3)*4 gives 20. Using cell addresses instead of typed numbers is what makes a spreadsheet useful: =C2*D2 calculates a line total and updates automatically when the price in C2 changes.</p><div class="ic-box"><b>Key points</b><ul><li>Always start with =</li><li>Operators: + - * / ^</li><li>Brackets control order: =(B2+C2)/2</li><li>Use addresses, not typed numbers</li></ul></div><h3 id="s3">3.3 Essential functions</h3><p>A function is a built-in formula with a name and arguments in brackets. SUM adds a range: =SUM(E2:E21). AVERAGE finds the mean, MIN and MAX the smallest and largest values, COUNT counts cells with numbers and COUNTA counts non-empty cells. COUNTIF counts cells meeting a condition, such as =COUNTIF(F2:F21,&quot;Low stock&quot;). IF makes a decision: =IF(D2&lt;10,&quot;Low stock&quot;,&quot;OK&quot;) shows ‘Low stock’ when the quantity is below 10. Text in formulas must be in straight double quotes. Functions can be combined, for example =IF(E2&gt;AVERAGE(E$2:E$21),&quot;Above average&quot;,&quot;Below&quot;).</p><div class="ic-box"><b>Key points</b><ul><li>=SUM(range)  =AVERAGE(range)</li><li>=MIN(range)  =MAX(range)</li><li>=COUNT(range)  =COUNTA(range)</li><li>=COUNTIF(range,condition)</li><li>=IF(test, value_if_true, value_if_false)</li></ul></div><h3 id="s4">3.4 Relative and absolute references</h3><p>When you copy a formula down a column with the fill handle (the small square at the bottom-right of a selected cell), the cell addresses change relative to the new position: =C2*D2 in row 2 becomes =C3*D3 in row 3. This is a relative reference and is usually what you want. Sometimes a formula must always point to one fixed cell, such as a tax rate or discount stored in H1. Add dollar signs to make it absolute: =E2*$H$1. Press F4 in Excel to toggle dollar signs. Mixed references ($H1 or H$1) fix only the column or only the row.</p><div class="ic-box"><b>Key points</b><ul><li>Relative: C2 (changes when copied)</li><li>Absolute: $H$1 (always the same cell)</li><li>Mixed: $H1 or H$1</li><li>F4 toggles reference types</li></ul></div><h3 id="s5">3.5 Sorting, filtering, formatting and charts</h3><p>Sorting rearranges rows by a column, for example highest sales first; always select the whole table so rows stay together. Filtering (Data → Filter) shows only rows that meet a condition, such as category ‘Grocery’, without deleting anything. Conditional formatting colours cells automatically, for example red for quantity below 10. Number formats display values as currency (Rs), percentages or dates. Charts turn numbers into pictures: a column or bar chart compares items, a line chart shows change over time and a pie chart shows parts of a whole (use it only for a few categories that add to 100%). Every chart needs a title and labelled axes.</p><div class="ic-box"><b>Key points</b><ul><li>Sort A→Z / largest→smallest</li><li>Filter to show matching rows</li><li>Conditional formatting rules</li><li>Column/bar = compare · Line = trend · Pie = parts of whole</li></ul></div><h2 id="terms">4. Technical terminology</h2><dl class="ic-def"><dt>Cell</dt><dd>The intersection of a row and a column, such as B3.</dd><dt>Range</dt><dd>A rectangular group of cells, such as A1:C10.</dd><dt>Formula</dt><dd>An expression beginning with = that calculates a value.</dd><dt>Function</dt><dd>A built-in formula such as SUM or IF.</dd><dt>Argument</dt><dd>A value or range supplied inside a function’s brackets.</dd><dt>Fill handle</dt><dd>Small square used to copy formulas to adjacent cells.</dd><dt>Absolute reference</dt><dd>A cell reference fixed with $ signs, such as $H$1.</dd><dt>Conditional formatting</dt><dd>Formatting that changes automatically based on cell values.</dd></dl><h3>Important definitions</h3><div class="ic-box hl"><b>Spreadsheet:</b> Application software that organises data in rows and columns and performs calculations using formulas.</div><div class="ic-box hl"><b>Workbook:</b> A spreadsheet file containing one or more worksheets.</div><div class="ic-box hl"><b>Chart:</b> A graphical representation of spreadsheet data.</div><h2 id="example">5. Step-by-step example</h2><h3>Worked example: Bhimber Mart sales sheet</h3><ol class="ic-steps"><li>Headings in row 1: Item (A), Category (B), Price Rs (C), Quantity Sold (D), Total Rs (E), Stock Left (F), Status (G).</li><li>Enter 20 items, for example Rice 5kg, Grocery, 1450, 32, …, 8.</li><li>In E2 type =C2*D2 and drag the fill handle down to E21.</li><li>In E22 type =SUM(E2:E21) for total sales and in E23 =AVERAGE(E2:E21).</li><li>In G2 type =IF(F2&lt;10,&quot;Low stock&quot;,&quot;OK&quot;) and fill down.</li><li>In H1 type a discount of 5% and in I2 =E2*(1-$H$1); fill down to see discounted totals.</li><li>Select A1:G21 and sort by Total Rs, largest to smallest.</li><li>Apply conditional formatting: Status equals ‘Low stock’ → red fill.</li><li>Select Item and Total columns and insert a column chart titled ‘Bhimber Mart – Sales by Item’.</li></ol><h2 id="pak">6. Pakistan-based examples</h2><div class="ic-grid two"><div class="ic-card"><h3>School result sheets</h3><p>Many schools in Azad Kashmir compile marks in Excel: SUM for totals, percentage with =total/max*100, and IF for pass or fail, before printing result cards.</p></div><div class="ic-card"><h3>Household budgets</h3><p>Families track electricity bills (with slab rates), school fees and groceries in a simple sheet to plan monthly spending.</p></div></div><h2 id="case">7. Bhimber case study</h2><div class="ic-box hl"><h3 style="margin-top:0">Case study: monthly review at Bhimber Mart</h3><p>At the end of the month the owner of Bhimber Mart wants to know which items earned the most, which are about to run out and whether a 5% Eid discount on all items is affordable. Using the sales sheet, the student sorts by Total Rs to find the top five items, filters Status to ‘Low stock’ to prepare a reorder list, changes the discount cell from 5% to 10% to see the effect on revenue instantly, and prints a column chart for the owner.</p><b>Questions for analysis</b><ol><li>Which features answered each of the owner’s three questions?</li><li>Why must the discount cell be an absolute reference?</li><li>Which chart type best shows sales by item, and why?</li></ol></div><h2 id="apps">8. Real-life applications</h2><ul><li>Shop sales, stock and accounts</li><li>Student result sheets and attendance</li><li>Household and event budgets</li><li>Survey data analysis</li><li>Salary sheets and fee records</li></ul><h2 id="procon">9. Advantages and disadvantages</h2><div class="ic-pc"><div class="ic-box pro"><h3><i class="fa-solid fa-circle-plus"></i> Advantages</h3><ul><li>Automatic recalculation when data changes</li><li>Fast analysis with functions, sorting and filtering</li><li>Charts make patterns easy to see</li><li>Sheets allows real-time sharing</li></ul></div><div class="ic-box con"><h3><i class="fa-solid fa-circle-minus"></i> Disadvantages</h3><ul><li>A single wrong formula can spread errors</li><li>Large datasets can become slow</li><li>Advanced functions take time to learn</li><li>Data can be accidentally overwritten without protection</li></ul></div></div><h2 id="compare">10. Comparison table</h2><div class="ic-table"><table><caption class="mut" style="caption-side:top;text-align:left;padding:8px 12px;font-weight:600">Common functions</caption><thead><tr><th>Function</th><th>Purpose</th><th>Example</th><th>Result</th></tr></thead><tbody><tr><td>SUM</td><td>Adds values</td><td>=SUM(E2:E21)</td><td>Total sales</td></tr><tr><td>AVERAGE</td><td>Mean value</td><td>=AVERAGE(D2:D21)</td><td>Average quantity</td></tr><tr><td>MAX / MIN</td><td>Largest / smallest</td><td>=MAX(E2:E21)</td><td>Best-selling total</td></tr><tr><td>COUNT</td><td>Counts numbers</td><td>=COUNT(C2:C21)</td><td>Number of priced items</td></tr><tr><td>COUNTIF</td><td>Counts by condition</td><td>=COUNTIF(G2:G21,&quot;Low stock&quot;)</td><td>Items to reorder</td></tr><tr><td>IF</td><td>Decision</td><td>=IF(F2&lt;10,&quot;Low stock&quot;,&quot;OK&quot;)</td><td>Status label</td></tr></tbody></table></div><h2 id="diagram">11. Diagram: From data to decision</h2><div class="ic-flow" role="img" aria-label="From data to decision: Enter data then Write formulas then Sort and filter then Chart then Decide"><span>Enter data</span><i class="fa-solid fa-arrow-right"></i><span>Write formulas</span><i class="fa-solid fa-arrow-right"></i><span>Sort and filter</span><i class="fa-solid fa-arrow-right"></i><span>Chart</span><i class="fa-solid fa-arrow-right"></i><span>Decide</span></div><p class="mut">Draw this flow in your notebook and label each stage with an example from this lecture.</p><h2 id="exam">12. Important points for examination</h2><div class="ic-box exam"><ul><li>Every formula starts with =; examiners deduct marks if it is missing.</li><li>Know the syntax of IF exactly, with three arguments.</li><li>Explain relative vs absolute references with an example using $.</li><li>Match chart types to purposes.</li></ul></div><h2 id="summary">13. Lecture summary</h2><div class="ic-box hl"><ul><li>A workbook holds worksheets made of cells with addresses.</li><li>Formulas start with = and follow the order of operations.</li><li>SUM, AVERAGE, MIN, MAX, COUNT, COUNTIF and IF cover most daily tasks.</li><li>Relative references change when copied; absolute ($) references do not.</li><li>Sort, filter, conditional formatting and charts turn data into decisions.</li></ul></div><h2 id="questions">14. Short questions</h2><ol><li>What is a cell address? Give an example.</li><li>Write a formula to add the values in B2 to B10.</li><li>What does =IF(C2&gt;=40,&quot;Pass&quot;,&quot;Fail&quot;) do?</li><li>What is the difference between a relative and an absolute reference?</li><li>When should a pie chart be used?</li><li>What is the purpose of filtering?</li></ol><h3>Long questions</h3><ol><li>Explain five spreadsheet functions with syntax and examples.</li><li>Describe how to build a sales sheet for a shop, including formulas, sorting, conditional formatting and a chart.</li><li>Explain relative, absolute and mixed references with examples.</li></ol><h2 id="mcq">15. MCQs with answers</h2><div data-quizset><p class="mut">Click an option to check your answer. <span class="qs-score" style="font-weight:700;color:var(--ic-pri)"></span></p><div class="iq" data-ans="1" data-why="All formulas start with an equals sign." data-reveal><p class="qt">A formula in Excel begins with:</p><button type="button" data-i="0">A. #</button><button type="button" data-i="1">B. =</button><button type="button" data-i="2">C. @</button><button type="button" data-i="3">D. $</button><p class="fb" aria-live="polite"></p></div><div class="iq" data-ans="1" data-why="AVERAGE returns the mean." data-reveal><p class="qt">=AVERAGE(B2:B6) calculates:</p><button type="button" data-i="0">A. Total</button><button type="button" data-i="1">B. Mean</button><button type="button" data-i="2">C. Largest value</button><button type="button" data-i="3">D. Count</button><p class="fb" aria-live="polite"></p></div><div class="iq" data-ans="1" data-why="Dollar signs make it absolute." data-reveal><p class="qt">Which reference stays fixed when copied?</p><button type="button" data-i="0">A. B2</button><button type="button" data-i="1">B. $B$2</button><button type="button" data-i="2">C. B$</button><button type="button" data-i="3">D. 2B</button><p class="fb" aria-live="polite"></p></div><div class="iq" data-ans="1" data-why="Multiplication happens before addition." data-reveal><p class="qt">What does =2+3*4 return?</p><button type="button" data-i="0">A. 20</button><button type="button" data-i="1">B. 14</button><button type="button" data-i="2">C. 24</button><button type="button" data-i="3">D. 9</button><p class="fb" aria-live="polite"></p></div><div class="iq" data-ans="1" data-why="Line charts show trends over time." data-reveal><p class="qt">Which chart best shows sales over 12 months?</p><button type="button" data-i="0">A. Pie</button><button type="button" data-i="1">B. Line</button><button type="button" data-i="2">C. Doughnut</button><button type="button" data-i="3">D. None</button><p class="fb" aria-live="polite"></p></div><button type="button" class="ict-btn no-print" data-quiz-reset><i class="fa-solid fa-rotate-left"></i> Reset quiz</button></div><details class="ic-ans"><summary>Show answer key</summary><ol><li>B. = — All formulas start with an equals sign.</li><li>B. Mean — AVERAGE returns the mean.</li><li>B. $B$2 — Dollar signs make it absolute.</li><li>B. 14 — Multiplication happens before addition.</li><li>B. Line — Line charts show trends over time.</li></ol></details><h2 id="tasks">16. Assignment</h2><div class="ic-box hl"><p style="margin:0">Using the provided Bhimber Mart dataset (20 items), compute totals, overall SUM and AVERAGE, a Status column with IF, a discounted total using an absolute reference, COUNTIF of low-stock items, conditional formatting, a sorted top-five list and one correctly titled chart. Write a 150-word summary of findings for the shop owner.</p></div><h3>Homework</h3><p>Create a personal monthly budget sheet with at least eight expense categories, a total, the percentage of each category (=B2/$B$10) and a pie chart.</p><h2 id="discuss">17. Suggested classroom discussion</h2><ol><li>Could a small shop in Bhimber run its accounts only on Google Sheets?</li><li>What can go wrong if one formula in a result sheet is incorrect?</li><li>Is a spreadsheet the right tool for large databases?</li></ol><div class="ic-box"><b>Continue with this lecture:</b> <a href="/ict/lab-6">Lab 06: Microsoft Excel / Google Sheets formulas and data analysis</a> · <a href="/ict/presentations#l6-s1">Slides</a> · <a href="/ict/teaching-plan#plan-6">Teaching plan</a></div><p class="no-print"><button type="button" class="ict-btn pri" data-complete="lecture-6"></button></p><div class="ic-nav no-print"><a class="ict-btn" href="/ict/lecture-5-microsoft-word-google-docs"><i class="fa-solid fa-arrow-left"></i> Lecture 5</a><a class="ict-btn pri" href="/ict/lecture-7-microsoft-powerpoint-google-slides">Lecture 7 <i class="fa-solid fa-arrow-right"></i></a></div></div></div></div></section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand" style="margin-bottom:18px">
+          <img src="/images/logo.jpg" alt="Startwell Education logo" width="180" height="192">
+          <div class="brand-text"><strong>Startwell</strong><small>Education</small></div>
+        </a>
+        <p>A place where young minds are given wings to fly — combining strong academics, good character and a caring environment.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/startwell.educationbhimber/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@startwell.edu" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-h">Quick Links</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/aboutus">About Us</a></li>
+          <li><a href="/academics">Academics</a></li>
+          <li><a href="/activities">Activities</a></li>
+          <li><a href="/faculty">Faculty &amp; Staff</a></li>
+          <li><a href="/calendar">School Calendar</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Explore</p>
+        <ul>
+          <li><a href="/junior-media-team">Junior Media Team</a></li>
+          <li><a href="/senior-media-team">Senior Media Team</a></li>
+          <li><a href="/spelling-bee">StartWell Spelling Bee</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/learn-well">Learn Well</a></li>
+          <li><a href="/tools">Free Student Tools</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Get in Touch</p>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i><span>Bhimber, Azad Jammu &amp; Kashmir, Pakistan</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+92 340 1501700</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>startwelleducationbhimber@gmail.com</span></li>
+          <li><i class="fa-regular fa-clock"></i><span>Mon – Sat: 8:00 AM – 2:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-links"><a href="/blog">Blog</a><a href="/news">News</a><a href="/faq">Parent FAQs</a><a href="/schools-in-bhimber">Schools in Bhimber</a><a href="/campuses">Campuses</a><a href="/admission-process">Admission Process</a><a href="/privacy-policy">Privacy Policy</a></div>
+  <div class="footer-bottom">© <span class="year-now">2026</span> Startwell Education, Bhimber — <em>Start Well to End Well</em>. All rights reserved.</div>
+</footer>
+<button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<a href="/tools" class="swe-tools" aria-label="Free Student Tools" title="Free Student Tools"><span class="swe-ico"><i class="fa-solid fa-screwdriver-wrench"></i></span></a>
+<script src="/js/config.js"></script>
+<script src="/js/main.js"></script>
+<script src="/ict/assets/ict.js" defer></script>
+</body>
+</html>

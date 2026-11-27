@@ -56,6 +56,43 @@ Contact: +92 340 1501700. Hours: Monday to Saturday, 8:00 AM to 2:00 PM. Website
 - [Marks Calculator](https://www.startwell.edu.pk/marks-calculator): Total, percentage, grade and pass/fail for each subject.
 - [Word Counter](https://www.startwell.edu.pk/word-counter): Count words and characters in English and Urdu, with word limit and reading time.
 
+## Applications of ICT (General Education)
+
+- [Applications of ICT course portal](https://www.startwell.edu.pk/ict): Free General Education ICT course in English and Roman Urdu with progress tracking.
+- [Quizzes and Examinations](https://www.startwell.edu.pk/ict/assessments)
+- [Assignments and Projects](https://www.startwell.edu.pk/ict/assignments)
+- [Detailed Course Outline](https://www.startwell.edu.pk/ict/course-outline)
+- [Instructor Dashboard](https://www.startwell.edu.pk/ict/instructor-panel)
+- [Identify ICT hardware, software, networks and storage](https://www.startwell.edu.pk/ict/lab-1)
+- [ICT applications in health, finance and e-commerce](https://www.startwell.edu.pk/ict/lab-10)
+- [Digital citizenship, privacy and cybersecurity awareness](https://www.startwell.edu.pk/ict/lab-11)
+- [Final Digital Portfolio development](https://www.startwell.edu.pk/ict/lab-12)
+- [Explore ICT applications and emerging technologies](https://www.startwell.edu.pk/ict/lab-2)
+- [Search engines, advanced searching and online research](https://www.startwell.edu.pk/ict/lab-3)
+- [Email, formal communication and video conferencing](https://www.startwell.edu.pk/ict/lab-4)
+- [Microsoft Word / Google Docs document preparation](https://www.startwell.edu.pk/ict/lab-5)
+- [Microsoft Excel / Google Sheets formulas and data analysis](https://www.startwell.edu.pk/ict/lab-6)
+- [Microsoft PowerPoint / Google Slides presentation development](https://www.startwell.edu.pk/ict/lab-7)
+- [Cloud storage, file management, backup and sharing](https://www.startwell.edu.pk/ict/lab-8)
+- [Learning Management Systems and online education](https://www.startwell.edu.pk/ict/lab-9)
+- [Practical Laboratory Manual](https://www.startwell.edu.pk/ict/laboratory)
+- [ICT Fundamentals: Hardware, Software, Networks and Storage](https://www.startwell.edu.pk/ict/lecture-1-ict-fundamentals-hardware-software-networks-storage)
+- [ICT in Health, Finance and Shopping](https://www.startwell.edu.pk/ict/lecture-10-ict-in-health-finance-shopping)
+- [Digital Citizenship and Netiquette](https://www.startwell.edu.pk/ict/lecture-11-digital-citizenship-netiquette)
+- [Digital Ethics, Copyright, Plagiarism, Misinformation and Final Project](https://www.startwell.edu.pk/ict/lecture-12-digital-ethics-copyright-plagiarism-misinformation)
+- [Scope of ICT and Emerging Technologies](https://www.startwell.edu.pk/ict/lecture-2-scope-of-ict-emerging-technologies)
+- [Search Engines and Web Research](https://www.startwell.edu.pk/ict/lecture-3-search-engines-web-research)
+- [Email and Formal Digital Communication](https://www.startwell.edu.pk/ict/lecture-4-email-formal-digital-communication)
+- [Microsoft Word and Google Docs](https://www.startwell.edu.pk/ict/lecture-5-microsoft-word-google-docs)
+- [Microsoft Excel and Google Sheets](https://www.startwell.edu.pk/ict/lecture-6-microsoft-excel-google-sheets)
+- [Microsoft PowerPoint and Google Slides](https://www.startwell.edu.pk/ict/lecture-7-microsoft-powerpoint-google-slides)
+- [Cloud Storage and Digital Note-Taking](https://www.startwell.edu.pk/ict/lecture-8-cloud-storage-digital-note-taking)
+- [ICT in Education and Learning Management Systems](https://www.startwell.edu.pk/ict/lecture-9-ict-in-education-learning-management-systems)
+- [Complete Lecture Notes](https://www.startwell.edu.pk/ict/lecture-notes)
+- [Classroom Presentations](https://www.startwell.edu.pk/ict/presentations)
+- [Learning Resources](https://www.startwell.edu.pk/ict/resources)
+- [Lecture Delivery Plans](https://www.startwell.edu.pk/ict/teaching-plan)
+
 ## Discrete Structures (BS CS)
 
 - [Discrete Structures](https://www.startwell.edu.pk/discrete-structures): Free BS CS course in English and Roman Urdu: CLOs, 10 modules, 16-week schedule, references.
